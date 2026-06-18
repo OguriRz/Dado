@@ -1,0 +1,2438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Moon — Herramientas</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  /* ---- CSS custom properties (theme) ---- */
+  :root {
+    --bg: #07070d;
+    --surface: #0d0d1a;
+    --surface2: #111122;
+    --surface3: #16162a;
+    --border: #1a1a2e;
+    --border2: #1f1f3a;
+    --border3: #2a2a4a;
+    --text: #eeeef2;
+    --text2: #ccccee;
+    --text3: #8888aa;
+    --text4: #555577;
+    --text5: #333355;
+    --text6: #444466;
+    --accent: #6c5ce7;
+    --accent2: #fd79a8;
+    --input-bg: #111122;
+    --pool-bg: #0a0a16;
+    --pool-empty: #333355;
+    --chip-bg: #16162a;
+    --footer-bg: #111122;
+    --die-bg: #16162a;
+    --die-border: #2a2a4a;
+    --shadow: rgba(108, 92, 231, 0.06);
+    --result-formula: #555577;
+    --more-color: #555577;
+    --clear-btn: #555577;
+    --clear-btn-border: #1f1f3a;
+    --remove-bg: #1f1f3a;
+    --gradient: linear-gradient(135deg, #6c5ce7, #fd79a8);
+    --btn-text: #fff;
+    --subtitle: #6c5ce7;
+    --tab-inactive: #333355;
+    /* Calc */
+    --btn-bg: #111122;
+    --btn-hover: #1a1a30;
+    --btn-active: #222244;
+    --op-btn: #6c5ce7;
+    --op-btn-hover: #7d6df8;
+    --display-bg: #0a0a16;
+  }
+
+  .light-mode {
+    --bg: #f5f3ff;
+    --surface: #ffffff;
+    --surface2: #f8f7ff;
+    --surface3: #eeebff;
+    --border: #e0d8ff;
+    --border2: #d5ccff;
+    --border3: #c4b8ff;
+    --text: #1a1a2e;
+    --text2: #3d3d5c;
+    --text3: #7a74a0;
+    --text4: #9990bb;
+    --text5: #b8aedd;
+    --text6: #aaa0c8;
+    --accent: #6c5ce7;
+    --accent2: #fd79a8;
+    --input-bg: #f8f7ff;
+    --pool-bg: #faf8ff;
+    --pool-empty: #bbb0dd;
+    --chip-bg: #eeebff;
+    --footer-bg: #f8f7ff;
+    --die-bg: #eeebff;
+    --die-border: #d5ccff;
+    --shadow: rgba(108, 92, 231, 0.08);
+    --result-formula: #9990bb;
+    --more-color: #9990bb;
+    --clear-btn: #7a74a0;
+    --clear-btn-border: #d5ccff;
+    --remove-bg: #d5ccff;
+    --gradient: linear-gradient(135deg, #7c6cf7, #fd79a8);
+    --btn-text: #fff;
+    --subtitle: #7c6cf7;
+    --tab-inactive: #bbb0dd;
+    /* Calc */
+    --btn-bg: #f8f7ff;
+    --btn-hover: #eeebff;
+    --btn-active: #e0d8ff;
+    --op-btn: #6c5ce7;
+    --op-btn-hover: #7d6df8;
+    --display-bg: #faf8ff;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .container {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    width: 100%;
+    max-width: 580px;
+    box-shadow: 0 0 50px var(--shadow);
+    transition: background 0.3s, border-color 0.3s;
+  }
+
+  /* --- Header --- */
+  .header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .header-left {
+    flex: 1;
+  }
+
+  .header-left h1 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 1px;
+  }
+
+  .header-left .subtitle {
+    color: var(--subtitle);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .theme-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    border: 1px solid var(--border2);
+    background: var(--surface2);
+    color: var(--text3);
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .theme-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* --- Tabs --- */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 3px;
+    margin-bottom: 18px;
+    transition: background 0.3s, border-color 0.3s;
+  }
+
+  .tab-btn {
+    flex: 1;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 7px;
+    background: transparent;
+    color: var(--tab-inactive);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.5px;
+  }
+
+  .tab-btn:hover {
+    color: var(--text2);
+  }
+
+  .tab-btn.active {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 2px 10px rgba(108, 92, 231, 0.3);
+  }
+
+  .tab-panel {
+    display: none;
+  }
+
+  .tab-panel.active {
+    display: block;
+  }
+
+  /* =============================================
+     TAB 1 — DICE ROLLER
+     ============================================= */
+
+  /* Dice type selector */
+  .dice-types {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .dice-type-btn {
+    width: 48px;
+    height: 48px;
+    background: var(--surface2);
+    border: 1px solid var(--border2);
+    border-radius: 10px;
+    color: var(--text3);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dice-type-btn:hover {
+    border-color: var(--accent);
+    color: var(--text2);
+    background: var(--surface3);
+  }
+
+  .dice-type-btn:active {
+    transform: scale(0.93);
+  }
+
+  /* Dice pool */
+  .pool-area {
+    background: var(--pool-bg);
+    border: 1px dashed var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    min-height: 52px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    transition: background 0.3s;
+  }
+
+  .pool-empty {
+    color: var(--pool-empty);
+    font-size: 13px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .pool-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--chip-bg);
+    border: 1px solid var(--border3);
+    border-radius: 8px;
+    padding: 5px 10px 5px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text2);
+    cursor: pointer;
+    transition: all 0.12s;
+    user-select: none;
+  }
+
+  .pool-chip:hover {
+    border-color: var(--accent);
+    background: var(--surface3);
+  }
+
+  .pool-chip .pool-count {
+    color: var(--accent);
+    font-weight: 700;
+    min-width: 14px;
+    text-align: center;
+  }
+
+  .pool-chip .pool-remove {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    background: var(--remove-bg);
+    border: none;
+    color: var(--text4);
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.12s;
+    line-height: 1;
+    padding: 0;
+  }
+
+  .pool-chip .pool-remove:hover {
+    background: #ff6b6b;
+    color: #fff;
+  }
+
+  /* Controls */
+  .controls-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+    align-items: flex-end;
+  }
+
+  .field {
+    flex: 1;
+  }
+
+  .field label {
+    display: block;
+    font-size: 11px;
+    color: var(--text3);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .field input {
+    width: 100%;
+    padding: 10px 12px;
+    background: var(--input-bg);
+    border: 1px solid var(--border2);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 600;
+    outline: none;
+    transition: border-color 0.2s, background 0.3s, color 0.3s;
+  }
+
+  .field input:focus {
+    border-color: var(--accent);
+  }
+
+  .field input[type=number]::-webkit-inner-spin-button {
+    opacity: 0.5;
+  }
+
+  /* Roll button */
+  .btn-roll {
+    width: 100%;
+    padding: 12px;
+    background: var(--gradient);
+    border: none;
+    border-radius: 10px;
+    color: var(--btn-text);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.12s, box-shadow 0.2s, opacity 0.2s;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+
+  .btn-roll:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(108, 92, 231, 0.35);
+  }
+
+  .btn-roll:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  .btn-roll:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .btn-roll.rolling {
+    animation: pulse 0.4s ease-in-out infinite alternate;
+  }
+
+  @keyframes pulse {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+  }
+
+  .btn-clear {
+    background: transparent;
+    border: 1px solid var(--clear-btn-border);
+    color: var(--clear-btn);
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-clear:hover {
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+  }
+
+  /* Result */
+  .result-box {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+    margin-bottom: 12px;
+    min-height: 120px;
+    transition: background 0.3s, border-color 0.3s;
+  }
+
+  .result-total {
+    font-size: 42px;
+    font-weight: 800;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+
+  .result-total.loading {
+    opacity: 0.15;
+  }
+
+  .result-formula {
+    font-size: 12px;
+    color: var(--result-formula);
+    margin-top: 4px;
+    min-height: 18px;
+  }
+
+  .dice-visuals {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    min-height: 20px;
+    transition: border-color 0.3s;
+  }
+
+  .die-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Tumble animation */
+  .die-visual.tumble {
+    animation: dice-tumble 0.9s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  }
+
+  @keyframes dice-tumble {
+    0%   { transform: rotate(0deg)    scale(1)    translateY(0); }
+    10%  { transform: rotate(30deg)   scale(0.85)  translateY(-4px); }
+    25%  { transform: rotate(120deg)  scale(1.1)   translateY(0); }
+    40%  { transform: rotate(200deg)  scale(0.9)   translateY(-3px); }
+    55%  { transform: rotate(280deg)  scale(1.05)  translateY(0); }
+    70%  { transform: rotate(330deg)  scale(0.95)  translateY(-2px); }
+    85%  { transform: rotate(355deg)  scale(1.02)  translateY(0); }
+    100% { transform: rotate(360deg)  scale(1)     translateY(0); }
+  }
+
+  .die-visual svg {
+    display: block;
+  }
+
+  /* Footer */
+  .footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .footer-tag {
+    display: inline-block;
+    background: var(--footer-bg);
+    border: 1px solid var(--border2);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 11px;
+    color: var(--text4);
+    transition: background 0.3s, border-color 0.3s;
+  }
+
+  .dice-count-label {
+    font-size: 11px;
+    color: var(--text4);
+  }
+
+  .empty-msg {
+    color: var(--text6);
+    font-size: 13px;
+    padding: 6px 0;
+  }
+
+  .send-to-compare {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+    transition: border-color 0.3s;
+  }
+
+  .send-to-compare button {
+    padding: 5px 12px;
+    background: var(--surface2);
+    border: 1px solid var(--border2);
+    border-radius: 6px;
+    color: var(--text4);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .send-to-compare button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--surface3);
+  }
+
+  .send-to-compare button.ally-send:hover {
+    border-color: #2ecc71;
+    color: #2ecc71;
+  }
+
+  .send-to-compare button.enemy-send:hover {
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+  }
+
+  /* Status effects */
+  .status-section {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    transition: border-color 0.3s;
+  }
+
+  .status-label {
+    font-size: 10px;
+    color: var(--text4);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+  }
+
+  .status-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .status-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: var(--surface2);
+    border: 1px solid var(--border2);
+    border-radius: 8px;
+    color: var(--text3);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.15s;
+  }
+
+  .status-badge:hover {
+    border-color: var(--accent);
+    color: var(--text2);
+    background: var(--surface3);
+  }
+
+  .status-badge.active {
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 2px 12px rgba(108, 92, 231, 0.3);
+  }
+
+  .status-badge:active {
+    transform: scale(0.95);
+  }
+
+  .status-badge.active.paralysis {
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  }
+
+  .status-icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+    filter: brightness(0.6) saturate(0.5);
+    transition: filter 0.2s;
+    object-fit: contain;
+  }
+
+  .status-badge.active .status-icon {
+    filter: brightness(1) saturate(1);
+  }
+
+  /* ---- Coins Tracker (global) ---- */
+  .coins-section {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    transition: background 0.3s, border-color 0.3s;
+  }
+
+  .coins-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .coins-label {
+    font-size: 10px;
+    color: var(--text4);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  .coins-turn-btn {
+    padding: 4px 12px;
+    background: var(--gradient);
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.12s, box-shadow 0.2s;
+    letter-spacing: 0.5px;
+  }
+
+  .coins-turn-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.35);
+  }
+
+  .coins-turn-btn:active {
+    transform: translateY(0);
+  }
+
+  .coins-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .coins-row-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .coins-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .coins-group-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text4);
+    margin-right: 2px;
+  }
+
+  .coin-ctrl {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid var(--border2);
+    background: var(--surface3);
+    color: var(--text4);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.12s;
+    line-height: 1;
+  }
+
+  .coin-ctrl:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--surface2);
+  }
+
+  .coin-ctrl:active {
+    transform: scale(0.9);
+  }
+
+  .coin-piece {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    user-select: none;
+    position: relative;
+  }
+
+  .coin-piece:hover {
+    transform: scale(1.15);
+  }
+
+  .coin-piece:active {
+    transform: scale(0.9);
+  }
+
+  .coin-piece img {
+    width: 22px;
+    height: 22px;
+    display: block;
+    object-fit: contain;
+    transition: filter 0.15s;
+  }
+
+  .coin-piece.action .coin-img {
+    filter: brightness(1) saturate(1.2);
+  }
+
+  .coin-piece.reaction .coin-img {
+    filter: brightness(0.6) saturate(1.8) hue-rotate(200deg);
+  }
+
+  .coin-piece.used {
+    opacity: 0.3;
+    transform: scale(0.85);
+  }
+
+  .coin-piece.used:hover {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+
+  .coin-piece.used img {
+    filter: grayscale(1) brightness(0.4);
+  }
+
+  /* =============================================
+     TAB 2 — CALCULATOR
+     ============================================= */
+
+  .calc-display {
+    background: var(--display-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+    text-align: right;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    transition: background 0.3s, border-color 0.3s;
+  }
+
+  .calc-formula {
+    font-size: 13px;
+    color: var(--text4);
+    min-height: 20px;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    transition: color 0.3s;
+  }
+
+  .calc-result {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    transition: color 0.3s;
+  }
+
+  .calc-result.error {
+    color: #ff6b6b;
+    font-size: 20px;
+  }
+
+  .calc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .calc-btn {
+    padding: 16px 8px;
+    background: var(--btn-bg);
+    border: 1px solid var(--border2);
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.12s;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .calc-btn:hover {
+    background: var(--btn-hover);
+    border-color: var(--border3);
+  }
+
+  .calc-btn:active {
+    background: var(--btn-active);
+    transform: scale(0.95);
+  }
+
+  .calc-btn.op {
+    color: #fff;
+    background: var(--op-btn);
+    border-color: transparent;
+  }
+
+  .calc-btn.op:hover {
+    background: var(--op-btn-hover);
+    border-color: transparent;
+  }
+
+  .calc-btn.op:active {
+    transform: scale(0.93);
+  }
+
+  .calc-btn.eq {
+    background: var(--gradient);
+    border-color: transparent;
+    color: #fff;
+  }
+
+  .calc-btn.eq:hover {
+    filter: brightness(1.1);
+    border-color: transparent;
+  }
+
+  .calc-btn.eq:active {
+    transform: scale(0.93);
+  }
+
+  .calc-btn.clear {
+    color: #ff6b6b;
+  }
+
+  .calc-btn.clear:hover {
+    background: rgba(255,107,107,0.1);
+    border-color: rgba(255,107,107,0.3);
+  }
+
+  .calc-footer {
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .calc-footer .footer-tag {
+    display: inline-block;
+    background: var(--footer-bg);
+    border: 1px solid var(--border2);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 11px;
+    color: var(--text4);
+    transition: background 0.3s, border-color 0.3s;
+  }
+
+  /* =============================================
+     TAB 3 — ENEMIES
+     ============================================= */
+
+  .enemy-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+
+  .enemy-form .field {
+    flex: 1;
+    min-width: 80px;
+  }
+
+  .enemy-form .field label {
+    display: block;
+    font-size: 10px;
+    color: var(--text3);
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .enemy-form .field input {
+    width: 100%;
+    padding: 8px 10px;
+    background: var(--input-bg);
+    border: 1px solid var(--border2);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    outline: none;
+    transition: border-color 0.2s, background 0.3s, color 0.3s;
+  }
+
+  .enemy-form .field input:focus {
+    border-color: var(--accent);
+  }
+
+  .btn-enemy-add {
+    padding: 8px 16px;
+    background: var(--gradient);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.12s, box-shadow 0.2s;
+    align-self: flex-end;
+    white-space: nowrap;
+  }
+
+  .btn-enemy-add:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+  }
+
+  .btn-enemy-add:active {
+    transform: translateY(0);
+  }
+
+  .enemy-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 420px;
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+
+  .enemy-list::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .enemy-list::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .enemy-list::-webkit-scrollbar-thumb {
+    background: var(--border3);
+    border-radius: 2px;
+  }
+
+  .enemy-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    transition: background 0.3s, border-color 0.3s, opacity 0.3s;
+  }
+
+  .enemy-card.removing {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.25s, transform 0.25s;
+  }
+
+  .enemy-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .enemy-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text2);
+  }
+
+  .enemy-card-actions {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .enemy-delete-btn {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    background: var(--remove-bg);
+    border: none;
+    color: var(--text4);
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.12s;
+  }
+
+  .enemy-delete-btn:hover {
+    background: #ff6b6b;
+    color: #fff;
+  }
+
+  /* HP bar */
+  .enemy-bar-section {
+    margin-bottom: 6px;
+  }
+
+  .enemy-bar-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .enemy-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    margin-bottom: 3px;
+  }
+
+  .enemy-bar-label .label {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .enemy-bar-label .value {
+    color: var(--text3);
+  }
+
+  .enemy-bar-track {
+    width: 100%;
+    height: 10px;
+    background: var(--surface3);
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.3s;
+  }
+
+  .enemy-bar-track:hover {
+    filter: brightness(1.2);
+  }
+
+  .enemy-bar-fill {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.25s ease;
+  }
+
+  .enemy-bar-fill.hp {
+    background: linear-gradient(90deg, #27ae60, #2ecc71);
+  }
+
+  .enemy-bar-fill.stagger {
+    background: linear-gradient(90deg, #d4a017, #f1c40f);
+  }
+
+  .enemy-damage-input {
+    display: none;
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px dashed var(--border2);
+  }
+
+  .enemy-damage-input.visible {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .enemy-damage-input input {
+    flex: 1;
+    padding: 6px 8px;
+    background: var(--input-bg);
+    border: 1px solid var(--border2);
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .enemy-damage-input input:focus {
+    border-color: var(--accent);
+  }
+
+  .enemy-damage-input .btn-damage-apply {
+    padding: 6px 12px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.1s;
+    white-space: nowrap;
+  }
+
+  .enemy-damage-input .btn-damage-apply:hover {
+    transform: scale(1.05);
+  }
+
+  .enemy-damage-input .btn-damage-apply:active {
+    transform: scale(0.95);
+  }
+
+  .enemy-empty {
+    color: var(--text6);
+    font-size: 13px;
+    text-align: center;
+    padding: 30px 0;
+  }
+
+  /* Enemy status effects */
+  .enemy-status-section {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--border2);
+  }
+
+  .enemy-status-badges {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .enemy-status-badge {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 3px 6px;
+    background: var(--surface3);
+    border: 1px solid var(--border2);
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text4);
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.12s;
+  }
+
+  .enemy-status-badge:hover {
+    border-color: var(--accent);
+    background: var(--surface2);
+  }
+
+  .enemy-status-badge:active {
+    transform: scale(0.93);
+  }
+
+  .enemy-status-badge .es-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    display: block;
+    filter: brightness(0.7);
+    transition: filter 0.15s;
+  }
+
+  .enemy-status-badge:hover .es-icon {
+    filter: brightness(1);
+  }
+
+  .enemy-status-badge .es-count {
+    min-width: 12px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 800;
+  }
+
+  .enemy-status-badge .es-arrow {
+    font-size: 8px;
+    color: var(--text5);
+    transition: color 0.12s;
+  }
+
+  .enemy-status-badge .es-left:hover .es-arrow,
+  .enemy-status-badge .es-right:hover .es-arrow {
+    color: var(--text2);
+  }
+
+  .enemy-status-badge .es-left,
+  .enemy-status-badge .es-right {
+    padding: 0 2px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.1s;
+  }
+
+  .enemy-status-badge .es-left:hover,
+  .enemy-status-badge .es-right:hover {
+    background: rgba(255,255,255,0.08);
+  }
+
+  /* =============================================
+     TAB 4 — COMPARISON
+     ============================================= */
+
+  .comp-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 10px;
+    align-items: end;
+    margin-bottom: 16px;
+  }
+
+  .comp-grid .field {
+    flex: unset;
+  }
+
+  .comp-grid .field label {
+    display: block;
+    font-size: 11px;
+    color: var(--text3);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .comp-grid .field input {
+    width: 100%;
+    padding: 10px 12px;
+    background: var(--input-bg);
+    border: 1px solid var(--border2);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 700;
+    outline: none;
+    transition: border-color 0.2s, background 0.3s, color 0.3s;
+    text-align: center;
+  }
+
+  .comp-grid .field input:focus {
+    border-color: var(--accent);
+  }
+
+  .comp-vs {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--text4);
+    padding-bottom: 12px;
+    letter-spacing: 2px;
+  }
+
+  .comp-btn {
+    padding: 12px 20px;
+    background: var(--gradient);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.12s, box-shadow 0.2s;
+    width: 100%;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+  }
+
+  .comp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(108, 92, 231, 0.35);
+  }
+
+  .comp-btn:active {
+    transform: translateY(0);
+  }
+
+  .comp-result {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    min-height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s, border-color 0.3s;
+  }
+
+  .comp-winner {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    transition: color 0.3s;
+  }
+
+  .comp-winner.ally {
+    color: #2ecc71;
+  }
+
+  .comp-winner.enemy {
+    color: #ff6b6b;
+  }
+
+  .comp-winner.tie {
+    color: var(--accent);
+  }
+
+  .comp-diff {
+    font-size: 14px;
+    color: var(--text3);
+  }
+
+  .comp-detail {
+    font-size: 12px;
+    color: var(--text4);
+    margin-top: 6px;
+  }
+
+  .comp-footer {
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .comp-footer .footer-tag {
+    display: inline-block;
+    background: var(--footer-bg);
+    border: 1px solid var(--border2);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 11px;
+    color: var(--text4);
+    transition: background 0.3s, border-color 0.3s;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Header -->
+  <div class="header-row">
+    <div class="header-left">
+      <h1>✦ PROJECT MOON</h1>
+      <div class="subtitle" id="tabSubtitle">🎲 Tirar Dados</div>
+    </div>
+    <button class="theme-btn" id="themeBtn" title="Cambiar tema">🌙</button>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-btn" data-tab="dice">🎲 Dados</button>
+    <button class="tab-btn" data-tab="calc">🧮 Calculadora</button>
+    <button class="tab-btn" data-tab="enemies">⚔️ Enemigos</button>
+    <button class="tab-btn" data-tab="compare">⚖️ Comparar</button>
+  </div>
+
+  <!-- ============ COINS TRACKER ============ -->
+  <div class="coins-section" id="coinsSection">
+    <div class="coins-header">
+      <span class="coins-label">🪙 Acciones &amp; Reacciones</span>
+      <button class="coins-turn-btn" onclick="finDelTurno()">⏭ Fin del turno</button>
+    </div>
+    <div class="coins-row" id="coinsRow">
+      <div class="coins-row-inner">
+        <div class="coins-group">
+          <span class="coins-group-label" style="color:#f1c40f">Acción</span>
+          <button class="coin-ctrl" onclick="addCoin('action')" title="Agregar acción">+</button>
+          <button class="coin-ctrl" onclick="removeCoin('action')" title="Quitar acción">−</button>
+        </div>
+        <div id="coinsActions" class="coins-group"></div>
+      </div>
+      <div class="coins-row-inner">
+        <div class="coins-group">
+          <span class="coins-group-label" style="color:#3498db">Reacción</span>
+          <button class="coin-ctrl" onclick="addCoin('reaction')" title="Agregar reacción">+</button>
+          <button class="coin-ctrl" onclick="removeCoin('reaction')" title="Quitar reacción">−</button>
+        </div>
+        <div id="coinsReactions" class="coins-group"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TAB 1: DICE ============ -->
+  <div class="tab-panel active" id="tabDice">
+    <div class="dice-types" id="diceTypes">
+      <button class="dice-type-btn" data-sides="4">D4</button>
+      <button class="dice-type-btn" data-sides="6">D6</button>
+      <button class="dice-type-btn" data-sides="8">D8</button>
+      <button class="dice-type-btn" data-sides="10">D10</button>
+      <button class="dice-type-btn" data-sides="12">D12</button>
+      <button class="dice-type-btn" data-sides="20">D20</button>
+      <button class="dice-type-btn" data-sides="25">D25</button>
+      <button class="dice-type-btn" data-sides="50">D50</button>
+      <button class="dice-type-btn" data-sides="100">D100</button>
+    </div>
+
+    <div class="pool-area" id="poolArea">
+      <span class="pool-empty" id="poolEmpty">Hacé click en un dado de arriba para agregarlo</span>
+      <div id="poolChips" style="width:100%;display:flex;flex-wrap:wrap;gap:8px;align-items:center"></div>
+      <button class="btn-clear" id="clearPoolBtn" style="display:none">Limpiar</button>
+    </div>
+
+    <div class="controls-row">
+      <div class="field" style="flex:0.6">
+        <label>Cantidad</label>
+        <input type="number" id="diceCount" value="1" min="1" max="100">
+      </div>
+      <div class="field">
+        <label>Ventaja</label>
+        <input type="number" id="bonus" value="0">
+      </div>
+    </div>
+
+    <button class="btn-roll" id="rollBtn">🎲 TIRAR</button>
+
+    <div class="result-box" id="resultBox">
+      <div class="result-total" id="resultTotal">—</div>
+      <div class="result-formula" id="resultFormula">Agregá dados al pool y tirá</div>
+      <div class="dice-visuals" id="diceVisuals"></div>
+      <div class="send-to-compare" id="sendToCompare" style="display:none">
+        <button class="ally-send" onclick="sendToCompare('ally')">⬅ Enviar a Aliado</button>
+        <button class="enemy-send" onclick="sendToCompare('enemy')">Enviar a Enemigo ➡</button>
+      </div>
+    </div>
+
+    <div class="footer-row">
+      <span class="footer-tag" id="lastRollTag">Última: —</span>
+      <span class="dice-count-label" id="diceTotalLabel">0 dados</span>
+    </div>
+
+    <div class="status-section">
+      <div class="status-label">🎯 Efectos de Estado</div>
+      <div class="status-badges" id="statusBadges">
+        <div class="status-badge" data-status="paralysis" onclick="toggleStatus('paralysis')">
+          <img src="https://limbuscompany.wiki.gg/images/Paralyze.png?ba5ec8" alt="Parálisis" class="status-icon">
+          Parálisis
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TAB 2: CALC ============ -->
+  <div class="tab-panel" id="tabCalc">
+    <div class="calc-display">
+      <div class="calc-formula" id="calcFormula"></div>
+      <div class="calc-result" id="calcResult">0</div>
+    </div>
+
+    <div class="calc-grid">
+      <button class="calc-btn clear" data-action="clear">AC</button>
+      <button class="calc-btn op" data-action="backspace">⌫</button>
+      <button class="calc-btn" data-action="percent">%</button>
+      <button class="calc-btn op" data-action="divide">÷</button>
+
+      <button class="calc-btn" data-action="digit" data-value="7">7</button>
+      <button class="calc-btn" data-action="digit" data-value="8">8</button>
+      <button class="calc-btn" data-action="digit" data-value="9">9</button>
+      <button class="calc-btn op" data-action="multiply">×</button>
+
+      <button class="calc-btn" data-action="digit" data-value="4">4</button>
+      <button class="calc-btn" data-action="digit" data-value="5">5</button>
+      <button class="calc-btn" data-action="digit" data-value="6">6</button>
+      <button class="calc-btn op" data-action="subtract">−</button>
+
+      <button class="calc-btn" data-action="digit" data-value="1">1</button>
+      <button class="calc-btn" data-action="digit" data-value="2">2</button>
+      <button class="calc-btn" data-action="digit" data-value="3">3</button>
+      <button class="calc-btn op" data-action="add">+</button>
+
+      <button class="calc-btn" data-action="negate">±</button>
+      <button class="calc-btn" data-action="digit" data-value="0">0</button>
+      <button class="calc-btn" data-action="decimal">,</button>
+      <button class="calc-btn eq" data-action="equals">=</button>
+    </div>
+
+    <div class="calc-footer">
+      <span class="footer-tag">+ − × ÷</span>
+    </div>
+  </div>
+  <!-- ============ TAB 3: ENEMIES ============ -->
+  <div class="tab-panel" id="tabEnemies">
+    <div class="enemy-form" id="enemyForm">
+      <div class="field">
+        <label>Nombre</label>
+        <input type="text" id="enemyName" placeholder="Ej: Carnicero" maxlength="30">
+      </div>
+      <div class="field">
+        <label>HP</label>
+        <input type="number" id="enemyHp" value="100" min="1">
+      </div>
+      <div class="field">
+        <label>Stagger</label>
+        <input type="number" id="enemyStagger" value="50" min="1">
+      </div>
+      <button class="btn-enemy-add" id="enemyAddBtn">+ Agregar</button>
+    </div>
+
+    <div class="enemy-list" id="enemyList">
+      <div class="enemy-empty">No hay enemigos. Agregá uno arriba.</div>
+    </div>
+  </div>
+  <!-- ============ TAB 4: COMPARE ============ -->
+  <div class="tab-panel" id="tabCompare">
+    <div class="comp-grid">
+      <div class="field">
+        <label>Aliado</label>
+        <input type="number" id="compAlly" value="0">
+      </div>
+      <div class="comp-vs">VS</div>
+      <div class="field">
+        <label>Enemigo</label>
+        <input type="number" id="compEnemy" value="0">
+      </div>
+    </div>
+
+    <button class="comp-btn" id="compBtn">⚖️ COMPARAR</button>
+
+    <div class="comp-result" id="compResult">
+      <div class="comp-detail">Poné los dos números y toca Comparar</div>
+    </div>
+
+    <div class="comp-footer">
+      <span class="footer-tag">¿Quién gana el clash?</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ============================================================
+  //  THEME TOGGLE
+  // ============================================================
+  const themeBtn = document.getElementById('themeBtn');
+  let isLight = false;
+
+  function applyTheme(light) {
+    isLight = light;
+    document.documentElement.classList.toggle('light-mode', light);
+    themeBtn.textContent = light ? '☀️' : '🌙';
+    try { localStorage.setItem('pmoon-theme', light ? 'light' : 'dark'); } catch(e) {}
+  }
+
+  try {
+    const saved = localStorage.getItem('pmoon-theme');
+    if (saved === 'light') applyTheme(true);
+  } catch(e) {}
+
+  themeBtn.addEventListener('click', () => applyTheme(!isLight));
+
+  // ============================================================
+  //  TABS
+  // ============================================================
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const panels = {
+    dice: document.getElementById('tabDice'),
+    calc: document.getElementById('tabCalc'),
+    enemies: document.getElementById('tabEnemies'),
+    compare: document.getElementById('tabCompare'),
+  };
+  const tabSubtitle = document.getElementById('tabSubtitle');
+  const tabLabels = { dice: '🎲 Tirar Dados', calc: '🧮 Calculadora', enemies: '⚔️ Enemigos', compare: '⚖️ Comparar' };
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      Object.keys(panels).forEach(k => panels[k].classList.toggle('active', k === btn.dataset.tab));
+      tabSubtitle.textContent = tabLabels[btn.dataset.tab] || '';
+    });
+  });
+
+  // ============================================================
+  //  DICE ROLLER
+  // ============================================================
+
+  const DICE_COLORS = {
+    4:   '#e74c3c',
+    6:   '#3498db',
+    8:   '#2ecc71',
+    10:  '#9b59b6',
+    12:  '#f39c12',
+    20:  '#e84393',
+    25:  '#1abc9c',
+    50:  '#f1c40f',
+    100: '#00b894',
+  };
+
+  function getDieColor(sides) {
+    return DICE_COLORS[sides] || '#6c5ce7';
+  }
+
+  let pool = [];
+  let isRolling = false;
+  let rollHistory = [];
+  let lastRollTotal = null;
+  let lastRawTotal = null;  // unhalved total for instant status toggle
+  let lastRawFormula = '';  // formula without ½× prefix
+
+  const diceTypeBtns = document.querySelectorAll('.dice-type-btn');
+  const diceCountInput = document.getElementById('diceCount');
+  const bonusInput = document.getElementById('bonus');
+  const rollBtn = document.getElementById('rollBtn');
+  const clearPoolBtn = document.getElementById('clearPoolBtn');
+  const poolEmpty = document.getElementById('poolEmpty');
+  const poolChips = document.getElementById('poolChips');
+  const resultTotal = document.getElementById('resultTotal');
+  const resultFormula = document.getElementById('resultFormula');
+  const diceVisuals = document.getElementById('diceVisuals');
+  const lastRollTag = document.getElementById('lastRollTag');
+  const diceTotalLabel = document.getElementById('diceTotalLabel');
+
+  function addToPool(sides) {
+    const count = Math.max(1, parseInt(diceCountInput.value) || 1);
+    const existing = pool.find(p => p.sides === sides);
+    if (existing) { existing.count += count; }
+    else { pool.push({ sides, count }); }
+    renderPool();
+    updateRollButton();
+  }
+
+  function removeFromPool(sides) {
+    const existing = pool.find(p => p.sides === sides);
+    if (!existing) return;
+    existing.count--;
+    if (existing.count <= 0) pool = pool.filter(p => p.sides !== sides);
+    renderPool();
+    updateRollButton();
+  }
+
+  function clearPool() {
+    pool = [];
+    renderPool();
+    updateRollButton();
+    resultTotal.textContent = '—';
+    resultFormula.textContent = 'Pool vacío';
+    diceVisuals.innerHTML = '';
+    diceTotalLabel.textContent = '0 dados';
+    document.getElementById('sendToCompare').style.display = 'none';
+    lastRollTotal = null;
+    lastRawTotal = null;
+    lastRawFormula = '';
+  }
+
+  function getTotalDiceCount() {
+    return pool.reduce((sum, p) => sum + p.count, 0);
+  }
+
+  function renderPool() {
+    const container = poolChips;
+    const total = getTotalDiceCount();
+    if (total === 0) {
+      poolEmpty.style.display = 'block';
+      container.style.display = 'none';
+      clearPoolBtn.style.display = 'none';
+      diceTotalLabel.textContent = '0 dados';
+      return;
+    }
+    poolEmpty.style.display = 'none';
+    container.style.display = 'flex';
+    container.innerHTML = '';
+    pool.forEach(item => {
+      const chip = document.createElement('span');
+      chip.className = 'pool-chip';
+      const color = getDieColor(item.sides);
+      const countSpan = document.createElement('span');
+      countSpan.className = 'pool-count';
+      countSpan.style.color = color;
+      countSpan.textContent = item.count;
+      const label = document.createTextNode('D' + item.sides);
+      const rmBtn = document.createElement('button');
+      rmBtn.className = 'pool-remove';
+      rmBtn.textContent = '✕';
+      rmBtn.title = 'Quitar uno';
+      rmBtn.addEventListener('click', (e) => { e.stopPropagation(); removeFromPool(item.sides); });
+      chip.appendChild(countSpan);
+      chip.appendChild(label);
+      chip.appendChild(rmBtn);
+      chip.addEventListener('click', () => { pool.find(p => p.sides === item.sides).count++; renderPool(); updateRollButton(); });
+      container.appendChild(chip);
+    });
+    clearPoolBtn.style.display = 'inline-block';
+    diceTotalLabel.textContent = total + ' dado' + (total !== 1 ? 's' : '');
+  }
+
+  function updateRollButton() {
+    rollBtn.disabled = getTotalDiceCount() === 0 || isRolling;
+  }
+
+  diceTypeBtns.forEach(btn => {
+    btn.addEventListener('click', () => { addToPool(parseInt(btn.dataset.sides)); });
+  });
+  clearPoolBtn.addEventListener('click', clearPool);
+
+  function buildDieShape(sides, size) {
+    const h = size / 2;
+    const r = size / 2 - 4;
+    if (sides === 6) return { type: 'rect', rx: 7, w: size - 2, h: size - 2 };
+    if (sides === 4) return { type: 'polygon', pts: `${h},5 6,${size-5} ${size-6},${size-5}` };
+    if (sides === 8) return { type: 'polygon', pts: `${h},5 ${size-5},${h} ${h},${size-5} 5,${h}` };
+    if (sides === 10) {
+      const pts = [];
+      for (let i = 0; i < 5; i++) { const a = (i * 72 - 90) * Math.PI / 180; pts.push(`${h + r * Math.cos(a)},${h + r * Math.sin(a)}`); }
+      return { type: 'polygon', pts: pts.join(' ') };
+    }
+    if (sides === 12) {
+      const pts = [];
+      for (let i = 0; i < 10; i++) { const a = (i * 36 - 90) * Math.PI / 180; pts.push(`${h + r * Math.cos(a)},${h + r * Math.sin(a)}`); }
+      return { type: 'polygon', pts: pts.join(' ') };
+    }
+    if (sides === 20) return { type: 'polygon', pts: `${h},5 6,${size-6} ${size-6},${size-6}` };
+    if (sides === 25) {
+      const pts = [];
+      for (let i = 0; i < 6; i++) { const a = (i * 60 - 90) * Math.PI / 180; pts.push(`${h + r * Math.cos(a)},${h + r * Math.sin(a)}`); }
+      return { type: 'polygon', pts: pts.join(' ') };
+    }
+    if (sides === 50) {
+      const pts = [];
+      for (let i = 0; i < 8; i++) { const a = (i * 45 - 90) * Math.PI / 180; pts.push(`${h + r * Math.cos(a)},${h + r * Math.sin(a)}`); }
+      return { type: 'polygon', pts: pts.join(' ') };
+    }
+    if (sides === 100) return { type: 'circle', cx: h, cy: h, r: h - 3 };
+    return { type: 'rect', rx: 7, w: size - 2, h: size - 2 };
+  }
+
+  function createDieSVG(val, sides, rolling) {
+    const size = 44;
+    const h = size / 2;
+    let fillColor, strokeColor, textColor, textStr;
+    if (rolling) {
+      const c = getDieColor(sides);
+      fillColor = c + '18'; strokeColor = c + '60'; textColor = c + '99'; textStr = '?';
+    } else {
+      const crit = val === sides;
+      const fail = val === 1 && (sides === 20 || sides === 100);
+      const c = getDieColor(sides);
+      if (crit) { fillColor = 'rgba(0,214,143,0.08)'; strokeColor = '#00d68f'; textColor = '#00d68f'; }
+      else if (fail) { fillColor = 'rgba(255,107,107,0.08)'; strokeColor = '#ff6b6b'; textColor = '#ff6b6b'; }
+      else { fillColor = c + '18'; strokeColor = c; textColor = '#ddddef'; }
+      textStr = String(val);
+    }
+    const shape = buildDieShape(sides, size);
+    const fontSize = sides >= 50 ? 12 : sides >= 25 ? 13 : 15;
+    let shapeEl = '';
+    if (shape.type === 'rect') shapeEl = `<rect x="1" y="1" width="${shape.w}" height="${shape.h}" rx="${shape.rx}" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5"/>`;
+    else if (shape.type === 'circle') shapeEl = `<circle cx="${shape.cx}" cy="${shape.cy}" r="${shape.r}" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5"/>`;
+    else if (shape.type === 'polygon') shapeEl = `<polygon points="${shape.pts}" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5" stroke-linejoin="round"/>`;
+    let innerEl = '';
+    if (sides === 6 && !rolling) {
+      const dotR = 3; const d = 9;
+      const positions = {
+        1: [[h, h]], 2: [[h-d, h-d], [h+d, h+d]],
+        3: [[h-d, h-d], [h, h], [h+d, h+d]],
+        4: [[h-d, h-d], [h+d, h-d], [h-d, h+d], [h+d, h+d]],
+        5: [[h-d, h-d], [h+d, h-d], [h, h], [h-d, h+d], [h+d, h+d]],
+        6: [[h-d, h-d], [h+d, h-d], [h-d, h], [h+d, h], [h-d, h+d], [h+d, h+d]]
+      };
+      innerEl = (positions[val] || positions[1]).map(([dx, dy]) => `<circle cx="${dx}" cy="${dy}" r="${dotR}" fill="${textColor}"/>`).join('');
+    } else {
+      const actualY = sides === 4 ? size - 9 : sides === 20 ? size - 11 : h + 5;
+      innerEl = `<text x="${h}" y="${actualY}" text-anchor="middle" fill="${textColor}" font-size="${fontSize}" font-weight="700">${textStr}</text>`;
+    }
+    return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">${shapeEl}${innerEl}</svg>`;
+  }
+
+  function renderDiceVisuals(results, sidesList, rolling) {
+    diceVisuals.innerHTML = '';
+    if (!results || results.length === 0) { diceVisuals.innerHTML = '<span class="empty-msg">Tirá los dados</span>'; return; }
+    const toShow = Math.min(results.length, 40);
+    for (let i = 0; i < toShow; i++) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'die-visual';
+      if (rolling) wrapper.classList.add('tumble');
+      wrapper.innerHTML = createDieSVG(results[i], sidesList[i], rolling);
+      diceVisuals.appendChild(wrapper);
+    }
+    if (results.length > 40) {
+      const more = document.createElement('div');
+      more.style.cssText = `color:var(--more-color);font-size:12px;display:flex;align-items:center`;
+      more.textContent = '+' + (results.length - 40);
+      diceVisuals.appendChild(more);
+    }
+  }
+
+  function rollDie(sides) { return Math.floor(Math.random() * sides) + 1; }
+
+  function doRoll() {
+    if (isRolling) return;
+    const totalDice = getTotalDiceCount();
+    if (totalDice === 0) return;
+    isRolling = true;
+    rollBtn.disabled = true;
+    rollBtn.classList.add('rolling');
+    rollBtn.textContent = '🎲 RODANDO';
+    const bonus = parseInt(bonusInput.value) || 0;
+    const allSides = [];
+    pool.forEach(item => { for (let i = 0; i < item.count; i++) allSides.push(item.sides); });
+    const realResults = allSides.map(s => rollDie(s));
+    const realSum = realResults.reduce((a, b) => a + b, 0);
+    lastRawTotal = realSum + bonus;
+    let realTotal = lastRawTotal;
+    if (activeStatuses.has('paralysis')) {
+      realTotal = Math.floor(realTotal / 2);
+    }
+    for (let i = realResults.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [realResults[i], realResults[j]] = [realResults[j], realResults[i]]; [allSides[i], allSides[j]] = [allSides[j], allSides[i]]; }      resultTotal.textContent = '?';
+    resultTotal.classList.add('loading');
+    resultFormula.textContent = 'Tirando ' + totalDice + ' dado' + (totalDice !== 1 ? 's' : '') + '...';
+    // Clear raw values while rolling so toggle doesn't show stale data
+    lastRawTotal = null;
+    lastRawFormula = '';
+    const blankResults = allSides.map(() => 1);
+    renderDiceVisuals(blankResults, allSides, true);
+    document.querySelectorAll('.die-visual').forEach(el => { el.style.animationDuration = (0.7 + Math.random() * 0.6) + 's'; });
+    const revealDelay = 1100 + Math.random() * 400;
+    setTimeout(() => {
+      resultTotal.classList.remove('loading');
+      resultTotal.textContent = realTotal;
+      renderDiceVisuals(realResults, allSides, false);
+      const grouped = {};
+      allSides.forEach((s, i) => { if (!grouped[s]) grouped[s] = []; if (i < 20) grouped[s].push(realResults[i]); });
+      lastRawFormula = '';
+      Object.keys(grouped).forEach(s => { if (lastRawFormula) lastRawFormula += ' + '; lastRawFormula += '(' + grouped[s].join(' + ') + ')'; });
+      if (allSides.length > 20) lastRawFormula += ' + ...';
+      if (bonus > 0) lastRawFormula += ' + ' + bonus;
+      lastRawTotal = realSum + bonus;
+      if (activeStatuses.has('paralysis')) {
+        resultFormula.textContent = '½ × (' + lastRawFormula + ') = ' + realTotal;
+      } else {
+        resultFormula.textContent = lastRawFormula + ' = ' + realTotal;
+      }
+      const idx = rollHistory.length + 1;
+      rollHistory.push({ results: realResults, allSides, sum: realSum, bonus, total: realTotal });
+      lastRollTag.textContent = '#' + idx + ': ' + realTotal;
+      lastRollTotal = realTotal;
+      document.getElementById('sendToCompare').style.display = 'flex';
+      isRolling = false;
+      rollBtn.classList.remove('rolling');
+      rollBtn.textContent = '🎲 TIRAR';
+      updateRollButton();
+    }, revealDelay);
+  }
+
+  rollBtn.addEventListener('click', doRoll);
+  document.addEventListener('keydown', (e) => {
+    if (!panels.dice.classList.contains('active')) return;
+    if (e.key === 'Enter' && !isRolling) doRoll();
+  });
+  document.querySelectorAll('input').forEach(inp => { inp.addEventListener('focus', () => inp.select()); });
+
+  // ============================================================
+  //  STATUS EFFECTS
+  // ============================================================
+
+  const activeStatuses = new Set();
+
+  function updateDisplayForStatus() {
+    // Update the current result display based on active statuses in real-time
+    if (lastRawTotal === null) return;
+    if (activeStatuses.has('paralysis')) {
+      const halved = Math.floor(lastRawTotal / 2);
+      resultTotal.textContent = halved;
+      resultFormula.textContent = '½ × (' + lastRawFormula + ') = ' + halved;
+      const historyIdx = rollHistory.length;
+      lastRollTag.textContent = '#' + historyIdx + ': ' + halved + ' (½)';
+      lastRollTotal = halved;
+    } else {
+      resultTotal.textContent = lastRawTotal;
+      resultFormula.textContent = lastRawFormula + ' = ' + lastRawTotal;
+      const historyIdx = rollHistory.length;
+      lastRollTag.textContent = '#' + historyIdx + ': ' + lastRawTotal;
+      lastRollTotal = lastRawTotal;
+    }
+  }
+
+  function toggleStatus(status) {
+    const el = document.querySelector(`.status-badge[data-status="${status}"]`);
+    if (!el) return;
+    if (activeStatuses.has(status)) {
+      activeStatuses.delete(status);
+      el.classList.remove('active');
+    } else {
+      activeStatuses.add(status);
+      el.classList.add('active');
+    }
+    if (status === 'paralysis') {
+      updateDisplayForStatus();
+    }
+  }
+
+  // ============================================================
+  //  COINS TRACKER (Acciones / Reacciones)
+  // ============================================================
+
+  const COIN_IMG = 'https://limbuscompany.wiki.gg/images/thumb/Coin.png/26px-Coin.png?245b33';
+  let coinsState = { action: [], reaction: [] };
+  let coinIdCounter = 0;
+
+  function renderCoins() {
+    ['action', 'reaction'].forEach(type => {
+      const container = document.getElementById(type === 'action' ? 'coinsActions' : 'coinsReactions');
+      if (!container) return;
+      container.innerHTML = coinsState[type].map(c => `
+        <div class="coin-piece ${type}${c.used ? ' used' : ''}" onclick="toggleCoin('${type}', ${c.id})" title="${c.used ? 'Recargar' : 'Gastar'}">
+          <img src="${COIN_IMG}" alt="${type}" class="coin-img">
+        </div>
+      `).join('');
+    });
+  }
+
+  function addCoin(type) {
+    coinsState[type].push({ id: ++coinIdCounter, used: false });
+    renderCoins();
+  }
+
+  function removeCoin(type) {
+    if (coinsState[type].length === 0) return;
+    coinsState[type].pop();
+    renderCoins();
+  }
+
+  function toggleCoin(type, id) {
+    const coin = coinsState[type].find(c => c.id === id);
+    if (!coin) return;
+    coin.used = !coin.used;
+    renderCoins();
+  }
+
+  function finDelTurno() {
+    coinsState.action.forEach(c => c.used = false);
+    coinsState.reaction.forEach(c => c.used = false);
+    renderCoins();
+  }
+
+  addToPool(20);
+
+  // ============================================================
+  //  CALCULATOR
+  // ============================================================
+
+  const MAX_DIGITS = 15;
+  let calcValue = '0';
+  let calcPrev = '';
+  let calcOp = null;
+  let calcReset = false;
+  let calcFormula = '';
+
+  const calcResultEl = document.getElementById('calcResult');
+  const calcFormulaEl = document.getElementById('calcFormula');
+
+  function calcUpdateDisplay() {
+    let display = calcValue;
+    if (display.length > MAX_DIGITS + 3) display = parseFloat(display).toExponential(6);
+    calcResultEl.textContent = display;
+    calcResultEl.classList.toggle('error', false);
+    calcFormulaEl.textContent = calcFormula;
+  }
+
+  function calcDigit(d) {
+    if (calcReset) { calcValue = String(d); calcReset = false; }
+    else {
+      if (calcValue === '0' && d !== '.') calcValue = String(d);
+      else { if (calcValue.replace('-','').replace('.','').length >= MAX_DIGITS) return; calcValue += String(d); }
+    }
+    calcUpdateDisplay();
+  }
+
+  function calcDecimal() {
+    if (calcReset) { calcValue = '0.'; calcReset = false; calcUpdateDisplay(); return; }
+    if (calcValue.includes('.')) return;
+    calcValue += '.';
+    calcUpdateDisplay();
+  }
+
+  function calcNegate() {
+    if (calcValue === '0') return;
+    calcValue = calcValue.startsWith('-') ? calcValue.slice(1) : '-' + calcValue;
+    calcUpdateDisplay();
+  }
+
+  function calcPercent() {
+    const v = parseFloat(calcValue);
+    if (isNaN(v)) return;
+    calcValue = String(v / 100);
+    calcUpdateDisplay();
+  }
+
+  function calcBackspace() {
+    if (calcReset) return;
+    if (calcValue.length <= 1 || (calcValue.length === 2 && calcValue.startsWith('-'))) calcValue = '0';
+    else calcValue = calcValue.slice(0, -1);
+    calcUpdateDisplay();
+  }
+
+  function calcClear() {
+    calcValue = '0'; calcPrev = ''; calcOp = null; calcReset = false; calcFormula = '';
+    calcResultEl.classList.remove('error');
+    calcUpdateDisplay();
+  }
+
+  function calcSetOp(op) {
+    if (calcOp !== null) calcDoEquals();
+    calcPrev = calcValue;
+    calcOp = op;
+    calcReset = true;
+    const sym = { add: '+', subtract: '−', multiply: '×', divide: '÷' }[op] || '?';
+    calcFormula = calcPrev + ' ' + sym;
+    calcUpdateDisplay();
+  }
+
+  function calcDoEquals() {
+    if (calcOp === null || calcReset) return;
+    const prev = parseFloat(calcPrev);
+    const curr = parseFloat(calcValue);
+    if (isNaN(prev) || isNaN(curr)) return;
+    const sym = { add: '+', subtract: '−', multiply: '×', divide: '÷' }[calcOp] || '?';
+    const raw = calcPrev + ' ' + sym + ' ' + calcValue;
+    let result;
+    switch (calcOp) {
+      case 'add': result = prev + curr; break;
+      case 'subtract': result = prev - curr; break;
+      case 'multiply': result = prev * curr; break;
+      case 'divide':
+        if (curr === 0) { calcResultEl.textContent = 'Error: Div/0'; calcResultEl.classList.add('error'); calcFormulaEl.textContent = raw; calcOp = null; calcReset = true; return; }
+        result = prev / curr; break;
+      default: return;
+    }
+    if (!isFinite(result)) { calcResultEl.textContent = 'Error'; calcResultEl.classList.add('error'); calcFormulaEl.textContent = raw; calcOp = null; calcReset = true; return; }
+    calcFormula = raw + ' =';
+    calcValue = String(parseFloat(result.toFixed(10)));
+    calcOp = null;
+    calcReset = true;
+    calcResultEl.classList.remove('error');
+    calcUpdateDisplay();
+  }
+
+  document.querySelector('.calc-grid').addEventListener('click', (e) => {
+    const btn = e.target.closest('.calc-btn');
+    if (!btn) return;
+    const a = btn.dataset.action;
+    const v = btn.dataset.value;
+    switch (a) {
+      case 'digit': calcDigit(parseInt(v)); break;
+      case 'decimal': calcDecimal(); break;
+      case 'negate': calcNegate(); break;
+      case 'clear': calcClear(); break;
+      case 'backspace': calcBackspace(); break;
+      case 'percent': calcPercent(); break;
+      case 'equals': calcDoEquals(); break;
+      case 'add': case 'subtract': case 'multiply': case 'divide': calcSetOp(a); break;
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!panels.calc.classList.contains('active')) return;
+    if (e.key >= '0' && e.key <= '9') { calcDigit(parseInt(e.key)); return; }
+    if (e.key === '.' || e.key === ',') { calcDecimal(); return; }
+    if (e.key === 'Enter' || e.key === '=') { calcDoEquals(); return; }
+    if (e.key === '+') { calcSetOp('add'); return; }
+    if (e.key === '-') { calcSetOp('subtract'); return; }
+    if (e.key === '*') { calcSetOp('multiply'); return; }
+    if (e.key === '/') { e.preventDefault(); calcSetOp('divide'); return; }
+    if (e.key === 'Escape' || e.key === 'c' || e.key === 'C') { calcClear(); return; }
+    if (e.key === 'Backspace') { calcBackspace(); return; }
+    if (e.key === '%') { calcPercent(); return; }
+  });
+
+  // ============================================================
+  //  ENEMY TRACKER
+  // ============================================================
+
+  let enemies = [];
+  let enemyIdCounter = 0;
+
+  const enemyNameInput = document.getElementById('enemyName');
+  const enemyHpInput = document.getElementById('enemyHp');
+  const enemyStaggerInput = document.getElementById('enemyStagger');
+  const enemyAddBtn = document.getElementById('enemyAddBtn');
+  const enemyList = document.getElementById('enemyList');
+
+  function addEnemy(name, maxHp, maxStagger) {
+    const id = ++enemyIdCounter;
+    enemies.push({
+      id,
+      name: name.trim() || 'Enemigo ' + id,
+      maxHp,
+      currentHp: maxHp,
+      maxStagger,
+      currentStagger: maxStagger,
+      statuses: { damageUp: 0, damageDown: 0, protection: 0, fragile: 0 },
+    });
+    renderEnemies();
+  }
+
+  function removeEnemy(id) {
+    const card = document.querySelector(`.enemy-card[data-id="${id}"]`);
+    if (card) {
+      card.classList.add('removing');
+      setTimeout(() => {
+        enemies = enemies.filter(e => e.id !== id);
+        renderEnemies();
+      }, 250);
+    } else {
+      enemies = enemies.filter(e => e.id !== id);
+      renderEnemies();
+    }
+  }
+
+  function damageEnemy(id, amount, type) {
+    const enemy = enemies.find(e => e.id === id);
+    if (!enemy) return;
+    let dmg = Math.max(0, Math.floor(amount));
+    if (dmg === 0) return;
+
+    // Apply Protection and Fragile modifiers for HP damage
+    if (type !== 'stagger') {
+      dmg = Math.round(dmg * getEnemyDamageMultiplier(enemy));
+      if (dmg < 1 && amount > 0) dmg = 1;
+    }
+
+    if (type === 'stagger') {
+      // Only stagger takes damage
+      enemy.currentStagger = Math.max(0, enemy.currentStagger - dmg);
+    } else {
+      // HP damage also reduces stagger
+      enemy.currentHp = Math.max(0, enemy.currentHp - dmg);
+      enemy.currentStagger = Math.max(0, enemy.currentStagger - dmg);
+    }
+
+    if (enemy.currentHp <= 0) {
+      removeEnemy(id);
+    } else {
+      renderEnemies();
+    }
+  }
+
+  function renderEnemies() {
+    if (enemies.length === 0) {
+      enemyList.innerHTML = '<div class="enemy-empty">No hay enemigos. Agregá uno arriba.</div>';
+      return;
+    }
+
+    let html = '';
+    enemies.forEach(e => {
+      const hpPct = Math.max(0, (e.currentHp / e.maxHp) * 100);
+      const staggerPct = Math.max(0, (e.currentStagger / e.maxStagger) * 100);
+
+      html += `
+        <div class="enemy-card" data-id="${e.id}">
+          <div class="enemy-card-header">
+            <span class="enemy-name">${escapeHtml(e.name)}</span>
+            <div class="enemy-card-actions">
+              <button class="enemy-delete-btn" onclick="removeEnemy(${e.id})" title="Eliminar">✕</button>
+              <button class="enemy-delete-btn" onclick="showHealInput(${e.id})" title="Curar" style="color:#2ecc71;background:transparent">+</button>
+            </div>
+          </div>
+
+          <div class="enemy-bar-section">
+            <div class="enemy-bar-label">
+              <span class="label" style="color:#2ecc71">Hp</span>
+              <span class="value">${e.currentHp} / ${e.maxHp}</span>
+            </div>
+            <div class="enemy-bar-track" onclick="showDamageInput(${e.id}, 'hp')">
+              <div class="enemy-bar-fill hp" style="width:${hpPct}%"></div>
+            </div>
+            <div class="enemy-damage-input" id="hpDmg-${e.id}">
+              <input type="number" id="hpField-${e.id}" value="1" min="1" placeholder="Daño a Hp">
+              <button class="btn-damage-apply" onclick="applyDamage(${e.id}, 'hp')">Aplicar</button>
+            </div>
+          </div>
+
+          <div class="enemy-bar-section">
+            <div class="enemy-bar-label">
+              <span class="label" style="color:#f1c40f">Stagger</span>
+              <span class="value">${e.currentStagger} / ${e.maxStagger}</span>
+            </div>
+            <div class="enemy-bar-track" onclick="showDamageInput(${e.id}, 'stagger')">
+              <div class="enemy-bar-fill stagger" style="width:${staggerPct}%"></div>
+            </div>
+            <div class="enemy-damage-input" id="staggerDmg-${e.id}">
+              <input type="number" id="staggerField-${e.id}" value="1" min="1" placeholder="Daño a Stagger">
+              <button class="btn-damage-apply" onclick="applyDamage(${e.id}, 'stagger')">Aplicar</button>
+            </div>
+          </div>
+
+          <div class="enemy-damage-input" id="healInput-${e.id}">
+            <input type="number" id="healField-${e.id}" value="1" min="1" placeholder="Cantidad a curar">
+            <button class="btn-damage-apply" onclick="applyHeal(${e.id})" style="background:linear-gradient(135deg,#27ae60,#2ecc71)">Curar</button>
+          </div>
+
+          <div class="enemy-status-section">
+            <div class="enemy-status-badges">
+              ${ENEMY_EFFECTS.map(eff => `
+                <div class="enemy-status-badge">
+                  <span class="es-left" onclick="changeEnemyStatus(${e.id}, '${eff.id}', -1)"><span class="es-arrow">◀</span></span>
+                  <img src="${eff.icon}" alt="${eff.name}" class="es-icon">
+                  <span class="es-count">${e.statuses[eff.id] || 0}</span>
+                  <span class="es-right" onclick="changeEnemyStatus(${e.id}, '${eff.id}', 1)"><span class="es-arrow">▶</span></span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+    });
+
+    enemyList.innerHTML = html;
+  }
+
+  const ENEMY_EFFECTS = [
+    { id: 'damageUp',   name: 'Daño +',  icon: 'https://limbuscompany.wiki.gg/images/thumb/Damage_Up.png/25px-Damage_Up.png?e8dfcd' },
+    { id: 'damageDown', name: 'Daño −',  icon: 'https://limbuscompany.wiki.gg/images/thumb/Damage_Down.png/25px-Damage_Down.png?99c357' },
+    { id: 'protection', name: 'Prot.',   icon: 'https://limbuscompany.wiki.gg/images/thumb/Protection.png/25px-Protection.png?bd9ff7' },
+    { id: 'fragile',    name: 'Frágil',  icon: 'https://limbuscompany.wiki.gg/images/thumb/Fragile.png/25px-Fragile.png?7c6083' },
+  ];
+
+  function changeEnemyStatus(id, effectId, delta) {
+    const enemy = enemies.find(e => e.id === id);
+    if (!enemy) return;
+    const cur = enemy.statuses[effectId] || 0;
+    enemy.statuses[effectId] = Math.max(0, Math.min(10, cur + delta));
+    renderEnemies();
+  }
+
+  function getEnemyDamageMultiplier(enemy) {
+    // All 4 effects stack additively:
+    // Damage Up:   +10% damage taken per charge
+    // Damage Down: -10% damage taken per charge
+    // Protection:  -10% damage taken per charge
+    // Fragile:     +10% damage taken per charge
+    let mult = 1;
+    mult += 0.1 * (enemy.statuses.fragile || 0);
+    mult += 0.1 * (enemy.statuses.damageUp || 0);
+    mult -= 0.1 * (enemy.statuses.protection || 0);
+    mult -= 0.1 * (enemy.statuses.damageDown || 0);
+    return Math.max(0.05, mult);
+  }
+
+  function showDamageInput(id, type) {
+    const el = document.getElementById(type + 'Dmg-' + id);
+    if (!el) return;
+    const wasVisible = el.classList.contains('visible');
+    // Close all others
+    document.querySelectorAll('.enemy-damage-input').forEach(inp => inp.classList.remove('visible'));
+    if (!wasVisible) {
+      el.classList.add('visible');
+      const field = document.getElementById(type + 'Field-' + id);
+      if (field) { field.focus(); field.select(); }
+    }
+  }
+
+  function applyDamage(id, type) {
+    const field = document.getElementById(type + 'Field-' + id);
+    const amount = parseInt(field?.value) || 1;
+    damageEnemy(id, amount, type);
+    // Close the input after applying
+    const el = document.getElementById(type + 'Dmg-' + id);
+    if (el) el.classList.remove('visible');
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  enemyAddBtn.addEventListener('click', () => {
+    const name = enemyNameInput.value || 'Enemigo';
+    const hp = parseInt(enemyHpInput.value) || 100;
+    const stagger = parseInt(enemyStaggerInput.value) || 50;
+    if (hp < 1 || stagger < 1) return;
+    addEnemy(name, hp, stagger);
+    enemyNameInput.value = '';
+    enemyNameInput.focus();
+  });
+
+  enemyNameInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') enemyAddBtn.click();
+  });
+
+  // Support Enter in damage fields
+  function showHealInput(id) {
+    // Close all other inputs first
+    document.querySelectorAll('.enemy-damage-input').forEach(inp => inp.classList.remove('visible'));
+    const el = document.getElementById('healInput-' + id);
+    if (!el) return;
+    el.classList.add('visible');
+    const field = document.getElementById('healField-' + id);
+    if (field) { field.focus(); field.select(); }
+  }
+
+  function healEnemy(id, amount) {
+    const enemy = enemies.find(e => e.id === id);
+    if (!enemy) return;
+    const heal = Math.max(0, Math.floor(amount));
+    if (heal === 0) return;
+    enemy.currentHp = Math.min(enemy.maxHp, enemy.currentHp + heal);
+    renderEnemies();
+  }
+
+  function applyHeal(id) {
+    const field = document.getElementById('healField-' + id);
+    const amount = parseInt(field?.value) || 1;
+    healEnemy(id, amount);
+    const el = document.getElementById('healInput-' + id);
+    if (el) el.classList.remove('visible');
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (!panels.enemies.classList.contains('active')) return;
+    if (e.key === 'Enter') {
+      const active = document.activeElement;
+      if (!active) return;
+      if (active.id.startsWith('hpField-')) {
+        const id = parseInt(active.id.replace('hpField-', ''));
+        applyDamage(id, 'hp');
+      } else if (active.id.startsWith('staggerField-')) {
+        const id = parseInt(active.id.replace('staggerField-', ''));
+        applyDamage(id, 'stagger');
+      } else if (active.id.startsWith('healField-')) {
+        const id = parseInt(active.id.replace('healField-', ''));
+        applyHeal(id);
+      }
+    }
+  });
+
+  // ============================================================
+  //  COMPARISON / CLASH
+  // ============================================================
+
+  const compAllyInput = document.getElementById('compAlly');
+  const compEnemyInput = document.getElementById('compEnemy');
+  const compBtn = document.getElementById('compBtn');
+  const compResult = document.getElementById('compResult');
+
+  function doCompare() {
+    const ally = parseInt(compAllyInput.value) || 0;
+    const enemy = parseInt(compEnemyInput.value) || 0;
+
+    if (ally === 0 && enemy === 0) {
+      compResult.innerHTML = '<div class="comp-detail">Poné los dos números y toca Comparar</div>';
+      return;
+    }
+
+    const diff = Math.abs(ally - enemy);
+    let winnerClass, winnerText, detailText;
+
+    if (ally > enemy) {
+      winnerClass = 'ally';
+      winnerText = '✅ Aliado gana';
+      detailText = `Gana por ${diff}`;
+    } else if (enemy > ally) {
+      winnerClass = 'enemy';
+      winnerText = '❌ Enemigo gana';
+      detailText = `Gana por ${diff}`;
+    } else {
+      winnerClass = 'tie';
+      winnerText = '⚖️ Empate';
+      detailText = 'Mismo valor';
+    }
+
+    compResult.innerHTML = `
+      <div class="comp-winner ${winnerClass}">${winnerText}</div>
+      <div class="comp-diff">${detailText}</div>
+      <div class="comp-detail">${ally} vs ${enemy}</div>
+    `;
+  }
+
+  function sendToCompare(target) {
+    if (lastRollTotal === null) return;
+    if (target === 'ally') {
+      compAllyInput.value = lastRollTotal;
+    } else {
+      compEnemyInput.value = lastRollTotal;
+    }
+    // Switch to compare tab
+    document.querySelector('.tab-btn[data-tab="compare"]').click();
+    doCompare();
+  }
+
+  compBtn.addEventListener('click', doCompare);
+
+  document.addEventListener('keydown', (e) => {
+    if (!panels.compare.classList.contains('active')) return;
+    if (e.key === 'Enter') doCompare();
+  });
+
+  // Add a demo enemy so the list isn't empty on first visit
+  setTimeout(() => {
+    if (enemies.length === 0) {
+      addEnemy('Carnicero', 150, 60);
+    }
+  }, 100);
+</script>
+
+</body>
+</html>
