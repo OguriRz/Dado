@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project Moon â€” Herramientas</title>
+<title>Project Moon — Herramientas</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:wght@300;400;600;700&display=swap');
 
-  /* AritaBuri â€” official Library of Ruina typeface */
+  /* AritaBuri — official Library of Ruina typeface */
   @font-face {
     font-family: 'AritaBuri';
     src: url('assets/arita-buri-sb.woff2') format('woff2');
@@ -33,11 +33,11 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   /* ============================================================
-     LIBRARY OF RUINA â€” GAME HUD THEME
+     LIBRARY OF RUINA — GAME HUD THEME
      ============================================================ */
 
   :root {
-    /* Background â€” pure black (invitation card) */
+    /* Background — pure black (invitation card) */
     --inv-bg: #000000;
     --inv-card: #050508;
     --inv-card2: #08080e;
@@ -48,7 +48,7 @@
     --inv-parchment: #080812;
     --inv-input: #06060e;
 
-    /* Gold â€” THE INVITATION, borders, important */
+    /* Gold — THE INVITATION, borders, important */
     --inv-gold: #d4a245;
     --inv-gold2: #b8852a;
     --inv-gold3: #e8c065;
@@ -56,7 +56,7 @@
     --inv-gold-glow: rgba(212, 162, 69, 0.3);
     --inv-gold-strong: rgba(212, 162, 69, 0.5);
 
-    /* Blue/cyan â€” body text, invitation writing */
+    /* Blue/cyan — body text, invitation writing */
     --inv-cyan: #5bd6e0;
     --inv-cyan2: #3ab0c0;
     --inv-blue: #4a9ad4;
@@ -64,7 +64,7 @@
     --inv-blue3: #1a4a6a;
     --inv-cyan-glow: rgba(91, 214, 224, 0.25);
 
-    /* Text colors â€” ink on invitation */
+    /* Text colors — ink on invitation */
     --inv-text: #c8d8e8;
     --inv-text2: #8ab4d4;
     --inv-text3: #5a8aaa;
@@ -72,7 +72,7 @@
     --inv-text5: #2a3a4a;
     --inv-muted: #1a2a3a;
 
-    /* Seal â€” red wax */
+    /* Seal — red wax */
     --inv-seal: #c0392b;
     --inv-seal2: #8a1a10;
     --inv-seal3: #e05545;
@@ -84,7 +84,7 @@
     --inv-warning: #d4a017;
     --inv-stagger: #b8860b;
 
-    /* Corners â€” elegant, invitation-style */
+    /* Corners — elegant, invitation-style */
     --inv-radius: 8px;
     --inv-radius-sm: 4px;
     --inv-radius-lg: 12px;
@@ -138,7 +138,7 @@
   }
 
   /* ============================================================
-     MAIN CONTAINER â€” THE INVITATION card frame
+     MAIN CONTAINER — THE INVITATION card frame
      ============================================================ */
   .container {
     background: var(--inv-card);
@@ -155,7 +155,7 @@
     z-index: 1;
   }
 
-  /* Outer ornate golden frame â€” 3px solid gold */
+  /* Outer ornate golden frame — 3px solid gold */
   .container::before {
     content: '';
     position: absolute;
@@ -181,7 +181,7 @@
       inset 0 0 8px rgba(0, 0, 0, 0.3);
   }
 
-  /* Second ornate border â€” thinner inner gold line */
+  /* Second ornate border — thinner inner gold line */
   .container::after {
     content: '';
     position: absolute;
@@ -192,7 +192,7 @@
     z-index: 6;
   }
 
-  /* Corner decorative images â€” ornate frame corners */
+  /* Corner decorative images — ornate frame corners */
   .corner-img {
     position: absolute;
     z-index: 7;
@@ -234,7 +234,7 @@
     background-repeat: no-repeat;
   }
 
-  /* Full card frame overlay â€” ui-frame from the game */
+  /* Full card frame overlay — ui-frame from the game */
   .card-frame-overlay {
     position: absolute;
     inset: -6px;
@@ -246,7 +246,7 @@
     border-radius: 10px;
   }
 
-  /* Picture frame â€” full card frame overlay using manual-frame.png */
+  /* Picture frame — full card frame overlay using manual-frame.png */
   .picture-frame {
     position: absolute;
     inset: -3px;
@@ -258,7 +258,7 @@
     border-radius: 8px;
   }
 
-  /* Invitation decorative frame â€” picture frame corner ornament */
+  /* Invitation decorative frame — picture frame corner ornament */
   .inv-frame-ornament {
     position: absolute;
     bottom: 30px;
@@ -295,7 +295,7 @@
   }
 
   /* ============================================================
-     HEADER â€” THE INVITATION
+     HEADER — THE INVITATION
      ============================================================ */
   .header-row {
     display: flex;
@@ -366,7 +366,7 @@
 
   .header-left .subtitle::before,
   .header-left .subtitle::after {
-    content: ' â€” ';
+    content: ' — ';
     color: var(--inv-gold-dim);
     font-weight: 100;
   }
@@ -423,7 +423,7 @@
   }
 
   /* ============================================================
-     TABS â€” Invitation chapter style
+     TABS — Invitation chapter style
      ============================================================ */
   .tabs {
     display: flex;
@@ -477,7 +477,7 @@
   }
 
   .tab-btn.active::after {
-    content: 'âœ¦';
+    content: '✦';
     position: absolute;
     top: -1px;
     left: 50%;
@@ -496,7 +496,7 @@
   }
 
   /* ============================================================
-     SCROLLBAR â€” Ornate
+     SCROLLBAR — Ornate
      ============================================================ */
   ::-webkit-scrollbar {
     width: 6px;
@@ -516,10 +516,10 @@
   }
 
   /* ============================================================
-     TAB 1 â€” DICE ROLLER
+     TAB 1 — DICE ROLLER
      ============================================================ */
 
-  /* Dice type buttons â€” medallion seals */
+  /* Dice type buttons — medallion seals */
   .dice-types {
     display: flex;
     gap: 6px;
@@ -585,7 +585,7 @@
     transform: scale(0.95);
   }
 
-  /* Pool area â€” invitation parchment */
+  /* Pool area — invitation parchment */
   .pool-area {
     background: var(--inv-parchment);
     border: none;
@@ -751,10 +751,10 @@
   }
 
   /* ============================================================
-     BUTTONS â€” Metallic, beveled
+     BUTTONS — Metallic, beveled
      ============================================================ */
 
-  /* Roll button â€” large gold invitation seal */
+  /* Roll button — large gold invitation seal */
   .btn-roll {
     width: 100%;
     padding: 14px;
@@ -850,7 +850,7 @@
   }
 
   /* ============================================================
-     RESULT BOX â€” Invitation page
+     RESULT BOX — Invitation page
      ============================================================ */
   .result-box {
     background: var(--inv-parchment);
@@ -1150,7 +1150,7 @@
   }
 
   /* ============================================================
-     COINS TRACKER â€” Invitation medallion style
+     COINS TRACKER — Invitation medallion style
      ============================================================ */
   .coins-section {
     background: var(--inv-parchment);
@@ -1266,6 +1266,7 @@
   }
 
   .coin-ctrl {
+    position: relative;
     width: 20px;
     height: 20px;
     border: none;
@@ -1353,7 +1354,7 @@
   }
 
   /* ============================================================
-     TAB 2 â€” CALCULATOR (Mechanical ledger style)
+     TAB 2 — CALCULATOR (Mechanical ledger style)
      ============================================================ */
   .calc-display {
     background: var(--inv-input);
@@ -1539,7 +1540,7 @@
   }
 
   /* ============================================================
-     TAB 3 â€” ENEMIES (Character stat panel style)
+     TAB 3 — ENEMIES (Character stat panel style)
      ============================================================ */
   .enemy-form {
     display: flex;
@@ -1721,7 +1722,7 @@
     border-color: transparent;
   }
 
-  /* HP/Stagger bars â€” game style */
+  /* HP/Stagger bars — game style */
   .enemy-bar-section {
     margin-bottom: 8px;
     position: relative;
@@ -1938,7 +1939,7 @@
   }
 
   /* ============================================================
-     TAB 4 â€” COMPARISON (Duel frame)
+     TAB 4 — COMPARISON (Duel frame)
      ============================================================ */
   .comp-grid {
     display: grid;
@@ -2144,27 +2145,27 @@
   <div class="container-inner">
   <div class="inv-frame-ornament"></div>
 
-  <!-- Header â€” THE INVITATION -->
+  <!-- Header — THE INVITATION -->
   <div class="header-row">
     <div class="header-left">
       <div class="invitation-title">
-        <span class="title-deco-left">â–</span>
+        <span class="title-deco-left">❖</span>
         <h1>THE INVITATION</h1>
-        <span class="title-deco-right">â–</span>
+        <span class="title-deco-right">❖</span>
       </div>
-      <div class="subtitle" id="tabSubtitle">ðŸŽ² Tirar Dados</div>
+      <div class="subtitle" id="tabSubtitle">🎲 Tirar Dados</div>
     </div>
-    <button class="seal-btn" id="themeBtn" title="Sello de la Biblioteca">âœ¦</button>
+    <button class="seal-btn" id="themeBtn" title="Sello de la Biblioteca">✦</button>
   </div>
 
   <div class="top-deco"></div>
 
   <!-- Tabs -->
   <div class="tabs">
-    <button class="tab-btn" data-tab="dice">ðŸŽ² Dados</button>
-    <button class="tab-btn" data-tab="calc">ðŸ§® Calculadora</button>
-    <button class="tab-btn" data-tab="enemies">âš”ï¸ Enemigos</button>
-    <button class="tab-btn" data-tab="compare">âš–ï¸ Comparar</button>
+    <button class="tab-btn" data-tab="dice">🎲 Dados</button>
+    <button class="tab-btn" data-tab="calc">🧮 Calculadora</button>
+    <button class="tab-btn" data-tab="enemies">⚔️ Enemigos</button>
+    <button class="tab-btn" data-tab="compare">⚖️ Comparar</button>
   </div>
 
   <div class="section-divider"></div>
@@ -2172,23 +2173,23 @@
   <!-- ============ COINS TRACKER ============ -->
   <div class="coins-section" id="coinsSection">
     <div class="coins-header">
-      <span class="coins-label">ðŸª™ Acciones &amp; Reacciones</span>
-      <button class="coins-turn-btn" onclick="finDelTurno()">â­ Fin del turno</button>
+      <span class="coins-label">🪙 Acciones &amp; Reacciones</span>
+      <button class="coins-turn-btn" onclick="finDelTurno()">⏭ Fin del turno</button>
     </div>
     <div class="coins-row" id="coinsRow">
       <div class="coins-row-inner">
         <div class="coins-group">
-          <span class="coins-group-label" style="color:#d4a245">AcciÃ³n</span>
-          <button class="coin-ctrl" onclick="addCoin('action')" title="Agregar acciÃ³n">+</button>
-          <button class="coin-ctrl" onclick="removeCoin('action')" title="Quitar acciÃ³n">âˆ’</button>
+          <span class="coins-group-label" style="color:#d4a245">Acción</span>
+          <button class="coin-ctrl" onclick="addCoin('action')" title="Agregar acción">+</button>
+          <button class="coin-ctrl" onclick="removeCoin('action')" title="Quitar acción">−</button>
         </div>
         <div id="coinsActions" class="coins-group"></div>
       </div>
       <div class="coins-row-inner">
         <div class="coins-group">
-          <span class="coins-group-label" style="color:#3A7EC0">ReacciÃ³n</span>
-          <button class="coin-ctrl" onclick="addCoin('reaction')" title="Agregar reacciÃ³n">+</button>
-          <button class="coin-ctrl" onclick="removeCoin('reaction')" title="Quitar reacciÃ³n">âˆ’</button>
+          <span class="coins-group-label" style="color:#3A7EC0">Reacción</span>
+          <button class="coin-ctrl" onclick="addCoin('reaction')" title="Agregar reacción">+</button>
+          <button class="coin-ctrl" onclick="removeCoin('reaction')" title="Quitar reacción">−</button>
         </div>
         <div id="coinsReactions" class="coins-group"></div>
       </div>
@@ -2212,7 +2213,7 @@
     </div>
 
     <div class="pool-area" id="poolArea">
-      <span class="pool-empty" id="poolEmpty">HacÃ© click en un dado de arriba para agregarlo</span>
+      <span class="pool-empty" id="poolEmpty">Hacé click en un dado de arriba para agregarlo</span>
       <div id="poolChips" style="width:100%;display:flex;flex-wrap:wrap;gap:8px;align-items:center"></div>
       <button class="btn-clear" id="clearPoolBtn" style="display:none">Limpiar</button>
     </div>
@@ -2228,29 +2229,29 @@
       </div>
     </div>
 
-    <button class="btn-roll" id="rollBtn">ðŸŽ² TIRAR</button>
+    <button class="btn-roll" id="rollBtn">🎲 TIRAR</button>
 
     <div class="result-box" id="resultBox">
-      <div class="result-total" id="resultTotal">â€”</div>
-      <div class="result-formula" id="resultFormula">AgregÃ¡ dados al pool y tirÃ¡</div>
+      <div class="result-total" id="resultTotal">—</div>
+      <div class="result-formula" id="resultFormula">Agregá dados al pool y tirá</div>
       <div class="dice-visuals" id="diceVisuals"></div>
       <div class="send-to-compare" id="sendToCompare" style="display:none">
-        <button class="ally-send" onclick="sendToCompare('ally')">â¬… Enviar a Aliado</button>
-        <button class="enemy-send" onclick="sendToCompare('enemy')">Enviar a Enemigo âž¡</button>
+        <button class="ally-send" onclick="sendToCompare('ally')">⬅ Enviar a Aliado</button>
+        <button class="enemy-send" onclick="sendToCompare('enemy')">Enviar a Enemigo ➡</button>
       </div>
     </div>
 
     <div class="footer-row">
-      <span class="footer-tag" id="lastRollTag">Ãšltima: â€”</span>
+      <span class="footer-tag" id="lastRollTag">Última: —</span>
       <span class="dice-count-label" id="diceTotalLabel">0 dados</span>
     </div>
 
     <div class="status-section">
-      <div class="status-label">ðŸŽ¯ Efectos de Estado</div>
+      <div class="status-label">🎯 Efectos de Estado</div>
       <div class="status-badges" id="statusBadges">
         <div class="status-badge" data-status="paralysis" onclick="toggleStatus('paralysis')">
-          <img src="https://limbuscompany.wiki.gg/images/Paralyze.png?ba5ec8" alt="ParÃ¡lisis" class="status-icon">
-          ParÃ¡lisis
+          <img src="https://limbuscompany.wiki.gg/images/Paralyze.png?ba5ec8" alt="Parálisis" class="status-icon">
+          Parálisis
         </div>
       </div>
     </div>
@@ -2266,33 +2267,33 @@
 
     <div class="calc-grid">
       <button class="calc-btn clear" data-action="clear">AC</button>
-      <button class="calc-btn op" data-action="backspace">âŒ«</button>
+      <button class="calc-btn op" data-action="backspace">⌫</button>
       <button class="calc-btn" data-action="percent">%</button>
-      <button class="calc-btn op" data-action="divide">Ã·</button>
+      <button class="calc-btn op" data-action="divide">÷</button>
 
       <button class="calc-btn" data-action="digit" data-value="7">7</button>
       <button class="calc-btn" data-action="digit" data-value="8">8</button>
       <button class="calc-btn" data-action="digit" data-value="9">9</button>
-      <button class="calc-btn op" data-action="multiply">Ã—</button>
+      <button class="calc-btn op" data-action="multiply">×</button>
 
       <button class="calc-btn" data-action="digit" data-value="4">4</button>
       <button class="calc-btn" data-action="digit" data-value="5">5</button>
       <button class="calc-btn" data-action="digit" data-value="6">6</button>
-      <button class="calc-btn op" data-action="subtract">âˆ’</button>
+      <button class="calc-btn op" data-action="subtract">−</button>
 
       <button class="calc-btn" data-action="digit" data-value="1">1</button>
       <button class="calc-btn" data-action="digit" data-value="2">2</button>
       <button class="calc-btn" data-action="digit" data-value="3">3</button>
       <button class="calc-btn op" data-action="add">+</button>
 
-      <button class="calc-btn" data-action="negate">Â±</button>
+      <button class="calc-btn" data-action="negate">±</button>
       <button class="calc-btn" data-action="digit" data-value="0">0</button>
       <button class="calc-btn" data-action="decimal">,</button>
       <button class="calc-btn eq" data-action="equals">=</button>
     </div>
 
     <div class="calc-footer">
-      <span class="footer-tag">+ âˆ’ Ã— Ã·</span>
+      <span class="footer-tag">+ − × ÷</span>
     </div>
     <div class="section-divider" style="margin-bottom:0"></div>
   </div>
@@ -2316,7 +2317,7 @@
     </div>
 
     <div class="enemy-list" id="enemyList">
-      <div class="enemy-empty">No hay enemigos. AgregÃ¡ uno arriba.</div>
+      <div class="enemy-empty">No hay enemigos. Agregá uno arriba.</div>
     </div>
     <div class="section-divider" style="margin-bottom:0"></div>
   </div>
@@ -2335,14 +2336,14 @@
       </div>
     </div>
 
-    <button class="comp-btn" id="compBtn">âš–ï¸ COMPARAR</button>
+    <button class="comp-btn" id="compBtn">⚖️ COMPARAR</button>
 
     <div class="comp-result" id="compResult">
-      <div class="comp-detail">PonÃ© los dos nÃºmeros y toca Comparar</div>
+      <div class="comp-detail">Poné los dos números y toca Comparar</div>
     </div>
 
     <div class="comp-footer">
-      <span class="footer-tag">Â¿QuiÃ©n gana el clash?</span>
+      <span class="footer-tag">¿Quién gana el clash?</span>
     </div>
     <div class="section-divider" style="margin-bottom:0"></div>
   </div>
@@ -2356,7 +2357,7 @@
   // ============================================================
   const themeBtn = document.getElementById('themeBtn');
   themeBtn.addEventListener('click', () => {
-    // PequeÃ±o efecto visual al hacer click â€” el HUD siempre es oscuro
+    // Pequeño efecto visual al hacer click — el HUD siempre es oscuro
     themeBtn.style.transform = 'scale(0.9)';
     setTimeout(() => themeBtn.style.transform = '', 150);
   });
@@ -2372,7 +2373,7 @@
     compare: document.getElementById('tabCompare'),
   };
   const tabSubtitle = document.getElementById('tabSubtitle');
-  const tabLabels = { dice: 'ðŸŽ² Tirar Dados', calc: 'ðŸ§® Calculadora', enemies: 'âš”ï¸ Enemigos', compare: 'âš–ï¸ Comparar' };
+  const tabLabels = { dice: '🎲 Tirar Dados', calc: '🧮 Calculadora', enemies: '⚔️ Enemigos', compare: '⚖️ Comparar' };
 
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -2446,8 +2447,8 @@
     pool = [];
     renderPool();
     updateRollButton();
-    resultTotal.textContent = 'â€”';
-    resultFormula.textContent = 'Pool vacÃ­o';
+    resultTotal.textContent = '—';
+    resultFormula.textContent = 'Pool vacío';
     diceVisuals.innerHTML = '';
     diceTotalLabel.textContent = '0 dados';
     document.getElementById('sendToCompare').style.display = 'none';
@@ -2485,7 +2486,7 @@
       const label = document.createTextNode('D' + item.sides);
       const rmBtn = document.createElement('button');
       rmBtn.className = 'pool-remove';
-      rmBtn.textContent = 'âœ•';
+      rmBtn.textContent = '✕';
       rmBtn.title = 'Quitar uno';
       rmBtn.addEventListener('click', (e) => { e.stopPropagation(); removeFromPool(item.sides); });
       chip.appendChild(countSpan);
@@ -2584,7 +2585,7 @@
 
   function renderDiceVisuals(results, sidesList, rolling) {
     diceVisuals.innerHTML = '';
-    if (!results || results.length === 0) { diceVisuals.innerHTML = '<span class="empty-msg">TirÃ¡ los dados</span>'; return; }
+    if (!results || results.length === 0) { diceVisuals.innerHTML = '<span class="empty-msg">Tirá los dados</span>'; return; }
     const toShow = Math.min(results.length, 40);
     for (let i = 0; i < toShow; i++) {
       const wrapper = document.createElement('div');
@@ -2610,7 +2611,7 @@
     isRolling = true;
     rollBtn.disabled = true;
     rollBtn.classList.add('rolling');
-    rollBtn.textContent = 'ðŸŽ² RODANDO';
+    rollBtn.textContent = '🎲 RODANDO';
     const bonus = parseInt(bonusInput.value) || 0;
     const allSides = [];
     pool.forEach(item => { for (let i = 0; i < item.count; i++) allSides.push(item.sides); });
@@ -2642,7 +2643,7 @@
       if (bonus > 0) lastRawFormula += ' + ' + bonus;
       lastRawTotal = realSum + bonus;
       if (activeStatuses.has('paralysis')) {
-        resultFormula.textContent = 'Â½ Ã— (' + lastRawFormula + ') = ' + realTotal;
+        resultFormula.textContent = '½ × (' + lastRawFormula + ') = ' + realTotal;
       } else {
         resultFormula.textContent = lastRawFormula + ' = ' + realTotal;
       }
@@ -2653,7 +2654,7 @@
       document.getElementById('sendToCompare').style.display = 'flex';
       isRolling = false;
       rollBtn.classList.remove('rolling');
-      rollBtn.textContent = 'ðŸŽ² TIRAR';
+      rollBtn.textContent = '🎲 TIRAR';
       updateRollButton();
       saveState();
     }, revealDelay);
@@ -2680,9 +2681,9 @@
     if (activeStatuses.has('paralysis')) {
       const halved = Math.floor(lastRawTotal / 2);
       resultTotal.textContent = halved;
-      resultFormula.textContent = 'Â½ Ã— (' + lastRawFormula + ') = ' + halved;
+      resultFormula.textContent = '½ × (' + lastRawFormula + ') = ' + halved;
       const historyIdx = rollHistory.length;
-      lastRollTag.textContent = '#' + historyIdx + ': ' + halved + ' (Â½)';
+      lastRollTag.textContent = '#' + historyIdx + ': ' + halved + ' (½)';
       lastRollTotal = halved;
     } else {
       resultTotal.textContent = lastRawTotal;
@@ -2827,7 +2828,7 @@
     calcPrev = calcValue;
     calcOp = op;
     calcReset = true;
-    const sym = { add: '+', subtract: 'âˆ’', multiply: 'Ã—', divide: 'Ã·' }[op] || '?';
+    const sym = { add: '+', subtract: '−', multiply: '×', divide: '÷' }[op] || '?';
     calcFormula = calcPrev + ' ' + sym;
     calcUpdateDisplay();
   }
@@ -2837,7 +2838,7 @@
     const prev = parseFloat(calcPrev);
     const curr = parseFloat(calcValue);
     if (isNaN(prev) || isNaN(curr)) return;
-    const sym = { add: '+', subtract: 'âˆ’', multiply: 'Ã—', divide: 'Ã·' }[calcOp] || '?';
+    const sym = { add: '+', subtract: '−', multiply: '×', divide: '÷' }[calcOp] || '?';
     const raw = calcPrev + ' ' + sym + ' ' + calcValue;
     let result;
     switch (calcOp) {
@@ -2914,6 +2915,7 @@
       statuses: { damageUp: 0, damageDown: 0, protection: 0, fragile: 0 },
     });
     renderEnemies();
+    saveState();
   }
 
   function removeEnemy(id) {
@@ -2923,10 +2925,12 @@
       setTimeout(() => {
         enemies = enemies.filter(e => e.id !== id);
         renderEnemies();
+        saveState();
       }, 250);
     } else {
       enemies = enemies.filter(e => e.id !== id);
       renderEnemies();
+      saveState();
     }
   }
 
@@ -2953,11 +2957,12 @@
     } else {
       renderEnemies();
     }
+    saveState();
   }
 
   function renderEnemies() {
     if (enemies.length === 0) {
-      enemyList.innerHTML = '<div class="enemy-empty">No hay enemigos. AgregÃ¡ uno arriba.</div>';
+      enemyList.innerHTML = '<div class="enemy-empty">No hay enemigos. Agregá uno arriba.</div>';
       return;
     }
 
@@ -2971,7 +2976,7 @@
           <div class="enemy-card-header">
             <span class="enemy-name">${escapeHtml(e.name)}</span>
             <div class="enemy-card-actions">
-              <button class="enemy-delete-btn" onclick="removeEnemy(${e.id})" title="Eliminar">âœ•</button>
+              <button class="enemy-delete-btn" onclick="removeEnemy(${e.id})" title="Eliminar">✕</button>
               <button class="enemy-delete-btn" onclick="showHealInput(${e.id})" title="Curar" style="color:#4a9a5a;background:transparent">+</button>
             </div>
           </div>
@@ -2985,7 +2990,7 @@
               <div class="enemy-bar-fill hp" style="width:${hpPct}%"></div>
             </div>
             <div class="enemy-damage-input" id="hpDmg-${e.id}">
-              <input type="number" id="hpField-${e.id}" value="1" min="1" placeholder="DaÃ±o a Hp">
+              <input type="number" id="hpField-${e.id}" value="1" min="1" placeholder="Daño a Hp">
               <button class="btn-damage-apply" onclick="applyDamage(${e.id}, 'hp')">Aplicar</button>
             </div>
           </div>
@@ -3001,7 +3006,7 @@
               <div class="enemy-bar-fill stagger" style="width:${staggerPct}%"></div>
             </div>
             <div class="enemy-damage-input" id="staggerDmg-${e.id}">
-              <input type="number" id="staggerField-${e.id}" value="1" min="1" placeholder="DaÃ±o a Stagger">
+              <input type="number" id="staggerField-${e.id}" value="1" min="1" placeholder="Daño a Stagger">
               <button class="btn-damage-apply" onclick="applyDamage(${e.id}, 'stagger')">Aplicar</button>
             </div>
             <div class="enemy-damage-input" id="staggerHealInput-${e.id}">
@@ -3019,10 +3024,10 @@
             <div class="enemy-status-badges">
               ${ENEMY_EFFECTS.map(eff => `
                 <div class="enemy-status-badge">
-                  <span class="es-left" onclick="changeEnemyStatus(${e.id}, '${eff.id}', -1)"><span class="es-arrow">â—€</span></span>
+                  <span class="es-left" onclick="changeEnemyStatus(${e.id}, '${eff.id}', -1)"><span class="es-arrow">◀</span></span>
                   <img src="${eff.icon}" alt="${eff.name}" class="es-icon">
                   <span class="es-count">${e.statuses[eff.id] || 0}</span>
-                  <span class="es-right" onclick="changeEnemyStatus(${e.id}, '${eff.id}', 1)"><span class="es-arrow">â–¶</span></span>
+                  <span class="es-right" onclick="changeEnemyStatus(${e.id}, '${eff.id}', 1)"><span class="es-arrow">▶</span></span>
                 </div>
               `).join('')}
             </div>
@@ -3035,10 +3040,10 @@
   }
 
   const ENEMY_EFFECTS = [
-    { id: 'damageUp',   name: 'DaÃ±o +',  icon: 'https://limbuscompany.wiki.gg/images/thumb/Damage_Up.png/25px-Damage_Up.png?e8dfcd' },
-    { id: 'damageDown', name: 'DaÃ±o âˆ’',  icon: 'https://limbuscompany.wiki.gg/images/thumb/Damage_Down.png/25px-Damage_Down.png?99c357' },
+    { id: 'damageUp',   name: 'Daño +',  icon: 'https://limbuscompany.wiki.gg/images/thumb/Damage_Up.png/25px-Damage_Up.png?e8dfcd' },
+    { id: 'damageDown', name: 'Daño −',  icon: 'https://limbuscompany.wiki.gg/images/thumb/Damage_Down.png/25px-Damage_Down.png?99c357' },
     { id: 'protection', name: 'Prot.',   icon: 'https://limbuscompany.wiki.gg/images/thumb/Protection.png/25px-Protection.png?bd9ff7' },
-    { id: 'fragile',    name: 'FrÃ¡gil',  icon: 'https://limbuscompany.wiki.gg/images/thumb/Fragile.png/25px-Fragile.png?7c6083' },
+    { id: 'fragile',    name: 'Frágil',  icon: 'https://limbuscompany.wiki.gg/images/thumb/Fragile.png/25px-Fragile.png?7c6083' },
   ];
 
   function changeEnemyStatus(id, effectId, delta) {
@@ -3047,6 +3052,7 @@
     const cur = enemy.statuses[effectId] || 0;
     enemy.statuses[effectId] = Math.max(0, Math.min(10, cur + delta));
     renderEnemies();
+    saveState();
   }
 
   function getEnemyDamageMultiplier(enemy) {
@@ -3085,6 +3091,7 @@
     if (heal === 0) return;
     enemy.currentStagger = Math.min(enemy.maxStagger, enemy.currentStagger + heal);
     renderEnemies();
+    saveState();
   }
 
   function showStaggerHealInput(id) {
@@ -3140,6 +3147,7 @@
     if (heal === 0) return;
     enemy.currentHp = Math.min(enemy.maxHp, enemy.currentHp + heal);
     renderEnemies();
+    saveState();
   }
 
   function applyHeal(id) {
@@ -3185,7 +3193,7 @@
     const enemy = parseInt(compEnemyInput.value) || 0;
 
     if (ally === 0 && enemy === 0) {
-      compResult.innerHTML = '<div class="comp-detail">PonÃ© los dos nÃºmeros y toca Comparar</div>';
+      compResult.innerHTML = '<div class="comp-detail">Poné los dos números y toca Comparar</div>';
       return;
     }
 
@@ -3194,15 +3202,15 @@
 
     if (ally > enemy) {
       winnerClass = 'ally';
-      winnerText = 'âœ… Aliado gana';
+      winnerText = '✅ Aliado gana';
       detailText = `Gana por ${diff}`;
     } else if (enemy > ally) {
       winnerClass = 'enemy';
-      winnerText = 'âŒ Enemigo gana';
+      winnerText = '❌ Enemigo gana';
       detailText = `Gana por ${diff}`;
     } else {
       winnerClass = 'tie';
-      winnerText = 'âš–ï¸ Empate';
+      winnerText = '⚖️ Empate';
       detailText = 'Mismo valor';
     }
 
@@ -3238,7 +3246,7 @@
   }, 100);
 
   // ============================================================
-  //  PERSISTENCE â€” localStorage (bonus + last roll)
+  //  PERSISTENCE — localStorage (bonus + last roll)
   // ============================================================
 
   function saveState() {
@@ -3247,6 +3255,8 @@
     localStorage.setItem('diceTool_pool', JSON.stringify(pool));
     localStorage.setItem('diceTool_coins', JSON.stringify(coinsState));
     localStorage.setItem('diceTool_coinId', String(coinIdCounter));
+    localStorage.setItem('diceTool_enemies', JSON.stringify(enemies));
+    localStorage.setItem('diceTool_enemyId', String(enemyIdCounter));
     if (lastRawTotal !== null) {
       const state = {
         total: lastRollTotal,
@@ -3293,6 +3303,16 @@
       } catch (e) { /* ignore */ }
     }
 
+    const savedEnemies = localStorage.getItem('diceTool_enemies');
+    if (savedEnemies) {
+      try {
+        enemies = JSON.parse(savedEnemies);
+        const savedEnemyId = localStorage.getItem('diceTool_enemyId');
+        if (savedEnemyId !== null) enemyIdCounter = parseInt(savedEnemyId) || 0;
+        renderEnemies();
+      } catch (e) { /* ignore */ }
+    }
+
     const savedRoll = localStorage.getItem('diceTool_lastRoll');
     if (savedRoll) {
       try {
@@ -3305,7 +3325,7 @@
           // Reconstruir display
           if (activeStatuses.has('paralysis')) {
             resultTotal.textContent = Math.floor(data.rawTotal / 2);
-            resultFormula.textContent = 'Â½ Ã— (' + data.formula + ') = ' + Math.floor(data.rawTotal / 2);
+            resultFormula.textContent = '½ × (' + data.formula + ') = ' + Math.floor(data.rawTotal / 2);
           } else {
             resultTotal.textContent = data.rawTotal;
             resultFormula.textContent = data.formula + ' = ' + data.rawTotal;
