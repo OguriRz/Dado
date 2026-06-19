@@ -2439,6 +2439,7 @@
     if (existing.count <= 0) pool = pool.filter(p => p.sides !== sides);
     renderPool();
     updateRollButton();
+    saveState();
   }
 
   function clearPool() {
@@ -2453,6 +2454,7 @@
     lastRollTotal = null;
     lastRawTotal = null;
     lastRawFormula = '';
+    saveState();
   }
 
   function getTotalDiceCount() {
@@ -2489,7 +2491,7 @@
       chip.appendChild(countSpan);
       chip.appendChild(label);
       chip.appendChild(rmBtn);
-      chip.addEventListener('click', () => { pool.find(p => p.sides === item.sides).count++; renderPool(); updateRollButton(); });
+      chip.addEventListener('click', () => { pool.find(p => p.sides === item.sides).count++; renderPool(); updateRollButton(); saveState(); });
       container.appendChild(chip);
     });
     clearPoolBtn.style.display = 'inline-block';
