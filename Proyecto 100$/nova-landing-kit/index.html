@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova UI — Premium SaaS Landing Page Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================= */
+/* ROOT VARIABLES                                */
+/* ============================================= */
+:root {
+  --bg: #07070d;
+  --bg-alt: #0c0c18;
+  --surface: rgba(255,255,255,0.025);
+  --surface-hover: rgba(255,255,255,0.05);
+  --border: rgba(255,255,255,0.06);
+  --border-hover: rgba(255,255,255,0.12);
+  --text: #eeeef2;
+  --text-secondary: #8888aa;
+  --text-muted: #555577;
+  --accent: #6c5ce7;
+  --accent-light: #a29bfe;
+  --grad-1: #6c5ce7;
+  --grad-2: #a29bfe;
+  --grad-3: #fd79a8;
+  --grad-4: #fdcb6e;
+  --success: #00b894;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+  --font: 'Inter', -apple-system, sans-serif;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow: 0 1px 3px rgba(0,0,0,0.2), 0 4px 16px rgba(0,0,0,0.15);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.3);
+  --shadow-xl: 0 20px 60px rgba(0,0,0,0.4);
+  --max-width: 1200px;
+}
+
+/* ============================================= */
+/* RESET & BASE                                  */
+/* ============================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+::selection { background: rgba(108,92,231,0.25); }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ============================================= */
+/* REDUCED MOTION                                */
+/* ============================================= */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .hero-float-badge { animation: none; }
+  .feature-card:hover { transform: none; }
+  .btn:hover { transform: none; }
+  .hero-badge .dot { animation: none; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+/* ============================================= */
+/* UTILITY CLASSES                               */
+/* ============================================= */
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+.gradient-text {
+  background: linear-gradient(135deg, var(--grad-1), var(--grad-3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.section { padding: 100px 0; }
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  background: rgba(108,92,231,0.08);
+  border: 1px solid rgba(108,92,231,0.15);
+  color: var(--accent-light);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.section-title {
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 560px;
+  line-height: 1.6;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+.btn:active { transform: scale(0.97); }
+.btn-primary {
+  background: linear-gradient(135deg, var(--grad-1), var(--grad-3));
+  color: white;
+  box-shadow: 0 4px 20px rgba(108,92,231,0.25);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(108,92,231,0.35);
+}
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-secondary:hover {
+  border-color: var(--border-hover);
+  background: var(--surface-hover);
+  transform: translateY(-2px);
+}
+.btn-sm { padding: 8px 18px; font-size: 13px; border-radius: 6px; }
+.btn-lg { padding: 16px 36px; font-size: 17px; border-radius: var(--radius-sm); }
+.btn-block { width: 100%; justify-content: center; }
+
+/* ============================================= */
+/* HEADER / NAV                                  */
+/* ============================================= */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 16px 0;
+  transition: all 0.4s ease;
+}
+header.scrolled {
+  background: rgba(7,7,13,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 0;
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 800;
+}
+.logo .logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--grad-1), var(--grad-3));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: white;
+}
+.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-cta { margin-left: 8px; }
+.mobile-toggle {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: background 0.2s;
+}
+.mobile-toggle:hover { background: var(--surface-hover); }
+
+/* ============================================= */
+/* HERO                                          */
+/* ============================================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(108,92,231,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(253,121,168,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.hero-content { position: relative; }
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  background: rgba(108,92,231,0.08);
+  border: 1px solid rgba(108,92,231,0.15);
+  color: var(--accent-light);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.6s ease both;
+}
+.hero-badge .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.hero h1 {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.6s 0.1s ease both;
+}
+.hero h1 .gradient-text { display: inline-block; }
+.hero p {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 480px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  animation: fadeInUp 0.6s 0.2s ease both;
+}
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.6s 0.3s ease both;
+}
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  animation: fadeInUp 0.6s 0.4s ease both;
+}
+.hero-stat .num {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+.hero-stat .label {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Hero right - visual showcase */
+.hero-visual {
+  position: relative;
+  animation: fadeInUp 0.8s 0.2s ease both;
+}
+.hero-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-xl);
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+.hero-card .mock-chart {
+  display: grid;
+  gap: 12px;
+}
+.hero-card .mock-chart .row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+.hero-card .mock-chart .row .label {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: right;
+}
+.hero-card .mock-chart .bar {
+  height: 24px;
+  border-radius: 6px;
+  background: var(--surface-hover);
+  overflow: hidden;
+  position: relative;
+}
+.hero-card .mock-chart .bar .fill {
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--grad-1), var(--grad-3));
+  transition: width 1.5s ease;
+}
+.hero-card .mock-chart .bar .fill.purple { background: linear-gradient(90deg, var(--grad-1), var(--grad-2)); }
+.hero-card .mock-chart .bar .fill.pink { background: linear-gradient(90deg, var(--grad-3), var(--grad-4)); }
+.hero-card .mock-chart .bar .fill.green { background: linear-gradient(90deg, var(--success), #00cec9); }
+/* Floating badges */
+.hero-float-badge {
+  position: absolute;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(10px);
+  animation: float 3s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-float-badge.fb-1 { top: -16px; right: -16px; animation-delay: 0s; }
+.hero-float-badge.fb-2 { bottom: 40px; left: -20px; animation-delay: 1.5s; }
+.hero-float-badge .fb-icon {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+.hero-float-badge .fb-icon.green { background: rgba(0,184,148,0.1); }
+.hero-float-badge .fb-icon.purple { background: rgba(108,92,231,0.1); }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================= */
+/* LOGOS / SOCIAL PROOF                          */
+/* ============================================= */
+.logos-section {
+  padding: 60px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.logos-section p {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 32px;
+}
+.logos-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.logo-item {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-muted);
+  opacity: 0.5;
+  letter-spacing: 1px;
+  transition: opacity 0.3s;
+}
+.logo-item:hover { opacity: 0.8; }
+
+/* ============================================= */
+/* FEATURES                                      */
+/* ============================================= */
+.features-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.features-header .section-subtitle { margin: 0 auto; }
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.feature-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--grad-1), var(--grad-3));
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.feature-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.feature-card:hover::before { opacity: 1; }
+.feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: rgba(108,92,231,0.08);
+  border: 1px solid rgba(108,92,231,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+.feature-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.feature-card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ============================================= */
+/* STATS SECTION                                 */
+/* ============================================= */
+.stats-section {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 80px 0;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+.stat-card .stat-number {
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-bottom: 4px;
+}
+.stat-card .stat-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ============================================= */
+/* TESTIMONIALS                                  */
+/* ============================================= */
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.testimonials-header .section-subtitle { margin: 0 auto; }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.testimonial-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: all 0.3s;
+}
+.testimonial-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+.testimonial-stars {
+  color: #fdcb6e;
+  font-size: 14px;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+.testimonial-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.testimonial-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--grad-1), var(--grad-3));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+.testimonial-author .name {
+  font-size: 13px;
+  font-weight: 600;
+}
+.testimonial-author .role {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* ============================================= */
+/* PRICING                                       */
+/* ============================================= */
+.pricing-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.pricing-header .section-subtitle { margin: 0 auto; }
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.pricing-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  transition: all 0.4s;
+  position: relative;
+}
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.pricing-card.featured {
+  border-color: rgba(108,92,231,0.25);
+  box-shadow: 0 0 0 1px rgba(108,92,231,0.1), var(--shadow);
+  background: var(--bg-alt);
+  transform: scale(1.03);
+}
+.pricing-card.featured:hover { transform: scale(1.03) translateY(-4px); }
+.pricing-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 16px;
+  border-radius: 100px;
+  background: linear-gradient(135deg, var(--grad-1), var(--grad-3));
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.pricing-card .plan-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+.pricing-card .price {
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-bottom: 4px;
+}
+.pricing-card .price span {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+.pricing-card .plan-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+.pricing-card .plan-features {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.pricing-card .plan-features li {
+  font-size: 14px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pricing-card .plan-features li::before {
+  content: '✓';
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(0,184,148,0.08);
+  color: var(--success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ============================================= */
+/* FAQ                                           */
+/* ============================================= */
+.faq-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.faq-list {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+  cursor: pointer;
+}
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+.faq-question .faq-arrow {
+  font-size: 12px;
+  color: var(--text-muted);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding-top: 0;
+}
+.faq-item.open .faq-answer {
+  max-height: 200px;
+  padding-top: 12px;
+}
+.faq-answer p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ============================================= */
+/* CTA                                           */
+/* ============================================= */
+.cta-section {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(108,92,231,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-box {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 64px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  box-shadow: var(--shadow-xl);
+}
+.cta-box h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+}
+.cta-box p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin: 0 auto 28px;
+}
+
+/* ============================================= */
+/* FOOTER                                        */
+/* ============================================= */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 60px 0 32px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.footer-brand .logo { margin-bottom: 12px; }
+.footer-brand p {
+  font-size: 13px;
+  color: var(--text-muted);
+  max-width: 300px;
+  line-height: 1.6;
+}
+.footer-col h4 {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+.footer-col a {
+  display: block;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--text); }
+.footer-bottom {
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.footer-socials { display: flex; gap: 12px; }
+.footer-socials a {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--text-muted);
+  transition: all 0.2s;
+}
+.footer-socials a:hover {
+  border-color: var(--border-hover);
+  color: var(--text);
+  background: var(--surface);
+}
+
+/* ============================================= */
+/* COMPONENT SNIPPETS SECTION (bonus)           */
+/* ============================================= */
+.components-showcase {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 100px 0;
+}
+.components-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.component-demo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.comp-demo-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-secondary);
+  transition: all 0.3s;
+}
+.comp-demo-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+.comp-demo-card .comp-icon { font-size: 28px; margin-bottom: 8px; }
+.comp-demo-card .comp-name { font-weight: 600; color: var(--text); margin-bottom: 2px; }
+
+/* ============================================= */
+/* ANIMATIONS (Intersection Observer)            */
+/* ============================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ============================================= */
+/* RESPONSIVE                                    */
+/* ============================================= */
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-visual { max-width: 500px; margin: 0 auto; }
+  .hero-stats { justify-content: center; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+  .pricing-card.featured { transform: none; }
+  .pricing-card.featured:hover { transform: translateY(-4px); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+  .component-demo-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .mobile-toggle { display: flex; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(7,7,13,0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    gap: 16px;
+  }
+  .nav-links.open .nav-cta { margin-left: 0; }
+
+  .section { padding: 60px 0; }
+  .hero { min-height: auto; padding: 120px 0 60px; }
+  .hero p { font-size: 16px; }
+  .hero-stats { gap: 24px; flex-wrap: wrap; }
+  .hero-visual { display: none; }
+
+  .features-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .stat-card .stat-number { font-size: 32px; }
+
+  .cta-box { padding: 40px 24px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+  .component-demo-grid { grid-template-columns: repeat(2, 1fr); }
+  .logos-grid { gap: 24px; }
+  .logo-item { font-size: 12px; }
+}
+
+/* ============================================= */
+/* MOBILE NAV OVERLAY                            */
+/* ============================================= */
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.mobile-nav-overlay.open { display: block; opacity: 1; }
+
+/* ============================================= */
+/* GO TO TOP                                     */
+/* ============================================= */
+.go-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+.go-top.visible { opacity: 1; transform: translateY(0); }
+.go-top:hover {
+  border-color: var(--border-hover);
+  color: var(--text);
+}
+</style>
+</head>
+<body>
+
+<!-- ========== MOBILE OVERLAY ========== -->
+<div class="mobile-nav-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+
+<!-- ========== GO TO TOP ========== -->
+<button class="go-top" id="goTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- ========== HEADER ========== -->
+<header id="header">
+  <div class="container">
+    <a href="#" class="logo">
+      <div class="logo-icon">✦</div>
+      Nova
+    </a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#features" onclick="closeMobileNav()">Features</a></li>
+        <li><a href="#testimonials" onclick="closeMobileNav()">Testimonials</a></li>
+        <li><a href="#pricing" onclick="closeMobileNav()">Pricing</a></li>
+        <li><a href="#faq" onclick="closeMobileNav()">FAQ</a></li>
+        <li class="nav-cta"><a href="#cta" class="btn btn-primary btn-sm" onclick="closeMobileNav()">Get Started</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileNav()" aria-label="Menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Now in Public Beta
+        </div>
+        <h1>
+          Build Faster.<br>
+          <span class="gradient-text">Ship Smarter.</span>
+        </h1>
+        <p>
+          The complete UI kit for modern SaaS products. Copy-paste components, 
+          pre-built sections, and production-ready code — all in one file.
+        </p>
+        <div class="hero-actions">
+          <a href="#cta" class="btn btn-primary btn-lg">Start Building →</a>
+          <a href="#features" class="btn btn-secondary btn-lg">Explore Features</a>
+        </div>
+        <div class="hero-stats" id="heroStats">
+          <div class="hero-stat">
+            <div class="num gradient-text">10K+</div>
+            <div class="label">Developers</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">4.9★</div>
+            <div class="label">Avg Rating</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num gradient-text">Zero</div>
+            <div class="label">Dependencies</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div style="font-size:13px;font-weight:600;margin-bottom:20px;">📊 Monthly Performance</div>
+          <div class="mock-chart">
+            <div class="row"><span class="label">Revenue</span><div class="bar"><div class="fill" style="width:85%"></div></div></div>
+            <div class="row"><span class="label">Users</span><div class="bar"><div class="fill purple" style="width:72%"></div></div></div>
+            <div class="row"><span class="label">Growth</span><div class="bar"><div class="fill pink" style="width:93%"></div></div></div>
+            <div class="row"><span class="label">Speed</span><div class="bar"><div class="fill green" style="width:98%"></div></div></div>
+          </div>
+          <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);display:flex;justify-content:space-between;font-size:12px;">
+            <span style="color:var(--success);">↑ +24% this month</span>
+            <span style="color:var(--text-muted);">Updated just now</span>
+          </div>
+        </div>
+        <div class="hero-float-badge fb-1">
+          <span class="fb-icon green">⚡</span>
+          <span>Page load: 0.3s</span>
+        </div>
+        <div class="hero-float-badge fb-2">
+          <span class="fb-icon purple">🎯</span>
+          <span>100% responsive</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== LOGOS ========== -->
+<section class="logos-section reveal">
+  <div class="container">
+    <p>Trusted by teams at</p>
+    <div class="logos-grid">
+      <span class="logo-item">ACME Corp</span>
+      <span class="logo-item">Vercel</span>
+      <span class="logo-item">Linear</span>
+      <span class="logo-item">Stripe</span>
+      <span class="logo-item">Figma</span>
+      <span class="logo-item">Notion</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FEATURES ========== -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="features-header reveal">
+      <div class="section-label">✦ Features</div>
+      <h2 class="section-title">Everything you need to <span class="gradient-text">launch faster</span></h2>
+      <p class="section-subtitle">Pre-built components, zero configuration. Copy, paste, and ship in minutes instead of hours.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon">🎨</div>
+        <h3>Beautiful by Default</h3>
+        <p>Modern, dark-themed design system with carefully crafted gradients, typography, and spacing that looks great out of the box.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">⚡</div>
+        <h3>Lightning Fast</h3>
+        <p>Zero dependencies. No build tools, no npm, no webpack. A single HTML file with everything you need, ready to deploy.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon">📱</div>
+        <h3>Fully Responsive</h3>
+        <p>Every section adapts perfectly to any screen size — from mobile phones to 4K monitors. Tested across all viewports.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon">🧩</div>
+        <h3>25+ Components</h3>
+        <p>Buttons, cards, forms, navigation, pricing tables, testimonials, stats, FAQ, modals, and more. Mix and match freely.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">🎯</div>
+        <h3>Copy-Paste Ready</h3>
+        <p>Every component is self-contained with its own styles. No conflicts, no side effects. Grab what you need and go.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon">🔧</div>
+        <h3>Easy to Customize</h3>
+        <p>CSS variables power the entire design system. Change colors, spacing, fonts — everything updates automatically.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STATS ========== -->
+<section class="stats-section reveal">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number gradient-text">10K+</div>
+        <div class="stat-label">Active Users</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number gradient-text">4.9★</div>
+        <div class="stat-label">Average Rating</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number gradient-text">99.9%</div>
+        <div class="stat-label">Uptime</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number gradient-text">150+</div>
+        <div class="stat-label">Countries</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="testimonials-header reveal">
+      <div class="section-label">❤️ Testimonials</div>
+      <h2 class="section-title">Loved by <span class="gradient-text">developers</span></h2>
+      <p class="section-subtitle">Join thousands of happy developers who use Nova UI to ship faster.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"This kit saved me 3 days of work. The components are beautiful and the code is clean. Worth every penny."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SM</div>
+          <div><div class="name">Sarah M.</div><div class="role">Frontend Lead, Stripe</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Finally a UI kit that's actually responsive. No framework lock-in, just clean HTML and CSS. This is how tools should be."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AK</div>
+          <div><div class="name">Alex K.</div><div class="role">Indie Developer</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-3">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"I've bought 10+ UI kits and this is the only one I actually use. The component isolation approach is genius."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JR</div>
+          <div><div class="name">Jamie R.</div><div class="role">CTO, StartupXYZ</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== COMPONENTS SHOWCASE ========== -->
+<section class="components-showcase reveal">
+  <div class="container">
+    <div class="components-header">
+      <div class="section-label">🧩 Included</div>
+      <h2 class="section-title"><span class="gradient-text">25+ Components</span> included</h2>
+    </div>
+    <div class="component-demo-grid">
+      <div class="comp-demo-card"><div class="comp-icon">🔘</div><div class="comp-name">Buttons</div><div>9 variants</div></div>
+      <div class="comp-demo-card"><div class="comp-icon">📦</div><div class="comp-name">Cards</div><div>4 styles</div></div>
+      <div class="comp-demo-card"><div class="comp-icon">📝</div><div class="comp-name">Forms</div><div>6 inputs</div></div>
+      <div class="comp-demo-card"><div class="comp-icon">🧭</div><div class="comp-name">Navigation</div><div>3 layouts</div></div>
+      <div class="comp-demo-card"><div class="comp-icon">💬</div><div class="comp-name">Testimonials</div><div>2 styles</div></div>
+      <div class="comp-demo-card"><div class="comp-icon">💰</div><div class="comp-name">Pricing</div><div>3 tiers</div></div>
+      <div class="comp-demo-card"><div class="comp-icon">❓</div><div class="comp-name">FAQ</div><div>Accordion</div></div>
+      <div class="comp-demo-card"><div class="comp-icon">📊</div><div class="comp-name">Stats</div><div>Animated</div></div>
+      <div class="comp-demo-card"><div class="comp-icon">🔔</div><div class="comp-name">Alerts</div><div>4 types</div></div>
+      <div class="comp-demo-card"><div class="comp-icon">🏷️</div><div class="comp-name">Badges</div><div>5 colors</div></div>
+      <div class="comp-demo-card"><div class="comp-icon">🔄</div><div class="comp-name">Loaders</div><div>3 types</div></div>
+      <div class="comp-demo-card"><div class="comp-icon">📄</div><div class="comp-name">Footer</div><div>2 styles</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRICING ========== -->
+<section class="section" id="pricing">
+  <div class="container">
+    <div class="pricing-header reveal">
+      <div class="section-label">💰 Pricing</div>
+      <h2 class="section-title">Simple, <span class="gradient-text">transparent</span> pricing</h2>
+      <p class="section-subtitle">One payment. Lifetime access. No subscriptions, no hidden fees.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal reveal-delay-1">
+        <div class="plan-name">Starter</div>
+        <div class="price">$19<span></span></div>
+        <div class="plan-desc">Perfect for personal projects and learning.</div>
+        <ul class="plan-features">
+          <li>Complete landing page template</li>
+          <li>10 core components</li>
+          <li>Responsive design</li>
+          <li>Basic documentation</li>
+          <li>1 year updates</li>
+        </ul>
+        <a href="#cta" class="btn btn-secondary btn-block">Get Started</a>
+      </div>
+      <div class="pricing-card featured reveal reveal-delay-2">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="plan-name">Professional</div>
+        <div class="price">$39<span></span></div>
+        <div class="plan-desc">For professional developers and small teams.</div>
+        <ul class="plan-features">
+          <li>Everything in Starter</li>
+          <li>25+ premium components</li>
+          <li>Component isolation system</li>
+          <li>Advanced animations</li>
+          <li>Full documentation + examples</li>
+          <li>Lifetime updates</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="#cta" class="btn btn-primary btn-block">Get Started →</a>
+      </div>
+      <div class="pricing-card reveal reveal-delay-3">
+        <div class="plan-name">Enterprise</div>
+        <div class="price">$79<span></span></div>
+        <div class="plan-desc">For agencies and large-scale projects.</div>
+        <ul class="plan-features">
+          <li>Everything in Professional</li>
+          <li>Commercial license</li>
+          <li>White-label rights</li>
+          <li>Custom components</li>
+          <li>Priority support</li>
+          <li>1-hour response time</li>
+          <li>Team training session</li>
+        </ul>
+        <a href="#cta" class="btn btn-secondary btn-block">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="faq-header reveal">
+      <div class="section-label">❓ FAQ</div>
+      <h2 class="section-title">Frequently asked <span class="gradient-text">questions</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item open reveal">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          What do I get when I purchase?
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>You get the complete Nova UI landing page kit as a fully functional HTML file, including all CSS, JavaScript, and component documentation. Everything is self-contained — no external dependencies required.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Do I need to know React, Vue, or any framework?
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>No! Nova UI is built with vanilla HTML, CSS, and JavaScript. It works with any framework or no framework at all. If you know basic HTML, you can use this kit.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-2">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Can I use this for commercial projects?
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! The Professional tier includes a commercial license. You can use the components in unlimited projects, including client work. The Enterprise tier adds white-label rights.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-3">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          What if I'm not satisfied?
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>We offer a 14-day money-back guarantee. If the kit doesn't meet your expectations, contact us and we'll refund your purchase — no questions asked.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal reveal-delay-4">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Will I get updates?
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! Professional and Enterprise tiers include lifetime updates. We regularly add new components and improvements based on user feedback.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section class="cta-section" id="cta">
+  <div class="container">
+    <div class="cta-box reveal">
+      <h2>Ready to <span class="gradient-text">build faster?</span></h2>
+      <p>Join 10K+ developers who use Nova UI to ship beautiful products in record time.</p>
+      <a href="#" class="btn btn-primary btn-lg">Get Nova UI Now →</a>
+      <div style="margin-top:16px;font-size:13px;color:var(--text-muted);">✨ 14-day money-back guarantee · Lifetime access</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">✦</div>
+          Nova
+        </div>
+        <p>Premium UI components for modern SaaS products. Built with care, designed for speed.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Refund Policy</a>
+        <a href="#">License</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Nova UI. All rights reserved.</span>
+      <div class="footer-socials">
+        <a href="#" title="Twitter">𝕏</a>
+        <a href="#" title="GitHub">⌘</a>
+        <a href="#" title="Discord">◆</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+// ============================================= //
+// TOGGLE MOBILE NAV                             //
+// ============================================= //
+function toggleMobileNav() {
+  const nav = document.getElementById('navLinks');
+  const overlay = document.getElementById('mobileOverlay');
+  const toggle = document.getElementById('mobileToggle');
+  const isOpen = nav.classList.toggle('open');
+  overlay.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', isOpen);
+}
+function closeMobileNav() {
+  const nav = document.getElementById('navLinks');
+  const toggle = document.getElementById('mobileToggle');
+  nav.classList.remove('open');
+  document.getElementById('mobileOverlay').classList.remove('open');
+  toggle.setAttribute('aria-expanded', 'false');
+}
+
+// ============================================= //
+// HEADER SCROLL                                  //
+// ============================================= //
+const header = document.getElementById('header');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+  const current = window.scrollY;
+  header.classList.toggle('scrolled', current > 50);
+  lastScroll = current;
+
+  // Go to top button
+  document.getElementById('goTop').classList.toggle('visible', current > 400);
+});
+
+// ============================================= //
+// FAQ TOGGLE                                     //
+// ============================================= //
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+
+// FAQ keyboard support
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.setAttribute('role', 'button');
+  q.setAttribute('tabindex', '0');
+  q.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleFaq(q);
+    }
+  });
+});
+
+// ============================================= //
+// INTERSECTION OBSERVER (Reveal animations)       //
+// ============================================= //
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ============================================= //
+// STAT COUNTER ANIMATION                         //
+// ============================================= //
+function animateCounters() {
+  const counters = document.querySelectorAll('.stat-number');
+  counters.forEach(counter => {
+    const text = counter.textContent;
+    const num = parseFloat(text.replace(/[^0-9.]/g, ''));
+    if (isNaN(num)) return;
+
+    const suffix = text.replace(/[0-9.]/g, '');
+    const duration = 1500;
+    const steps = 30;
+    const increment = num / steps;
+    let current = 0;
+    let step = 0;
+
+    const timer = setInterval(() => {
+      step++;
+      current = Math.min(increment * step, num);
+      counter.textContent = Math.floor(current).toLocaleString() + suffix;
+      if (step >= steps) {
+        counter.textContent = text;
+        clearInterval(timer);
+      }
+    }, duration / steps);
+  });
+}
+
+// Animate stats when they come into view
+const statsSection = document.querySelector('.stats-section');
+if (statsSection) {
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  statsObserver.observe(statsSection);
+}
+
+// ============================================= //
+// SMOOTH SCROLL FOR NAV (fallback)               //
+// ============================================= //
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href === '#') return;
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+console.log('✦ Nova UI — Premium SaaS Landing Page Kit');
+console.log('✦ 25+ Components · Zero Dependencies · Responsive');
+console.log('✦ Built with ❤️');
+</script>
+</body>
+</html>

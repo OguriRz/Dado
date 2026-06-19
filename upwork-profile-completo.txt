@@ -1,0 +1,259 @@
+══════════════════════════════════════════════════════════════
+  PERFIL COMPLETO DE UPWORK — Nicolás Granella
+  Copiá esto en upwork.com
+══════════════════════════════════════════════════════════════
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  1. CREAR CUENTA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Andá a upwork.com → "Sign Up" → "I'm a freelancer"
+
+• Nombre: Nicolás
+• Apellido: Granella
+• Email: nicogranella123@gmail.com
+• País: Argentina
+• Skills: HTML, CSS, JavaScript
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  2. TÍTULO / HEADLINE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👉 PONÉ ESTO COMO TÍTULO:
+
+Frontend Bug Fixer | HTML, CSS & JavaScript Specialist
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  3. OVERVIEW / DESCRIPCIÓN DEL PERFIL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👉 PEGÁ TODO ESTO EN LA CAJA DE TEXTO:
+
+─── COPIAR DESDE ACÁ ──────────────────────────────────────
+
+Struggling with CSS layout glitches or JavaScript errors on your site? I'll fix your HTML/CSS/JS bugs within 24 hours.
+
+I have 2 years of experience building with HTML, CSS, and JavaScript, plus I recently launched a premium UI component library with 25+ components.
+
+WHAT I CAN FIX FOR YOU:
+• CSS layout issues (Flexbox, Grid, positioning, z-index)
+• Responsive / mobile breakpoint bugs
+• JavaScript console errors or broken event handlers
+• Broken modals, menus, sliders, and interactive elements
+• Cross-browser compatibility issues (Chrome, Firefox, Safari, Edge)
+• Pixel-perfect UI adjustments
+• CSS animations and transitions that aren't working
+• Any HTML/CSS/JS rendering issue
+
+WHY WORK WITH ME:
+• I deliver in 24 hours or less — usually same day
+• Clean, semantic code that respects your existing codebase
+• Clear communication — I tell you exactly what I fixed
+• Quick replies — I respond within minutes, not hours
+
+HOW IT WORKS:
+1. Send me your code (GitHub, CodePen, or ZIP file)
+2. Tell me exactly what's broken or what you need changed
+3. I fix it and send back the working code
+4. You test it — if anything needs adjustment, just ask
+
+Send me a message with your issue and I'll take a quick look. Let's fix it. 🚀
+
+─── HASTA ACÁ ──────────────────────────────────────────────
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  4. TARIFA POR HORA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👉 PONÉ: $15.00 / hora
+
+Razón: Si ponés menos de $10, los clientes piensan que no sos serio.
+$15 es un precio justo para Argentina y competitivo para clientes de USA.
+
+CUANDO TENGAS 3 RESEÑAS → subí a $20/hora
+CUANDO TENGAS 10 RESEÑAS → subí a $25/hora
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  5. CATEGORÍA Y SUBCATEGORÍA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+• Category: Web Development
+• Subcategory: Website Maintenance
+• Otros: Frontend Development, Bug Fixes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  6. SKILLS (HABILIDADES)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👉 AGREGÁ ESTAS SKILLS (en este orden):
+
+1. HTML5
+2. CSS3
+3. JavaScript
+4. Responsive Design
+5. Frontend Development
+6. Web Development
+7. Bug Fixes
+8. Web Troubleshooting
+9. UI Components
+10. Git
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  7. PORTFOLIO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👉 AGREGÁ ESTE PROYECTO EN TU PORTFOLIO:
+
+Título: CSS Library Pro — 25+ UI Components
+URL: https://devvibe2.gumroad.com/l/tuxdag
+Descripción: A premium collection of 25+ handcrafted UI components with live preview and one-click copy. Built with pure HTML, CSS, and JavaScript — zero dependencies. Includes buttons, cards, forms, navigation, alerts, pricing tables, and more.
+
+Skills usadas: HTML5, CSS3, JavaScript, Responsive Design
+
+Imagen: Subí screenshot-1-full.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  8. EDUCACIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👉 PONÉ ESTO:
+
+Título: Self-Taught Developer
+Institución: (dejalo vacío o poné online learning)
+Año: 2024 - Presente
+Descripción: Frontend development focused on HTML, CSS, and JavaScript. Built practical projects including a 25+ component UI library.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  9. IDIOMAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+• Spanish: Native
+• English: — (poné tu nivel real: Basic / Conversational / Intermediate)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  10. EMPLEO / EXPERIENCIA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👉 AGREGÁ ESTO:
+
+Título: Customer Support Assistant
+Empresa: One Play
+Ubicación: Mendoza, Argentina
+Fechas: January 2024 — Present
+
+Descripción:
+• Resolved technical inquiries and provided clear solutions to customers
+• Developed strong communication skills explaining technical concepts to non-technical users
+• Managed multiple cases simultaneously under pressure
+• Collaborated with internal teams to troubleshoot complex issues
+• Maintained high customer satisfaction ratings
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  11. PROPUESTAS PARA APLICAR A TRABAJOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️ ESTO ES LO MÁS IMPORTANTE. No aplicás a todo lo que ves.
+   Solo aplicá a trabajos PUBLICADOS EN LAS ÚLTIMAS 2 HORAS
+   y que sean de BUG FIXES CHICOS (menos de $50-100).
+
+━━━ PLANTILLA DE PROPUESTA ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Hi [Client Name],
+
+I saw you need help with [mencioná el problema específico de su post].
+
+I've fixed similar CSS/JS issues before and can get this sorted within 24 hours. Do you have the code hosted somewhere (GitHub, CodePen) so I can take a look?
+
+Happy to jump on this right away.
+
+Best,
+Nicolás
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  EJEMPLOS DE PROPUESTAS REALES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Ejemplo 1 — CSS bug:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Hi Sarah,
+
+I saw your navigation menu breaks on mobile. I've fixed similar responsive issues before and can have it working across all screen sizes within 24 hours.
+
+Do you have the code on GitHub or a staging URL I can check?
+
+Best,
+Nicolás
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Ejemplo 2 — JS error:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Hi Mark,
+
+I saw your contact form isn't submitting. I've debugged similar JavaScript form issues before — it's usually a validation or event handler problem that I can fix quickly.
+
+Can you share a link to the page?
+
+Best,
+Nicolás
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Ejemplo 3 — Responsive fix:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Hi David,
+
+I saw your site layout breaks on tablet screens. I specialize in responsive CSS fixes and can have it looking good on all devices within 24 hours.
+
+Is this an urgent fix? I can start immediately.
+
+Best,
+Nicolás
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  PLAN DE ACCIÓN — PRIMEROS 7 DÍAS EN UPWORK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DÍA 1 — Crear perfil
+[ ] Crear la cuenta en upwork.com
+[ ] Poner el título, overview, skills y tarifa
+[ ] Subir el portfolio con CSS Library Pro
+[ ] Subir una foto profesional (si no tenés, usa una selfie prolija fondo liso)
+
+DÍA 2-3 — Primeras aplicaciones
+[ ] Buscar trabajos de las últimas 2 horas
+[ ] Filtrar por: "Web Development" > "Website Maintenance"
+[ ] Presupuesto: $15-50 (fixed price)
+[ ] Aplicar a 5 trabajos por día usando la plantilla
+
+DÍA 4-7 — Seguir aplicando
+[ ] 5 propuestas por día
+[ ] Si no responden, mejorar las propuestas
+[ ] Probar diferentes enfoques
+
+⚠️ REGLA DE ORO:
+   • NO apliques a trabajos con más de 20 propuestas
+   • SOLO trabajos publicados en las últimas 2 horas
+   • SIEMPRE personalizá la primera oración de la propuesta
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TIPS EXTRA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. RESPONDÉ RÁPIDO
+   La app de Upwork en el celular te notifica al instante.
+   Responder en minutos = mucho más chances de que te contraten.
+
+2. PRIMER TRABAJO: ACEPTÁ BAJO
+   El primer trabajo puede ser por $10-15 aunque valga más.
+   Necesitás esa primera reseña de 5 estrellas.
+
+3. ENTREGÁ ANTES
+   Si decís 24 horas, entrega en 12. Los clientes aman eso.
+
+4. PEDÍ RESEÑA
+   Cuando entregues: "If everything looks good, I'd really appreciate
+   a 5-star review. It helps me grow on the platform. Thanks!"
+
+5. COBRAR
+   Upwork paga por ACH, Wire, PayPal o Payoneer.
+   Desde Argentina, lo mejor es Payoneer o Airtm.

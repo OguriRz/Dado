@@ -1,0 +1,4049 @@
+﻿🥳 Notas Del Parche
+“Notas del parche 4”
+
+
+
+
+-Despedimos a nuestra amada Ana, una pena, le volaron la cabeza
+-Le damos un gran saludo al chico carnaval 2
+-Ahora los reworks pe (solo 1)
+
+
+ Ready to Fire.png 
+Listo Para Disparar: Tus compañeros ganan 2 acciones adicionales al atacar al afectado por este efecto, si el que infringe el efecto ataca al objetivo le inflige el doble de daño y gana 1 bala por cada hit.
+—--------------------------------------------------------------------------------------------------------------------
+ Ready to Fire.png 
+Listo Para Disparar: El efecto solo se activa en el primer golpe.
+Si alguno de tus compañeros ataca gana 2 acciones adicionales.
+Si el que infringe el efecto es el que ataca infringe un crítico asegurado y gana 1 bala.
+
+
+-Nueva Efecto de Estado 
+ Overwatch Assignment.png 
+Ahí vuelvo Amigos: Usa este efecto al final del turno.
+Reduce tu iniciativa a 0 y vas para atrás en el campo de batalla.
+* Te recuperas del Stagger.
+* El enemigo debe gastar 2 acciones para alcanzarte.
+* Reduce Tus Acciones y Reacciones a la mitad. (Redondeando para abajo)
+* Convierte tus Acciones y Reacciones en Movimientos.
+* No puede Reaccionar para defender a aliados.
+* Consigues 5 de  Ammo.png Munición.
+* Solo puedes atacar a rango.
+Cuando sea tu turno en iniciativa vuelves al campo con la Ammo.png Munición sobrante.
+
+
+
+
+
+
+
+
+
+
+
+
+Buzon de propuestas
+Antes
+Cicatriz Ardiente: Cada vez que golpee con su reliquia gana 7 de  Burn.png Quemadura 
+Unbreakable: Durandarte ( 10/0 Burn.png ) ( ??????? ) 
+
+
+Después
+Cicatriz Ardiente: Cada vez que golpee con su reliquia gana 3 de  Burn.png Quemadura 
+Unbreakable: Durandarte ( 5/0 Burn.png ) ( ??????? ) 
+
+
+
+
+—----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Introducir sistema de “tiradas de salvación” como en el dnd normal.
+
+
+🤐 Tabla de Misiones (capaz)
+Tablón de Misiones
+
+
+Hana
+🏯 La ciudad(lugares de interés)
+Distrito 21 (U Corp.)
+El Mall Distrito 21
+Distrito 7
+hana sede.
+La IA pederasta
+El chad vendedor de prótesis (descendiente del que le tuneo el bastón a Dong)
+
+
+
+
+🌆 Mapa / Taboos
+  
+
+“Taboos De La Ciudad”
+Si hacen esto la cabeza 💀
+
+
+Resucitar a los muertos en cuerpo y mente
+   * Se permiten formas limitadas de resurrección, como los métodos usados por el Seguro de Vida de H Corp.
+   * Estrictamente prohibido pasar tu conciencia a un objeto inanimado
+Tabúes dictados por la Enmienda de Ética de Inteligencia Artificial
+   * Permitir que un clon y el humano original coexistan por más de 7 días
+   * Creación de seres no humanos conscientes y sapientes
+   * Creación artificial de un ser consciente y sapiente
+Destrucción o violación de una zona residencial durante la Noche en las Callejuelas
+   * Cualquier tipo de grabación de video o audio; en general, cualquier intento de investigar los eventos de la Noche en las callejuelas
+No pagar impuestos
+   * Los ciudadanos reciben tres advertencias para realizar sus pagos y son asesinados tras la cuarta infracción
+No respetar las restricciones sobre la creación y distribución de armas de fuego
+   * La longitud máxima del cañón de un arma debe ser más corta cuanto mayor sea el calibre del arma
+   * Ningún arma debe poseer suficiente potencia como para penetrar acero o paredes de edificios (aunque romper acero está permitido)
+   * El sonido de un disparo debe ser audible
+   * No investigar ni imaginar tecnología que infrinja las directrices de fabricación de armas de fuego proporcionadas por la cabeza junto con la licencia
+   * Solo los Workshops autorizados pueden fabricar armas de fuego de clase S
+No se pueden lanzar bombas explosivas
+   * Deben colocarse sobre un objeto o una superficie, y el radio no debe exceder cierto límite
+
+
+“Taboos De Los Distritos”
+Si hacen esto los Taboo Hunters los 💀
+
+
+Distrito 6 (F Corp.)
+   * Hacerse pasar por alguien por más de 1 hora.
+   * Preguntar qué hay detrás de una puerta sellada por F Corp.
+   * Modificar, recargar o reparar un Hada fuera de instalaciones aprobadas por F Corp.
+   * Usar un Hada sobre una cerradura sellada por J Corp.
+Distrito 7 (G Corp.)
+   * Desperdiciar Recursos Valiosos de manera intencional.
+   * Almacenar comida por más de una semana sin autorización.
+Distrito 8 (H Corp.)
+   * La Búsqueda de la Inmortalidad.
+   * Acumulacion de Riqueza.
+Distrito 9 (I Corp.)
+   * La Música.
+   * Crear zonas de oscuridad total.
+   * Mirar a cámaras de seguridad por más de 2 minutos.
+Distrito 10 (J Corp.)
+   * Apostar Años de vida, Recuerdos o partes del cuerpo sin licencia.
+   * Abandonar una apuesta antes de que termine.
+ Distrito 11 (K Corp.)
+   * Crear Disturbios en el Ala.
+   * Crear Disturbios en las estaciones Warp.
+Distrito 12 (L Corp.)
+   * Hablar sobre lo ocurrido en las instalaciones de L corp.
+   * Entrar en las Ruinas de L corp.
+Distrito 13 (M Corp.)
+   * Provocar deliberadamente daño mental o emocional a otra persona.
+   * Forzar a alguien a recordar un trauma ya “tratado” por M Corp.
+Distrito 14 (N Corp.)
+   * Creación de imágenes o Grabaciones del Distrito.
+   * Usar prótesis, implantes o reemplazos mecánicos visibles sin autorización de N Corp.
+   * Consumir “Experiencias Enlatadas” no aprobadas por el Distrito.
+   * Nombrar a un Taboo Hunter o describir su rostro después de haberlo visto.
+   * Hablar públicamente contra la “pureza” del cuerpo humano.
+Distrito 15 (O Corp.)
+   * Que las Oficinas Fixer no paguen un Impuesto extra al Pulgar.
+   * Faltar el Respeto a miembros del Pulgar en su presencia.
+   * Hablar mal del Capo Di Tutti Capi Billy.
+Distrito 16 (P Corp.)
+   * Asesinato.
+   * Huir de las autoridades.
+   * Construir una habitación, refugio o edificio sin registrarlo ante el Departamento de Compresión.
+   * Intentar abandonar el Distrito con documentos, muestras o sangre extraída de La Manchaland.
+Distrito 17 (Q Corp.)
+   * Poseer un arma con sellos o glifos no registrados.
+   * Portar más de cuatro talismanes activos al mismo tiempo.
+   * Destruir un talismán mientras está activo.
+Distrito 18 (R Corp.)
+   * Abandonar una zona de exterminio antes de que la misión sea declarada terminada.
+   * Conservar o robar el cadáver de un soldado de R Corp.
+   * Ocultar a un sospechoso de R Corp. declarado “no apto” por Raven.
+Distrito 19 (S Corp.)
+   * Enterrar cadáveres en suelo fértil sin permiso de S Corp.
+   * Matar ganado perteneciente a otro ciudadano sin permiso de S Corp.
+   * Consumir o vender productos agrícolas antes de que S Corp. los declare aptos.
+Distrito 20 (T Corp.)
+   * Robar, transferir o esconder tiempo perteneciente a otra persona.
+   * Negarse a registrar una patente o invento.
+   * Pintar, teñir o devolver color a una zona del Distrito sin pagar la tarifa correspondiente. 
+   * Poseer objetos con color natural no registrado. 
+   * Preguntar cuál es la “hora real” más de una vez al día. 
+   * Preguntar de dónde obtiene T Corp el tiempo que vende. 
+Distrito 21 (U Corp.)
+   * Registro no autorizado de las leyes del Gran Lago.
+   * Ocultar la aparición de una Sirena, una Ola o una Ballena. 
+   * Navegar hacia otro lago sin haber permanecido el tiempo mínimo exigido por las Leyes del Lago actual. 
+   * Navegar sin una campana, sirena o instrumento capaz de anunciar tu presencia. 
+Distrito 22 (V Corp.)
+   * Investigar por cuenta propia una Distorsión ocurrida en el Distrito. 
+   * Entrar a un edificio abandonado sin anunciar tu nombre en voz alta. 
+   * Preguntar qué ocurrió realmente durante el incidente de los “Crying Children“.
+Distrito 23 (W Corp.)
+   * Hablar públicamente sobre lo que ocurre dentro de un tren WARP durante el trayecto.
+   * Preguntar qué sucede durante los diez segundos entre la partida y la llegada.
+   * Intentar impedir el proceso de “Limpieza” una vez que un tren ha llegado.
+   * Abrir, dañar o manipular una cápsula de hibernación de primera clase.
+   * Entrar a una cabina de primera clase sin un billete correspondiente.
+Distrito 24 (X Corp.)
+   * Negarse a entregar un hallazgo raro a X Corp.
+   * Descender a un nivel de excavación superior al permitido por tu rango.  
+   * Ocultar, destruir o vender un objeto excavado antes de registrarlo ante X Corp. 
+   * Intentar salir de un “Pozo Infernal” sin declarar todos los objetos encontrados. 
+Distrito 25 (Y Corp.)
+   * Acusar a Y Corp. de permitir deliberadamente el sufrimiento en las Callejuelas.
+   * Entrar a una casa abandonada durante una tormenta de nieve. 
+   * Preguntar por qué ciertas zonas del Distrito nunca dejan de nevar. 
+   * Decir que la vida de una persona de las Callejuelas vale lo mismo que la de alguien de un Nido.
+   * Los Ciempiés.
+Distrito 26 (Z Corp.)
+   * No bajes solo 
+   * No respondas a una voz que use tu nombre
+   * No bajes solo.
+   * No sigas a nadie que conozcas
+   * Nunca duermas en Z Corp 
+   * NO bajes solo
+   * No leas los archivos
+   * No intentes abrir la última bóveda 
+   * La última bóveda no existe.
+   * NO BAJES SOLO
+   * Bajo ninguna circunstancia Abrir el libro
+
+
+
+
+🧧 El Chico Chino
+        
+  Jia Jia  
+[ 贾 贾 ]
+  Coin.png  Coin.png  Coin.png  Coin.png  Coin.png  Coin.png 
+ Coin.png 
+ Coin.png 
+ Coin.png 
+
+最後的賈
+
+
+他們告訴我，我絕對不能像他那樣                                                                                                    他從未原諒過任何人
+拒絕復仇                               我會殺了他
+  
+我將走自己的路  
+                                                                我將復仇                              擁抱寬恕
+他說我應該原諒他                                                                                                                                                          即使我死了，我也永遠不會變他
+
+
+我心中充滿了怨恨 
+這種怨恨不斷侵蝕我的靈魂
+  
+  
+  
+
+等級：250
+Fixer ID: 689343333331
+	Dados:
+8 D20
+1 D4
+
+
+	
+
+Ventajas: 99
+
+
+Fuerza: +1          Destreza: +1        Defensa: +1
+
+
+
+
+
+
+Velocidad: +60      Fortitude: +17     Carisma: +1
+
+
+
+
+
+
+Inteligencia: +60
+
+
+
+
+
+
+我心中的綠色: +0
+
+
+
+
+
+
+  
+Baston Jia  
+Ataque: [ +70 ]
+
+
+
+
+Defensa: [ +65 ]
+	HP:
+
+
+
+
+
+
+
+
+455/455
+
+
+
+
+
+
+Stagger Threshold:
+
+
+225
+	Armas:
+
+
+  
+Bastón Jia Replica  
+(3 de Rupture.png / 1 Entangled Curse Talisman.png )
+
+
+
+
+Adoctrinado incluso para que utilice la misma arma que él, yo mismo elegiré el sendero que desee recorrer en el arte del combate. Mientras tanto esta cosa vieja servirá de soporte.
+	Talismanes
+ Entangled Curse Talisman.png 
+: 
+	Armadura:
+Vestimenta de Aprendiz
+  
+(    )  
+
+
+
+
+	Puntos para subir: 
+
+
+	Efectos de estado:
+
+
+	Inteligencia: 200
+
+
+   * 20 de inteligencia: Una vez por pelea fortalece un ataque propio o de un aliado. También puedes reducir la eficacia de un ataque rival contra vos. (%25) 
+
+
+   * 40 de inteligencia: Una vez por pelea puedes prever los próximos 2 ataques que te vayan a entrar haciendo que cuando pasen tengan -30 de ventaja y tu tengas +30 de ventaja al defenderte de ellos.
+
+
+   * 60 de inteligencia: Una vez por pelea puede reducir el roleo de un ataque enemigo que se dirija hacia él a la mitad.
+
+
+   * 80 de inteligencia: De manera pasiva se puede usar inteligencia para roleos de ataque.
+
+
+   * 100 de inteligencia: Una vez cada 2 turnos puedes realizar 40% de daño adicional contra un objetivo que ya haya recibido daño este turno.
+
+
+   * 120 de inteligencia: Una vez por turno puedes negar un un efecto “On Hit” o “On Use”.
+
+
+   * 140 de inteligencia: ???
+
+
+   * 160 de inteligencia: Cada 2 turnos puedes duplicar los efectos de estado infringidos por 1 acción.
+
+
+   * 180 de inteligencia: En combate a partir del 3 turnos puedes reiniciar el cooldown de una habilidad de turnos / Una vez por pelea puedes reiniciar una habilidad de una vez por pelea.
+
+
+   * 200 de inteligencia: Una vez por pelea puedes reescribir una acción de un enemigo. (Ej. Si enemigo está atacando a Ster, podes hacer que se defienda y no haga nada)
+
+
+
+
+   * “Sé inteligente cuando vayas a combatir, si entiendes tu cuerpo y entorno, la poca fuerza y destreza no importaran, pues sabrás cómo moverte en cada situación.”
+fue el único consejo útil que ese tipo algún día me dio…
+
+
+	Velocidad: 200
+
+
+   * 20 de velocidad: Una vez por combate puedes hacer 1 acción extra.
+
+
+40 de velocidad: De forma pasiva al tirar iniciativa y quedar primero ganas 1 acción, si quedas en los otros puestos ganas 1 reacción.
+
+
+   * 60 de velocidad: Una vez cada 2 turnos se puede usar esta habilidad para realizar otra acción.
+
+
+80 de velocidad: De forma pasiva ganas una acción extra.
+
+
+   * 100 de velocidad: Una vez por combate puedes realizar una acción a lo que el enemigo no puede responder pero esta no tendrá ventaja.
+
+
+   * 120 de velocidad: Una vez por combate puedes realizar una acción en el momento que se te plazca, incluso si es el turno de ataque enemigo.
+
+
+   * 140 de velocidad: ???
+
+
+   * 160 de velocidad: De manera pasiva al realizar 6 acciones ganas 1 reacción para el próximo turno.
+
+
+   * 180 de velocidad: Una vez cada 3 turnos si se falló una reacción se puede usar esta habilidad para volver a tirar ya sea con otra skill o haciendo otra cosa para reaccionar.
+
+
+   * 200 de velocidad: De forma pasiva ganas una repetición de moneda por cada 100 de velocidad que poseas por el resto del combate.
+
+
+
+
+   * “Debes saber tu propio ritmo, nunca llegaras a mi nivel, pero podrás acercarte si lo entiendes”
+solo sabía desafiarme con cada palabra que salía de su boca…
+
+
+	Fortitude: 87
+
+
+   * 20 de Fortitude: Una vez por pelea, reduce el daño entrante 50%.
+
+
+   * 40 de Fortitude: Una vez por pelea puedes reducir el daño de un ataque a un cuarto. 
+
+
+60 de fortitude: De forma pasiva cada 2 turnos gana un 10% de tu vida como escudo.
+
+
+80 de fortitude: De forma pasiva al caer por primera vez en el combate te puedes levantar al instante curándote 120 de vida.
+
+
+   * “Si eres lo suficientemente hábil, nunca te golpearan”
+No me gusta tanto tomar riesgos honestamente.
+
+
+	Destreza: 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   * “No es algo que me preocupara nunca, solo optimiza tus movimientos con la cabeza, eventualmente tus músculos lo recordarán por su cuenta.”
+Quizá tenga razón, pero debería intentar seguir mi propio camino.
+	Defensa: 6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   * “Solo preocúpate por ti mismo, confiar en la gente de esta ciudad nunca sale bien, ¿para que protegerlo en dado caso?.”
+Siento sus heridas de solo recordarlo, alguien tuvo hacerle mucho daño, a pesar de todo, él siempre lo dice “así es la ciudad”.
+	Carisma: 45
+
+
+   * 20 de carisma: Una vez cada 2 turnos puedes darle 10 de  Clash Power Up.png Poder de Clash a un aliado por el resto del turno
+
+
+      * 40 de carisma: Una vez cada 3 turnos puedes darle 15 de  Offense Level Up.png Ventaja Ofensiva y  Defense Level Up.png Ventaja Defensiva a un aliado
+
+
+
+
+         * “Con la suficiente labia no habrá puerta cerrada en tu camino, solo asegurate de decir las palabras correctas.”
+A veces me pregunto cómo consiguió su trono realmente, con su complexión física, un derrocamiento armado no suena realista…
+¿Quizá un montón de favores y amigos fuertes?
+
+
+	Fuerza: 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         * “No, no te dejaré ser como “el”, no serás un gorila descerebrado.”
+El nunca me permitió pulir mi físico, siempre le dio demasiado peso a mi capacidad intelectual, el solo quiere moldear una versión pequeña de sí.
+
+
+	  
+Último Heredero Jia  
+
+
+  
+Rencor: Luego de por fin ser libre de la tiranía del Jerarca de H y R corp al fin puedes emprender tu viaje para cumplir encontrar tu propósito +5  Defense Level Up.png Ventaja Defensiva y +10  Offense Level Up.png Ventaja ofensiva.
+
+
+
+
+
+
+
+
+Incluso si no hablábamos mucho, los extraño, Xichun, Baoyu, madre, padre. Algun dia lo hare pagar, algun dia pagara por todo lo que le hizo a nuestro nombre.
+	Inhabitante de Daguanyuan
+
+
+  
+Observación del Hongyuan: Coloca una marca sobre un enemigo, esta se desvanece tras 1 turno, además de reducir el daño realizado por el marcado por un 30%.
+
+
+
+
+
+
+
+
+
+
+
+
+         * “Cuando estés listo para recorrer un sendero por tu propia cuenta. Ahí es cuando saldrás de este lugar.
+	Jia Jia
+
+
+  
+Muestrenme un sendero Zi: En combate a partir del 3er turnos 2 Zis realizaran un ataque conjunto en el enemigo seleccionado. (6 D20 +70 ventaja 5/4 de  Rupture.png Ruptura y 10 de Poison.png Veneno )
+
+
+  
+Deteriorate (削貶): Si el enemigo tiene al menos 5 estados de efecto, +20 de ventaja  Attack Power Up.png Ventaja.
+
+
+         * “No eres más que una burda copia, incluso así, nunca serás como el señor. Él está a años luz de ti, aprendiz.
+Quizás tenían razón, incluso después de odiarlo durante toda mi vida, él es la única figura a la que puedo aspirar. No soy más que una copia…
+	Posible goon corner 3
+
+
+
+
+
+
+	Inventario
+	Siente el Aura
+  
+
+  
+
+  
+
+  
+
+  
+
+	Goon Corner
+  
+  
+  
+  
+  
+  
+
+  
+
+	
+
+
+
+
+
+🤒 Técnicas de Aprendiz
+Técnicas de Heredero
+Skill 1
+Ventaja Base: +70
+
+
+Con Clash power por Ruptura: +95
+
+
+Ventaja Talismanes: +85
+
+
+Ventaja y PC Máxima: +110
+  
+
+  	 Coin.png 
+ Coin.png 
+
+  
+
+ SkillAttack.png 
+ 
+Atk Weight ⯀
+[On Use] Gana +5 de  Clash Power Up.png Poder de Clash  por cada instancia de  Rupture.png Ruptura en el enemigo. (max. 5)
+[On Use] Gana +5 de  Offense Level Up.png Ventaja ofensiva por cada instancia de Entangled Curse Talisman.png Talismán colocada. (Max.3)
+[Skill End] Un aliado aleatorio gana +5 de  Offense Level Up.png Ventaja ofensiva /  Defense Level Up.png Ventaja Defensiva aleatoriamente.
+ CoinEffect1.png 
+[On Hit] Infringe +3 de Rupture.png Ruptura.
+[On Hit] Infringe +1 de contador de Rupture.png Ruptura.
+[On Hit] Infringe +1 de  Entangled Curse Talisman.png Talismán.
+ CoinEffect1.png 
+[On Hit] Infringe +3 de Rupture.png Ruptura.
+[On Hit] Infringe +1 de contador de Rupture.png Ruptura.
+[On Hit] Infringe +1 de  Entangled Curse Talisman.png Talismán.
+
+
+Encuentra un camino
+Encuentra una respuesta
+Encuentra tu verdadero Sendero
+	Skill 2
+Ventaja Base: +70
+
+
+Con Clash power por Ruptura: +100
+
+
+Ventaja Talismanes: +90
+
+
+Con Clash power por efecto negativo: +76
+
+
+Ventaja Máxima: +126
+
+
+  
+
+  	 Coin.png 
+ Coin.png 
+ Coin.png 
+
+  
+
+ SkillAttack.png 
+ 
+Atk Weight ⯀
+[On Use] Gana +5 de  Clash Power Up.png Poder de Clash  por cada instancia  de Rupture.png Ruptura en el enemigo. (Max.6)
+[On Use] Gana +5 de  Offense Level Up.png Ventaja ofensiva por cada 2 instancias de Entangled Curse Talisman.png Talismán colocadas. (Max.4)
+[On Use] Gana +2 de  Clash Power Up.png Poder de Clash  por cada 2 efectos de estado negativo en el enemigo. (max. 3)
+[Skill End] Un aliado aleatorio gana +7 de  Offense Level Up.png Ventaja ofensiva /  Defense Level Up.png Ventaja Defensiva aleatoriamente.
+ CoinEffect1.png 
+ [On Hit] Infringe +3 de  Rupture.png Ruptura
+[On Hit] Infringe +1 de  Entangled Curse Talisman.png Talismán
+ CoinEffect2.png 
+ [On Hit] Infringe +3 de  Rupture.png Ruptura
+[On Hit] Infringe +1 de contador de  Rupture.png Ruptura
+[On Hit] Infringe +1 de  Entangled Curse Talisman.png Talismán
+
+
+No se por que el no me mato
+No se por que yo no le he matado a él
+No se que es lo que realmente necesito.
+
+
+	Skill 3
+Ventaja Base: +70
+
+
+Con Clash power por Ruptura: +100
+
+
+Ventaja Talismanes: +95
+
+
+Ventaja Máxima: +155
+
+
+  
+
+  	 Coin.png 
+ Coin.png 
+ Coin.png 
+ Coin.png 
+
+  
+
+ SkillAttack.png 
+
+Atk Weight ⯀
+Utilizable 1 vez por turno
+[On Use] Gana +5 de  Clash Power Up.png Poder de Clash  por cada 3 instancia de Rupture.png Ruptura en el enemigo. (Max.6)
+[On Use] Gana +5 de  Offense Level Up.png Ventaja ofensiva por cada 2 instancias de Entangled Curse Talisman.png Talismán colocadas. (Max.5)
+[After Attack] Si el enemigo golpeó a un aliado este turno, gana +10 de  Clash Power Up.png Poder de Clash el próximo turno.
+[Skill End] Un aliado aleatorio gana +10 de  Offense Level Up.png Ventaja ofensiva /  Defense Level Up.png Ventaja Defensiva aleatoriamente.
+ CoinEffect1.png 
+ [On Hit] Infringe +3 de  Rupture.png Ruptura
+[On Hit] Infringe +1 de contador de  Rupture.png Ruptura
+[On Hit] Infringe +1 de  Entangled Curse Talisman.png Talismán
+ CoinEffect2.png 
+ [On Hit] Infringe +3 de  Rupture.png Ruptura
+[On Hit] Infringe +1 de  Entangled Curse Talisman.png Talismán
+ CoinEffect3.png 
+ [On Hit] Infringe +3 de  Rupture.png Ruptura
+[On Hit] Infringe +1 de contador de  Rupture.png Ruptura
+[On Hit] Infringe +1 de  Entangled Curse Talisman.png Talismán
+
+
+El Hongyuan ya ha tenido suficiente de esto
+nuestra tierra no merece el reinado de terror de un dragón
+algun dia, algun dia yo…
+	Skill 3-2
+
+
+Ventaja Base: +17
+
+
+Ventaja Ruptura: +57
+
+
+Ventaja Talismanes: +47
+
+
+Ventaja Máxima: +107!!??
+
+
+  
+
+  	 Coin.png 
+ Coin.png 
+ Coin.png 
+ Coin.png 
+ Coin.png 
+
+  
+
+ SkillAttack.png 
+
+Atk Weight ⯀
+Utilizable 1 vez por turno
+No utilizable hasta que tenga condiciones de activación. Son 😭🙏
+[On Use] Gana +8 de  Offense Level Up.png Ventaja ofensiva por cada instancia de Rupture.png Ruptura en el enemigo. (Max.4)
+[On Use] Gana +8 de  Offense Level Up.png Ventaja ofensiva por cada instancia de Entangled Curse Talisman.png Talismán colocada. (Max.3)
+[After Attack] Si el enemigo golpeó a un aliado este turno, gana +15 de  Clash Power Up.png Poder de Clash el próximo turno.
+[Skill End] Un aliado aleatorio gana +15 de  Offense Level Up.png Ventaja ofensiva /  Defense Level Up.png Ventaja Defensiva aleatoriamente.
+ CoinEffect1.png 
+ [On Hit] Infringe +3 de  Rupture.png Ruptura
+[On Hit] Infringe +1 de contador de  Rupture.png Ruptura
+[On Hit] Infringe +1 de  Entangled Curse Talisman.png Talismán
+ CoinEffect2.png 
+ [On Hit] Infringe +3 de  Rupture.png Ruptura
+[On Hit] Infringe +1 de  Entangled Curse Talisman.png Talismán
+ CoinEffect3.png 
+ [On Hit] Infringe +3 de  Rupture.png Ruptura
+[On Hit] Infringe +1 de contador de  Rupture.png Ruptura
+[On Hit] Infringe +1 de  Entangled Curse Talisman.png Talismán
+  
+[On Hit] Infringe +3 de  Rupture.png Ruptura
+[On Hit] Infringe +1 de  Entangled Curse Talisman.png Talismán
+  
+[On Hit] Infringe +3 de  Rupture.png Ruptura
+[On Hit] Infringe +1 de contador de  Rupture.png Ruptura
+[On Hit] Infringe +1 de  Entangled Curse Talisman.png Talismán
+
+
+Brindaré paz a este infierno.
+	Defensa
+
+
+Ventaja Base: +65
+
+
+Ventaja por Ruptura: +90
+
+
+Ventaja Talismanes: +80
+
+
+Ventaja Máxima: +105
+
+
+    	 Coin.png 
+
+  
+
+ SkillAttack.png 
+
+Atk Weight ⯀
+[Clashable Guard]
+[First Reaction] Si se usó para cubrir a un aliado puedes, el próximo turno, sacrifica esta reacción para darle la moneda a ese aliado.
+[On Use] Ganas +5 de  Defense Level Up.png Ventaja Defensiva por cada instancia de Rupture.png Ruptura en el enemigo. (Max.5)
+[On Use] Ganas +5 de  Defense Level Up.png Ventaja Defensiva por cada instancia de  Entangled Curse Talisman.png Talismán colocada este combate. (Max.3)
+
+
+¿Acaso no puedes responder a una sencilla pregunta?
+puede que no seas lo que buscaba al final
+solo seguiré buscando un respuesta que me sacie~
+
+
+	
+
+
+
+🐦‍⬛ Los queques del infinito...
+
+
+
+
+
+
+  
+Wolfram Thane  
+ Coin.png 
+ Coin.png 
+ Coin.png 
+ Coin.png 
+ Coin.png 
+ Coin.png 
+
+ Coin.png 
+ Coin.png 
+ Coin.png 
+ Coin.png 
+
+Prosélito
+  
+2.43 Mililitros    
+  
+  
+
+Queques del infinito: 250
+	Dados:
+8 D20
+1 D4
+
+
+	
+
+
+
+Ventajas: 
+
+
+
+
+
+
+
+
+
+
+Fuerza: +58     Destreza: +0 (4)     Defensa: +1 (5)
+
+
+
+
+
+
+
+
+Velocidad: +60     Fortitude: +26     Carisma: +1 (6)
+
+
+
+
+
+
+
+
+Inteligencia: +0 (4)
+
+
+
+
+
+
+
+
+???: +0
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+	HP:
+587/387
+
+
+Stagger Thresholds
+0/293
+
+
+
+
+	  
+Armas:  
+
+
+Unbreakable: Durandarte
+( 5/0 Burn.png )
+( ??????? ) 
+
+
+  
+
+
+
+Espadón de Prosélito
+( 1/0 Poise.png  /  1/1 Sinking.png  )
+
+
+  
+
+
+
+	Efectos de estado:
+	Armadura:
+Traje de Prosélito
+( Cada vez que se cumpla un Precepto consigue 2 de Sp )
+	Puntos para subir:
+0
+	Fuerza: 199 
+
+
+         * 20 de Fuerza: Una vez por pelea, incrementa tu tirada un 15%
+         * 40 de fuerza: De forma pasiva cada 2 turnos si ya no tienes más Reacciones puedes tirar una guardia con tu ventaja de fuerza 
+         * 60 de fuerza: En combate a partir del 4to turnos puedes elegir un ataque a elección para que haga el doble de daño.
+         * 80 de fuerza: En combate a partir del 3er turno un ataque a tu elección le pondra 3 de  Fragile.png Fragilidad a un enemigo*
+         * 100 de fuerza: En Combate a partir del 3er turno si el rival ataca con fuerza suma la mitad de su ventaja a tu tirada
+120 de fuerza: De forma pasiva cada vez que golpees a alguien con fuerza suma +10 ventaja para el próximo turno, al inicio del segundo turno tu primera acción se realiza con toda la ventaja stackeada y luego reinicia esta pasiva
+            * 140 de fuerza: ???
+160 de Fuerza: De forma pasiva al inicio del segundo turno y los turnos siguientes suma +15 puntos a esta estadística hasta el final del combate
+            * 180 de Fuerza: Una vez por pelea puedes usar un cuarto del roleo enemigo como ventaja para una acción 
+
+
+	Velocidad: 200
+
+
+            * 20 de velocidad: Una vez por combate puedes hacer 1 acción extra.
+            * 40 de velocidad: De forma pasiva al tirar iniciativa y quedar primero ganas 1 acción, si quedas en los otros puestos ganas 1 reacción.
+            * 60 de velocidad: Una vez cada 2 turnos se puede usar esta habilidad para realizar otra acción.
+80 de velocidad: De forma pasiva ganas una acción extra.
+            * 100 de velocidad: Una vez por combate puedes realizar una acción a lo que el enemigo no puede responder pero esta no tendrá ventaja.
+            * 120 de velocidad: Una vez por combate puedes realizar una acción en el momento que se te plazca, incluso si es el turno de ataque enemigo.
+            * 140 de velocidad: ???
+            * 160 de velocidad: De manera pasiva al realizar 6 acciones ganas 1 reacción para el próximo turno.
+            * 180 de velocidad: Una vez cada 3 turnos si se falló una reacción se puede usar esta habilidad para volver a tirar ya sea con otra skill o haciendo otra cosa para reaccionar.
+200 de velocidad: De forma pasiva ganas una repetición de moneda por cada 100 de velocidad que poseas por el resto del combate.
+
+
+	Fortitude: 115 
+
+
+            * 20 de Fortitude: Una vez por pelea puedes reducir el daño de un ataque a la mitad.
+            * 40 de Fortitude: Una vez por pelea puedes reducir el daño de un ataque a un cuarto.
+60 de fortitude: De forma pasiva cada 2 turnos gana un 10% de tu vida como escudo.
+80 de fortitude: De forma pasiva al caer por primera vez en el combate te puedes levantar al instante curándote 120 de vida.
+            * 100 de fortitude: Una vez cada 2 turnos puedes tanquear un ataque, luego curate la mitad del daño que te infringieron.
+
+
+	Inventario
+
+
+$1.299.000 Ahns
+Ticket peluquería Martina
++22 622 12 63 89
+	Sindicalista
+
+
+Ganándose El Sueldo: Al estar haciendo una mision gana 5 de Attack Power Up.png Ventaja, al pelear solo gana 20 de Clash Power Up.png Poder de Clash.
+
+
+Digno de Sindicato: Gana 10 de Clash Power Up.png Poder de Clash por cada enemigo Abatido/Asesinado En el combate
+
+
+La Voluntad de la Ciudad: Cada que cumplas un Precepto en combate consigue 20 de Escudo👍
+	Miembro del “Index”
+
+
+Papel: Al inicio de todos los turnos recibe el efecto   Prescript.png Precepto, al cumplir con el precepto se ganan 2 de  Clash Power Up.png Poder de Clash, al fallar con el precepto se ganan 5 de  Karmic Consequence.png Consecuencia Kármica 
+
+
+Objetivo de Precepto: Al inicio de los turnos un enemigo es marcado con  The Prescript's Target.png El Objetivo del Precepto gana 5 de Clash Power Up.png Poder de Clash contra estos
+
+
+Voluntad del Precepto: Si en un turno se golpea al  The Prescript's Target.png El Objetivo Del Precepto gana 1 de  Grace of the Prescript.png  Gracia Del Precepto / Si se cumple 1  Prescript.png Precepto y se golpea al  The Prescript's Target.png El Objetivo del Precepto en el mismo turno gana 3 de  Grace of the Prescript.png  Gracia Del Precepto 
+
+
+
+
+	Wolfram
+
+
+Cicatriz Ardiente: Cada vez que golpee con su reliquia gana 3 de  Burn.png Quemadura 
+
+
+Todo por ellas: La primera vez que te caigas en un combate te puedes levantar al instante, cuando te levantes luego de caer por primera vez en combate obtén 35 de  Clash Power Down.png Reducción de Clash por el resto del combate
+
+
+Sindicato Peligroso: Cada vez en combate que falle un precepto gana 4 de   Erosión
+
+
+Debo Protegerlas: Al inicio de los turnos gana 1 de Assist Defense (Zilu).png Defensa Asistida
+
+
+	Usuario de Reliquia
+
+
+Usuario de Durandarte: No apto: No se posee la aptitud para usar la habilidad ni la reliquia al máximo, pero al empuñarla gana 5 de Attack Power Up.png Ventaja
+
+
+
+
+  
+
+	
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+
+
+	Goon corner
+  
+  
+       
+  
+
+	Thanos EndGame
+  
+  
+  
+
+	
+
+💠 Ca caw
+
+
+
+
+  
+
+ Blunt.png 
+
+	 Coin.png 
+
+  
+
+[On Use] For every 2 (sum of  custom_icon Sinking +  custom_icon Poise ) gain 4  Attack Power Up.png Ventaja (max 3)
+ CoinEffect1.png 
+[On Hit] Inflict 1  custom_icon Sinking potency
+[On Hit] Inflict 1  custom_icon Sinking count
+[On Hit] Gain 1  custom_icon Poise potency
+[On Crit] Inflict 1  custom_icon Sinking count
+	
+
+  
+
+ Blunt.png 
+
+	 Coin.png 
+ Coin.png 
+
+  
+
+[On Use] For every 2 (sum of  custom_icon Sinking +  custom_icon Poise ) gain 5  Attack Power Up.png Ventaja (max 5)
+ CoinEffect1.png 
+[On Hit] Inflict 1  custom_icon Sinking potency
+[On Hit] Inflict 1  custom_icon Sinking count
+[On Hit] Gain 1  custom_icon Poise potency
+ CoinEffect2.png 
+ [On Hit] Inflict 2  custom_icon Sinking potency
+[On Hit] Gain 1  custom_icon Poise count
+[On Crit] Inflict 2  custom_icon Sinking count
+	
+
+  
+
+ Blunt.png 
+
+	 Coin.png 
+ Coin.png 
+
+  
+
+Utilizable 1 vez por turno
+[On Use] For every 2 (sum of custom_icon Sinking + custom_icon Poise) gain 7 Attack Power Up.png Ventaja (max 5)
+ CoinEffect1.png 
+[On Hit] Inflict 2  custom_icon Sinking potency
+[On Hit] Gain 1  custom_icon Poise potency
+ CoinEffect2.png 
+[On Hit] Inflict 2  custom_icon Sinking potency
+[On Hit] Gain 1  custom_icon Poise count
+[On Crit] Inflict 4  custom_icon Sinking potency
+
+
+	
+
+  
+
+ Blunt.png 
+
+	 Coin.png 
+
+  
+
+[On Use] For every 2 (sum of custom_icon Sinking + custom_icon Poise) gain 4 Clash Power Up.png Poder de Clash (max 5)
+[Clash Win] Gain 1  custom_icon Poise potency
+[Clash Lose] Loose 1  custom_icon Poise count
+
+
+
+
+	
+
+🔫 John Carnaval 2
+        
+Cain
+Fixer de la oficina Full-Stop Grado 7.
+      Quien te pensas que sos pretencioso de mierda
+“El ave nunca podrá abrir sus alas si no abandona su nido”
+ Coin.png  Coin.png  Coin.png  Coin.png 
+ Coin.png  Coin.png  Coin.png 
+189 cm
+Nivel 250
+	Dados:
+8 d20
+1 d4
+
+
+	Ventajas: 136
+
+
+
+
+Fuerza: +66     Destreza: +1     Defensa: +1
+
+
+Velocidad: +32     Fortitude: +20     Carisma: +8
+
+
+Inteligencia: +8
+
+
+
+
+	HP:
+810/810
+
+
+Daño Hasta Stagger
+0/550
+
+
+	Armas:
+Pistola Completamente Detenida
+  
+
+(2/0 Poise.png poise)
+
+
+
+  
+full   
+(5/0 Bleed.png bleed )
+	Efectos de estado:
+	Armadura:
+Traje custom made Full-Stop
+  
+      
+  
+
+
+	Puntos para subir:
+0
+	Fuerza: 215
+
+            * 20 de Fuerza: Una vez por pelea, incrementa tu tirada un 15%.
+
+40 de fuerza: De forma pasiva cada 2 turnos si ya no tienes más Reacciones puedes tirar una guardia con tu ventaja de fuerza.
+
+            * 60 de fuerza: En combate a partir del 4to turnos puedes elegir un ataque a elección para que haga el doble de daño.
+
+            * 80 de fuerza: En combate a partir del 3er turno un ataque a tu elección le pondra 3 de  Fragile.png Fragilidad a un enemigo.
+
+            * 100 de fuerza: En Combate a partir del 3er turno si el rival ataca con fuerza suma la mitad de su ventaja a tu tirada.
+
+120 de fuerza: De forma pasiva cada vez que golpees a alguien con fuerza suma +10 ventaja para el próximo turno, al inicio del segundo turno tu primera acción se realiza con toda la ventaja stackeada y luego reinicia esta pasiva.
+
+            * 140 de fuerza: ???
+
+160 de Fuerza: De forma pasiva al inicio del segundo turno y los turnos siguientes suma +15 puntos a esta estadística hasta el final del combate.
+
+            * 180 de Fuerza: Una vez por pelea puedes usar un cuarto del roleo enemigo como ventaja para una acción.
+
+200 de Fuerza: De forma pasiva al inicio de todos los turnos gana 1 Reacción adicional, ésta duplica la ventaja de fuerza al defenderte o defender.
+	Velocidad: 130
+
+               * 20 de velocidad: Una vez por combate puedes hacer 1 acción extra.
+
+40 de velocidad: De forma pasiva al tirar iniciativa y quedar primero ganas 1 acción, si quedas en los otros puestos ganas 1 reacción.
+
+               * 60 de velocidad: Una vez cada 2 turnos se puede usar esta habilidad para realizar otra acción.
+
+80 de velocidad: De forma pasiva ganas una acción extra.
+
+               * 100 de velocidad: Una vez por combate puedes realizar una acción a lo que el enemigo no puede responder pero esta no tendrá ventaja.
+
+               * 120 de velocidad: Una vez por combate puedes realizar una acción en el momento que se te plazca, incluso si es el turno de ataque enemigo.
+
+
+
+
+
+
+
+
+
+
+	Carisma: 40
+
+
+                  * 20 de carisma: Una vez cada 2 turnos puedes darle 10 de  Clash Power Up.png Poder de Clash a un aliado por el resto del turno.
+
+                  * 40 de carisma: Una vez cada 3 turnos puedes darle 15 de  Offense Level Up.png Ventaja Ofensiva y  Defense Level Up.png Ventaja Defensiva a un aliado.
+	Inteligencia: 40
+
+                     * 20 de inteligencia: Una vez por pelea fortalece un ataque propio o de un aliado. También puedes reducir la eficacia de un ataque rival contra vos. (%25) 
+
+                     * 40 de inteligencia: Una vez por pelea puedes prever los próximos 2 ataques que te vayan a entrar haciendo que cuando pasen tengan -30 de ventaja y tu tengas +30 de ventaja al defenderte de ellos.
+	Fortitude: 100
+
+
+                        * 20 de Fortitude: Una vez por pelea puedes reducir el daño de un ataque a la mitad.
+
+                        * 40 de Fortitude: Una vez por pelea puedes reducir el daño de un ataque a un cuarto. 
+
+60 de fortitude: De forma pasiva cada 2 turnos gana un 10% de tu vida como escudo.
+
+                        * 80 de fortitude: De forma pasiva al caer por primera vez en el combate te puedes levantar al instante curándote 120 de vida.
+
+                        * 100 de fortitude: Una vez cada 2 turnos puedes tanquear un ataque, luego curate la mitad del daño que te infringieron.
+	Defensa: 5 // Destreza: 5
+
+
+  
+
+	Cain
+
+
+Mi Jefe Se Va a Enojar: Al quedarse sin Ammo.png Munición Consigue Overwatch Assignment.png Ahí vuelvo amigos, Si termina una pelea sin  Ammo.png Munición pierde la mitad de su dinero.
+
+
+
+
+Quiero Plata: Si hace un Encargo / Misión y no le pagan al final de esta al inicio de su próxima pelea gana 30 de  Clash Power Down.png Reducción de Clash.
+
+
+
+
+
+
+	Oficina Full-Stop
+
+
+Marca: Puedes ponerle  Ready to Fire.png Listo Para Disparar a quien golpeas por primera vez (Max.1)
+
+
+Me banco el combate Cuerpo a Cuerpo: Cuando es atacado mientras esté usando su arma a rango, gana 30 de  Defense Level Up.png Ventaja Defensiva, ganas 20 extra si se usa un esquive.
+
+
+Fuego Ciego: Gana 20 de  Attack Power Up.png Ventaja en su primera acción.
+
+
+ Ammo.png 
+Munición: 15/999
+20 de Attack Power Up.png Ventaja.
+
+
+	Fixer
+
+
+Trabajo Fixer: Al estar haciendo una mision gana 5 de Attack Power Up.png Ventaja, al pelear solo gana otros 10 de Attack Power Up.png Ventaja.
+
+
+Respeta mi Grado: Gana 5 de  Attack Power Up.png Ventaja por cada Grado arriba de Grado 9 que tengas.
+
+
+	Aumentos
+
+
+Ojos (Baja Calidad): Luego de lograr 4 esquives consigue 1 de  Haste.png Haste.
+
+Fibra Muscular (Calidad Media): Gana 300 de HP y STAGGER.
+	Inventario / Coso de Notas
+
+915,000 ahns
++22 6 2212 6389 
++3 
+Victor Manuel Vicente 
+en L corp preguntar por emilio
+	Goon corner
+  
+	
+
+ Ammo.png 
+Munición: 20 de Attack Power Up.png Ventaja
+🩸 Balazos y facazos
+Skill 1-1
+todavía no conozco la ventaja de las balas así que no están contabilizadas
+Base: 101
+Full poise: 141
+Todas las balas: 139
+Full Stack: 179
+  
+
+ Pierce.png 
+
+	 Coin.png 
+ Coin.png 
+
+  
+
+ SkillAttack.png 
+  Atk Weight ⯀
+
+
+[On Use] Gana 8  Offense Level Up.png Ventaja Ofensiva por cada 1 de  Poise.png Poise  Poseído (max. 5)
+[On Use] Gana 2  Offense Level Up.png Ventaja Ofensiva por cada bala Restante en la recamara (max. 19)
+ CoinEffect1.png 
+ Gasta 1  Ammo.png Munición
+[On Hit] Gana 2  Poise.png Poise
+ CoinEffect2.png 
+ Gasta 1  Ammo.png Munición
+[On Hit] Gana 2  Poise.png Poise
+
+
+	
+
+
+
+Skill 1-2
+Base: 81
+Full poise: 106
+Full bleed: 106
+Sin Balas: 135
+Full Stack: 185
+
+
+  
+
+
+
+ Slash.png 
+
+	 Coin.png 
+ Coin.png 
+
+  
+
+ SkillAttack.png 
+ Atk Weight ⯀
+[On Use] Gana 5  Clash Power Up.png Poder de Clash por cada 1 de  Poise.png Poise  Poseído (max. 5)
+[On Use] Gana 5  Clash Power Up.png Poder de Clash por cada 2 de  Bleed.png Sangrado en el enemigo. (max. 5)
+[On Use] Gana 3  Clash Power Up.png Poder de Clash por cada bala Faltante en la recamara (max. 19)
+ CoinEffect1.png 
+ [On Hit] 5 de  Bleed.png Sangrado
+ CoinEffect2.png 
+ [On Hit] 5 de  Bleed.png Sangrado
+	
+
+Skill 2-1
+Base: 101
+Full poise: 146
+Todas las balas: 139
+Full Stack: 184
+  
+
+
+
+ Pierce.png 
+
+	 Coin.png 
+ Coin.png 
+ Coin.png 
+
+  
+
+ SkillAttack.png 
+ Atk Weight ⯀
+[On Use] Gana 9  Offense Level Up.png Ventaja Ofensiva Por cada X de  Poise.png Poise  Poseído (max. 5)
+[On Use] Gana 2 Offense Level Up.png Ventaja Ofensiva por cada bala restante en la recamara (max. 19)
+ CoinEffect1.png 
+ Gasta 1  Ammo.png Munición
+[On Hit] Gain 2  Poise.png Poise
+ CoinEffect2.png 
+Gasta 1  Ammo.png Munición 
+[On Hit] Gain 2  Poise.png Poise
+ CoinEffect3.png 
+ Gasta 1  Ammo.png Munición
+[On Hit] Gain 2  Poise.png Poise
+	
+
+
+
+
+
+Skil 2-2
+Base: 81
+Full poise: 106
+Full bleed: 106
+Sin Balas: 135
+Full Stack: 185
+  
+
+
+
+ Pierce.png 
+ 
+	 Coin.png 
+ Coin.png 
+ Coin.png 
+
+  
+
+ SkillAttack.png 
+  Atk Weight ⯀
+[On Use] Gana 5  Clash Power Up.png Poder de Clash por cada X de  Poise.png Poise  Poseído (max. 5)
+[On Use] Gana 6  Clash Power Up.png Poder de Clash por cada X de  Bleed.png Sangrado en el enemigo. (max. 5)
+[On Use] Gana 3  Clash Power Up.png Poder de Clash por cada bala Faltante en la recamara (max. 19)
+ CoinEffect1.png 
+ [On Hit] 5 de  Bleed.png Sangrado
+ CoinEffect2.png 
+ [On Hit] 5 de  Bleed.png Sangrado
+ CoinEffect3.png 
+ [On Hit] 5 de  Bleed.png Sangrado
+
+
+	
+
+Skill 3-1
+Base: 101
+Full poise: 151
+Todas las balas: 139
+Full Stack: 189
+  
+
+
+
+ Pierce.png 
+
+	 Coin.png 
+ Coin.png 
+ Coin.png 
+
+  
+
+ SkillAttack.png 
+ Atk Weight ⯀
+Utilizable 1 vez por turno
+[On Use] Gana 10  Offense Level Up.png Ventaja Ofensiva por cada 1 de  Poise.png Poise  Poseído (max. 5)
+[On Use] Gana 2 Offense Level Up.png Ventaja Ofensiva por cada bala Faltante en la recamara (max. 19)
+ CoinEffect1.png 
+ Gasta 1  Ammo.png Munición
+[On Hit] 2  Poise.png Poise
+ CoinEffect2.png 
+ Gasta 1  Ammo.png Munición
+[On Hit] 2  Poise.png Poise
+ CoinEffect3.png 
+ Gasta 1  Ammo.png Munición
+[On Hit] 2  Poise.png Poise
+[On Hit] 5 de Offense Level Down.png Desventaja Ofensiva
+	Skill 3-2
+
+
+  
+
+
+
+ Pierce.png 
+
+	 Coin.png 
+ Coin.png 
+ Coin.png 
+
+  
+
+ SkillAttack.png 
+ Atk Weight ⯀
+Utilizable 1 vez por turno
+[On Use] Gana 6  Clash Power Up.png Poder de Clash por cada 1 de  Poise.png Poise  Poseído (max. 5)
+[On Use] Gana 7  Clash Power Up.png Poder de Clash por cada 2 de  Bleed.png Sangrado en el enemigo. (max. 5)
+[On Use] Gana 3  Clash Power Up.png Poder de Clash por cada bala Faltante en la recamara (max. 19)
+ CoinEffect1.png 
+ [On Hit] 5 de  Bleed.png Sangrado
+ CoinEffect2.png 
+ [On Hit] 5 de  Bleed.png Sangrado
+ CoinEffect3.png 
+ [On Hit] 5 de  Bleed.png Sangrado
+[On Hit]  5 de  Defense Level Down.png Desventaja Defensiva
+	
+
+Skill Defensiva
+Ventaja base: 92
+  
+
+ Evade.png 
+
+	 Coin.png 
+
+  
+
+ SkillDefense.png 
+Atk Weight ⯀
+[On Use] Gana 2  Defense Level Up.png Ventaja Defensiva por cada 1 de  Poise.png Poise  Poseído (max. 10)
+[On Evade] Gana 2  Poise.png Poise (2 Veces por turno)
+	
+
+🕯️ "Un Queque? cerca"
+
+
+Katarina
+La Estrella Negra?
+ Coin.png 
+ Coin.png 
+ Coin.png 
+ Coin.png 
+
+ Coin.png 
+ Coin.png 
+ Coin.png 
+
+  
+  
+  
+  
+  
+
+Nivel: 250
+Grado de Fixer: 8
+ID Fixer: 477299569921
+Numero de telefono: +3
+1,60 m
+	Dados:
+8 D20
+1 D4
+	Ventajas: 164
+
+
+
+
+
+
+
+
+
+
+Fuerza: +0     Destreza: +128     Defensa: +1
+
+
+
+
+
+
+
+
+Velocidad: +30     Fortitude:+4     Carisma: +0
+
+
+
+
+
+
+
+
+Inteligencia: +1
+
+
+
+
+
+
+
+
+Determinación: +0
+
+
+
+
+	HP:
+420/420
+
+
+SP:
+0/45
+
+
+Daño Hasta Stagger
+360/360
+
+
+
+
+
+
+	Armas:
+
+
+Prototipo Hana Roto
+( 2/0 Rupture.png )
+
+
+  
+Abraxas  
+( 4/1 Rupture.png )
+
+
+
+
+
+
+
+
+	Efectos de estado:
+
+
+0 Protection.png Protección
+
+
+       
+	Armadura:
+Ropa con Aura
+(Hay un 25% de probabilidad al terminar un combate de conseguir 1 Unjust Enrichment.png Enriquecimiento )
+  
+
+	Puntos para subir: 
+	Fuerza: 1
+
+
+	Destreza: 350
+
+
+                           * 20 de Destreza: Una vez por pelea una acción de destreza escala el doble.
+
+
+40 de Destreza: De forma pasiva al realizar 10 Acciones con destreza gana 1 Repetición de moneda.
+
+
+                           * 60 de Destreza: Una vez cada 2 turnos puede sumar la mitad del bonificador de otra estadística y sumarlo a su tirada de destreza.
+
+
+80 de Destreza: De forma pasiva tus acciones y ataques son insonoras.
+
+
+100 de Destreza: De forma pasiva tus tiradas de destreza al quedar empatado o lejos por 15 ganaran el clash.
+
+
+                           * 120 de Destreza: De forma pasiva cada vez que ataques e impactes gana 2 de Offense Level Up.png Ventaja Ofensiva por el resto del combate. 
+
+
+                              * 160 de Destreza: Una vez por pelea una acción de destreza actuará 3 veces.
+
+
+                              * 180 de Destreza: Una vez por pelea cada 2 acciones/Reacciones de aliados puedes hacer una acción de destreza por ese turno.
+
+
+                              * 200 de Destreza: En combate a partir del 4to turno puedes juntar todas tus ventajas de estadísticas en 1 ataque.
+
+
+
+
+
+
+	Defensa: 5
+	Velocidad: 130
+
+                              * 20 de velocidad: Una vez por combate puedes hacer 1 acción extra.
+
+
+40 de velocidad: De forma pasiva al tirar iniciativa y quedar primero ganas 1 acción, si quedas en los otros puestos ganas 1 reacción.
+
+
+                              * 60 de velocidad: Una vez cada 2 turnos se puede usar esta habilidad para realizar otra acción.
+
+
+                              * 80 de velocidad: De forma pasiva ganas una acción extra.
+
+
+                              * 100 de velocidad: Una vez por combate puedes realizar una acción a lo que el enemigo no puede responder pero esta no tendrá ventaja.
+
+
+                              * 120 de velocidad: Una vez por combate puedes realizar una acción en el momento que se te plazca, incluso si es el turno de ataque enemigo.
+
+
+q
+	Fortitude: 22
+
+
+                              * 20 de Fortitude: Una vez por pelea puedes reducir el daño de un ataque a la mitad.
+
+
+
+
+
+
+	Carisma: 5
+
+
+
+
+	Inteligencia: 6
+
+
+
+
+
+
+	Ciudadano de la Ciudad
+
+
+Instinto: Al entrar en una pelea gana 8 de  Attack Power Up.png Ventaja si se encuentra entra solo gana 2 de  Damage Up.png Daño Adicional
+
+
+No seré alimento de Sweeper: La primera vez que caigas en combate puedes realizar una tirada con un D20, si el resultado es mayor a 12 te levantarás instantáneamente 
+
+
+	Fixer
+
+
+Trabajo Fixer: Al estar haciendo una mision gana 5 de Attack Power Up.png Ventaja, al pelear solo gana otros 10 de Attack Power Up.png Ventaja
+
+
+Respeta mi Grado: Gana 5 de  Attack Power Up.png Ventaja por cada Grado arriba de Grado 9 que Tengas
+
+
+	Oficina Crimson
+
+
+Nacidos de Otra Oficina: Los Fixer Crimson ganan una accion o reaccion extra 
+Efectividad antes que cantidad
+
+
+Reorganización Crimson: Una vez cada 2 turnos los Fixers Crimson pueden gastar una acción para cambiar el orden de sus acciones y reacciones durante el combate
+La mejor elección
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  
+
+
+
+	  
+
+  
+
+	Katarina
+
+
+El Cienpies Amable: Cada vez que se recibe daño se recibe 5 de daño de Sp debido al intenso movimiento dentro de la cabeza de Katarina
+
+
+Mala Costumbre Corporal: Su primera Accion y Reaccion tienen 10 de  Clash Power Down.png Reducción de Clash
+
+
+Idolo de Ceniza: Al caer en combate “Baal” se comerá una cantidad de puntos de una estadística aleatoria hasta que se termine el próximo combate
+
+
+Usuario de Abraxas: No Apto: No se posee la aptitud para usar la habilidad ni la reliquia al máximo, pero al empuñarla gana 5 de Attack Power Up.png Ventaja.
+
+
+
+
+
+
+
+
+	Recuerdo Vago
+
+
+Los Cuatro Tres Trigramas: Al inicio de los turnos se pueden escoger entre 3 trigramas, estos otorgan mejoras dependiendo la forma, los trigramas se recargan luego de que todos son utilizados
+
+
+                              *   Geon de los Tres Trigramas: Al usarse se gana 2 de  Attack Power Up.png Ventaja y 4 de  Clash Power Up.png Poder de Clash
+
+
+                                 *   Gon de los Tres Trigramas: Al usarse se gana 1 de  Protection.png Protección hasta que te impacten un golpe y tomas un 10% menos de daño de Stagger
+
+
+                                    *   Gam de los Tres Trigramas: Al usarse se consigue una moneda extra
+	Aumentos
+
+
+Protesis de Tirador (Calidad Media): Al usar armas de Fuego ganas 45 de Clash Power Up.png Poder de Clash y al 5to tiro el disparo es [Target Fixed]
+
+
+Fibra Muscular (Calidad Media): Gana 300 de HP y STAGGER.
+	Fragmentos Espejos 1/10
+
+
+Adaptabilidad Menor : Al inicio de los turnos se puede volver inmune a recibir daño de un estado de efecto si no supera 15 de potencia
+
+
+	Inventario
+$5,427,000 Ahns
+Pipon 29
+Ticket de Moelleux
+Sidralero Tralagod (98% alcohol)
+
+Caña Dorada (Fake af) (Medio Rota)  
+	Numeros de Telefono
+
+
+James Garry Baxter
++21 7 823 5978
+	Goon Corner
+  
+
+  
+  
+  
+
+  
+
+
+
+	Baal corner
+  
+
+
+  
+
+	
+
+🦡 BQE (Big Queque Eater)
+ i
+Victor Manuel Vicente
+  
+  
+  
+  
+  
+  
+  
+
+ Coin.png 
+ Coin.png 
+ Coin.png 
+ Coin.png 
+ Coin.png 
+ Coin.png 
+
+  
+  
+ 
+          30 cm
+NIVEL DE QUEQUE: 250
+	Dados:
+8 D20
+ 1 D4
+
+
+
+
+
+
+	Ventajas: 199
+
+
+
+
+
+
+
+
+Fuerza: +1
+
+
+
+
+     Destreza: +9    Defensa: +1
+
+
+
+
+
+
+Velocidad: +240/ 180   Fortitude:+10    Carisma: +1
+
+
+
+
+
+
+Inteligencia: +1
+
+
+
+
+
+
+Instinto Animal: +0
+
+
+	HP:
+185/185
+
+
+SP:
+0/45
+
+
+Stagger Thresholds:
+92/92
+
+
+Maná: 152/152
+
+
+
+
+	Armas:
+
+
+Palo Desplegable del “Pulgar”
+( 3/0 Tremor.png )
+( Permite el uso de Munición.)
+
+  
+
+
+
+	Efectos de estado:
+
+
+
+
+	Armadura:
+
+
+Uniforme extrañamente parecido al del Pulgar.
+( Al usar Municion tu arma infringe 2/1 extra de  Tremor.png  )
+  
+
+	Puntos para subir: 
+	Fuerza: 5  
+
+
+	Destreza: 48  
+
+
+                                       * 20 de Destreza: Una vez por pelea una acción de destreza escala el doble.
+                                       * 40 de Destreza: De forma pasiva al realizar 10 Acciones con destreza gana 1 Repetición de moneda.
+
+
+
+
+	Defensa: 5  
+	Velocidad: 500(+40 por prótesis)  
+
+
+                                       * 20 de velocidad: Una vez por combate puedes hacer 1 acción extra.
+
+
+                                       * 40 de velocidad: De forma pasiva al tirar iniciativa y quedar primero ganas 1 acción, si quedas en los otros puestos ganas 1 reacción.
+
+
+                                       * 60 de velocidad: Una vez cada 2 turnos se puede usar esta habilidad para realizar otra acción.
+
+                                       * 80 de velocidad: De forma pasiva ganas una acción extra.
+                                       * 100 de velocidad: Una vez por combate puedes realizar una acción a lo que el enemigo no puede responder pero esta no tendrá ventaja.
+                                       * 120 de velocidad: Una vez por combate puedes realizar una acción en el momento que se te plazca, incluso si es el turno de ataque enemigo.
+                                       * 140 de velocidad: ???
+                                       * 160 de velocidad: De manera pasiva al realizar 6 acciones ganas 1 reacción para el próximo turno.
+                                       * 180 de velocidad: Una vez cada 3 turnos si se falló una reacción se puede usar esta habilidad para volver a tirar ya sea con otra skill o haciendo otra cosa para reaccionar.
+                                       * 200 de velocidad: De forma pasiva ganas una repetición de moneda por cada 100 de velocidad que poseas por el resto del combate. (3 moneda de repe)
+                                       * 450 de velocidad: De forma pasiva se puede utilizar velocidad para roleos de ataque.
+
+
+	Fortitude: 50  
+
+
+                                          * 20 de Fortitude: Una vez por pelea puedes reducir el daño de un ataque a la mitad.
+
+                                          * 40 de Fortitude: Una vez por pelea puedes reducir el daño de un ataque a un cuarto. 
+
+
+	Carisma: 5  
+
+
+
+
+	Inteligencia: 5  
+	Victor
+
+
+Protesis de Renzo (Sin Adaptarse):  Reduce tu tirada de velocidad un 25% / Aumenta tu estadística de Velocidad en 40
+
+
+Instinto De Rata: Cada vez que le infrinjan 25% de vida  como daño muerde a un aliado a elección y le infringe 5 de  Poison.png Veneno y el gana 5 de  Poison.png Veneno
+
+
+Sin bigotes: Posees 0% de capacidad de orientación, nunca sabes en qué distrito zona o habitación estas
+  
+
+
+
+Ratón Mágico: Por ser mágico por cada punto de fortitude gana 3 de vida y 2 de maná
+
+
+“Soy fixer”
+	Sindicalista
+
+
+Ganándose El Sueldo: Al estar haciendo una mision gana 5 de Attack Power Up.png Ventaja, al pelear solo gana 20 de Clash Power Up.png Poder de Clash.
+
+
+Digno de Sindicato: Gana 10 de Clash Power Up.png Poder de Clash por cada enemigo Abatido/Asesinado En el combate
+
+
+Orgoglio Familiare: Cada vez que provoques  Tremor Burst.png Tremor Burst gana 5 de  Attack Power Up.png Ventaja.
+
+
+
+
+
+
+	Miembro del Pulgar
+
+
+Uso Inteligente De Munición: Al pasar 4 turnos genera una  Propellant Ammo.png 
+Bala de Baja Calidad.
+
+
+Iniciador avanzado: Gana 15 de  Attack Power Up.png Ventaja en su primera tirada cada 2 turnos.
+
+
+Munición agresiva: Después de 8 golpes conectados, genera 1 de  Propellant Ammo.png Bala de Baja Calidad.
+
+
+ Propellant Ammo.png 
+Bala de Baja Calidad: 1/999 
+Gana 15 de  Attack Power Up.png Ventaja al usarse 
+	Fixer Grado 8
+
+
+Trabajo Fixer: Al estar haciendo una mision gana 5 de Attack Power Up.png Ventaja, al pelear solo gana otros 10 de Attack Power Up.png Ventaja.
+
+	Magia
+
+
+(5 Mana) Volacion: Al usar esto el usuario es capaz de volar 4 metros por encima del suelo, si se usa en otra persona, duplica el coste de la magia.
+
+
+(15 Mana) Fuercitas: Al usar esto el usuario gana 5 de  Clash Power Up.png Poder de Clash y 1 de  Damage Up.png Daño adicional, si se usa en otra persona, duplica el coste de la magia. 
+
+
+(40 Mana) Nos vimos: Al usar esto el usuario es capaz de teletransportarse a la sede de el Pulgar.
+¿Dónde quedaba…?
+
+
+
+
+
+
+Inventario
+
+
+$1.290.000 Ahns
+5 hojas de Lechuga (2 de hp y 1 de sanida)
+Ticket de Moelleux
+
+
+	                                                   Speed Boy:
+  
+  
+
+	Rata corner
+  
+
+  
+  
+  
+ 
+  
+  
+  
+  
+
+
+
+BILLY Y LA RATA: (CANON)
+  
+	
+
+🖱️ habilidades ratonas
+Skill 1
+  
+
+
+
+
+
+	 Coin.png 
+
+  
+
+ SkillAttack.png 
+ Atk Weight ⯀
+[On Use] Ganá +5 de Clash Power Up.png Poder de Clash por cada instancias de  Tremor.png Tremor en el enemigo. (Max.5)
+[On Use] Ganá +5 de Offense Level Up.png Ventaja ofensiva por cada 5 de maná consumido en el combate. (Máx.3) (15 de maná consumido)
+ CoinEffect1.png 
+ [On Hit] Infringe 3 de  Tremor.png Tremor
+
+
+	Skill 2
+
+
+
+
+  
+
+
+
+	 Coin.png 
+ Coin.png 
+
+  
+
+ SkillAttack.png 
+ Atk Weight ⯀
+[On Use] Ganá +5 de Clash Power Up.png Poder de Clash por cada instancias de  Tremor.png Tremor en el enemigo. (Max.6)
+[On Use] Ganá +5 de Offense Level Up.png Ventaja ofensiva por cada 10 de maná consumido en el combate. (Max.4) (40 de maná consumido)
+ CoinEffect1.png 
+ [On Hit] Infringe 3 de  Tremor.png Tremor
+ CoinEffect2.png 
+ [On Hit] Infringe 3 de  Tremor.png Tremor
+	Skill 3
+
+
+  
+
+
+
+	 Coin.png 
+ Coin.png 
+ Coin.png 
+
+  
+   
+ SkillAttack.png 
+ Atk Weight ⯀
+Utilizable 1 vez por turno
+[On Use] Ganá +5 de Clash Power Up.png Poder de Clash por cada instancias de  Tremor.png Tremor en el enemigo. (Max.6) 30
+[On Use] Ganá +5 de Offense Level Up.png Ventaja ofensiva por cada 15 de maná consumido en el combate. (Max.5) (75 de maná consumido) 20
+ CoinEffect1.png 
+ [On Hit] Infringe 3 de  Tremor.png Tremor 
+ CoinEffect2.png 
+ [On Hit] Infringe 3 de  Tremor.png Tremor
+ CoinEffect3.png 
+ [On Hit] Infringe  Tremor Burst.png Tremor Burst.
+  	Defensa
+  
+
+ Guard.png 
+
+	  
+
+  
+
+ SkillDefense.png 
+Atk Weight ⯀
+ Clashable Guard.png 
+Clashable Guard
+[On Use] Ganá +5 de Defense Level Up.png Ventaja Defensiva por cada instancias de  Tremor.png Tremor en el enemigo. (Max.4)
+[On Use] Ganá +5 de Defense Level Up.png Ventaja Defensiva por cada 10 de maná consumido en el combate. (Max.4)
+	
+
+👺 Enemigos
+Turno: 2
+Ana 12 // Katarina 177
+Acciones totales: 12/16
+Reacciones totales: 16/16
+GANAMOS SP DE A 6
+
+
+Jia Jia 118/455 // 0/227
+4/4 // 3/3
+/1 Burn.png Quemadura
+🥥
+  
+Thanos 1/387  // 193/193  The Prescript's Target.png  
+4/4 // 4/4
+0 + 0 por poise Clash Power Up.png Poder de Clash   // 2/1  Poise.png Poise // 3 Grace of the Prescript.png Gracia del precepto
+2/1 Burn.png Quemadura
+
+
+  
+Victor Manuel Vicente (muelto)    45/185  // 92/92 // 2/152 //  8/8 // 7/7    Golpes conectados: 0/8 ventaja normal: 21
+Efectos de estado:  50 Poder de Clash (fuercitas) //   Damage Up.png 1 Daño Adicional  //  Clash Power Up.png    Ventaja (sindicato) //  Clash Power Up.png   Poder de Clash (High Morale) // 
+
+
+  
+  
+Cain    
+810/810 // 555/555 //
+4/4 // 3/3 // 3 movimientos 
+Efectos de estado:  15 Attack Power Up.png Ventaja //   Offense Level Up.png Ventaja Ofensiva // 0 Defense Level Up.png Ventaja Defensiva // // 4 veneno
+15/19 balas en la recamara
+0 acciones hechas este turno.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+STAGGER
+
+
+ Power Up.png 
+Aumento /  Power Down.png Reducción
+ Clash Power Up.png 
+Poder de Clash /  Clash Power Down.png Reducción de Clash
+ Attack Power Up.png 
+Ventaja /  Attack Power Down.png Desventaja
+ Defense Level Up.png 
+Ventaja Defensiva /  Defense Level Down.png Desventaja Defensiva
+ Offense Level Up.png 
+Ventaja Ofensiva /  Offense Level Down.png Desventaja Ofensiva
+ Protection.png 
+Protección /  Fragile.png Fragilidad
+ Damage Up.png 
+Daño Adicional /  Damage Down.png Reducción de Daño
+
+
+
+
+0/0 Burn.png Quemadura // 0/0 Bleed.png Sangrado // 0/0 Tremor.png Tremor// 0/0 Rupture.png Ruptura//
+ The Prescript's Target.png 
+El Objetivo del Precepto // 0/0 Sinking.png  Sinking // 0/0 Poise.png Poise // Decay Ampule.png Ampolla de K Corp //  
+0  Erosión // 0/3 Entangled Curse Talisman.png Talismán //  Haste.png Haste
+
+
+
+
+
+
+
+
+🕳️ QueQuerina
+
+
+HP: 120/120
+2/3   +1     1/2
+Escudo: 0
+Sanidad: 18/45
+Stagger: 56/56
+Efectos de Estados: 
+1  Protection.png Protección
+4 Veneno
+12  Clash Power Up.png Poder de Clash 
+13  Attack Power Up.png Ventaja 
+2  Offense Level Up.png Ventaja Ofensiva
+10  Clash Power Down.png Reducción de Clash
+0  Attack Power Down.png Desventaja
+0  Decay Ampule.png Ampolla de K Corp 
+0  Cold.png Frío
+Ventajas
+Ventaja Base (Principio): 115
+Ventaja Actual: 115
+
+
+Efectos de Katarina:
+
+
+Prototipo Hana Roto  
+          ( 2/0 Rupture.png )
+
+
+Trigramas
+
+
+                                             *   Geon de los Tres Trigramas: Al usarse se gana 2 de  Attack Power Up.png Ventaja y 4 de  Clash Power Up.png Poder de Clash
+
+
+                                                *   Gon de los Tres Trigramas: Al usarse se gana 1 de  Protection.png Protección hasta que te impacten un golpe y tomas un 10% menos de daño de Stagger
+
+
+                                                   *   Gam de los Tres Trigramas: Al usarse se consigue una moneda extra
+
+
+Skills
+
+
+Skill 1
+Skill 1
+  
+ 
+	 Coin.png 
+
+  
+
+ SkillAttack.png 
+ 
+Atk Weight ⯀
+[On Use] Gana 15 de Poder de Clash si esta habilidad es utilizada con un Trigrama.
+[On Use] Gana 5 de Ventaja si el enemigo tiene ruptura. (Max.3)
+ CoinEffect1.png 
+ [On Hit] 2 Rupture
+Ventaja que esta habilidad Suma (Todas las condiciones cumplidas):
++5 (+10 de Poder de Clash)
+Ventaja Total con Armas & Estadistica:
+	Skill 2
+Skill 2
+  
+ 
+	 Coin.png 
+ Coin.png 
+
+  
+
+ SkillAttack.png 
+ 
+Atk Weight ⯀
+[First Action] Gana 10 de Ventaja si esta habilidad es utilizada con un Trigrama 
+[On Use] Gana 10 de Poder de Clash si esta habilidad es utilizada con un Trigrama
+ CoinEffect1.png 
+ [On Hit] 2 Rupture
+ CoinEffect1.png 
+ [On Hit] 2 Rupture
+Ventaja que esta habilidad Suma (Todas las condiciones cumplidas):
++5 (+10 de Poder de Clash)
+Ventaja Total con Armas & Estadistica:
+	Skill 3
+Skill 3
+Ventaja que esta habilidad Suma (Todas las condiciones cumplidas):
++5 (+10 de Poder de Clash)
+Ventaja Total con Armas & Estadistica:
+  
+ 
+	 Coin.png 
+ Coin.png 
+
+  
+
+ SkillAttack.png 
+ 
+Atk Weight ⯀
+
+
+Al usar un Trigrama tira una variación de esta Skill dependiendo del Trigrama utilizado
+                                                      * Formación de Trigrama: Geon
+                                                      * Formación de Trigrama: Gam
+                                                      * Formación de Trigrama: Gon
+                                                      * Formación de Trigrama Ri
+Al haber utilizado las 4 variaciones, podrás utilizar Verdadera Formación de Trigramas
+
+
+ CoinEffect1.png 
+ [On Hit] 2 Rupture
+ CoinEffect1.png 
+ [On Hit] 2 Rupture
+
+
+	Skill 3-1
+  
+ 
+	 Coin.png 
+ Coin.png 
+
+  
+
+ SkillAttack.png 
+ 
+Atk Weight ⯀
+Solo utilizable con Trigrama Geon
+
+
+[On Use] Duplica la cantidad de Poder de Clash que te otorga el trigrama
+[On Use] Gana 5 de Poder de Clash por cada Trigrama Geon utilizado en el combate (Max 20)
+[On Use] Gana 10 de Ventaja por cada 5 Trigrama Geon utilizado en el combate (Max 20)
+ CoinEffect1.png 
+ [On Hit] 2 Rupture
+ CoinEffect1.png 
+ [On Hit] 2 Rupture
+Ventaja que esta habilidad Suma (Todas las condiciones cumplidas):
++5 (+10 de Poder de Clash)
+Ventaja Total con Armas & Estadistica:
+
+
+
+	Skill 3-2
+  
+ 
+	 Coin.png 
+ Coin.png 
+ Coin.png 
+ Coin.png 
+
+  
+
+ SkillAttack.png 
+ 
+Atk Weight ⯀
+Solo utilizable con Trigrama Gam
+
+
+[On Use] Gana 1 de Haste por cada 2 veces que se haya utilizado el Trigrama Gam en el combate (Max 3)
+[On Use] Gana 10 de Poder de Clash si tiene
+[On Use] Gana 10 de Ventaja por cada instancia de  Haste (Max 3)
+ CoinEffect1.png 
+ [On Hit] 2 Rupture
+ CoinEffect1.png 
+ [On Hit] 2 Rupture
+ CoinEffect1.png 
+ [On Hit] 2 Rupture
+ CoinEffect1.png 
+ [On Hit] 2 Rupture
+Ventaja que esta habilidad Suma (Todas las condiciones cumplidas):
++5 (+10 de Poder de Clash)
+Ventaja Total con Armas & Estadistica:
+
+
+
+	Skill 3-3
+  
+ 
+	 Coin.png 
+ Coin.png 
+
+  
+
+ SkillAttack.png 
+ 
+Atk Weight ⯀
+Solo utilizable con Trigrama Gon
+[On Use] Gana 10 de Poder de Clash por cada instancia de Protección 
+[On Use] Se otorga a ella y al aliado con menos vida 50% del daño realizado como escudo. Por cada instancia de Protección por encima de la primera  aumenta un 10%. (Max 50%)
+ CoinEffect1.png 
+ [On Hit] 2 Rupture
+ CoinEffect1.png 
+ [On Hit] 2 Rupture
+Ventaja que esta habilidad Suma (Todas las condiciones cumplidas):
++5 (+10 de Poder de Clash)
+Ventaja Total con Armas & Estadistica:
+	
+
+😱 Peruanos
+
+
+
+
+
+
+
+
+
+
+
+
+👀 Efectos de Estado
+ Bleed.png 
+Sangrado: Al realizar una acción recibe daño igual a la cantidad de instancias en el usuario.
+
+
+ Presence of a Second Kindred.png 
+Hemorragia: Al realizar una acción recibe daño igual a la cantidad de sangrado en el usuario, luego el daño hecho es eliminado de la vida máxima del enemigo mientras posea sangrado.
+
+
+ Burn.png 
+Quemadura: Al final del turno recibe daño igual a la cantidad de instancias del mismo, al recibir el daño la potencia de quemadura se reduce por la mitad.
+
+
+ Dark Flame.png 
+Llama oscura: Al final del turno recibe daño igual al doble de la cantidad de instancias 
+del mismo, al recibir el daño la potencia de llama oscura se reduce un tercio (redondeado hacia abajo).
+
+
+ Cold.png 
+Frío: 0/5
+Gana 1 de  Bind.png Atadura por stack
+Al ganar 3 stacks, toma 20 de daño y resta 20 de Sp 
+Al tener 5 stacks, gana   Congelado este turno.
+Este efecto se reducen en 1 por turno
+
+
+  
+Congelado: No puede actuar de ninguna forma este turno.
+Se puede extinguir prematuramente usando ataques o habilidades que infrinjan  Burn.png Quemadura pero recibes el doble de daño del ataque
+
+
+ Rupture.png 
+Ruptura: Al ser golpeado recibes daño igual a la cantidad de potencia total que tengas y baja  el contador en 1.
+
+
+ Dimensional Rift.png 
+Grieta Dimensional: Al final del turno gana Rupture y Contador de Rupture igual a la cantidad de este efecto
+
+
+ Deathrite -Haste-.png 
+Deathrite【Haste】0/3
+Al tener este efecto cuando te golpeen recibirás tu daño de  Rupture.png Ruptura y pierdes 1 carga de este efecto.
+
+
+ Deathrite -Fissure-.png 
+Deathrite【Fissure】0/3
+Al tener este efecto cuando te golpeen recibirás tu daño de  Rupture.png Ruptura y ganaras 3 de   Bind.png Atadura igual a la cantidad de Deathrite -Fissure-.png Deathrite【Fissure】Que tengas, se pierden todas las cargas al ser golpeado
+
+
+ Strider -Mao-.png 
+Strider【Mao】: 0/3
+Cada que golpees ganarás 3 de Haste mientras poseas este estado, pierdes 1 cada 2 golpes que te metan, pierdes 2 al finalizar el turno
+
+
+ Deathrite -Halt-.png 
+Deathrite【Halt】0/3
+Al tener este efecto cuando tengas 3 de atadura y te golpeen recibirá 1 de atadura cada 10 de ruptura explotada.
+
+
+ Deathrite -Wane-.png 
+Deathrite【Wane】0/10
+Infringe 1 carga de este efecto al dañar a un enemigo con 10 de rupture
+Explota 1 carga de este efecto al dañar a un enemigo 2 veces en el mismo punto con 10 de ruptura
+Activa 1 Deathrite aleatorio en el enemigo
+Activa Rupture 1 vez pero el daño es el 50%
+No se puede ganar y perder este efecto a la vez
+
+
+ Entangled Curse Talisman.png 
+Talismán: Al tener 3 instancias gana 10 de potencia y 2 de contador de  Rupture.png Ruptura
+
+
+ Twisted Curse Talisman.png 
+Conjunto de Talismanes: 0/30 bajo chequeo médico
+Infringe 1 de este efecto por cada 1 vez que se infringió 3 de talismán
+Expira luego de 4 turnos
+A 10 stacks duplica el rupture metido con el arma
+A 20 stacks duplica el daño recibido con rupture
+a 30 stacks duplica los efectos metidos con Talismanes 
+
+
+ Omen Talisman.png 
+Omen Talismán 0/25   bajo chequeo médico
+Al tener 10 cargas el enemigo recibe +1 de contador de rupture de todas las fuentes
+Al tener 15 cargas de este efecto el enemigo gana el doble de contador de Rupture de todas las fuentes que sean “Talismán”
+Al tener las 25 explota todas las cargas y intercambia la potencia y el contador de Rupture en un 50% (Ej: Rupture 10/6 /// 6/5)
+
+
+ Poise.png 
+Poise Gana 10% de probabilidad de crítico (x2.0 daño) por cada instancia y pierde 1 de contador al golpear, cada 10 de potencia extra luego de los 100% ganas 20 de ventaja
+Al final del turno reduce el contador en 1 si se tiene más de 1 de count
+
+
+ Sinking.png 
+Sinking: Al ser golpeado pierde ventaja igual a la cantidad de sinking puesta para el próximo clash
+ 
+  
+Hundimiento: Cada acumulación de Hundimiento reduce la Ventaja final de tus tiradas en –15 
+Por cada 5 acumulaciones, pierdes 1 acción el siguiente turno.
+Al llegar a 15 acumulaciones:
+Tu siguiente clash pierde automáticamente.
+El Hundimiento se reduce a la mitad al final de tu turno.
+
+
+ Tremor.png 
+Tremor: Al ser golpeado con  Tremor Burst.png Tremor Burst sube el Stagger Threshold igual a la potencia que tengas y consume 1 de contador por cada vez que  Tremor Burst.png Tremor Burst hizo efecto. Al final del turno reduce el contador en 1 si se tiene más de 1 de count
+
+
+ Tremor - Scorch.png 
+Tremor - Scorch: “Tremor Único”
+Al producirse un  Tremor Burst.png Tremor Burst recibe daño igual a la mitad de la potencia de  Tremor.png Tremor y la potencia de  Burn.png Quemadura y luego se pierde 1 de contador de  Burn.png Quemadura
+Al ser golpeado con  Tremor Burst.png Tremor Burst sube el Stagger Threshold igual a la potencia que tengas y consume 1 de contador
+Al final del turno reduce el contador en 1 si se tiene más de 1 de count
+
+
+ Tremor - Decay.png 
+Tremor - Decay: “Tremor Único”
+Infringe 1 de  Defense Level Down.png Desventaja Defensiva por cada 1 de potencia de  Tremor - Decay.png Tremor - Decay
+Infringe 1 de  Fragile.png Fragilidad por cada 20 cargas de  Tremor - Decay.png Tremor - Decay estalladas
+Al ser golpeado con  Tremor Burst.png Tremor Burst sube el Stagger Threshold igual a la potencia que tengas y consume 1 de contador
+Al final del turno reduce el contador en 1 si se tiene más de 1 de count
+
+
+  
+Tremor - Hemorrhage: “Tremor Único”
+Al producirse un  Tremor Burst.png Tremor Burst recibe daño igual a la mitad de la potencia de  Tremor.png Tremor y la potencia de  Bleed.png Sangrado y luego se pierde 1 de contador de  Bleed.png Sangrado
+Al ser golpeado con  Tremor Burst.png Tremor Burst sube el Stagger Threshold igual a la potencia que tengas y consume 1 de contador
+Al final del turno reduce el contador en 1 si se tiene más de 1 de count
+
+
+ Tremor - Reverb.png 
+Tremor - Reverb: “Tremor Único”
+Al producirse un  Tremor Burst.png Tremor Burst recibe daño igual la potencia de  Tremor.png Tremor 
+Al ser golpeado con  Tremor Burst.png Tremor Burst sube el Stagger Threshold igual a la potencia que tengas y consume 1 de contador
+Al final del turno reduce el contador en 1 si se tiene más de 1 de count
+
+
+  
+Tremor-Distribución: “Tremor Único”
+Al final del turno gana 5 Offense Level Up.png Ventaja ofensiva igual a la suma de el contador de  Tremor.png Tremor y a la cantidad de aliados vivos
+Al ser golpeado con  Tremor Burst.png Tremor Burst sube el Stagger Threshold igual a la potencia que tengas y consume 1 de contador
+Al final del turno reduce el contador en 1 si se tiene más de 1 de count
+
+
+  
+Oscuridad: La persona afectada por este efecto no puede ganar ventaja de ningún tipo por ese turno.
+
+
+ SinIcon.png 
+ Horca: Los afectados por este estado rolean la mitad todas sus tiradas por este turno.
+
+
+ Poison.png 
+Veneno: Al finalizar el turno recibe daño igual a la cantidad de este efecto luego reduce este efecto a la mitad
+
+
+ Strategic R&R Mode.png 
+Movimiento Preciso: 0/4 
+Ganas este efecto al esquivar 1 veces
+Cuando esquives puedes utilizar este efecto para tener 25 de ventaja extra por cada 1 de este efecto
+Al tener los 4 puedes utilizarlos para ganar 150 de ventaja extra de esquive y un esquive el cual no pueden offsetear
+
+
+ EnchantedIcon.png 
+ Encantado: Los afectados por este estado están obligados a atacar sin ventaja, pierden todas las reacciones y solo les queda 1 acción con un d4, si el encantado es golpeado y tumbado al piso, se levantará, recuperara la vida igual a la mitad que tenía antes de estar encantado.
+
+
+ Ready to Fire.png 
+Listo Para Disparar: El efecto solo se activa en el primer golpe
+Si alguno de tus compañeros ataca gana 2 acciones adicionales 
+Si el que infringe el efecto es el que ataca infringe un crítico asegurado y gana 1 bala
+
+
+ Unjust Enrichment.png 
+Enriquecimiento: Este efecto solo puede ser usado con armas a rango.
+Puedes lanzar estas monedas y dispararles rápidamente para que vayan directamente al objetivo que apuntas, por cada rebote que haga tu bala está ganará 50 de ventaja. (Max 3)
+Puedes lanzar esta moneda hacia una bala enemiga para rebotarla directamente hacia el.
+Por cada moneda sobrante al final de la pelea recibe 10 millones por cada carga.
+
+
+ Paralyze.png 
+Parálisis: Al realizar una acción el rol se ve reducido a la mitad luego pierde 1 instancia de este efecto
+
+
+ Clash Power Up.png 
+Poder de Clash: Incrementa tu tirada en un clash. Al ganar un clash ofensivo solo realiza daño igual a tu tirada original.
+
+
+ Clash Power Down.png 
+Reducción de Clash: Reduce tu tirada en un clash. Al ganar un clash ofensivo solo realiza daño igual a tu tirada original.
+
+
+ Power Up.png 
+Aumento: Aumenta la tirada de todos tus dados igual a la cantidad de este efecto
+
+
+ Power Down.png 
+Reducción: Reduce la tirada de todos tus dados igual a la cantidad de este efecto
+
+
+ Attack Power Up.png 
+Ventaja: Al realizar una acción el rol se ve aumentado igual a la instancia en el usuario.
+
+
+ Attack Power Down.png 
+Desventaja: Al realizar una acción el rol se ve reducido igual a la instancia en el usuario.
+
+
+ Defense Level Up.png 
+Ventaja Defensiva: Al realizar una acción defensiva, el rol se ve aumentado igual a la instancia en el usuario.
+
+
+ Defense Level Down.png 
+Desventaja Defensiva: Al realizar una acción defensiva, el rol se ve reducido igual a la instancia en el usuario.
+
+
+ Offense Level Up.png 
+Ventaja Ofensiva: Al realizar una acción ofensiva, el rol se ve aumentado igual a la instancia en el usuario.
+
+
+ Offense Level Down.png 
+Desventaja Ofensiva: Al realizar una acción ofensiva, el rol se ve reducido igual a la instancia en el usuario.
+
+
+ Damage Up.png 
+Daño Adicional: Haz un 10% de daño extra por cada carga de este efecto (Max 10)
+Al finalizar el turno pierde todas las cargas
+
+
+ Damage Down.png 
+Reducción de Daño: Haz un 10% menos de daño por cada carga de este efecto (Max 10)
+Al finalizar el turno pierde todas las cargas
+
+
+ Aggro.png 
+Agravio: Los enemigos gastaran sus acciones de ataque igual a la cantidad Agravio que poseas, el que posea más agravio del combate será targeteado primero.
+
+
+ Haste.png 
+Haste: Cada punto de Haste dará +1 de ventaja en tiradas de velocidad
+cada 3 puntos en haste sube 1 a tu tirada de iniciativa permitiendote ponerte primero para atacar en los turnos
+con 15 puedes intercambiarlo por una Acción o Reacción
+
+
+ Bind.png 
+Atadura: Pierdes reacciones igual a la cantidad de instancias.
+
+
+ Immobilized.png 
+Inmovilizado: Pierdes todas las acciones mientras tengas este efecto.
+
+
+ Protection.png 
+Protección: Recibes 10% de daño reducido por cada instancia (Max 10)
+Al finalizar el turno pierde todas las cargas
+
+
+ Fragile.png 
+Fragilidad: Recibes 10% de daño aumentado por cada instancia (Max 10)
+Al finalizar el turno pierde todas las cargas
+
+
+  
+Mimetismo Gana +1 de Ventaja e infringe +1 de bleed por cada Instancia.
+
+
+  
+Llanto: Efecto de estado consumido por habilidades de “E.G.O. MoonLight”
+
+
+ Deep Tears.png 
+Lágrima Profunda: Efecto de estado consumido por habilidades de “E.G.O. Escudo forjado con lágrimas”
+
+
+ Protecting Sword.png 
+Escudo Lloroso: Gana  Protection.png Protección y contador de  Sinking.png Sinking igual a la cantidad de instancias
+
+
+ Penitence.png 
+Penitencia: 0/20
+Al inicio del turno cura 1 de Sp por cada 1 carga de este efecto que tengas
+Da 1% de tu vida máxima como escudo por cada carga de este efecto que tengas al inicio del turno.
+
+
+ Red Eyes.png 
+Red Eyes: 0/20
+Infringe 10 de bleed extra por cada 1 carga de este efecto que tengas.
+Al tener +5 Gana 20 de ventaja.
+Al tener +15 Infringe 2 de  Bind.png Atadura cada ataque.
+Al tener +20 gana 50 de ventaja.
+
+
+ Assist Defense (Zilu).png 
+Defensa Asistida: Puedes gastar una carga para defender a un aliado que no puede defenderse, No gasta reacción.
+
+
+ Defensive Stance.png 
+Posición Defensiva: 
+Al obtener este efecto se obtiene la tirada más baja de iniciativa 
+Gana +10 de  Defense Level Up.png Ventaja Defensiva por cada 1 de iniciativa perdido
+Gana 1 de Aggro.png Agravio por cada 2 de iniciativa perdido
+Luego de bloquear 4 ataques infringe  Tremor Burst.png Tremor Burst en el próximo bloqueo
+El efectos se pierde al final del turno
+
+
+  
+ Queques de ovación: Efecto de estado consumido para generar ventaja o ganar Acciones/Reacciones.
+
+
+  
+Erosión:  Cada que se golpee a alguien con este efecto recibe daño igual a la cantidad de este efecto, al finalizar el turno recibe daño igual a la cantidad de este efecto y reduce 1 carga de este efecto.
+
+
+  
+Erosión Ensangrentada: Cada que se golpee a alguien recibe daño igual a este efecto y duplica el Sangrado por cada 1 de este efecto y suma 1 de contador por cada 1 de este efecto, al finalizar el turno pierde la mitad
+
+
+ Discard.png 
+Descarte: 0/40
+Al descartar Habilidades gana 1 carga y gana 1 carga extra por cada turno que tarde esa habilidad en restablecerse (Si la habilidad tiene muchos turnos pero es usable turno 1 solo se ganará 1 carga, la segunda vez que se descarte gana las cargas extras) Si se descarta una habilidad de “Una vez por pelea” gana 10 cargas.
+Puede gastar 3 cargas para reducir el cooldown de una habilidad en 1 turno.
+Puede gastar 30 cargas para reducir el cooldown de “Una vez por pelea” y poder usarla otra vez.
+Puedes activar cualquier habilidad 1 vez por turno.
+
+
+ Insight.png 
+Conocimiento: 0/3
+ Gana este efecto igual al valor de la skill descartada
+
+
+  
+Erudición: 0/6
+Cuando descartes Skills gana Erudición igual al rango de la skill descartada
+al tener +2 tu próximo ataque te pone escudo igual a un 60% del daño hecho de tu anterior moneda por el resto del turno
+Al tener +4 suma + 1 de  Insight.png Conocimiento a tu próxima skill
+al tener +6 gana 50 de  Attack Power Up.png Ventaja
+
+
+ Binding Technique.png 
+Encadenado: La persona afectada por este efecto es incapaz de realizar acciones pero es incapaz de recibir daño
+
+
+La persona afectada por este efecto puede ser usada como arma por quien lleva la cadena, estos ataques poseen +2 de Atk Weight
+
+
+Si se auto infringe este efecto recibes un 90% menos de daño pero no puedes usar la mitad de tus movimientos
+
+
+Cuando se libera de este estado la persona pierde 4 reacciones y 4 acciones
+
+
+ Severing Slash 切斬.png 
+Espada Demoledor [切斬] 0/1
+Tus ataques con espada gastan una reacción extra al objetivo
+El efecto termina al finalizar el turno o si alguien más posee este estado
+
+
+ Bloomed Rose.png 
+Entintado: Al tener este efecto se pierde un bloque de pasivas completo y se pierde toda la ventaja base hasta el fin del turno 
+
+
+  
+Corta Curas: El Afectado por este efecto no podrá curarse de ninguna manera
+
+
+ Prescript (Device).png 
+ Precepto: [Dispositivo]: Al inicio de los turnos suena y manda un precepto, al cumplirlo se gana  Clash Power Up.png Poder de Clash
+?? ??? ???  Prescript (Device).png Precepto: [Dispositivo] I /  Prescript (Device).png Precepto: [Dispositivo] II /  Prescript (Device).png Precepto: [Dispositivo]] III /  Prescript (Device).png Precepto: [Dispositivo] IV  
+
+
+ Karmic Consequence.png 
+Consecuencia Kármica: 0/100 
+Gana -5 de  Defense Level Up.png Ventaja Defensiva por cada 5 instancias del efecto.
+Gana 1 de  Fragile.png Fragilidad por cada 10 instancias del efecto.
+
+
+ The Prescript's Target.png 
+El Objetivo del Precepto: Los miembros del Index Ganan  Clash Power Up.png Poder de Clash y infringen un 10% extra de daño contra los objetivos con este efecto
+
+
+ Grace of the Prescript.png 
+Gracia del precepto: 0/9
+Gana +5 de  Offense Level Up.png Ventaja ofensiva por cada 3 instancias del efecto
+
+
+ Appetite.png 
+Apetito: 0/50
+                                                      * Gana +5 ventaja por cada carga
+                                                      * Al tener 15 Curate un 25% del daño que hagas
+                                                      * Al tener 30 Curate un 50% del daño que hagas
+                                                      * Al tener 50 Curate un 100% del daño que hagas
+
+
+  
+La Gloriosa Salchicha de Don Eladio: Duplica la vida / Da 30 Sp
+
+
+ Decay Ampule.png 
+Ampolla de K Corp: Cuando vayas a morir pierde 1 de este efecto y recupera un 100% de vida.
+
+
+ Overwatch Assignment.png 
+Ahí vuelvo Amigos: Usa este efecto al final del turno
+Reduce tu iniciativa a 0 y vas para atrás en el campo de batalla
+                                                      * Te recuperas del Stagger
+                                                      * El enemigo debe gastar 2 acciones para alcanzarte
+                                                      * Reduce Tus Acciones y Reacciones a la mitad (Redondeando para abajo)
+                                                      * Convierte tus Acciones y Reacciones en Movimientos
+                                                      * No puede Reaccionar para defender a aliados 
+                                                      * Consigues 5 de  Ammo.png Munición
+                                                      * Solo puedes atacar a rango
+Cuando sea tu turno en iniciativa vuelves al campo con la Ammo.png Munición sobrante
+
+
+
+
+🛡️ Habilidades Defensivas
+Counter Clasheable
+Tipo de Ventaja:  Defense Level Up.png Ventaja Defensiva
+Utilidad: Al ganar un clash, puedes realizar una tirada de daño, esta se realiza sin ventaja y mete los efectos de la habilidad. Si se pierde el clash se recibe el daño de la tirada enemiga al completo
+
+
+Guardia Clasheable
+Tipo de Ventaja:  Defense Level Up.png Ventaja Defensiva
+Utilidad: Al ganar un clash defiéndete del ataque por completo y mete los efectos de la habilidad, al perder un clash reduce el daño en relación a la tirada.
+
+
+Guardia
+Tipo de Ventaja:  Defense Level Up.png Ventaja Defensiva
+Utilidad: Antes de ser golpeada utiliza la guardia para ponerte escudo en relación a la tirada.
+
+
+Counter
+Tipo de Ventaja:  Offense Level Up.png Ventaja Ofensiva
+Utilidad: Después de ser golpeado, ejecuta una tirada de ataque.
+
+
+Evasión💩
+Tipo de ventaja:  Defense Level Up.png Ventaja Defensiva (solo con velocidad)
+Utilidad: Si ganas el clash no recibirás daño y la siguiente tirada que se dirija a ti debe superar tu tirada anterior.
+
+
+
+
+
+
+
+
+
+
+
+
+👽 Habilidades de Estadisticas
+Fuerza
+
+
+20 de Fuerza: Una vez por pelea, incrementa tu tirada un 15%
+
+
+40 de fuerza: De forma pasiva cada 2 turnos si ya no tienes más Reacciones puedes tirar una guardia con tu ventaja de fuerza 
+
+
+60 de fuerza: En combate a partir del 4to turnos puedes elegir un ataque a elección para que haga el doble de daño.
+
+
+80 de fuerza: En combate a partir del 3er turno un ataque a tu elección le pondra 3 de  Fragile.png Fragilidad a un enemigo
+
+
+100 de fuerza: En Combate a partir del 3er turno si el rival ataca con fuerza suma la mitad de su ventaja a tu tirada
+
+
+120 de fuerza: De forma pasiva cada vez que golpees a alguien con fuerza suma +10 ventaja para el próximo turno, al inicio del segundo turno tu primera acción se realiza con toda la ventaja stackeada y luego reinicia esta pasiva
+
+
+140 de fuerza: ???
+
+
+ 160 de Fuerza: De forma pasiva al inicio del segundo turno y los turnos siguientes suma +15 puntos a esta estadística hasta el final del combate
+
+
+180 de Fuerza: Una vez por pelea puedes usar un cuarto del roleo enemigo como ventaja para una acción 
+
+
+200 de Fuerza: De forma pasiva al inicio de todos los turnos gana 1 Reacción adicional, ésta duplica la ventaja de fuerza al defenderte o defender
+
+
+Destreza
+
+
+20 de Destreza: Una vez por pelea una acción de destreza escala el doble.
+
+
+40 de Destreza: De forma pasiva al realizar 10 Acciones con destreza gana 1 Repetición de moneda.
+
+
+60 de Destreza: Una vez cada 2 turnos puede sumar la mitad del bonificador de otra estadística y sumarlo a su tirada de destreza.
+
+
+80 de Destreza: De forma pasiva tus acciones y ataques son insonoras.
+
+
+100 de Destreza: De forma pasiva tus tiradas de destreza al quedar empatado o lejos por 15 ganaran el clash.
+
+
+120 de Destreza: De forma pasiva cada vez que ataques e impactes gana 2 de Offense Level Up.png Ventaja Ofensiva por el resto del combate.
+
+
+140 de Destreza: ???
+
+
+160 de Destreza: Una vez por pelea una acción de destreza actuará 3 veces.
+
+
+180 de Destreza: Una vez por pelea cada 2 acciones/Reacciones de aliados puedes hacer una acción de destreza por ese turno.
+
+
+200 de Destreza: En combate a partir del 4to turno puedes juntar todas tus ventajas de estadísticas en 1 ataque.
+Defensa
+
+
+20 de Defensa: Una vez por pelea puede hacer una acción extra para defenderse o defender un aliado. 
+
+
+40 de Defensa: Una vez por pelea puedes intercambiar el daño que vaya a recibir un aliado y tirar una reacción defensiva al instante.
+
+
+60 de Defensa: Una vez cada 4 turnos puede duplicar la ventaja en tirada de defensa, y luego queda incapacitado por 1 turno.
+
+
+80 de Defensa: En combate a partir del 2ndo turno, si uno de tus aliados recibe un golpe de más del 25% de vida puedes realizar una reacción extra para defenderte o defenderlo.
+
+
+100 de Defensa: Una vez por combate si un aliado va a recibir un ataque letal puedes llevar el ataque hacia ti y recibir un 25% menos de daño de ese ataque.
+
+
+120 de Defensa: De forma pasiva cuando tus aliados caigan en combate y se levantan, se levantarán con 100 de vida extra.
+
+
+140 de Defensa: ???
+
+
+160 de Defensa: De forma pasiva al cubrir un ataque con defensa, ganas +15 de ventaja hasta finalizar el turno, al inicio del siguiente turno se reinicia.
+
+
+180 de Defensa: Una vez por pelea tu estadística de Defensa se vuelve tu ventaja para cubrir 1 ataque.
+
+
+200 de defensa: Una vez por pelea puedes redirigir todos los ataques de 1 turno hacia ti, Todo el daño luego de tirar esa habilidad es reducido un 50% y puedes usar un bloqueo para cada ataque.
+
+
+Velocidad
+
+
+20 de velocidad: Una vez por combate puedes hacer 1 acción extra.
+
+
+40 de velocidad: De forma pasiva al tirar iniciativa y quedar primero ganas 1 acción, si quedas en los otros puestos ganas 1 reacción.
+
+
+60 de velocidad: Una vez cada 2 turnos se puede usar esta habilidad para realizar otra acción.
+
+
+80 de velocidad: De forma pasiva ganas una acción extra.
+
+
+100 de velocidad: Una vez por combate puedes realizar una acción a lo que el enemigo no puede responder pero esta no tendrá ventaja.
+
+
+120 de velocidad: Una vez por combate puedes realizar una acción en el momento que se te plazca, incluso si es el turno de ataque enemigo.
+
+
+140 de velocidad: ???
+
+
+160 de velocidad: De manera pasiva al realizar 6 acciones ganas 1 reacción para el próximo turno.
+
+
+180 de velocidad: Una vez cada 3 turnos si se falló una reacción se puede usar esta habilidad para volver a tirar ya sea con otra skill o haciendo otra cosa para reaccionar.
+
+
+200 de velocidad: De forma pasiva ganas una repetición de moneda por cada 100 de velocidad que poseas por el resto del combate.
+
+
+450 de velocidad: De forma pasiva se puede utilizar velocidad para roleos de ataque.
+
+
+Fortitude
+
+
+20 de Fortitude: Una vez por pelea puedes reducir el daño de un ataque a la mitad.
+
+
+40 de Fortitude: Una vez por pelea puedes reducir el daño de un ataque a un cuarto. 
+
+
+60 de fortitude: De forma pasiva cada 2 turnos gana un 10% de tu vida como escudo.
+
+
+80 de fortitude: De forma pasiva al caer por primera vez en el combate te puedes levantar al instante curándote 120 de vida.
+
+
+100 de fortitude: Una vez cada 2 turnos puedes tanquear un ataque, luego curate la mitad del daño que te infringieron.
+
+
+120 de fortitude: Una vez por pelea puedes sumar tu ventaja en fortitude a otra ventaja para defenderte. 
+
+
+140 de fortitude: ???
+
+
+160 de fortitude: De forma pasiva al inicio de todos los turnos gana 1 de  Protection.png Protección y gana 3 de  Protection.png Protección contra Jefes.
+
+
+180 de fortitude: Una vez cada 4 turnos puedes sumar tu ventaja de fortitude a tu tirada de ataque.
+
+
+200 de fortitude: Pasivamente eres un 50% más resistente a efectos de estado. (Excluyendo Cosas como  Paralyze.png Parálisis)
+
+
+Inteligencia 
+
+
+20 de inteligencia: Una vez por pelea fortalece un ataque propio o de un aliado. También puedes reducir la eficacia de un ataque rival contra vos. (%25) 
+
+
+40 de inteligencia: Una vez por pelea puedes prever los próximos 2 ataques que te vayan a entrar haciendo que cuando pasen tengan -30 de ventaja y tu tengas +30 de ventaja al defenderte de ellos.
+
+
+60 de inteligencia: Una vez por pelea puede reducir el roleo de un ataque enemigo que se dirija hacia él a la mitad.
+
+
+80 de inteligencia: De manera pasiva se puede usar inteligencia para roleos de ataque.
+
+
+100 de inteligencia: Una vez cada 2 turnos puedes realizar 40% de daño adicional contra un objetivo que ya haya recibido daño este turno.
+
+
+120 de inteligencia: Una vez por turno puedes negar un un efecto “On Hit” o “On Use”.
+
+
+140 de inteligencia: ???
+
+
+160 de inteligencia: Cada 2 turnos puedes duplicar los efectos de estado infringidos por 1 acción.
+
+
+180 de inteligencia: En combate a partir del 3 turnos puedes reiniciar el cooldown de una habilidad de turnos / Una vez por pelea puedes reiniciar una habilidad de una vez por pelea.
+
+
+200 de inteligencia: Una vez por pelea puedes reescribir una acción de un enemigo. (Ej. Si enemigo está atacando a Ster, podes hacer que se defienda y no haga nada)
+
+Carisma
+
+
+20 de carisma: Una vez cada 2 turnos puedes darle 10 de  Clash Power Up.png Poder de Clash a un aliado por el resto del turno
+
+
+40 de carisma: Una vez cada 3 turnos puedes darle 15 de  Offense Level Up.png Ventaja Ofensiva y  Defense Level Up.png Ventaja Defensiva a un aliado
+
+
+60 de carisma: Una vez cada 2 turnos puedes tirar apoyo moral a un integrante de tu equipo, haciendo que meta un 50% más de efectos de estados durante 3 acciones.
+
+
+80 carisma: De forma pasiva brinda a tus aliados 10 de Offense Level Up.png Ventaja Ofensiva o 1 de Protection.png Protección por el resto del combate.
+
+
+100 carisma: Una vez cada 3 turnos puedes darle 30 de  Attack Power Up.png Ventaja a 2 aliados por el resto del turno.
+
+
+120 carisma: En combate a partir del 3er turnos puedes hacer que un aliado repita una Acción si este la fallo 
+
+
+140 carisma: ???
+
+
+160 de carisma: En combate a partir del 3er turno puedes elegir a un aliado para que la mitad de sus acciones infrinjan +1 de contador de el efecto principal de su arma
+
+
+180 de carisma: Una vez por pelea dale a todos tus aliados por el resto del turno 3 de  Protection.png Protección o 6 de  Damage Up.png Daño Adicional
+
+
+200 de carisma: Una vez por pelea por un turno completo puedes hacer que un aliado ignore efectos negativos que afecten su tirada (Ej:  Attack Power Down.png Desventaja /  Paralyze.png Parálisis)
+🪙 Monedas
+ Coin.png 
+= Acción Natural :l
+  
+= Acción de habilidad de velocidad 🏃‍♂️‍➡️:v
+ Coin.png 
+= Acción realizable en cualquier momento :D 🙆‍♂️
+ Coin.png 
+= Acción Irrompible que se repite si falla pero sin ventaja ÛwÛ 
+ Coin.png 
+= Acción Unclasheable >:U
+ Coin.png 
+= Acción ganada por festín de sangre >:’v
+  
+= Acción de Escisión Bv
+ Coin.png 
+= Acción destinada a cambiar de arma >:l
+ Coin.png 
+= Reacción >:3
+ Coin.png 
+= Reacción por habilidad de defensa TwT
+ Coin.png 
+= Acción/Reacción por habilidad “Ecos de Ovación” >w<
+  
+
+ Coin.png 
+= Moneda Repetida 
+
+
+Copiar y pegar parte del documento
+
+
+
+
+          
+	Dados:
+???
+
+
+	Ventajas: ???
+
+
+
+
+Fuerza: ???     Destreza: ???     Defensa: ???
+
+
+Velocidad: ???     Fortitude: ???     Carisma: ???
+
+
+Inteligencia: ???
+
+
+
+
+	HP:
+???/???
+
+
+Daño Hasta Stagger
+???/???
+
+
+	Armas:
+
+
+
+
+	Sanidad:
+
+
+  
+
+	Efectos de estado:
+	Armadura:
+	Puntos para subir: 
+	Low Morale
+???
+	
+
+Gana ??? de Sp por cada clash ganado
+
+
+	High Morale
+???
+	Fuerza: ???
+
+
+	Destreza: ???
+
+
+
+
+
+
+	Defensa: ???
+	Velocidad: ???
+
+
+
+
+
+
+	Fortitude: ???
+
+
+
+
+
+
+	Carisma: ???
+
+
+
+
+	Inteligencia: ???
+	???
+	???
+	???
+	
+
+Miren muchachos hoy les vengo a enseñar
+0-100 = +1 cada 5 puntos de estadística
+100-200 = +2 cada 5 puntos de estadística
+200-300 = +2 cada 5 puntos de estadística
+300-400 = +3 
+400-500 = +4
+500-600 = +5
+Una explicación más para los números planos es así
+100 → 20
+200 → 60 
+300 → 100 
+400 → 160
+500 → 240 
+600 → 340 
+700 → 460 
+800 → 600 
+900 → 760 
+1000 → 940 
+1100 → 1140 
+1200 → 1360 
+1300 → 1600 
+1400 → 1860 
+1500 → 2140 
+1600 → 2440 
+1700 → 2760 
+1800 → 3100 
+1900 → 3460
+2000 → 3840
+
+
+
+
+★???★
+
+
+	Alineación:
+???
+	??? mil Anhs
+	???
+	Image.Png
+	
+
+
+
+
+
+???
+ Coin.png 
+
+ Coin.png 
+
+???/???
+
+
+
+
+	???
+ Coin.png 
+
+ Coin.png 
+
+???/???
+
+
+
+
+	???
+ Coin.png 
+
+ Coin.png 
+
+???/???
+
+
+
+
+	Dados
+?d?
+	
+
+	Dados
+?d?
+	Efectos de estado:
+a 
+	
+
+	Efectos de estado:
+ a
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+💍 Galeria de QueQue
+Dejen las cosas que Hacen aca pe, para después cuando se cancela la campaña nos reímos
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+el QueQue encontrado
+
+
+K
+  ❤️
+	
+
+🥀 El Cementerio
+🥀Aquí yace Jun Ren, Toñito te extrañaremos🥀
+Ya no quiere queque, pero a qué precio…
+  
+
+
+
+🥀Aquí yace Anastasia, te extrañaremos ana🥀
+Ya no quiere comida, pero a qué precio…
+  
+
+🍂 Ana
+- Uqu
+🥀Anastasia🥀
+Fixer Grado 8
+Liu Sección 6
+Nivel 200
+1,70 cm
+23 añitos
+  
+  
+  
+  
+
+ Coin.png 
+ Coin.png 
+
+  
+  
+  
+  
+  
+
+  
+
+Ana.Ycorp.liu.MP.Cold
+	Dados:
+6 D20
+D10
+
+
+	Ventajas: 98
+
+
+
+
+
+
+Fuerza: +1     Destreza: +60    Defensa: +1
+
+
+
+
+
+
+
+
+Velocidad: +20    Fortitude: +15     Carisma: +1
+
+
+
+
+
+
+
+
+Inteligencia: +1
+
+
+
+
+
+
+
+
+???: +0
+
+
+
+
+
+
+	HP:
+375/375
+
+
+SP:
+0/45
+
+
+Stagger Thresholds
+0/56
+
+
+	Armas:
+
+
+mis manos wey 
+( 2/0 Burn.png )
+  
+
+	Puntos para subir: 
+40
+	Efectos de estado:
+	Armadura:
+Uniforme Liu  
+( Una vez por combate transfiere el  Burn.png en sí mismo a un enemigo con un ataque 
+( Máximo Transferible 3/2 )
+  
+
+	Fuerza: 5
+  
+	Destreza: 200
+
+
+                                                         * 20 de Destreza: Una vez por pelea una acción de destreza escala el doble.
+
+                                                            * 40 de Destreza: De forma pasiva al realizar 10 Acciones con destreza gana 1 Repetición de moneda.
+
+
+                                                            * 60 de Destreza: Una vez cada 2 turnos puede sumar la mitad del bonificador de otra estadística y sumarlo a su tirada de destreza.
+
+80 de Destreza: De forma pasiva tus acciones y ataques son insonoras.
+
+
+100 de Destreza: De forma pasiva tus tiradas de destreza al quedar empatado o lejos por 15 ganaran el clash.
+
+120 de Destreza: De forma pasiva cada vez que ataques e impactes gana 2 de Offense Level Up.png Ventaja Ofensiva por el resto del combate.
+
+140 de Destreza: ???
+
+160 de Destreza: Una vez por pelea una acción de destreza actuará 3 veces.
+
+180 de Destreza: Una vez por pelea cada 2 acciones/Reacciones de aliados puedes hacer una acción de destreza por ese turno.
+
+200 de Destreza: En combate a partir del 4to turno puedes juntar todas tus ventajas de estadísticas en 1 ataque.
+	Defensa: 5
+  
+
+	Velocidad: 130
+
+
+                                                               * 20 de velocidad: Una vez por combate puedes hacer 1 acción extra.
+
+
+40 de velocidad: De forma pasiva al tirar iniciativa y quedar primero ganas 1 acción, si quedas en los otros puestos ganas 1 reacción.
+
+
+60 de velocidad: Una vez cada 2 turnos se puede usar esta habilidad para realizar otra acción.
+
+
+80 de velocidad: De forma pasiva ganas una acción extra.
+
+
+                                                               * 100 de velocidad: Una vez por combate puedes realizar una acción a lo que el enemigo no puede responder pero esta no tendrá ventaja.
+                                                               * 120 de velocidad: Una vez por combate puedes realizar una acción en el momento que se te plazca, incluso si es el turno de ataque enemigo.
+	Fortitude: 86 
+
+
+                                                               * 20 de Fortitude: Una vez por pelea puedes reducir el daño de un ataque a la mitad.
+
+                                                               * 40 de Fortitude: Una vez por pelea puedes reducir el daño de un ataque a un cuarto.
+
+                                                               * 60 de fortitude: De forma pasiva cada 2 turnos gana un 10% de tu vida como escudo.
+
+                                                               * 80 de fortitude: De forma pasiva al caer por primera vez en el combate te puedes levantar al instante curándote 120 de vida.
+	Carisma: 5
+  
+
+	Inteligencia: 5
+  
+	Liu Sur, Sección 6
+
+
+Corazón Ardiente: Gana 5 de  Clash Power Up.png Poder de Clash Contra objetivos que tengan más de 6 de  Burn.png Quemadura 
+
+
+Paz Mental: Si se posee Sp negativa gana 10 de Clash Power Up.png Poder de Clash, si se posee más de 0 de Sp gana 10 de Attack Power Up.png Ventaja
+
+
+Fiesta Picante: La primera vez que infringe  Burn.png Quemadura también le infringe 1 de  Burn.png Quemadura a un enemigo aleatorio
+
+
+Encendido: Cada 4 acciones infringes 2 extra de  Burn.png Quemadura y 1 de contador de  Burn.png Quemadura 
+
+
+Amistad Liu: El aliado con menos velocidad infringe 1 de  Burn.png Quemadura en su primera acción, Tú ganas 4 de Clash Power Up.png Poder de Clash cada vez que ese aliado uso esta pasiva 
+
+
+Chamuscado: Cuando un enemigo con  Burn.png Quemadura muere, recupera 5 SP. 
+
+	Ana
+
+
+Noche fatídica: Al pelear con integrantes del Pulgar gana 20 de  Attack Power Down.png Desventaja y 40 de  Clash Power Down.png Reducción de Clash este efecto empeora dependiendo el rango del miembro del Pulgar.
+Contra guardaespaldas de billy: 200 de  Attack Power Down.png Desventaja
+
+
+Miedo a Congelarse: Al 50% de Hp gana 2 de  Cold.png Frío pero su arma infringe 4 extra de  Burn.png Quemadura.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Fixer
+
+
+Trabajo Fixer: Al estar haciendo una mision gana 5 de Attack Power Up.png Ventaja, al pelear solo gana otros 10 de Attack Power Up.png Ventaja
+
+
+Respeta mi Grado: Gana 5 de  Attack Power Up.png Ventaja por cada Grado arriba de Grado 9 que Tengas
+
+
+Asociación: Gana 10 de  Attack Power Up.png Ventaja por cada sección superior a 6 que tengas
+
+  
+	Fuego Interno
+
+
+Cuando el Fuego Interno de Ana Arde Ella alcanza este Estado
+
+
+Fuego Interno 1: Ana gana 20 de  Offense Level Up.png Ventaja Ofensiva y  Defense Level Up.png Ventaja Defensiva, gana 1 acción y 1 reacción
+
+
+Fuego Interno 2: Ana cambia sus 20 de  Attack Power Up.png Ventaja por 40 de de  Offense Level Up.png Ventaja Ofensiva y  Defense Level Up.png Ventaja Defensiva, El fuego de tus manos arde con más potencia, infringes 5 extra de   Burn.png Quemadura y metes 1 de contador cada 4 golpes
+
+
+Fuego Interno 3: Ana cambia sus 40 de  Attack Power Up.png Ventaja por 80 de de  Offense Level Up.png Ventaja Ofensiva y  Defense Level Up.png Ventaja Defensiva, infringes 15 extra de   Burn.png Quemadura y metes 3 de contador cada 2 golpes, ganas 2 reacciones y 2 acciones
+	INVENTARIO (aca estan mis cosas)
+
+
+$1.611.510 Ahns
+0 cápsulas kcorp
+1 ticket de peluquería del medio
+pipon 23 heredado (gracias toñito)
+Número de fixer: 500000000003
+Deudas
+cero
+
+  El Objetivo de la Gorda
+	Food Corner
+  
+  
+  
+
+  
+  
+
+
+  
+
+
+  
+  
+
+  
+
+  
+
+	
+
+Notas de Sesión
+
+casi nos matan pero víctor demostró ser la rata mas importante de la ciudad
+dormimos a la rata mas bum de la ciudad
+35 niveles  
+
+nos encontramos con una llorona del index que buscaba los labios de cassetti (o algo asi no estaba prestando mucha atención) (supuestamente es importante pero eso es metagaming)
+luca y ster están esperando la llamada crimson del celular de ana (no tienen celular a la verga) 
+james larper
+ana tiene que trabajar en sus habilidades sociales
+
+
+nos enfrentamos a los twin hooks
+una estrella esta en H corp (maybe importante para después)
+la barba volverá con otro huésped
+no paso nada en el gran lago
+ana se quedó a dormir en U corp
+wolfram tiene una familia bella y feliz
+katarina volvió a casa
+
+Nombre del ultra bum: luminox (vino a romper las bolas)
+número d fixer jun 477298735557
+número d fixer katarina 477299569921
+
+
+Hoy me mataron alv
+💢 Habilidades de Gorda flama
+Skill 1
+
+
+  
+
+  
+
+	 Coin.png 
+
+  
+
+ SkillAttack.png 
+ Atk Weight ⯀
+[On use] Gana 3  Clash Power Up.png Poder de Clash por cada 1 de  Burn.png Quemadura en el enemigo. (max. 5)
+ CoinEffect1.png  [On Hit] Infringe 2 de  Burn.png Quemadura
+	Skill 2
+
+
+  
+
+  
+
+	 Coin.png 
+ Coin.png 
+
+  
+
+ SkillAttack.png 
+ Atk Weight ⯀
+
+[On use] Gana 5  Clash Power Up.png Poder de Clash por cada 1 de  Burn.png Quemadura en el enemigo. (max. 5)
+ CoinEffect1.png 
+ [On Hit] Infringe 2 de  Burn.png Quemadura
+ CoinEffect2.png 
+ [On Hit] Infringe 2 de  Burn.png Quemadura. Si el objetivo tiene +10 de  Burn.png Quemadura Ana gana 1 de contador de  Burn.png Quemadura 
+	
+
+Skill 3
+
+
+  
+
+
+
+	 Coin.png 
+ Coin.png 
+ Coin.png 
+ Coin.png 
+
+  
+
+ SkillAttack.png 
+ Atk Weight ⯀
+[On use] Gana 7  Clash Power Up.png Poder de Clash por cada 2 de  Burn.png Quemadura en el enemigo. (max. 5)
+[On use] Gana 3  Offense Level Up.png Ventaja ofensiva Por cada 1 de  Burn.png Quemadura. (max. 5)
+[Clash Lose] Ana gana 1 de  Cold.png Frío
+ CoinEffect1.png  [On Hit] Infringe 2 de  Burn.png Quemadura
+ CoinEffect2.png 
+ [On Hit] Infringe 2 de  Burn.png Quemadura
+ CoinEffect3.png 
+ [On Hit] Infringe 2 de  Burn.png Quemadura
+ CoinEffect4.png 
+ [On Hit] Infringe 2 de  Burn.png Quemadura
+
+
+	
+
+Defensa
+
+
+  
+
+
+
+ Blunt.png 
+
+	 Coin.png 
+
+  
+
+ SkillAttack.png 
+ Atk Weight ⯀
+[On use] Gana 3  Defense Level Up.png Ventaja Defensiva Por cada 1 de  Burn.png Quemadura. (max. 5)
+
+
+ CoinEffect1.png 
+ [On Hit] Inflict 1  Burn.png Burn
+	
+
+🧛 Eric
+
+
+¿JunEric NyxRen? 
+& 
+Ada
+20 Movimientos // 20 movimientos
+Der letzte Nyx      abraxas Träger
+Ein gewisser Blutdämon
+	Dados:
+
+
+25 D20
+16 D20
+
+
+———————
+
+
+8 D20
+	Ventaja Eric: 450 1750
+
+
+Ventaja Ada: 300
+
+
+
+
+Fuerza: ???     Destreza: ???     Defensa: ???
+
+
+Velocidad: ???     Fortitude: ???     Carisma: ???
+
+
+Inteligencia: ???
+
+
+
+
+	HP:
+
+
+Eric
+1.500 8.000/8.000
+———————
+Ada
+16.000/16.000
+
+
+Daño Hasta Stagger
+4000
+
+
+SP:
+-20/45
+	Armas:
+
+
+  
+Abraxas  
+( 30/4 Bleed.png / 15/2 Presence of a Second Kindred.png )
+( Todos los efectos negativos en el enemigo cuentan como Bleed.png  )
+
+
+
+
+Anton Nyx, ese nombre que resuena en los hilos del destino, el nombre de un ladrón.
+Abraxas, la reliquia originaria de la casa Vlad, robada por esa desgracia que se hacía llamar Bloodfiend.
+	Sanidad:
+
+
+  
+
+Honor Familiar Nyx
+
+
+	Efectos de estado:
+	Armadura:
+
+
+Coraza Sangrienta Modelo “Dana”
+(1500 Escudo)
+
+
+
+
+                                                                  * “Con una coraza de esa calidad no podrás bloquear ni el más suave de mis ataques, hermanito.
+                                                                  * “Es lo mejor que puedo hacer Dana, padre te dijo que me trataras más suave.
+                                                                  * “Tener 13 años no te hace débil, ¡débil te hace no poder hacer algo tan simple!
+	Low Morale
+
+
+Todo lo que cree con   será la mitad de efectivo y costará el doble de recursos
+	
+
+Gana 20 de Sp por cada clash ganado
+
+
+Pierde 5 de Sp por cada clash perdido
+
+
+	High Morale
+
+
+Todo lo que cree con   será el doble de efectivo y costará la mitad de recursos
+	  
+Amore fraterno  
+
+
+Ada: Una extraña criatura puede ser invocada por Eric, ésta posee sus propias estadísticas y sus propios movimientos si esta muere en combate ya no puede ser usada durante todo el combate 
+(Vida 16.000/16.000) (200 de Ventaja) (10 Acciones / 10 Reacción) (8 D20)
+
+
+cura della famiglia: Una vez por turno Ada sale a defender a Eric, está aguantara un golpe por el recibiendo daño en el proceso.
+
+
+Violenza domestica: Una vez cada 5 movimientos si Eric ataca junto a Ada, esta infringira los mismos efectos que el arma de Eric.
+
+
+Resilienza materna: Ada gana 5 puntos extra de vida por cada punto en Fortitude.
+
+
+
+
+Una traidora no podía convertirse en nada que no fuera un monstruo.
+Lo hubieras pensado dos veces antes de enamorarte de un demonio.
+
+
+
+
+
+
+	  
+Was von uns übrig bleibt, ABRAXAS  
+
+
+Usuario de Abraxas: Apto: La reliquia está demostrando su potencial máximo, se posee la aptitud para blandirla, ganas 50 de Attack Power Up.png Ventaja.
+
+
+Rios De Sangre: Luego de impactar 3 veces en un enemigo activa 3 veces el contador de Bleed.png Sangrado sin gastar contador y luego suma el contador de  Bleed.png Sangrado en 3.
+
+
+Compañero de armas: Si ataca junto a Wolfram infringe 1 de   Erosión Ensangrentada (Máx 1 por turno)
+
+
+El único recuerdo que queda como remanente de lo que alguna vez fue la casa Nyx.
+Un arma forjada por la misma sangre de un Elder, caída en las desgraciadas manos de un bueno para nada.
+	Eric
+
+
+  
+Hambre insaciable: Al consumir 20 de sangrado recupera 10 de hp y gana 20 de Festín de Sangre, Al tener hambre reduce a la mitad/Cuarto sus estadísticas
+
+
+ Dreamy Hesitation.png 
+Hambre: El año entero sin alimento y sus traumas han debilitado su cuerpo bloodfiend hasta el límite dejando daños irreparables 
+  
+Arte Nyx Cristalización: Su estilo de Sangre le permite crear equipamiento de sangre cristalizada y estructuras de sangre cristalizada
+                                                                  * Consume hasta 300 de  Festín de Sangre para crear una armadura completa para alguien, aquel que posea la armadura ganara 1500 de Escudo hasta que la armadura se rompa
+                                                                  * Consume hasta 100 de  Festín de Sangre para crear estructuras completas hechas de sangre cristalizada, la gente podría caminar o tomar apoyo detrás de estas.
+
+
+Al final de su vida, Eric sintió que quizás tuvo que haber muerto en ese día.
+Aunque, si lo hubiera hecho nunca los hubiera conocido.
+Peleará por sus primeros y únicos amigos.
+	  
+Festín de Sangre: 0
+
+
+Al consumir sangre esta gana el nombre de festín de sangre, El festín de sangre mejora estadísticas y habilidades.
+Puede autoflagelarse para generar festín de sangre.
+A 50 de   Festín de Sangre da +10 de ventaja
+A 100 de   Festín de Sangre no gasta Reacción la primera vez que Reaccione.
+A 155 de   Festín de Sangre da +10 de ventaja
+A 200 de   Festín de Sangre se obtienen 2 acciones extra.
+A 300 de   Festín de Sangre puede generar armas a rango, puede generar armas sin gastar turno y gana +10 de ventaja.
+A 450 De   Festín de Sangre todos tus ataques golpean +4 enemigos.
+A 500 de   Festín de Sangre Toda moneda pasa a ser  Coin.png 
+A 650 de   Festín de Sangre +10 de  Presence of a Second Kindred.png Hemorragia on hit
+A 800 de   Festín de Sangre +30 de ventaja 
+A 999 de   Festín de Sangre On hit infringe 80 extra de  Bleed.png y 10/3 de  Rupture.png 
+
+
+El descontento de saber que la muerte de su madre se acercaba siempre lo llenó, pero él nunca cuestionó su decisión, la de no unirse a ellos en la eternidad de la existencia como demonio de sangre.

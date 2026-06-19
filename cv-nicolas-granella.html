@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nicolás Granella — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f2f4f8;
+  color: #1a1a2e;
+  line-height: 1.5;
+  padding: 40px 20px;
+  -webkit-font-smoothing: antialiased;
+}
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 60px rgba(0,0,0,0.06);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+@media print {
+  body { background: white; padding: 0; }
+  .page { box-shadow: none; border-radius: 0; max-width: 100%; }
+  .section { break-inside: avoid; }
+}
+
+/* ============ SIDEBAR ============ */
+.sidebar {
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+  padding: 40px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.sidebar .name h1 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+.sidebar .name .title {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.6);
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.sidebar .divider {
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+  margin: 4px 0;
+}
+.sidebar h3 {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 12px;
+}
+.sidebar .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 8px;
+}
+.sidebar .contact-item .icon {
+  width: 28px; height: 28px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+.sidebar .contact-item a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.sidebar .contact-item a:hover { color: white; }
+.sidebar .skill-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.8);
+  margin: 0 4px 6px 0;
+}
+.sidebar .skill-tag.highlight {
+  background: rgba(108,92,231,0.2);
+  color: #a29bfe;
+}
+.sidebar .lang-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 6px;
+}
+.sidebar .lang-item .level {
+  font-size: 10px;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ============ MAIN ============ */
+.main {
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.section h2 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #6c5ce7;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #f0f0f6;
+}
+.section p {
+  font-size: 13px;
+  color: #4a4a6a;
+  line-height: 1.7;
+}
+
+/* Profile Summary */
+.profile-text {
+  font-size: 13px;
+  color: #4a4a6a;
+  line-height: 1.8;
+}
+
+/* Experience */
+.exp-item {
+  margin-bottom: 20px;
+}
+.exp-item:last-child { margin-bottom: 0; }
+.exp-item .exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+.exp-item .exp-header .exp-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+.exp-item .exp-header .exp-company {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6c5ce7;
+}
+.exp-item .exp-header .exp-date {
+  font-size: 11px;
+  color: #8888aa;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+.exp-item .exp-desc {
+  font-size: 12px;
+  color: #4a4a6a;
+  line-height: 1.7;
+  margin-top: 4px;
+}
+.exp-item .exp-desc ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 4px;
+}
+.exp-item .exp-desc ul li {
+  position: relative;
+  padding-left: 14px;
+  margin-bottom: 3px;
+  font-size: 12px;
+  color: #4a4a6a;
+}
+.exp-item .exp-desc ul li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: #6c5ce7;
+  opacity: 0.5;
+}
+
+/* Project */
+.project-item {
+  background: #f8f8fc;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #f0f0f6;
+}
+.project-item .proj-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 2px;
+}
+.project-item .proj-link {
+  font-size: 11px;
+  color: #6c5ce7;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+.project-item .proj-link:hover { text-decoration: underline; }
+.project-item .proj-desc {
+  font-size: 12px;
+  color: #4a4a6a;
+  line-height: 1.6;
+}
+.project-item .proj-tech {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.project-item .proj-tech span {
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 500;
+  background: rgba(108,92,231,0.08);
+  color: #6c5ce7;
+}
+
+@media (max-width: 700px) {
+  .page { grid-template-columns: 1fr; }
+  .sidebar { padding: 28px 20px; }
+  .main { padding: 28px 20px; }
+  .exp-item .exp-header { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="name">
+      <h1>Nicolás<br>Granella</h1>
+      <div class="title">Frontend Developer</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div>
+      <h3>Contact</h3>
+      <div class="contact-item">
+        <div class="icon">📍</div>
+        <span>Mendoza, Argentina</span>
+      </div>
+      <div class="contact-item">
+        <div class="icon">✉️</div>
+        <a href="mailto:nicogranella123@gmail.com">nicogranella123@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <div class="icon">🌐</div>
+        <a href="https://devvibe2.gumroad.com/l/tuxdag" target="_blank">CSS Library Pro</a>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div>
+      <h3>Technical Skills</h3>
+      <span class="skill-tag highlight">HTML5</span>
+      <span class="skill-tag highlight">CSS3</span>
+      <span class="skill-tag highlight">JavaScript</span>
+      <span class="skill-tag">Responsive Design</span>
+      <span class="skill-tag">Flexbox & Grid</span>
+      <span class="skill-tag">UI Components</span>
+      <span class="skill-tag">Git & GitHub</span>
+      <span class="skill-tag">Customer Support</span>
+      <span class="skill-tag">Debugging</span>
+      <span class="skill-tag">Communication</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <div>
+      <h3>Languages</h3>
+      <div class="lang-item"><span>Spanish</span><span class="level">Native</span></div>
+      <div class="lang-item"><span>English</span><span class="level">— [Your level: Basic/Intermediate/Advanced]</span></div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- Profile -->
+    <div class="section">
+      <h2>Profile</h2>
+      <p class="profile-text">
+        Frontend Developer with hands-on experience in HTML, CSS, and JavaScript, 
+        combined with 2 years of customer support background at One Play. 
+        This blend of technical and client-facing skills gives me a unique 
+        perspective — I build clean, responsive interfaces while understanding 
+        exactly what users need.
+        <br><br>
+        I recently launched <strong>CSS Library Pro</strong>, a premium collection 
+        of 25+ UI components with live preview and one-click copy, available on Gumroad. 
+        Currently seeking frontend development opportunities — both full-time and freelance — 
+        where I can grow and contribute.
+      </p>
+    </div>
+
+    <!-- Experience -->
+    <div class="section">
+      <h2>Experience</h2>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Customer Support Assistant</div>
+            <div class="exp-company">One Play</div>
+          </div>
+          <div class="exp-date">2024 — Present</div>
+        </div>
+        <div class="exp-desc">
+          <ul>
+            <li>Resolved technical inquiries and provided clear, step-by-step solutions to customers</li>
+            <li>Developed strong communication skills by explaining technical concepts to non-technical users</li>
+            <li>Managed multiple customer cases simultaneously under pressure</li>
+            <li>Collaborated with internal teams to troubleshoot and escalate complex issues</li>
+            <li>Maintained high customer satisfaction ratings through efficient problem-solving</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project -->
+    <div class="section">
+      <h2>Featured Project</h2>
+      <div class="project-item">
+        <div class="proj-title">CSS Library Pro</div>
+        <a class="proj-link" href="https://devvibe2.gumroad.com/l/tuxdag" target="_blank">devvibe2.gumroad.com/l/tuxdag →</a>
+        <p class="proj-desc">
+          A premium collection of 25+ handcrafted UI components with live preview 
+          and one-click copy-to-clipboard. Built with pure HTML, CSS, and JavaScript — 
+          zero dependencies. Includes buttons, cards, forms, navigation, alerts, 
+          pricing tables, hero sections, and more across 8 categories.
+        </p>
+        <div class="proj-tech">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+          <span>Responsive Design</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+      <h2>Education</h2>
+      <p style="font-size:13px;color:#4a4a6a;">
+        <strong>Self-Taught Developer</strong> — Continuous learning through online resources, 
+        documentation, and hands-on project building. Currently strengthening frontend 
+        fundamentals through practical project development.
+      </p>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
