@@ -2501,7 +2501,7 @@
   }
 
   diceTypeBtns.forEach(btn => {
-    btn.addEventListener('click', () => { addToPool(parseInt(btn.dataset.sides)); });
+    btn.addEventListener('click', () => { addToPool(parseInt(btn.dataset.sides)); saveState(); });
   });
   clearPoolBtn.addEventListener('click', clearPool);
 
