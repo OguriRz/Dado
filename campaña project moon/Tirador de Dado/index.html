@@ -3237,6 +3237,8 @@
 
   function saveState() {
     localStorage.setItem('diceTool_bonus', bonusInput.value);
+    localStorage.setItem('diceTool_diceCount', diceCountInput.value);
+    localStorage.setItem('diceTool_pool', JSON.stringify(pool));
     if (lastRawTotal !== null) {
       const state = {
         total: lastRollTotal,
@@ -3257,6 +3259,20 @@
     const savedBonus = localStorage.getItem('diceTool_bonus');
     if (savedBonus !== null) {
       bonusInput.value = savedBonus;
+    }
+
+    const savedCount = localStorage.getItem('diceTool_diceCount');
+    if (savedCount !== null) {
+      diceCountInput.value = savedCount;
+    }
+
+    const savedPool = localStorage.getItem('diceTool_pool');
+    if (savedPool) {
+      try {
+        pool = JSON.parse(savedPool);
+        renderPool();
+        updateRollButton();
+      } catch (e) { pool = []; }
     }
 
     const savedRoll = localStorage.getItem('diceTool_lastRoll');
