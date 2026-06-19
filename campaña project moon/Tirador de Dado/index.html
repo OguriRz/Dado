@@ -3900,7 +3900,7 @@
     const winnerIndex = ruletaPickWinner();
     const targetAngle = ruletaGetAngleForIndex(winnerIndex);
     const extraSpins = 4 + Math.floor(Math.random() * 3); // 4-6 full rotations
-    const totalRotation = extraSpins * Math.PI * 2 + (Math.PI * 2 - targetAngle);
+    const totalRotation = extraSpins * Math.PI * 2 + (Math.PI * 3 / 2 - targetAngle);
 
     const startRotation = 0;
     const duration = 3000 + Math.random() * 1000; // 3-4 seconds
@@ -4027,6 +4027,7 @@
     localStorage.setItem('diceTool_enemyId', String(enemyIdCounter));
     localStorage.setItem('diceTool_players', JSON.stringify(players));
     localStorage.setItem('diceTool_playerId', String(playerIdCounter));
+    localStorage.setItem('diceTool_ruleta', JSON.stringify(ruletaOptions));
     if (lastRawTotal !== null) {
       const state = {
         total: lastRollTotal,
@@ -4090,6 +4091,16 @@
         const savedPlayerId = localStorage.getItem('diceTool_playerId');
         if (savedPlayerId !== null) playerIdCounter = parseInt(savedPlayerId) || 0;
         renderPlayers();
+      } catch (e) { /* ignore */ }
+    }
+
+    const savedRuleta = localStorage.getItem('diceTool_ruleta');
+    if (savedRuleta) {
+      try {
+        ruletaOptions = JSON.parse(savedRuleta);
+        ruletaRenderOptions();
+        ruletaDrawWheel();
+        ruletaUpdateButton();
       } catch (e) { /* ignore */ }
     }
 
