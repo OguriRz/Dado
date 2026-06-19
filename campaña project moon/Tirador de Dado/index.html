@@ -2653,6 +2653,7 @@
       rollBtn.classList.remove('rolling');
       rollBtn.textContent = '🎲 TIRAR';
       updateRollButton();
+      saveState();
     }, revealDelay);
   }
 
@@ -2662,6 +2663,9 @@
     if (e.key === 'Enter' && !isRolling) doRoll();
   });
   document.querySelectorAll('input').forEach(inp => { inp.addEventListener('focus', () => inp.select()); });
+
+  // Auto-save bonus on change
+  bonusInput.addEventListener('input', () => saveState());
 
   // ============================================================
   //  STATUS EFFECTS
@@ -3226,6 +3230,66 @@
       addEnemy('Carnicero', 150, 60);
     }
   }, 100);
+
+  // ============================================================
+  //  PERSISTENCE — localStorage (bonus + last roll)
+  // ============================================================
+
+  function saveState() {
+    localStorage.setItem('diceTool_bonus', bonusInput.value);
+    if (lastRawTotal !== null) {
+      const state = {
+        total: lastRollTotal,
+        rawTotal: lastRawTotal,
+        formula: lastRawFormula,
+        historyIdx: rollHistory.length,
+      };
+      if (rollHistory.length > 0) {
+        const last = rollHistory[rollHistory.length - 1];
+        state.lastResults = last.results.slice(0, 40);
+        state.lastSides = last.allSides.slice(0, 40);
+      }
+      localStorage.setItem('diceTool_lastRoll', JSON.stringify(state));
+    }
+  }
+
+  function loadState() {
+    const savedBonus = localStorage.getItem('diceTool_bonus');
+    if (savedBonus !== null) {
+      bonusInput.value = savedBonus;
+    }
+
+    const savedRoll = localStorage.getItem('diceTool_lastRoll');
+    if (savedRoll) {
+      try {
+        const data = JSON.parse(savedRoll);
+        if (data.formula && data.rawTotal !== null) {
+          lastRawTotal = data.rawTotal;
+          lastRollTotal = data.total;
+          lastRawFormula = data.formula;
+
+          // Reconstruir display
+          if (activeStatuses.has('paralysis')) {
+            resultTotal.textContent = Math.floor(data.rawTotal / 2);
+            resultFormula.textContent = '½ × (' + data.formula + ') = ' + Math.floor(data.rawTotal / 2);
+          } else {
+            resultTotal.textContent = data.rawTotal;
+            resultFormula.textContent = data.formula + ' = ' + data.rawTotal;
+          }
+
+          if (data.lastResults && data.lastSides) {
+            renderDiceVisuals(data.lastResults, data.lastSides, false);
+          }
+
+          lastRollTag.textContent = '#' + (data.historyIdx || '?') + ': ' + data.total;
+          document.getElementById('sendToCompare').style.display = 'flex';
+        }
+      } catch (e) { /* ignore corrupt data */ }
+    }
+  }
+
+  // Restore state on load
+  loadState();
 </script>
 
 </body>
