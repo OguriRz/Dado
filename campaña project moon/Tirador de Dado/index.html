@@ -1335,7 +1335,7 @@
   }
 
   .coin-piece.reaction .coin-img {
-    filter: brightness(0.5) saturate(0.3) hue-rotate(200deg);
+    filter: brightness(0.3) saturate(6) hue-rotate(210deg);
   }
 
   .coin-piece.used {
@@ -2186,7 +2186,7 @@
       </div>
       <div class="coins-row-inner">
         <div class="coins-group">
-          <span class="coins-group-label" style="color:#7a9fc0">Reacción</span>
+          <span class="coins-group-label" style="color:#3A7EC0">Reacción</span>
           <button class="coin-ctrl" onclick="addCoin('reaction')" title="Agregar reacción">+</button>
           <button class="coin-ctrl" onclick="removeCoin('reaction')" title="Quitar reacción">−</button>
         </div>
@@ -2393,7 +2393,7 @@
     8:   '#27ae60',
     10:  '#8e44ad',
     12:  '#d4a017',
-    20:  '#c0395a',
+    20:  '#16a085',
     25:  '#16a085',
     50:  '#b8860b',
     100: '#00a885',
@@ -2521,7 +2521,11 @@
       for (let i = 0; i < 10; i++) { const a = (i * 36 - 90) * Math.PI / 180; pts.push(`${h + r * Math.cos(a)},${h + r * Math.sin(a)}`); }
       return { type: 'polygon', pts: pts.join(' ') };
     }
-    if (sides === 20) return { type: 'polygon', pts: `${h},5 6,${size-6} ${size-6},${size-6}` };
+    if (sides === 20) {
+      const pts = [];
+      for (let i = 0; i < 6; i++) { const a = (i * 60 - 90) * Math.PI / 180; pts.push(`${h + r * Math.cos(a)},${h + r * Math.sin(a)}`); }
+      return { type: 'polygon', pts: pts.join(' ') };
+    }
     if (sides === 25) {
       const pts = [];
       for (let i = 0; i < 6; i++) { const a = (i * 60 - 90) * Math.PI / 180; pts.push(`${h + r * Math.cos(a)},${h + r * Math.sin(a)}`); }
@@ -2570,7 +2574,7 @@
       };
       innerEl = (positions[val] || positions[1]).map(([dx, dy]) => `<circle cx="${dx}" cy="${dy}" r="${dotR}" fill="${textColor}"/>`).join('');
     } else {
-      const actualY = sides === 4 ? size - 9 : sides === 20 ? size - 11 : h + 5;
+      const actualY = sides === 4 ? size - 9 : h + 5;
       innerEl = `<text x="${h}" y="${actualY}" text-anchor="middle" fill="${textColor}" font-size="${fontSize}" font-weight="700">${textStr}</text>`;
     }
     return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">${shapeEl}${innerEl}</svg>`;
