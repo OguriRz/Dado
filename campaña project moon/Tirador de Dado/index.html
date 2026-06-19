@@ -2518,40 +2518,7 @@
     <div class="section-divider" style="margin-bottom:0"></div>
   </div>
 
-      <!-- ============ TAB: RULETA ============ -->
-  <div class="tab-panel" id="tabRuleta">
-    <div class="ruleta-layout">
-      <div class="ruleta-options-area">
-        <div class="ruleta-add-row">
-          <input type="text" id="ruletaOptionInput" placeholder="Opción (ej: Cofre A)" maxlength="30">
-          <span class="weight-label">Peso</span>
-          <input type="number" id="ruletaWeightInput" value="1" min="1" max="100">
-          <button class="btn-enemy-add" id="ruletaAddBtn" style="padding:6px 12px;font-size:12px">+</button>
-        </div>
-        <div class="ruleta-option-list" id="ruletaOptionList">
-          <div class="ruleta-empty" id="ruletaEmpty">Agregá opciones con su peso probabilidad</div>
-        </div>
-      </div>
-
-      <div class="ruleta-canvas-wrap">
-        <div class="ruleta-arrow">▼</div>
-        <canvas id="ruletaCanvas" width="260" height="260"></canvas>
-      </div>
-
-      <div class="ruleta-controls">
-        <button class="btn-roll" id="ruletaSpinBtn" style="margin-bottom:0;flex:1" disabled>🎰 GIRAR</button>
-        <button class="btn-clear" id="ruletaClearBtn" style="flex-shrink:0">Limpiar</button>
-      </div>
-
-      <div class="result-box" id="ruletaResultBox" style="min-height:60px;padding:14px">
-        <div class="ruleta-result" id="ruletaResult">
-          <div class="ruleta-result-placeholder" style="color:var(--inv-text4);font-size:13px;font-style:italic">Agregá opciones y girá la ruleta</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<!-- ============ TAB: PLAYERS ============ -->
+      <!-- ============ TAB: PLAYERS ============ -->
   <div class="tab-panel" id="tabPlayers">
     <div class="enemy-form" id="playerForm">
       <div class="field"><label>Nombre</label><input type="text" id="playerName" placeholder="Ej: Roland" maxlength="30"></div>
@@ -3749,6 +3716,7 @@
     ruletaDrawWheel();
     ruletaUpdateButton();
     ruletaClearResult();
+    saveState();
   }
 
   function ruletaRemoveOption(index) {
@@ -3757,12 +3725,14 @@
     ruletaDrawWheel();
     ruletaUpdateButton();
     ruletaClearResult();
+    saveState();
   }
 
   function ruletaUpdateWeight(index, newWeight) {
     const w = Math.max(1, parseInt(newWeight) || 1);
     ruletaOptions[index].weight = w;
     ruletaDrawWheel();
+    saveState();
   }
 
   function ruletaClearAll() {
@@ -3771,6 +3741,7 @@
     ruletaDrawWheel();
     ruletaUpdateButton();
     ruletaClearResult();
+    saveState();
     if (ruletaAnimFrame) { cancelAnimationFrame(ruletaAnimFrame); ruletaAnimFrame = null; }
     ruletaIsSpinning = false;
   }
