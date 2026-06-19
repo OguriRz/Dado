@@ -143,7 +143,7 @@
   .container {
     background: var(--inv-card);
     width: 100%;
-    max-width: 720px;
+    max-width: 600px;
     padding: 0;
     border-radius: 4px;
     box-shadow:
@@ -221,7 +221,7 @@
 
   /* Inner content area with subtle paper texture */
   .container-inner {
-    padding: 30px 32px 26px;
+    padding: 18px 20px 16px;
     position: relative;
     z-index: 2;
     background:
@@ -258,168 +258,28 @@
     border-radius: 8px;
   }
 
-  /* Invitation decorative frame — picture frame corner ornament */
-  .inv-frame-ornament {
-    position: absolute;
-    bottom: 30px;
-    right: 20px;
-    width: 120px;
-    height: 120px;
-    background: url('assets/infobox-frame.png') no-repeat center;
-    background-size: contain;
-    opacity: 0.18;
-    pointer-events: none;
-    z-index: 3;
-  }
-
-
-
-  /* Decorative header ornament */
-  .top-deco {
-    height: 24px;
-    margin: 0 0 10px;
-    background: url('assets/deco-header.png') no-repeat center;
-    background-size: contain;
-    opacity: 0.25;
-    pointer-events: none;
-  }
-
-  /* Section decorative dividers */
-  .section-divider {
-    height: 12px;
-    margin: 8px 0;
-    background: url('assets/story-chapter-line.png') no-repeat center;
-    background-size: contain;
-    opacity: 0.06;
-    pointer-events: none;
-  }
-
   /* ============================================================
      HEADER — THE INVITATION
      ============================================================ */
   .header-row {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-bottom: 16px;
-    padding-bottom: 14px;
-    position: relative;
-  }
-
-  .header-row::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 10%;
-    right: 10%;
-    height: 1px;
-    background: linear-gradient(90deg,
-      transparent 0%,
-      rgba(212, 162, 69, 0.15) 20%,
-      var(--inv-gold-dim) 50%,
-      rgba(212, 162, 69, 0.15) 80%,
-      transparent 100%
-    );
-  }
-
-  .header-left {
-    flex: 1;
-  }
-
-  .header-left .invitation-title {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .header-left .invitation-title .title-deco-left,
-  .header-left .invitation-title .title-deco-right {
-    color: var(--inv-gold-dim);
-    font-size: 14px;
-    letter-spacing: 2px;
-  }
-
-  .header-left .invitation-title h1 {
-    font-family: 'AritaBuri', 'Cinzel Decorative', Georgia, serif;
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 8px;
-    text-transform: uppercase;
-    color: var(--inv-gold);
-    text-shadow:
-      0 0 30px rgba(212, 162, 69, 0.2),
-      0 0 60px rgba(212, 162, 69, 0.08);
-    line-height: 1.2;
-  }
-
-  .header-left .subtitle {
-    color: var(--inv-cyan);
-    font-size: 11px;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
-    font-weight: 500;
-    margin-top: 6px;
-    text-shadow: 0 0 15px rgba(91, 214, 224, 0.12);
-  }
-
-  .header-left .subtitle::before,
-  .header-left .subtitle::after {
-    content: ' — ';
-    color: var(--inv-gold-dim);
-    font-weight: 100;
-  }
-
-  /* Wax Seal button */
-  .seal-btn {
-    width: 48px;
-    height: 48px;
-    border: none;
-    background: radial-gradient(ellipse at 35% 35%, var(--inv-seal3), var(--inv-seal) 40%, var(--inv-seal2) 80%);
-    color: var(--inv-gold3);
-    font-size: 20px;
-    cursor: pointer;
-    transition: all 0.25s;
-    display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    font-family: 'AritaBuri', 'Cinzel Decorative', Georgia, serif;
+    margin-bottom: 10px;
+    padding: 6px 0;
     position: relative;
-    border-radius: 50%;
-    box-shadow:
-      0 0 0 2px var(--inv-gold-dim),
-      0 0 0 4px rgba(192, 57, 43, 0.3),
-      0 0 20px rgba(192, 57, 43, 0.15),
-      inset 0 -2px 4px rgba(0, 0, 0, 0.4),
-      inset 0 2px 4px rgba(255, 255, 255, 0.08);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    font-weight: 700;
-    letter-spacing: 0;
   }
 
-  .seal-btn::before {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    border-radius: 50%;
-    border: 1px solid rgba(232, 192, 101, 0.2);
-    pointer-events: none;
-  }
-
-  .seal-btn:hover {
-    transform: scale(1.05);
-    box-shadow:
-      0 0 0 2px var(--inv-gold-dim),
-      0 0 0 4px rgba(192, 57, 43, 0.4),
-      0 0 30px rgba(192, 57, 43, 0.25),
-      inset 0 -2px 4px rgba(0, 0, 0, 0.4),
-      inset 0 2px 4px rgba(255, 255, 255, 0.1);
-  }
-
-  .seal-btn:active {
-    transform: scale(0.95);
+  .subtitle {
+    color: var(--inv-cyan);
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-align: center;
+    width: 100%;
+    text-shadow: 0 0 20px rgba(91, 214, 224, 0.2);
   }
 
   /* ============================================================
@@ -428,7 +288,7 @@
   .tabs {
     display: flex;
     gap: 0;
-    margin-bottom: 18px;
+    margin-bottom: 12px;
     position: relative;
     background: var(--inv-surface3);
     border-radius: 4px;
@@ -445,11 +305,11 @@
 
   .tab-btn {
     flex: 1;
-    padding: 10px 6px;
+    padding: 7px 4px;
     border: none;
     background: transparent;
     color: var(--inv-text4);
-    font-size: 11px;
+    font-size: 9px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
@@ -493,6 +353,7 @@
 
   .tab-panel.active {
     display: block;
+    padding-bottom: 12px;
   }
 
   /* ============================================================
@@ -522,19 +383,19 @@
   /* Dice type buttons — medallion seals */
   .dice-types {
     display: flex;
-    gap: 6px;
+    gap: 4px;
     justify-content: center;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     flex-wrap: wrap;
   }
 
   .dice-type-btn {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background: linear-gradient(145deg, var(--inv-surface3), var(--inv-card));
     border: none;
     color: var(--inv-text3);
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.15s;
@@ -589,9 +450,9 @@
   .pool-area {
     background: var(--inv-parchment);
     border: none;
-    padding: 12px 14px;
-    margin-bottom: 14px;
-    min-height: 52px;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    min-height: 42px;
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
@@ -639,7 +500,7 @@
     background: linear-gradient(135deg, var(--inv-surface2), var(--inv-surface3));
     border: none;
     padding: 6px 10px 6px 12px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     color: var(--inv-text);
     cursor: pointer;
@@ -704,7 +565,7 @@
   .controls-row {
     display: flex;
     gap: 10px;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     align-items: flex-end;
   }
 
@@ -757,11 +618,11 @@
   /* Roll button — large gold invitation seal */
   .btn-roll {
     width: 100%;
-    padding: 14px;
+    padding: 10px;
     background: linear-gradient(135deg, var(--inv-gold), var(--inv-gold2) 50%, #6a5a2a);
     border: none;
     color: #000;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.15s;
@@ -855,10 +716,10 @@
   .result-box {
     background: var(--inv-parchment);
     border: none;
-    padding: 20px;
+    padding: 14px;
     text-align: center;
-    margin-bottom: 12px;
-    min-height: 130px;
+    margin-bottom: 8px;
+    min-height: 100px;
     position: relative;
     border-radius: 4px;
     box-shadow:
@@ -885,7 +746,7 @@
   }
 
   .result-total {
-    font-size: 52px;
+    font-size: 40px;
     font-weight: 900;
     color: var(--inv-gold);
     line-height: 1;
@@ -915,8 +776,8 @@
     flex-wrap: wrap;
     gap: 8px;
     justify-content: center;
-    margin-top: 14px;
-    padding-top: 14px;
+    margin-top: 10px;
+    padding-top: 10px;
     position: relative;
     min-height: 20px;
   }
@@ -1155,8 +1016,8 @@
   .coins-section {
     background: var(--inv-parchment);
     border: none;
-    padding: 12px 14px;
-    margin-bottom: 14px;
+    padding: 8px 10px;
+    margin-bottom: 10px;
     position: relative;
     border-radius: 4px;
     box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
@@ -1391,7 +1252,7 @@
   }
 
   .calc-result {
-    font-size: 38px;
+    font-size: 30px;
     font-weight: 700;
     color: var(--inv-gold);
     line-height: 1.2;
@@ -1410,15 +1271,15 @@
   .calc-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
+    gap: 4px;
   }
 
   .calc-btn {
-    padding: 14px 8px;
+    padding: 10px 6px;
     background: linear-gradient(135deg, var(--inv-surface3), var(--inv-card));
     border: none;
     color: var(--inv-text2);
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.1s;
@@ -1545,7 +1406,7 @@
   .enemy-form {
     display: flex;
     gap: 8px;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     flex-wrap: wrap;
   }
 
@@ -1629,7 +1490,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-height: 420px;
+    max-height: 320px;
     overflow-y: auto;
     padding-right: 4px;
   }
@@ -1637,28 +1498,17 @@
   .enemy-card {
     background: var(--inv-parchment);
     border: none;
-    padding: 12px 14px;
+    padding: 8px 10px;
     transition: opacity 0.3s;
     position: relative;
     border-radius: 4px;
-    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
   }
 
   .enemy-card::before {
     content: '';
     position: absolute;
     inset: 0;
-    border: 1px solid var(--inv-gold-dim);
     border-radius: 4px;
-    pointer-events: none;
-  }
-
-  .enemy-card::after {
-    content: '';
-    position: absolute;
-    inset: 3px;
-    border: 1px solid rgba(212, 162, 69, 0.02);
-    border-radius: 2px;
     pointer-events: none;
   }
 
@@ -1672,13 +1522,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     position: relative;
     z-index: 1;
   }
 
   .enemy-name {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 700;
     color: var(--inv-text);
     font-family: 'Playfair Display', Georgia, serif;
@@ -1724,7 +1574,7 @@
 
   /* HP/Stagger bars — game style */
   .enemy-bar-section {
-    margin-bottom: 8px;
+    margin-bottom: 14px;
     position: relative;
     z-index: 1;
   }
@@ -1736,8 +1586,8 @@
   .enemy-bar-label {
     display: flex;
     justify-content: space-between;
-    font-size: 11px;
-    margin-bottom: 3px;
+    font-size: 10px;
+    margin-bottom: 0;
     font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
   }
 
@@ -1758,12 +1608,11 @@
     overflow: hidden;
     cursor: pointer;
     position: relative;
-    border: 1px solid var(--inv-gold-dim);
     border-radius: 3px;
   }
 
   .enemy-bar-track:hover {
-    border-color: rgba(212, 162, 69, 0.2);
+    background: rgba(0, 0, 0, 0.55);
   }
 
   .enemy-bar-fill {
@@ -1784,14 +1633,13 @@
 
   .enemy-damage-input {
     display: none;
-    margin-top: 6px;
-    padding-top: 6px;
+    margin-top: 8px;
     position: relative;
   }
 
   .enemy-damage-input.visible {
     display: flex;
-    gap: 6px;
+    gap: 8px;
     align-items: center;
   }
 
@@ -2038,9 +1886,9 @@
   .comp-result {
     background: var(--inv-parchment);
     border: none;
-    padding: 20px;
+    padding: 14px;
     text-align: center;
-    min-height: 90px;
+    min-height: 70px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2069,7 +1917,7 @@
   }
 
   .comp-winner {
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 800;
     margin-bottom: 4px;
     font-family: 'Playfair Display', Georgia, serif;
@@ -2323,6 +2171,450 @@
     font-style: italic;
   }
 
+
+  /* ============================================================
+     POISE TRACKER (Limbus Company)
+     ============================================================ */
+  .poise-section {
+    margin-top: 16px;
+    padding: 12px 14px;
+    background: var(--inv-parchment);
+    border: none;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
+  }
+
+  .poise-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .poise-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .poise-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: brightness(0.9) saturate(1.2);
+  }
+
+  .poise-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--inv-cyan);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-shadow: 0 0 15px rgba(91, 214, 224, 0.15);
+  }
+
+  .poise-stats {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--inv-gold);
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+  }
+
+  .poise-counter-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  .poise-btn {
+    padding: 8px 16px;
+    background: linear-gradient(135deg, var(--inv-cyan2), var(--inv-blue));
+    border: none;
+    color: #000;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 1px 3px rgba(0,0,0,0.3);
+    border-radius: 4px;
+  }
+
+  .poise-btn::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border: 1px solid rgba(255,255,255,0.08);
+    pointer-events: none;
+  }
+
+  .poise-btn:hover {
+    background: linear-gradient(135deg, var(--inv-cyan), var(--inv-cyan2));
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 0 15px var(--inv-cyan-glow), 0 1px 3px rgba(0,0,0,0.3);
+  }
+
+  .poise-btn:active {
+    transform: translateY(1px);
+  }
+
+  .poise-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 6px 14px;
+    background: var(--inv-surface3);
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    min-width: 60px;
+  }
+
+  .poise-count-label {
+    font-size: 9px;
+    color: var(--inv-text4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+  }
+
+  .poise-count-value {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--inv-cyan);
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-shadow: 0 0 10px var(--inv-cyan-glow);
+  }
+
+  .poise-crit-value {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--inv-gold);
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-shadow: 0 0 10px var(--inv-gold-glow);
+  }
+
+  .poise-crit-value.maxed {
+    color: #ff6b6b;
+    text-shadow: 0 0 20px rgba(255,107,107,0.5);
+    animation: poise-pulse 0.8s ease-in-out infinite alternate;
+  }
+
+  .poise-adv-value {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--inv-success);
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-shadow: 0 0 10px rgba(74,154,90,0.3);
+  }
+
+  @keyframes poise-pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+  }
+
+  .poise-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .poise-hit-btn {
+    padding: 10px !important;
+    font-size: 14px !important;
+  }
+
+  .poise-hit-btn.crit-ready {
+    animation: poise-glow 0.6s ease-in-out infinite alternate;
+  }
+
+  @keyframes poise-glow {
+    from { box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 0 15px var(--inv-gold-glow); }
+    to { box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 0 35px var(--inv-gold-strong); }
+  }
+
+  .poise-endturn-btn {
+    padding: 8px 14px;
+    background: linear-gradient(135deg, var(--inv-surface3), var(--inv-card));
+    border: none;
+    color: var(--inv-text3);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(212,162,69,0.03);
+  }
+
+  .poise-endturn-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .poise-endturn-btn:hover {
+    color: var(--inv-gold);
+    background: linear-gradient(135deg, var(--inv-surface4), var(--inv-surface2));
+    box-shadow: inset 0 1px 0 rgba(212,162,69,0.06);
+  }
+
+  .poise-log {
+    margin-top: 10px;
+    padding: 8px 10px;
+    background: var(--inv-input);
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    min-height: 30px;
+    font-size: 12px;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    color: var(--inv-text3);
+    line-height: 1.4;
+    max-height: 100px;
+    overflow-y: auto;
+  }
+
+  .poise-log-empty {
+    color: var(--inv-text4);
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
+  }
+
+  .poise-log-entry {
+    margin: 2px 0;
+  }
+
+  .poise-log-entry.crit {
+    color: #ff6b6b;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255,107,107,0.3);
+  }
+
+  .poise-log-entry.info {
+    color: var(--inv-text3);
+  }
+
+  .poise-log-entry.advantage {
+    color: var(--inv-success);
+    font-weight: 600;
+  }
+
+  /* Crit dialog overlay */
+  .crit-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: crit-fade-in 0.3s ease;
+  }
+
+  @keyframes crit-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .crit-dialog {
+    background: linear-gradient(145deg, #1a0a0a, #0a0505);
+    border: 2px solid #ff6b6b;
+    border-radius: 12px;
+    padding: 30px 40px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 0 80px rgba(255,107,107,0.3), 0 0 0 4px rgba(255,107,107,0.1);
+    animation: crit-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  @keyframes crit-pop {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  .crit-dialog .crit-title {
+    font-size: 36px;
+    font-weight: 900;
+    color: #ff6b6b;
+    font-family: 'AritaBuri', 'Cinzel Decorative', Georgia, serif;
+    text-shadow: 0 0 30px rgba(255,107,107,0.5);
+    margin-bottom: 8px;
+    letter-spacing: 4px;
+  }
+
+  .crit-dialog .crit-sub {
+    font-size: 16px;
+    color: var(--inv-text2);
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    margin-bottom: 6px;
+  }
+
+  .crit-dialog .crit-dmg {
+    font-size: 48px;
+    font-weight: 900;
+    color: #ff4444;
+    font-family: 'AritaBuri', 'Playfair Display', Georgia, serif;
+    text-shadow: 0 0 40px rgba(255,68,68,0.4);
+    margin: 10px 0;
+  }
+
+  .crit-dialog .crit-close-btn {
+    margin-top: 16px;
+    padding: 10px 30px;
+    background: linear-gradient(135deg, #ff6b6b, #cc3333);
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+
+  .crit-dialog .crit-close-btn:hover {
+    filter: brightness(1.2);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 0 25px rgba(255,107,107,0.3);
+  }
+  .poise-counter-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .poise-btn-pot {
+    background: linear-gradient(135deg, var(--inv-gold), var(--inv-gold2)) !important;
+    color: #000 !important;
+    font-size: 11px !important;
+    padding: 4px 10px !important;
+  }
+
+  .poise-btn-cnt {
+    background: linear-gradient(135deg, var(--inv-cyan2), var(--inv-blue)) !important;
+    color: #000 !important;
+    font-size: 11px !important;
+    padding: 4px 10px !important;
+  }
+
+  .poise-count-value.potency {
+    color: var(--inv-gold);
+    text-shadow: 0 0 10px var(--inv-gold-glow);
+  }
+
+  .poise-count-value.contador {
+    color: var(--inv-cyan);
+    text-shadow: 0 0 10px var(--inv-cyan-glow);
+  }
+  .poise-value-input {
+    width: 54px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 3px;
+    color: inherit;
+    font-size: 20px;
+    font-weight: 800;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-align: center;
+    outline: none;
+    -moz-appearance: textfield;
+  }
+  .poise-value-input::-webkit-inner-spin-button,
+  .poise-value-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .poise-value-input:focus {
+    border-color: var(--inv-cyan);
+    box-shadow: 0 0 8px var(--inv-cyan-glow);
+  }
+  .poise-value-input.potency {
+    color: var(--inv-gold);
+    text-shadow: 0 0 10px var(--inv-gold-glow);
+  }
+  .poise-value-input.contador {
+    color: var(--inv-cyan);
+    text-shadow: 0 0 10px var(--inv-cyan-glow);
+  }
+
+
+  .poise-info-row {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .poise-hint {
+    font-size: 10px;
+    color: var(--inv-text4);
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    font-style: italic;
+  }
+
+  .poise-counter-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .poise-btn-pot {
+    background: linear-gradient(135deg, var(--inv-gold), var(--inv-gold2)) !important;
+    color: #000 !important;
+    font-size: 11px !important;
+    padding: 4px 10px !important;
+  }
+
+  .poise-btn-cnt {
+    background: linear-gradient(135deg, var(--inv-cyan2), var(--inv-blue)) !important;
+    color: #000 !important;
+    font-size: 11px !important;
+    padding: 4px 10px !important;
+  }
+
+  .poise-count-value.potency {
+    color: var(--inv-gold);
+    text-shadow: 0 0 10px var(--inv-gold-glow);
+  }
+
+  .poise-count-value.contador {
+    color: var(--inv-cyan);
+    text-shadow: 0 0 10px var(--inv-cyan-glow);
+  }
+
+  .poise-info-row {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .poise-hint {
+    font-size: 10px;
+    color: var(--inv-text4);
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    font-style: italic;
+  }
+
 </style>
 </head>
 <body>
@@ -2335,22 +2627,11 @@
   <div class="card-frame-overlay"></div>
   <div class="picture-frame"></div>
   <div class="container-inner">
-  <div class="inv-frame-ornament"></div>
 
   <!-- Header — THE INVITATION -->
-  <div class="header-row">
-    <div class="header-left">
-      <div class="invitation-title">
-        <span class="title-deco-left">❖</span>
-        <h1>THE INVITATION</h1>
-        <span class="title-deco-right">❖</span>
-      </div>
-      <div class="subtitle" id="tabSubtitle">🎲 Tirar Dados</div>
-    </div>
-    <button class="seal-btn" id="themeBtn" title="Sello de la Biblioteca">✦</button>
+    <div class="header-row">
+    <div class="subtitle" id="tabSubtitle">🎲 Tirar Dados</div>
   </div>
-
-  <div class="top-deco"></div>
 
   <!-- Tabs -->
   <div class="tabs">
@@ -2362,10 +2643,8 @@
     <button class="tab-btn" data-tab="ruleta">🎰 Ruleta</button>
   </div>
 
-  <div class="section-divider"></div>  </div>
-
-  <div class="section-divider"></div>
-
+  
+  
   <!-- ============ COINS TRACKER ============ -->
   <div class="coins-section" id="coinsSection">
     <div class="coins-header">
@@ -2392,8 +2671,7 @@
     </div>
   </div>
 
-  <div class="section-divider"></div>
-
+  
   <!-- ============ TAB 1: DICE ============ -->
   <div class="tab-panel active" id="tabDice">
     <div class="dice-types" id="diceTypes">
@@ -2451,8 +2729,7 @@
         </div>
       </div>
     </div>
-    <div class="section-divider" style="margin-bottom:0"></div>
-  </div>
+      </div>
 
   <!-- ============ TAB 2: CALC ============ -->
   <div class="tab-panel" id="tabCalc">
@@ -2491,8 +2768,7 @@
     <div class="calc-footer">
       <span class="footer-tag">+ − × ÷</span>
     </div>
-    <div class="section-divider" style="margin-bottom:0"></div>
-  </div>
+      </div>
 
   <!-- ============ TAB 3: ENEMIES ============ -->
   <div class="tab-panel" id="tabEnemies">
@@ -2515,8 +2791,52 @@
     <div class="enemy-list" id="enemyList">
       <div class="enemy-empty">No hay enemigos. Agregá uno arriba.</div>
     </div>
-    <div class="section-divider" style="margin-bottom:0"></div>
+      <!-- ============ POISE (Limbus Company) ============ -->
+  <div class="poise-section">
+    <div class="poise-header">
+      <img src="https://limbuscompany.wiki.gg/images/Poise.png?1174f1" alt="Poise" class="poise-icon">
+      <span class="poise-title">Poise</span>
+      <span class="poise-stats" id="poiseStats">0% critico</span>
+    </div>
+
+    <div class="poise-counter-row">
+      <div class="poise-counter-group">
+        <button class="poise-btn poise-btn-pot" onclick="poiseAddPotencia(1)" title="Agregar Potencia">+ Potencia</button>
+        <button class="poise-btn poise-btn-pot" onclick="poiseAddPotencia(-1)" title="Quitar Potencia" style="margin-left:2px">- Potencia</button>
+        <div class="poise-display">
+          <span class="poise-count-label">Potencia</span>
+          <input type="number" class="poise-value-input potency" id="poisePotenciaValue" value="0" min="0">
+        </div>
+      </div>
+      <div class="poise-counter-group">
+        <button class="poise-btn poise-btn-cnt" onclick="poiseAddContador(1)" title="Agregar Contador">+ Contador</button>
+        <button class="poise-btn poise-btn-cnt" onclick="poiseAddContador(-1)" title="Quitar Contador" style="margin-left:2px">- Contador</button>
+        <div class="poise-display">
+          <span class="poise-count-label">Contador</span>
+          <input type="number" class="poise-value-input contador" id="poiseContadorValue" value="0" min="0">
+        </div>
+      </div>
+      <div class="poise-display">
+        <span class="poise-count-label">Critico</span>
+        <span class="poise-crit-value" id="poiseCritValue">0%</span>
+      </div>
+      <div class="poise-display" id="poiseAdvantageDisplay" style="display:none">
+        <span class="poise-count-label">Ventaja</span>
+        <span class="poise-adv-value" id="poiseAdvValue">+0</span>
+      </div>
+    </div>
+
+    <div class="poise-info-row">
+      <span class="poise-hint">Solo los CRITICOS gastan Contador</span>
+    </div>
+
+    
+
+    <div class="poise-log" id="poiseLog">
+      <div class="poise-log-empty">Agrega Potencia y Contador, aplica daño para activar</div>
+    </div>
   </div>
+      </div>
 
       <!-- ============ TAB: PLAYERS ============ -->
   <div class="tab-panel" id="tabPlayers">
@@ -2529,8 +2849,52 @@
     <div class="enemy-list" id="playerList">
       <div class="enemy-empty">No hay jugadores. Agregá uno arriba.</div>
     </div>
-    <div class="section-divider" style="margin-bottom:0"></div>
+      <!-- ============ POISE (Limbus Company) ============ -->
+  <div class="poise-section">
+    <div class="poise-header">
+      <img src="https://limbuscompany.wiki.gg/images/Poise.png?1174f1" alt="Poise" class="poise-icon">
+      <span class="poise-title">Poise</span>
+      <span class="poise-stats" id="poiseStatsPlayers">0% critico</span>
+    </div>
+
+    <div class="poise-counter-row">
+      <div class="poise-counter-group">
+        <button class="poise-btn poise-btn-pot" onclick="poiseAddPotencia(1)" title="Agregar Potencia">+ Potencia</button>
+        <button class="poise-btn poise-btn-pot" onclick="poiseAddPotencia(-1)" title="Quitar Potencia" style="margin-left:2px">- Potencia</button>
+        <div class="poise-display">
+          <span class="poise-count-label">Potencia</span>
+          <input type="number" class="poise-value-input potency" id="poisePotenciaValuePlayers" value="0" min="0">
+        </div>
+      </div>
+      <div class="poise-counter-group">
+        <button class="poise-btn poise-btn-cnt" onclick="poiseAddContador(1)" title="Agregar Contador">+ Contador</button>
+        <button class="poise-btn poise-btn-cnt" onclick="poiseAddContador(-1)" title="Quitar Contador" style="margin-left:2px">- Contador</button>
+        <div class="poise-display">
+          <span class="poise-count-label">Contador</span>
+          <input type="number" class="poise-value-input contador" id="poiseContadorValuePlayers" value="0" min="0">
+        </div>
+      </div>
+      <div class="poise-display">
+        <span class="poise-count-label">Critico</span>
+        <span class="poise-crit-value" id="poiseCritValuePlayers">0%</span>
+      </div>
+      <div class="poise-display" id="poiseAdvantageDisplayPlayers" style="display:none">
+        <span class="poise-count-label">Ventaja</span>
+        <span class="poise-adv-value" id="poiseAdvValuePlayers">+0</span>
+      </div>
+    </div>
+
+    <div class="poise-info-row">
+      <span class="poise-hint">Solo los CRITICOS gastan Contador</span>
+    </div>
+
+    
+
+    <div class="poise-log" id="poiseLogPlayers">
+      <div class="poise-log-empty">Agrega Potencia y Contador, aplica daño para activar</div>
+    </div>
   </div>
+      </div>
 
 <!-- ============ TAB 4: COMPARE ============ -->
   <div class="tab-panel" id="tabCompare">
@@ -2555,8 +2919,7 @@
     <div class="comp-footer">
       <span class="footer-tag">¿Quién gana el clash?</span>
     </div>
-    <div class="section-divider" style="margin-bottom:0"></div>
-  </div>
+      </div>
 
   <!-- ============ TAB: RULETA ============ -->
   <div class="tab-panel" id="tabRuleta">
@@ -2589,22 +2952,11 @@
         </div>
       </div>
     </div>
-  </div>
 
-  </div><!-- /.container-inner -->
+</div><!-- /.container-inner -->
 </div><!-- /.container -->
 
 <script>
-  // ============================================================
-  //  THEME TOGGLE (HUD siempre en modo oscuro)
-  // ============================================================
-  const themeBtn = document.getElementById('themeBtn');
-  themeBtn.addEventListener('click', () => {
-    // Pequeño efecto visual al hacer click — el HUD siempre es oscuro
-    themeBtn.style.transform = 'scale(0.9)';
-    setTimeout(() => themeBtn.style.transform = '', 150);
-  });
-
   // ============================================================
   //  TABS
   // ============================================================
@@ -3000,9 +3352,8 @@
     coinsState.reaction.forEach(c => c.used = false);
     renderCoins();
     saveState();
+    poiseEndTurn();
   }
-
-  addToPool(20);
 
   // ============================================================
   //  CALCULATOR
@@ -3186,6 +3537,8 @@
     if (dmg === 0) return;
 
     if (type !== 'stagger') {
+      var _crit = poiseTryCritDamage();
+      if (_crit.isCrit) dmg = dmg * _crit.multiplier;
       dmg = Math.round(dmg * getEntityDamageMultiplier(enemy));
       if (dmg < 1 && amount > 0) dmg = 1;
     }
@@ -3424,7 +3777,6 @@
     }
   });
 
-
   // ============================================================
   //  PLAYER TRACKER
   // ============================================================
@@ -3456,7 +3808,11 @@
     if (!player) return;
     let dmg = Math.max(0, Math.floor(amount));
     if (dmg === 0) return;
-    if (type !== 'stagger') { dmg = Math.round(dmg * getEntityDamageMultiplier(player)); if (dmg < 1 && amount > 0) dmg = 1; }
+    if (type !== 'stagger') {
+      var _crit = poiseTryCritDamage();
+      if (_crit.isCrit) dmg = dmg * _crit.multiplier;
+      dmg = Math.round(dmg * getEntityDamageMultiplier(player));
+      if (dmg < 1 && amount > 0) dmg = 1; }
     if (type === 'stagger') { player.currentStagger = Math.max(0, player.currentStagger - dmg); }
     else { player.currentHp = Math.max(0, player.currentHp - dmg); player.currentStagger = Math.max(0, player.currentStagger - dmg); }
     if (player.currentHp <= 0) { removePlayer(id); }
@@ -3821,10 +4177,17 @@
       ctx.rotate(midAngle);
       ctx.fillStyle = 'rgba(0,0,0,0.7)';
       ctx.font = 'bold 11px AritaBuri, Rajdhani, Arial';
-      ctx.textAlign = 'right';
       ctx.textBaseline = 'middle';
       const label = opt.name.length > 10 ? opt.name.substring(0, 9) + '...' : opt.name;
-      ctx.fillText(label, 0, 0);
+      // Flip text on left side so it is never upside-down
+      if (midAngle > Math.PI / 2 && midAngle < 3 * Math.PI / 2) {
+        ctx.rotate(Math.PI);
+        ctx.textAlign = 'left';
+        ctx.fillText(label, 0, 0);
+      } else {
+        ctx.textAlign = 'right';
+        ctx.fillText(label, 0, 0);
+      }
       ctx.restore();
 
       startAngle = endAngle;
@@ -3924,10 +4287,17 @@
         ctx.rotate(midAngle);
         ctx.fillStyle = 'rgba(0,0,0,0.7)';
         ctx.font = 'bold 11px AritaBuri, Rajdhani, Arial';
-        ctx.textAlign = 'right';
         ctx.textBaseline = 'middle';
         const label = opt.name.length > 10 ? opt.name.substring(0, 9) + '...' : opt.name;
-        ctx.fillText(label, 0, 0);
+        // Flip text on left side so it is never upside-down
+        if (midAngle > Math.PI / 2 && midAngle < 3 * Math.PI / 2) {
+          ctx.rotate(Math.PI);
+          ctx.textAlign = 'left';
+          ctx.fillText(label, 0, 0);
+        } else {
+          ctx.textAlign = 'right';
+          ctx.fillText(label, 0, 0);
+        }
         ctx.restore();
         startAngle = endAngle;
       });
@@ -4106,6 +4476,247 @@
 
   // Restore state on load
   loadState();
+
+  // Add default D20 only if pool is empty
+  if (pool.length === 0) {
+    addToPool(20);
+  }
+
+  // ============================================================
+  //  POISE TRACKER (Limbus Company) - v2
+  //  Potencia = crit chance (each = +5%)
+  //  Contador = how many crits can trigger
+  //  Only crits consume Contador
+  //  Ventaja = every 10 Potencia beyond 20 = +20
+  // ============================================================
+
+  let poisePotencia = 0;
+  let poiseContador = 0;
+
+  function poiseLoad() {
+    try {
+      const saved = localStorage.getItem('diceTool_poise');
+      if (saved) {
+        const data = JSON.parse(saved);
+        poisePotencia = data.potencia || 0;
+        poiseContador = data.contador || 0;
+        poiseUpdateUI();
+      }
+    } catch(e) {}
+  }
+
+  function poiseSave() {
+    localStorage.setItem('diceTool_poise', JSON.stringify({
+      potencia: poisePotencia,
+      contador: poiseContador
+    }));
+  }
+
+  function poiseGetCritChance() {
+    return Math.min(poisePotencia * 5, 100);
+  }
+
+  function poiseGetAdvantage() {
+    const extra = poisePotencia - 20;
+    if (extra <= 0) return 0;
+    return Math.floor(extra / 10) * 20;
+  }
+
+  function poiseUpdateUI() {
+    const chance = poiseGetCritChance();
+    const advantage = poiseGetAdvantage();
+
+    ['', 'Players'].forEach(function(suffix) {
+      var potEl = document.getElementById('poisePotenciaValue' + suffix);
+      var cntEl = document.getElementById('poiseContadorValue' + suffix);
+      if (!potEl || !cntEl) return;
+
+      potEl.value = poisePotencia;
+      cntEl.value = poiseContador;
+
+      var critEl = document.getElementById('poiseCritValue' + suffix);
+      critEl.textContent = chance + '%';
+      critEl.classList.toggle('maxed', chance >= 80);
+
+      var statsEl = document.getElementById('poiseStats' + suffix);
+      if (chance >= 100 && poisePotencia > 0) {
+        statsEl.textContent = 'CRITICO GARANTIZADO';
+        statsEl.style.color = '#ff6b6b';
+      } else if (poisePotencia > 0) {
+        statsEl.textContent = chance + '% critico';
+        statsEl.style.color = '';
+      } else {
+        statsEl.textContent = '0% critico';
+        statsEl.style.color = '';
+      }
+
+      var advDisplay = document.getElementById('poiseAdvantageDisplay' + suffix);
+      if (advantage > 0) {
+        advDisplay.style.display = 'flex';
+        document.getElementById('poiseAdvValue' + suffix).textContent = '+' + advantage;
+      } else {
+        advDisplay.style.display = 'none';
+      }
+
+    });
+
+    poiseSave();
+  }
+
+  function poiseTryCritDamage() {
+    if (poisePotencia <= 0 || poiseContador <= 0) {
+      return { multiplier: 1, isCrit: false };
+    }
+    const chance = poiseGetCritChance();
+    const roll = Math.random() * 100;
+    const isCrit = roll <= chance || (chance >= 100 && poisePotencia > 0);
+    
+    if (isCrit) {
+      poiseContador = Math.max(0, poiseContador - 1);
+      if (poiseContador === 0 && poisePotencia > 0) {
+        poisePotencia = 0;
+      }
+      poiseUpdateUI();
+      var adv = poiseGetAdvantage();
+      var msg = 'DAMAGE CRITICO! (tirada: ' + roll.toFixed(1) + '% <= ' + chance + '%)';
+      msg += ' | Danio x2.0';
+      if (poiseContador === 0) msg += ' | Poise perdido!';
+      if (adv > 0) msg += ' | Ventaja +' + adv;
+      poiseLogEntry(msg, 'crit');
+      showCritDialog(adv);
+      return { multiplier: 2, isCrit: true };
+    }
+    return { multiplier: 1, isCrit: false };
+  }
+
+  function poiseAddPotencia(amount) {
+    poisePotencia = Math.max(0, poisePotencia + amount);
+    var sign = amount > 0 ? '+' : '';
+    poiseLogEntry(sign + amount + ' Potencia (total: ' + poisePotencia + ', ' + poiseGetCritChance() + '%)', 'info');
+    poiseUpdateUI();
+  }
+
+  function poiseAddContador(amount) {
+    poiseContador = Math.max(0, poiseContador + amount);
+    var sign = amount > 0 ? '+' : '';
+    poiseLogEntry(sign + amount + ' Contador (total: ' + poiseContador + ')', 'info');
+    poiseUpdateUI();
+  }
+
+  function showCritDialog(advantage) {
+    var overlay = document.createElement('div');
+    overlay.className = 'crit-overlay';
+    overlay.id = 'critOverlay';
+
+    var advHtml = '';
+    if (advantage > 0) {
+      advHtml = '<div class="crit-sub" style="color:#4a9a5a">+ Ventaja ' + advantage + '</div>';
+    }
+
+    overlay.innerHTML =
+      '<div class="crit-dialog">' +
+        '<div class="crit-title">CRITICO</div>' +
+        '<div class="crit-sub">Golpe perfecto!</div>' +
+        '<div class="crit-dmg">x2.0</div>' +
+        advHtml +
+        '<button class="crit-close-btn" onclick="closeCritDialog()">Continuar</button>' +
+      '</div>';
+    document.body.appendChild(overlay);
+
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) closeCritDialog();
+    });
+
+    setTimeout(function() {
+      var el = document.getElementById('critOverlay');
+      if (el) el.remove();
+    }, 4000);
+  }
+
+  function closeCritDialog() {
+    var el = document.getElementById('critOverlay');
+    if (el) el.remove();
+  }
+
+  function poiseEndTurn() {
+    if (poiseContador <= 0 && poisePotencia > 0) {
+      poiseLogEntry('Contador en 0, Poise perdido', 'info');
+      poisePotencia = 0;
+      poiseUpdateUI();
+      return;
+    }
+    if (poiseContador <= 0) {
+      poiseLogEntry('No hay Contador para reducir', 'info');
+      return;
+    }
+    poiseContador = Math.max(0, poiseContador - 1);
+    poiseLogEntry('Fin del turno: -1 Contador (restante: ' + poiseContador + ')', 'info');
+
+    if (poiseContador === 0 && poisePotencia > 0) {
+      poisePotencia = 0;
+      poiseLogEntry('Poise perdido! Sin Contador la Potencia se disipa', 'info');
+    }
+
+    poiseUpdateUI();
+  }
+
+  function poiseLogEntry(msg, type) {
+    ['', 'Players'].forEach(function(suffix) {
+      var log = document.getElementById('poiseLog' + suffix);
+      if (!log) return;
+      var empty = log.querySelector('.poise-log-empty');
+      if (empty) empty.remove();
+
+      var entry = document.createElement('div');
+      entry.className = 'poise-log-entry ' + (type || 'info');
+      entry.textContent = msg;
+      log.appendChild(entry);
+      log.scrollTop = log.scrollHeight;
+    });
+  }
+
+
+  function poiseInitInputs() {
+    ['', 'Players'].forEach(function(suffix) {
+      var potInput = document.getElementById('poisePotenciaValue' + suffix);
+      var cntInput = document.getElementById('poiseContadorValue' + suffix);
+      
+      if (potInput) {
+        potInput.addEventListener('input', function() {
+          var val = parseInt(this.value);
+          if (!isNaN(val) && val >= 0) {
+            poisePotencia = val;
+            poiseUpdateUI();
+          }
+        });
+        potInput.addEventListener('blur', function() {
+          if (this.value === '' || isNaN(parseInt(this.value))) {
+            this.value = poisePotencia;
+          }
+        });
+      }
+      
+      if (cntInput) {
+        cntInput.addEventListener('input', function() {
+          var val = parseInt(this.value);
+          if (!isNaN(val) && val >= 0) {
+            poiseContador = val;
+            poiseUpdateUI();
+          }
+        });
+        cntInput.addEventListener('blur', function() {
+          if (this.value === '' || isNaN(parseInt(this.value))) {
+            this.value = poiseContador;
+          }
+        });
+      }
+    });
+  }
+
+  poiseLoad();
+  poiseUpdateUI();
+  poiseInitInputs();
+
 </script>
 
 </body>
