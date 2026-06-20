@@ -307,12 +307,3 @@
 
   // Init: draw empty wheel
   ruletaDrawWheel();
-
-  setTimeout(() => {
-    if (enemies.length === 0) {
-      addEnemy('Carnicero', 150, 60);
-    }
-    if (players.length === 0) {
-      addPlayer('Roland', 120, 50);
-    }
-  }, 100);

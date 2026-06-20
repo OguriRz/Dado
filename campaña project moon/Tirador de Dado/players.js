@@ -13,7 +13,7 @@
 
   function addPlayer(name, maxHp, maxStagger) {
     const id = ++playerIdCounter;
-    players.push({ id, name: name.trim() || 'Jugador ' + id, maxHp, currentHp: maxHp, maxStagger, currentStagger: maxStagger, statuses: { damageUp: 0, damageDown: 0, protection: 0, fragile: 0, target: 0, rupturePotency: 0, ruptureCount: 0 } });
+    players.push({ id, name: name.trim() || 'Jugador ' + id, maxHp, currentHp: maxHp, maxStagger, currentStagger: maxStagger, statuses: { damageUp: 0, damageDown: 0, protection: 0, fragile: 0, target: 0, targetPercent: 10, rupturePotency: 0, ruptureCount: 0 } });
     renderPlayers();
     saveState();
   }
@@ -42,8 +42,7 @@
           player.statuses.rupturePotency = 0;
         }
       }
-      dmg = Math.round(dmg * getEntityDamageMultiplier(player));
-      if (dmg < 1 && amount > 0) dmg = 1; }
+      dmg = Math.round(dmg * getEntityDamageMultiplier(player)); }
     if (type === 'stagger') { player.currentStagger = Math.max(0, player.currentStagger - dmg); }
     else { player.currentHp = Math.max(0, player.currentHp - dmg); player.currentStagger = Math.max(0, player.currentStagger - dmg); }
     if (player.currentHp <= 0) { removePlayer(id); }
@@ -92,7 +91,7 @@
           </div>
           <div class="enemy-status-section">
             <div class="enemy-status-badges">
-              ${ENTITY_EFFECTS.map(eff => `
+              ${ENTITY_EFFECTS.filter(eff => eff.id !== 'target').map(eff => `
                 <div class="enemy-status-badge">
                   <button class="es-btn es-minus" onmousedown="holdStart(event,()=>changePlayerStatus(${e.id},'${eff.id}',-1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Quitar stack">−</button>
                   <img src="${eff.icon}" alt="${eff.name}" class="es-icon" title="${eff.name}">
@@ -102,18 +101,32 @@
                   <button class="es-btn es-plus" onmousedown="holdStart(event,()=>changePlayerStatus(${e.id},'${eff.id}',1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Agregar stack">+</button>
                 </div>
               `).join('')}
+              <div class="enemy-status-badge" style="gap:3px">
+                <button class="es-btn es-minus" onmousedown="holdStart(event,()=>changePlayerStatus(${e.id},'target',-1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Quitar Marca">−</button>
+                <img src="${ENTITY_EFFECTS.find(ef=>ef.id==='target').icon}" alt="Marca" class="es-icon" title="Marca">
+                <input type="number" class="es-input" value="${e.statuses.target || 0}"
+                  onchange="setPlayerStatus(${e.id}, 'target', this.value)"
+                  onfocus="this.select()" min="0" max="1" style="width:28px">
+                <button class="es-btn es-plus" onmousedown="holdStart(event,()=>changePlayerStatus(${e.id},'target',1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Agregar Marca">+</button>
+                <span class="rup-label" style="margin:0 2px 0 6px">%</span>
+                <button class="es-btn es-minus" onmousedown="holdStart(event,()=>changePlayerTargetPercent(${e.id},-10))" onmouseup="holdStop()" onmouseleave="holdStop()" title="−10%">−</button>
+                <input type="number" class="es-input" value="${e.statuses.targetPercent || 10}"
+                  onchange="setPlayerTargetPercent(${e.id}, this.value)"
+                  onfocus="this.select()" min="0" max="1000" step="10" style="width:44px">
+                <button class="es-btn es-plus" onmousedown="holdStart(event,()=>changePlayerTargetPercent(${e.id},10))" onmouseup="holdStop()" onmouseleave="holdStop()" title="+10%">+</button>
+              </div>
               <div class="enemy-status-badge rupture-badge">
                 <button class="es-btn es-minus" onmousedown="holdStart(event,()=>changeRupturePotency(${e.id},-1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Quitar Potencia">−</button>
                 <img src="${RUP_ICON}" alt="Ruptura" class="es-icon" title="Ruptura">
                 <span class="rup-label">Pot</span>
                 <input type="number" class="es-input" value="${e.statuses.rupturePotency || 0}"
-                  onchange="setRupturePotency(${e.id}, this.value)" onfocus="this.select()" min="0" max="99">
+                  onchange="setRupturePotency(${e.id}, this.value)" onfocus="this.select()" min="0" max="10000">
                 <button class="es-btn es-plus" onmousedown="holdStart(event,()=>changeRupturePotency(${e.id},1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Agregar Potencia">+</button>
                 <span class="rup-sep">│</span>
                 <button class="es-btn es-minus" onmousedown="holdStart(event,()=>changeRuptureCount(${e.id},-1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Quitar Contador">−</button>
                 <span class="rup-label">Cnt</span>
                 <input type="number" class="es-input" value="${e.statuses.ruptureCount || 0}"
-                  onchange="setRuptureCount(${e.id}, this.value)" onfocus="this.select()" min="0" max="99">
+                  onchange="setRuptureCount(${e.id}, this.value)" onfocus="this.select()" min="0" max="10000">
                 <button class="es-btn es-plus" onmousedown="holdStart(event,()=>changeRuptureCount(${e.id},1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Agregar Contador">+</button>
               </div>
             </div>
@@ -125,6 +138,23 @@
         </div>`;
     });
     playerList.innerHTML = html;
+  }
+
+  function changePlayerTargetPercent(id, delta) {
+    const player = players.find(e => e.id === id);
+    if (!player) return;
+    const cur = player.statuses.targetPercent || 10;
+    player.statuses.targetPercent = Math.max(0, Math.min(1000, cur + delta));
+    renderPlayers();
+    saveState();
+  }
+
+  function setPlayerTargetPercent(id, value) {
+    const player = players.find(e => e.id === id);
+    if (!player) return;
+    player.statuses.targetPercent = Math.max(0, Math.min(1000, parseInt(value) || 0));
+    renderPlayers();
+    saveState();
   }
 
   function changePlayerStatus(id, effectId, delta) {

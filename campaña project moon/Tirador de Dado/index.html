@@ -59,6 +59,22 @@
         <div id="coinsReactions" class="coins-group"></div>
       </div>
     </div>
+
+    <!-- ============ MOVIMIENTOS (X / Y) ============ -->
+    <div class="movimientos-section">
+      <div class="movimientos-header">
+        <span class="movimientos-label">🏃 Movimientos</span>
+        <div class="movimientos-controls">
+          <button class="mov-ctrl" onclick="recoverMovimiento()" title="Recuperar movimiento">+</button>
+          <button class="mov-ctrl" onclick="spendMovimiento()" title="Gastar movimiento">−</button>
+        </div>
+      </div>
+      <div class="movimientos-display">
+        <span class="mov-remaining" id="movRemaining">35</span>
+        <span class="mov-sep">/</span>
+        <input type="number" class="mov-total-input" id="movTotalInput" value="35" min="1" max="999" onchange="setMovTotal(this.value)">
+      </div>
+    </div>
   </div>
 
   
@@ -117,13 +133,30 @@
           <img src="https://limbuscompany.wiki.gg/images/Paralyze.png?ba5ec8" alt="Parálisis" class="status-icon">
           Parálisis
         </div>
-        <div class="status-badge" data-status="power" onclick="toggleStatus('power')">
-          <img src="https://limbuscompany.wiki.gg/images/thumb/Damage_Up.png/25px-Damage_Up.png?e8dfcd" alt="Poder" class="status-icon">
-          Poder +5
+      </div>
+
+      <div class="status-stacks-section">
+        <div class="status-stack-badge" data-stack="ventaja">
+          <div class="ss-header">
+            <img src="https://limbuscompany.wiki.gg/images/thumb/Clash_Power_Up.png/25px-Clash_Power_Up.png?b6e2bc" alt="Poder de Clash" class="ss-icon">
+            <span class="ss-name">Poder de Clash</span>
+          </div>
+          <div class="ss-controls">
+            <button class="ss-btn ss-minus" onmousedown="holdStart(event,()=>addVentaja(-1))" onmouseup="holdStop()" onmouseleave="holdStop()">−</button>
+            <input type="number" class="ss-input" id="ventajaCount" value="0" min="0" max="10000" onchange="setVentaja(this.value)">
+            <button class="ss-btn ss-plus" onmousedown="holdStart(event,()=>addVentaja(1))" onmouseup="holdStop()" onmouseleave="holdStop()">+</button>
+          </div>
         </div>
-        <div class="status-badge" data-status="weakness" onclick="toggleStatus('weakness')">
-          <img src="https://limbuscompany.wiki.gg/images/thumb/Damage_Down.png/25px-Damage_Down.png?99c357" alt="Debilidad" class="status-icon">
-          Debilidad -5
+        <div class="status-stack-badge" data-stack="desventaja">
+          <div class="ss-header">
+            <img src="https://limbuscompany.wiki.gg/images/thumb/Clash_Power_Down.png/25px-Clash_Power_Down.png?d0dbdc" alt="Reducción de Clash" class="ss-icon">
+            <span class="ss-name">Reducción de Clash</span>
+          </div>
+          <div class="ss-controls">
+            <button class="ss-btn ss-minus" onmousedown="holdStart(event,()=>addDesventaja(-1))" onmouseup="holdStop()" onmouseleave="holdStop()">−</button>
+            <input type="number" class="ss-input" id="desventajaCount" value="0" min="0" max="10000" onchange="setDesventaja(this.value)">
+            <button class="ss-btn ss-plus" onmousedown="holdStart(event,()=>addDesventaja(1))" onmouseup="holdStop()" onmouseleave="holdStop()">+</button>
+          </div>
         </div>
       </div>
     </div>

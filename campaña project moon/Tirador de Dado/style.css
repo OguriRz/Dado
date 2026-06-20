@@ -990,6 +990,137 @@
     transform: scale(0.95);
   }
 
+  /* Stackable status effects (Ventaja / Desventaja) */
+  .status-stacks-section {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+
+  .status-stack-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    background: linear-gradient(135deg, var(--inv-surface3), var(--inv-surface2));
+    border: 1px solid var(--inv-gold-dim);
+    color: var(--inv-text3);
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    user-select: none;
+    border-radius: 6px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+
+  .status-stack-badge:hover {
+    border-color: var(--inv-gold-strong);
+    box-shadow: 0 0 8px var(--inv-gold-glow);
+  }
+
+  .ss-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 90px;
+  }
+
+  .ss-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    display: block;
+    filter: brightness(0.7);
+    transition: filter 0.15s;
+    flex-shrink: 0;
+  }
+
+  .status-stack-badge:hover .ss-icon {
+    filter: brightness(1);
+  }
+
+  .ss-name {
+    font-size: 12px;
+    color: var(--inv-text3);
+    white-space: nowrap;
+  }
+
+  .ss-controls {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .ss-btn {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(212, 162, 69, 0.12);
+    color: var(--inv-text4);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.12s;
+    border-radius: 4px;
+    line-height: 1;
+    padding: 0;
+  }
+
+  .ss-btn:hover {
+    background: rgba(212, 162, 69, 0.2);
+    color: var(--inv-gold);
+    border-color: var(--inv-gold-dim);
+  }
+
+  .ss-btn.ss-minus:hover {
+    background: rgba(192, 57, 43, 0.2);
+    color: var(--inv-alert);
+    border-color: rgba(192, 57, 43, 0.3);
+  }
+
+  .ss-btn.ss-plus:hover {
+    background: rgba(74, 154, 90, 0.2);
+    color: var(--inv-success);
+    border-color: rgba(74, 154, 90, 0.3);
+  }
+
+  .ss-btn:active {
+    transform: scale(0.9);
+  }
+
+  .ss-input {
+    width: 40px;
+    padding: 3px 0;
+    background: transparent;
+    border: 1px solid rgba(212, 162, 69, 0.12);
+    border-radius: 4px;
+    color: var(--inv-text2);
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    outline: none;
+    font-family: inherit;
+    -moz-appearance: textfield;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    min-width: 36px;
+  }
+
+  .ss-input:focus {
+    border-color: var(--inv-cyan);
+    box-shadow: 0 0 8px var(--inv-cyan-glow);
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .ss-input::-webkit-inner-spin-button,
+  .ss-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
   .status-icon {
     width: 20px;
     height: 20px;
@@ -1205,6 +1336,130 @@
 
   .coin-piece.used img {
     filter: grayscale(1) brightness(0.2);
+  }
+
+  /* ============================================================
+     MOVIMIENTOS
+     ============================================================ */
+  .movimientos-section {
+    margin-top: 8px;
+    padding-top: 8px;
+    position: relative;
+    border-top: 1px solid var(--inv-gold-dim);
+  }
+
+  .movimientos-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+
+  .movimientos-label {
+    font-size: 10px;
+    color: var(--inv-cyan);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    font-weight: 600;
+  }
+
+  .movimientos-controls {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .mov-ctrl {
+    position: relative;
+    width: 26px;
+    height: 26px;
+    border: none;
+    background: linear-gradient(135deg, var(--inv-surface4), var(--inv-card));
+    color: var(--inv-text4);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.12s;
+    line-height: 1;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    box-shadow: inset 0 1px 0 rgba(212, 162, 69, 0.04);
+    border-radius: 3px;
+  }
+
+  .mov-ctrl::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--inv-gold-dim);
+    pointer-events: none;
+  }
+
+  .mov-ctrl:hover {
+    color: var(--inv-cyan);
+    background: linear-gradient(135deg, var(--inv-surface2), var(--inv-card));
+    box-shadow: inset 0 1px 0 rgba(212, 162, 69, 0.08);
+  }
+
+  .mov-ctrl:active {
+    transform: scale(0.9);
+  }
+
+  .movimientos-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 4px 0;
+  }
+
+  .mov-remaining {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--inv-cyan);
+    font-family: 'AritaBuri', 'Playfair Display', Georgia, serif;
+    text-shadow: 0 0 15px rgba(91, 214, 224, 0.2);
+    line-height: 1.2;
+    min-width: 40px;
+    text-align: right;
+  }
+
+  .mov-sep {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--inv-text4);
+    font-family: 'AritaBuri', 'Playfair Display', Georgia, serif;
+    line-height: 1.2;
+  }
+
+  .mov-total-input {
+    width: 54px;
+    padding: 2px 4px;
+    background: transparent;
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    color: var(--inv-text2);
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-align: center;
+    outline: none;
+    -moz-appearance: textfield;
+    transition: border-color 0.15s;
+  }
+
+  .mov-total-input::-webkit-inner-spin-button,
+  .mov-total-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .mov-total-input:focus {
+    border-color: var(--inv-cyan);
+    box-shadow: 0 0 8px var(--inv-cyan-glow);
   }
 
   /* ============================================================

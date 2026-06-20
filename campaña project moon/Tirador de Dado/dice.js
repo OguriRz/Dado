@@ -233,6 +233,12 @@
     const realSum = realResults.reduce((a, b) => a + b, 0);
     lastRawTotal = realSum + bonus;
     let realTotal = lastRawTotal;
+    if (ventajaStacks > 0) {
+      realTotal += ventajaStacks;
+    }
+    if (desventajaStacks > 0) {
+      realTotal -= desventajaStacks;
+    }
     if (activeStatuses.has('paralysis')) {
       realTotal = Math.floor(realTotal / 2);
     }
@@ -258,8 +264,10 @@
       if (bonus > 0) lastRawFormula += ' + ' + bonus;
       lastRawTotal = realSum + bonus;
       var formulaParts = [];
-      if (activeStatuses.has('paralysis')) formulaParts.push('½');
       formulaParts.push('(' + lastRawFormula + ')');
+      if (ventajaStacks > 0) formulaParts.push('+' + ventajaStacks);
+      if (desventajaStacks > 0) formulaParts.push('−' + desventajaStacks);
+      if (activeStatuses.has('paralysis')) formulaParts.push('½');
 
       resultFormula.textContent = formulaParts.join(' ') + ' = ' + realTotal;
       const idx = rollHistory.length + 1;

@@ -20,7 +20,7 @@
       currentHp: maxHp,
       maxStagger,
       currentStagger: maxStagger,
-      statuses: { damageUp: 0, damageDown: 0, protection: 0, fragile: 0, target: 0, rupturePotency: 0, ruptureCount: 0 },
+      statuses: { damageUp: 0, damageDown: 0, protection: 0, fragile: 0, target: 0, targetPercent: 10, rupturePotency: 0, ruptureCount: 0 },
     });
     renderEnemies();
     saveState();
@@ -62,7 +62,6 @@
         }
       }
       dmg = Math.round(dmg * getEntityDamageMultiplier(enemy));
-      if (dmg < 1 && amount > 0) dmg = 1;
     }
 
     if (type === 'stagger') {
@@ -142,7 +141,7 @@
 
           <div class="enemy-status-section">
             <div class="enemy-status-badges">
-              ${ENTITY_EFFECTS.map(eff => `
+              ${ENTITY_EFFECTS.filter(eff => eff.id !== 'target').map(eff => `
                 <div class="enemy-status-badge">
                   <button class="es-btn es-minus" onmousedown="holdStart(event,()=>changeEnemyStatus(${e.id},'${eff.id}',-1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Quitar stack">−</button>
                   <img src="${eff.icon}" alt="${eff.name}" class="es-icon" title="${eff.name}">
@@ -152,18 +151,32 @@
                   <button class="es-btn es-plus" onmousedown="holdStart(event,()=>changeEnemyStatus(${e.id},'${eff.id}',1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Agregar stack">+</button>
                 </div>
               `).join('')}
+              <div class="enemy-status-badge" style="gap:3px">
+                <button class="es-btn es-minus" onmousedown="holdStart(event,()=>changeEnemyStatus(${e.id},'target',-1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Quitar Marca">−</button>
+                <img src="${ENTITY_EFFECTS.find(ef=>ef.id==='target').icon}" alt="Marca" class="es-icon" title="Marca">
+                <input type="number" class="es-input" value="${e.statuses.target || 0}"
+                  onchange="setEnemyStatus(${e.id}, 'target', this.value)"
+                  onfocus="this.select()" min="0" max="1" style="width:28px">
+                <button class="es-btn es-plus" onmousedown="holdStart(event,()=>changeEnemyStatus(${e.id},'target',1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Agregar Marca">+</button>
+                <span class="rup-label" style="margin:0 2px 0 6px">%</span>
+                <button class="es-btn es-minus" onmousedown="holdStart(event,()=>changeEnemyTargetPercent(${e.id},-10))" onmouseup="holdStop()" onmouseleave="holdStop()" title="−10%">−</button>
+                <input type="number" class="es-input" value="${e.statuses.targetPercent || 10}"
+                  onchange="setEnemyTargetPercent(${e.id}, this.value)"
+                  onfocus="this.select()" min="0" max="1000" step="10" style="width:44px">
+                <button class="es-btn es-plus" onmousedown="holdStart(event,()=>changeEnemyTargetPercent(${e.id},10))" onmouseup="holdStop()" onmouseleave="holdStop()" title="+10%">+</button>
+              </div>
               <div class="enemy-status-badge rupture-badge">
                 <button class="es-btn es-minus" onmousedown="holdStart(event,()=>changeRupturePotency(${e.id},-1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Quitar Potencia">−</button>
                 <img src="${RUP_ICON}" alt="Ruptura" class="es-icon" title="Ruptura">
                 <span class="rup-label">Pot</span>
                 <input type="number" class="es-input" value="${e.statuses.rupturePotency || 0}"
-                  onchange="setRupturePotency(${e.id}, this.value)" onfocus="this.select()" min="0" max="99">
+                  onchange="setRupturePotency(${e.id}, this.value)" onfocus="this.select()" min="0" max="10000">
                 <button class="es-btn es-plus" onmousedown="holdStart(event,()=>changeRupturePotency(${e.id},1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Agregar Potencia">+</button>
                 <span class="rup-sep">│</span>
                 <button class="es-btn es-minus" onmousedown="holdStart(event,()=>changeRuptureCount(${e.id},-1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Quitar Contador">−</button>
                 <span class="rup-label">Cnt</span>
                 <input type="number" class="es-input" value="${e.statuses.ruptureCount || 0}"
-                  onchange="setRuptureCount(${e.id}, this.value)" onfocus="this.select()" min="0" max="99">
+                  onchange="setRuptureCount(${e.id}, this.value)" onfocus="this.select()" min="0" max="10000">
                 <button class="es-btn es-plus" onmousedown="holdStart(event,()=>changeRuptureCount(${e.id},1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Agregar Contador">+</button>
               </div>
             </div>
@@ -232,13 +245,13 @@
   }
 
   function getEntityDamageMultiplier(enemy) {
-    let mult = 1;
-    mult += 0.1 * (enemy.statuses.fragile || 0);
-    mult += 0.1 * (enemy.statuses.damageUp || 0);
-    mult += 0.1 * (enemy.statuses.target || 0);
-    mult -= 0.1 * (enemy.statuses.protection || 0);
-    mult -= 0.1 * (enemy.statuses.damageDown || 0);
-    return Math.max(0.05, mult);
+    let mult = 1
+      + 0.1 * (enemy.statuses.fragile    || 0)
+      + 0.1 * (enemy.statuses.damageUp   || 0)
+      + (enemy.statuses.targetPercent || 10) / 100 * (enemy.statuses.target || 0)
+      - 0.1 * (enemy.statuses.protection || 0)
+      - 0.1 * (enemy.statuses.damageDown || 0);
+    return Math.max(0, mult); // Puede llegar a 0 (inmune)
   }
 
   function getEntityMultiplierClass(enemy) {
@@ -248,10 +261,27 @@
     return 'neutral';
   }
 
+  function changeEnemyTargetPercent(id, delta) {
+    const enemy = enemies.find(e => e.id === id);
+    if (!enemy) return;
+    const cur = enemy.statuses.targetPercent || 10;
+    enemy.statuses.targetPercent = Math.max(0, Math.min(1000, cur + delta));
+    renderEnemies();
+    saveState();
+  }
+
+  function setEnemyTargetPercent(id, value) {
+    const enemy = enemies.find(e => e.id === id);
+    if (!enemy) return;
+    enemy.statuses.targetPercent = Math.max(0, Math.min(1000, parseInt(value) || 0));
+    renderEnemies();
+    saveState();
+  }
+
   function changeRupturePotency(id, delta) {
     const enemy = enemies.find(e => e.id === id);
     if (!enemy) return;
-    enemy.statuses.rupturePotency = Math.max(0, Math.min(99, (enemy.statuses.rupturePotency || 0) + delta));
+    enemy.statuses.rupturePotency = Math.max(0, Math.min(10000, (enemy.statuses.rupturePotency || 0) + delta));
     renderEnemies();
     saveState();
   }
@@ -259,7 +289,7 @@
   function setRupturePotency(id, value) {
     const enemy = enemies.find(e => e.id === id);
     if (!enemy) return;
-    enemy.statuses.rupturePotency = Math.max(0, Math.min(99, parseInt(value) || 0));
+    enemy.statuses.rupturePotency = Math.max(0, Math.min(10000, parseInt(value) || 0));
     renderEnemies();
     saveState();
   }
@@ -267,7 +297,7 @@
   function changeRuptureCount(id, delta) {
     const enemy = enemies.find(e => e.id === id);
     if (!enemy) return;
-    enemy.statuses.ruptureCount = Math.max(0, Math.min(99, (enemy.statuses.ruptureCount || 0) + delta));
+    enemy.statuses.ruptureCount = Math.max(0, Math.min(10000, (enemy.statuses.ruptureCount || 0) + delta));
     renderEnemies();
     saveState();
   }
@@ -275,7 +305,7 @@
   function setRuptureCount(id, value) {
     const enemy = enemies.find(e => e.id === id);
     if (!enemy) return;
-    enemy.statuses.ruptureCount = Math.max(0, Math.min(99, parseInt(value) || 0));
+    enemy.statuses.ruptureCount = Math.max(0, Math.min(10000, parseInt(value) || 0));
     renderEnemies();
     saveState();
   }

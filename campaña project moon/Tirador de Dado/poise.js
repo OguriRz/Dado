@@ -14,7 +14,7 @@
   function poiseLoad() {
     try {
       ['enemy', 'player'].forEach(function(target) {
-        const saved = localStorage.getItem('diceTool_poise_' + target);
+        const saved = localStorage.getItem('freebuff_poise_' + target);
         if (saved) {
           const data = JSON.parse(saved);
           poiseState[target].potencia = data.potencia || 0;
@@ -27,7 +27,7 @@
 
   function poiseSave() {
     ['enemy', 'player'].forEach(function(target) {
-      localStorage.setItem('diceTool_poise_' + target, JSON.stringify({
+      localStorage.setItem('freebuff_poise_' + target, JSON.stringify({
         potencia: poiseState[target].potencia,
         contador: poiseState[target].contador
       }));
