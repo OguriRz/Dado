@@ -1,0 +1,3 @@
+  poiseLoad();
+  poiseUpdateUI();
+  poiseInitInputs();

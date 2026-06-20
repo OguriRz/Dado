@@ -1,0 +1,2516 @@
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Rajdhani:wght@300;400;500;600;700&family=Exo+2:wght@300;400;600;700&display=swap');
+
+  /* AritaBuri — official Library of Ruina typeface */
+  @font-face {
+    font-family: 'AritaBuri';
+    src: url('assets/arita-buri-sb.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'AritaBuri';
+    src: url('assets/arita-buri.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'AritaBuri';
+    src: url('assets/arita-buri-m.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  /* ============================================================
+     LIBRARY OF RUINA — GAME HUD THEME
+     ============================================================ */
+
+  :root {
+    /* Background — pure black (invitation card) */
+    --inv-bg: #000000;
+    --inv-card: #050508;
+    --inv-card2: #08080e;
+    --inv-surface: #0a0a14;
+    --inv-surface2: #0d0d1a;
+    --inv-surface3: #101020;
+    --inv-surface4: #151530;
+    --inv-parchment: #080812;
+    --inv-input: #06060e;
+
+    /* Gold — THE INVITATION, borders, important */
+    --inv-gold: #d4a245;
+    --inv-gold2: #b8852a;
+    --inv-gold3: #e8c065;
+    --inv-gold-dim: rgba(212, 162, 69, 0.15);
+    --inv-gold-glow: rgba(212, 162, 69, 0.3);
+    --inv-gold-strong: rgba(212, 162, 69, 0.5);
+
+    /* Blue/cyan — body text, invitation writing */
+    --inv-cyan: #5bd6e0;
+    --inv-cyan2: #3ab0c0;
+    --inv-blue: #4a9ad4;
+    --inv-blue2: #2a7ab4;
+    --inv-blue3: #1a4a6a;
+    --inv-cyan-glow: rgba(91, 214, 224, 0.25);
+
+    /* Text colors — ink on invitation */
+    --inv-text: #c8d8e8;
+    --inv-text2: #8ab4d4;
+    --inv-text3: #5a8aaa;
+    --inv-text4: #3a5a7a;
+    --inv-text5: #2a3a4a;
+    --inv-muted: #1a2a3a;
+
+    /* Seal — red wax */
+    --inv-seal: #c0392b;
+    --inv-seal2: #8a1a10;
+    --inv-seal3: #e05545;
+    --inv-seal-glow: rgba(192, 57, 43, 0.3);
+
+    /* Functional */
+    --inv-success: #2a9a5a;
+    --inv-alert: #d04030;
+    --inv-warning: #d4a017;
+    --inv-stagger: #b8860b;
+
+    /* Corners — elegant, invitation-style */
+    --inv-radius: 8px;
+    --inv-radius-sm: 4px;
+    --inv-radius-lg: 12px;
+
+    /* Dice colors */
+    --die-4:   #c0392b;
+    --die-6:   #2980b9;
+    --die-8:   #27ae60;
+    --die-10:  #8e44ad;
+    --die-12:  #d4a017;
+    --die-20:  #c0395a;
+    --die-25:  #16a085;
+    --die-50:  #b8860b;
+    --die-100: #00a885;
+  }
+
+  /* ============================================================
+     BACKGROUND AND MAIN CONTAINER
+     ============================================================ */
+  body {
+    font-family: 'AritaBuri', 'Cinzel Decorative', 'Playfair Display', Georgia, serif;
+    background: var(--inv-bg);
+    color: var(--inv-text2);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-image:
+      url('assets/the-city-bg.png'),
+      radial-gradient(ellipse at 50% 0%, rgba(212, 162, 69, 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(91, 214, 224, 0.04) 0%, transparent 40%),
+      radial-gradient(ellipse at 20% 70%, rgba(192, 57, 43, 0.03) 0%, transparent 30%);
+    background-size: cover, auto, auto, auto;
+    background-position: center, center, center, center;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: normal;
+  }
+
+  /* Subtle vignette overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+      radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(0, 0, 0, 0.8) 100%),
+      linear-gradient(180deg, rgba(0,0,0,0.3) 0%, transparent 30%, transparent 70%, rgba(0,0,0,0.5) 100%);
+  }
+
+  /* ============================================================
+     MAIN CONTAINER — THE INVITATION card frame
+     ============================================================ */
+  .container {
+    background: var(--inv-card);
+    width: 100%;
+    max-width: 600px;
+    padding: 0;
+    border-radius: 4px;
+    box-shadow:
+      0 0 100px rgba(0, 0, 0, 0.9),
+      0 0 30px rgba(212, 162, 69, 0.06),
+      0 0 6px rgba(212, 162, 69, 0.1),
+      0 0 2px rgba(212, 162, 69, 0.15);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Outer ornate golden frame — 3px solid gold */
+  .container::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 10px;
+    background: linear-gradient(145deg,
+      var(--inv-gold3) 0%,
+      var(--inv-gold) 15%,
+      var(--inv-gold2) 30%,
+      var(--inv-gold) 50%,
+      var(--inv-gold2) 65%,
+      var(--inv-gold) 80%,
+      var(--inv-gold3) 100%
+    );
+    padding: 3px;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 5;
+    box-shadow:
+      0 0 40px rgba(212, 162, 69, 0.1),
+      inset 0 0 8px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Second ornate border — thinner inner gold line */
+  .container::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border: 1px solid rgba(212, 162, 69, 0.35);
+    border-radius: 7px;
+    pointer-events: none;
+    z-index: 6;
+  }
+
+  /* Corner decorative images — ornate frame corners */
+  .corner-img {
+    position: absolute;
+    z-index: 7;
+    width: 52px;
+    height: 52px;
+    pointer-events: none;
+    background: url('assets/corner-deco.png') no-repeat center;
+    background-size: contain;
+    filter: drop-shadow(0 0 8px rgba(212, 162, 69, 0.2));
+  }
+  .corner-img.tl {
+    top: -10px; left: -10px;
+    transform: scaleY(-1);
+  }
+  .corner-img.tr {
+    top: -10px; right: -10px;
+    transform: scaleY(-1) scaleX(-1);
+  }
+  .corner-img.bl {
+    bottom: -10px; left: -10px;
+  }
+  .corner-img.br {
+    bottom: -10px; right: -10px;
+    transform: scaleX(-1);
+  }
+
+  /* Inner content area with subtle paper texture */
+  .container-inner {
+    padding: 18px 20px 16px;
+    position: relative;
+    z-index: 2;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(212, 162, 69, 0.025) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 100%, rgba(91, 214, 224, 0.02) 0%, transparent 50%),
+      linear-gradient(rgba(5, 5, 8, 0.92), rgba(5, 5, 8, 0.92)),
+      url('assets/page-bg.png');
+    background-size: auto, auto, auto, cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Full card frame overlay — ui-frame from the game */
+  .card-frame-overlay {
+    position: absolute;
+    inset: -6px;
+    z-index: 4;
+    background: url('assets/ui-frame.png') no-repeat center;
+    background-size: 100% 100%;
+    opacity: 0.2;
+    pointer-events: none;
+    border-radius: 10px;
+  }
+
+  /* Picture frame — full card frame overlay using manual-frame.png */
+  .picture-frame {
+    position: absolute;
+    inset: -3px;
+    z-index: 1;
+    background: url('assets/manual-frame.png') no-repeat center;
+    background-size: 100% 100%;
+    opacity: 0.45;
+    pointer-events: none;
+    border-radius: 8px;
+  }
+
+  /* ============================================================
+     HEADER — THE INVITATION
+     ============================================================ */
+  .header-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    padding: 6px 0;
+    position: relative;
+  }
+
+  .subtitle {
+    color: var(--inv-cyan);
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-align: center;
+    width: 100%;
+    text-shadow: 0 0 20px rgba(91, 214, 224, 0.2);
+  }
+
+  /* ============================================================
+     TABS — Invitation chapter style
+     ============================================================ */
+  .tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 12px;
+    position: relative;
+    background: var(--inv-surface3);
+    border-radius: 4px;
+  }
+
+  .tabs::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .tab-btn {
+    flex: 1;
+    padding: 7px 4px;
+    border: none;
+    background: transparent;
+    color: var(--inv-text4);
+    font-size: 9px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 2px;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    border-radius: 3px;
+  }
+
+  .tab-btn + .tab-btn {
+    border-left: 1px solid rgba(212, 162, 69, 0.08);
+  }
+
+  .tab-btn:hover {
+    color: var(--inv-cyan);
+    background: rgba(91, 214, 224, 0.04);
+  }
+
+  .tab-btn.active {
+    color: #000;
+    background: linear-gradient(135deg, var(--inv-gold), var(--inv-gold2));
+    text-shadow: none;
+    font-weight: 700;
+  }
+
+  .tab-btn.active::after {
+    content: '✦';
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 8px;
+    color: var(--inv-gold3);
+    text-shadow: 0 0 6px var(--inv-gold-glow);
+  }
+
+  .tab-panel {
+    display: none;
+  }
+
+  .tab-panel.active {
+    display: block;
+    padding-bottom: 12px;
+  }
+
+  /* ============================================================
+     SCROLLBAR — Ornate
+     ============================================================ */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--inv-surface3);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--inv-gold), var(--inv-gold2));
+    border-radius: 3px;
+    border: 1px solid var(--inv-surface3);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--inv-gold3), var(--inv-gold));
+  }
+
+  /* ============================================================
+     TAB 1 — DICE ROLLER
+     ============================================================ */
+
+  /* Dice type buttons — medallion seals */
+  .dice-types {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+
+  .dice-type-btn {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(145deg, var(--inv-surface3), var(--inv-card));
+    border: none;
+    color: var(--inv-text3);
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    position: relative;
+    border-radius: 4px;
+    box-shadow:
+      inset 0 1px 0 rgba(212, 162, 69, 0.04),
+      0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+
+  .dice-type-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .dice-type-btn::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border: 1px solid rgba(212, 162, 69, 0.04);
+    border-radius: 2px;
+    pointer-events: none;
+    transition: border-color 0.2s;
+  }
+
+  .dice-type-btn:hover {
+    color: var(--inv-cyan);
+    background: linear-gradient(145deg, var(--inv-surface4), var(--inv-surface2));
+    box-shadow:
+      inset 0 1px 0 rgba(212, 162, 69, 0.1),
+      0 0 12px var(--inv-cyan-glow),
+      0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+
+  .dice-type-btn:hover::after {
+    border-color: rgba(212, 162, 69, 0.2);
+  }
+
+  .dice-type-btn:active {
+    transform: scale(0.95);
+  }
+
+  /* Pool area — invitation parchment */
+  .pool-area {
+    background: var(--inv-parchment);
+    border: none;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    min-height: 42px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    position: relative;
+    border-radius: 4px;
+    box-shadow:
+      inset 0 0 20px rgba(0, 0, 0, 0.4),
+      0 1px 0 rgba(212, 162, 69, 0.02);
+  }
+
+  .pool-area::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .pool-area::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border: 1px solid rgba(212, 162, 69, 0.03);
+    border-radius: 2px;
+    pointer-events: none;
+  }
+
+  .pool-empty {
+    color: var(--inv-text4);
+    font-size: 13px;
+    width: 100%;
+    text-align: center;
+    font-family: 'AritaBuri', 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    letter-spacing: 1px;
+  }
+
+  /* Pool chips like invitation medallions */
+  .pool-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, var(--inv-surface2), var(--inv-surface3));
+    border: none;
+    padding: 6px 10px 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--inv-text);
+    cursor: pointer;
+    transition: all 0.12s;
+    user-select: none;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    position: relative;
+    border-radius: 4px;
+    box-shadow:
+      inset 0 1px 0 rgba(212, 162, 69, 0.04),
+      0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .pool-chip::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .pool-chip:hover {
+    background: linear-gradient(135deg, var(--inv-surface4), var(--inv-surface2));
+    color: var(--inv-cyan);
+    box-shadow:
+      inset 0 1px 0 rgba(212, 162, 69, 0.08),
+      0 0 12px var(--inv-cyan-glow),
+      0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .pool-chip .pool-count {
+    color: var(--inv-gold);
+    font-weight: 700;
+    min-width: 14px;
+    text-align: center;
+  }
+
+  .pool-chip .pool-remove {
+    width: 18px;
+    height: 18px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(212, 162, 69, 0.15);
+    color: var(--inv-text4);
+    font-size: 11px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.12s;
+    line-height: 1;
+    padding: 0;
+  }
+
+  .pool-chip .pool-remove:hover {
+    background: var(--inv-alert);
+    color: #fff;
+    border-color: transparent;
+  }
+
+  /* Controls */
+  .controls-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: flex-end;
+  }
+
+  .field {
+    flex: 1;
+  }
+
+  .field label {
+    display: block;
+    font-size: 10px;
+    color: var(--inv-text4);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    font-weight: 500;
+  }
+
+  .field input {
+    width: 100%;
+    padding: 10px 12px;
+    background: var(--inv-input);
+    border: 1px solid var(--inv-gold-dim);
+    color: var(--inv-text);
+    font-size: 16px;
+    font-weight: 600;
+    outline: none;
+    transition: all 0.2s;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    box-shadow:
+      inset 0 1px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+  }
+
+  .field input:focus {
+    border-color: var(--inv-gold);
+    box-shadow:
+      inset 0 1px 3px rgba(0, 0, 0, 0.5),
+      0 0 12px var(--inv-gold-glow);
+  }
+
+  .field input[type=number]::-webkit-inner-spin-button {
+    opacity: 0.2;
+  }
+
+  /* ============================================================
+     BUTTONS — Metallic, beveled
+     ============================================================ */
+
+  /* Roll button — large gold invitation seal */
+  .btn-roll {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(135deg, var(--inv-gold), var(--inv-gold2) 50%, #6a5a2a);
+    border: none;
+    color: #000;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+    letter-spacing: 4px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    position: relative;
+    border-radius: 4px;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.3),
+      0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .btn-roll::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+    pointer-events: none;
+  }
+
+  .btn-roll:hover:not(:disabled) {
+    background: linear-gradient(135deg, var(--inv-gold3), var(--inv-gold) 50%, var(--inv-gold2));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.25),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.3),
+      0 0 25px rgba(212, 162, 69, 0.35),
+      0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .btn-roll:active:not(:disabled) {
+    transform: translateY(1px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.4),
+      0 0 15px var(--inv-gold-glow);
+  }
+
+  .btn-roll:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+  }
+
+  .btn-roll.rolling {
+    animation: inv-pulse 0.8s ease-in-out infinite alternate;
+  }
+
+  @keyframes inv-pulse {
+    from { opacity: 0.6; box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 0 20px var(--inv-gold-glow); }
+    to   { opacity: 1;   box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 0 40px var(--inv-gold-strong); }
+  }
+
+  .btn-clear {
+    background: transparent;
+    border: none;
+    color: var(--inv-text4);
+    font-size: 11px;
+    padding: 4px 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    border-radius: 4px;
+  }
+
+  .btn-clear::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(212, 162, 69, 0.06);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .btn-clear:hover {
+    color: var(--inv-alert);
+  }
+
+  .btn-clear:hover::before {
+    border-color: rgba(208, 64, 48, 0.25);
+  }
+
+  /* ============================================================
+     RESULT BOX — Invitation page
+     ============================================================ */
+  .result-box {
+    background: var(--inv-parchment);
+    border: none;
+    padding: 14px;
+    text-align: center;
+    margin-bottom: 8px;
+    min-height: 100px;
+    position: relative;
+    border-radius: 4px;
+    box-shadow:
+      inset 0 0 30px rgba(0, 0, 0, 0.4),
+      0 1px 0 rgba(212, 162, 69, 0.02);
+  }
+
+  .result-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .result-box::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 1px solid rgba(212, 162, 69, 0.03);
+    border-radius: 2px;
+    pointer-events: none;
+  }
+
+  .result-total {
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--inv-gold);
+    line-height: 1;
+    opacity: 1;
+    transition: opacity 0.3s;
+    text-shadow:
+      0 0 25px rgba(212, 162, 69, 0.3),
+      0 0 50px rgba(212, 162, 69, 0.1);
+    font-family: 'AritaBuri', 'Playfair Display', Georgia, serif;
+  }
+
+  .result-total.loading {
+    opacity: 0.1;
+  }
+
+  .result-formula {
+    font-size: 12px;
+    color: var(--inv-text3);
+    margin-top: 6px;
+    min-height: 18px;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    letter-spacing: 0.5px;
+  }
+
+  .dice-visuals {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    position: relative;
+    min-height: 20px;
+  }
+
+  .dice-visuals::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 30%;
+    right: 30%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--inv-gold-dim), transparent);
+  }
+
+  .die-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .die-visual.tumble {
+    animation: dice-tumble 0.9s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  }
+
+  @keyframes dice-tumble {
+    0%   { transform: rotate(0deg)    scale(1)    translateY(0); }
+    10%  { transform: rotate(30deg)   scale(0.85)  translateY(-4px); }
+    25%  { transform: rotate(120deg)  scale(1.1)   translateY(0); }
+    40%  { transform: rotate(200deg)  scale(0.9)   translateY(-3px); }
+    55%  { transform: rotate(280deg)  scale(1.05)  translateY(0); }
+    70%  { transform: rotate(330deg)  scale(0.95)  translateY(-2px); }
+    85%  { transform: rotate(355deg)  scale(1.02)  translateY(0); }
+    100% { transform: rotate(360deg)  scale(1)     translateY(0); }
+  }
+
+  .die-visual svg {
+    display: block;
+  }
+
+  /* Footer row */
+  .footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .footer-tag {
+    display: inline-block;
+    background: var(--inv-surface3);
+    border: none;
+    padding: 4px 10px;
+    font-size: 11px;
+    color: var(--inv-text4);
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    position: relative;
+    border-radius: 4px;
+  }
+
+  .footer-tag::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .dice-count-label {
+    font-size: 11px;
+    color: var(--inv-text4);
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+  }
+
+  .empty-msg {
+    color: var(--inv-text4);
+    font-size: 13px;
+    padding: 6px 0;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+  }
+
+  /* Send to compare */
+  .send-to-compare {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
+  .send-to-compare button {
+    padding: 5px 14px;
+    background: linear-gradient(135deg, var(--inv-surface3), var(--inv-surface2));
+    border: none;
+    color: var(--inv-text3);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(212, 162, 69, 0.03);
+  }
+
+  .send-to-compare button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .send-to-compare button:hover {
+    color: var(--inv-cyan);
+    background: linear-gradient(135deg, var(--inv-surface4), var(--inv-surface2));
+    box-shadow: inset 0 1px 0 rgba(212, 162, 69, 0.06), 0 0 10px var(--inv-cyan-glow);
+  }
+
+  .send-to-compare button.ally-send:hover {
+    color: var(--inv-success);
+    border-color: transparent;
+  }
+
+  .send-to-compare button.enemy-send:hover {
+    color: var(--inv-alert);
+    border-color: transparent;
+  }
+
+  /* ============================================================
+     STATUS EFFECTS
+     ============================================================ */
+  .status-section {
+    margin-top: 14px;
+    padding-top: 14px;
+    position: relative;
+  }
+
+  .status-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20%;
+    right: 20%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--inv-gold-dim), transparent);
+  }
+
+  .status-label {
+    font-size: 10px;
+    color: var(--inv-text4);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    font-weight: 500;
+  }
+
+  .status-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .status-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: linear-gradient(135deg, var(--inv-surface3), var(--inv-surface2));
+    border: none;
+    color: var(--inv-text3);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.15s;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(212, 162, 69, 0.03);
+  }
+
+  .status-badge::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .status-badge:hover {
+    color: var(--inv-cyan);
+    background: linear-gradient(135deg, var(--inv-surface4), var(--inv-surface2));
+    box-shadow: inset 0 1px 0 rgba(212, 162, 69, 0.06), 0 0 10px var(--inv-cyan-glow);
+  }
+
+  .status-badge.active {
+    color: #1a0e00;
+    background: linear-gradient(135deg, var(--inv-gold), var(--inv-gold2));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      0 0 20px rgba(212, 162, 69, 0.35);
+  }
+
+  .status-badge.active::before {
+    border-color: transparent;
+  }
+
+  .status-badge:active {
+    transform: scale(0.95);
+  }
+
+  .status-icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+    filter: brightness(0.5) saturate(0.3);
+    transition: filter 0.2s;
+    object-fit: contain;
+  }
+
+  .status-badge.active .status-icon {
+    filter: brightness(1) saturate(1);
+  }
+
+  /* ============================================================
+     COINS TRACKER — Invitation medallion style
+     ============================================================ */
+  .coins-section {
+    background: var(--inv-parchment);
+    border: none;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
+  }
+
+  .coins-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .coins-section::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border: 1px solid rgba(212, 162, 69, 0.03);
+    border-radius: 2px;
+    pointer-events: none;
+  }
+
+  .coins-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    position: relative;
+  }
+
+  .coins-label {
+    font-size: 10px;
+    color: var(--inv-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    font-weight: 600;
+  }
+
+  .coins-turn-btn {
+    padding: 4px 12px;
+    background: linear-gradient(135deg, var(--inv-gold), var(--inv-gold2));
+    border: none;
+    color: #1a0e00;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+    letter-spacing: 1px;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.15),
+      0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .coins-turn-btn::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    pointer-events: none;
+  }
+
+  .coins-turn-btn:hover {
+    background: linear-gradient(135deg, var(--inv-gold3), var(--inv-gold));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      0 0 15px var(--inv-gold-glow),
+      0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .coins-turn-btn:active {
+    transform: translateY(1px);
+  }
+
+  .coins-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .coins-row-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .coins-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .coins-group-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--inv-text4);
+    margin-right: 4px;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .coin-ctrl {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: linear-gradient(135deg, var(--inv-surface4), var(--inv-card));
+    color: var(--inv-text4);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.12s;
+    line-height: 1;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    box-shadow: inset 0 1px 0 rgba(212, 162, 69, 0.04);
+    border-radius: 3px;
+  }
+
+  .coin-ctrl::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--inv-gold-dim);
+    pointer-events: none;
+  }
+
+  .coin-ctrl:hover {
+    color: var(--inv-gold);
+    background: linear-gradient(135deg, var(--inv-surface2), var(--inv-card));
+    box-shadow: inset 0 1px 0 rgba(212, 162, 69, 0.08);
+  }
+
+  .coin-ctrl:active {
+    transform: scale(0.9);
+  }
+
+  .coin-piece {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    user-select: none;
+    position: relative;
+  }
+
+  .coin-piece:hover {
+    transform: scale(1.15);
+  }
+
+  .coin-piece:active {
+    transform: scale(0.9);
+  }
+
+  .coin-piece img {
+    width: 24px;
+    height: 24px;
+    display: block;
+    object-fit: contain;
+    transition: filter 0.15s;
+  }
+
+  .coin-piece.action .coin-img {
+    filter: brightness(1) saturate(1.2);
+  }
+
+  .coin-piece.reaction .coin-img {
+    filter: brightness(0.3) saturate(6) hue-rotate(210deg);
+  }
+
+  .coin-piece.used {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+
+  .coin-piece.used:hover {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+
+  .coin-piece.used img {
+    filter: grayscale(1) brightness(0.2);
+  }
+
+  /* ============================================================
+     TAB 2 — CALCULATOR (Mechanical ledger style)
+     ============================================================ */
+  .calc-display {
+    background: var(--inv-input);
+    border: none;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+    text-align: right;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .calc-display::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .calc-formula {
+    font-size: 13px;
+    color: var(--inv-text4);
+    min-height: 20px;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+  }
+
+  .calc-result {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--inv-gold);
+    line-height: 1.2;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    font-family: 'AritaBuri', 'Playfair Display', Georgia, serif;
+    text-shadow: 0 0 20px rgba(212, 162, 69, 0.2);
+  }
+
+  .calc-result.error {
+    color: var(--inv-alert);
+    font-size: 20px;
+    text-shadow: 0 0 15px rgba(192, 57, 43, 0.3);
+  }
+
+  .calc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+  }
+
+  .calc-btn {
+    padding: 10px 6px;
+    background: linear-gradient(135deg, var(--inv-surface3), var(--inv-card));
+    border: none;
+    color: var(--inv-text2);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.1s;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    position: relative;
+    border-radius: 4px;
+    box-shadow:
+      inset 0 1px 0 rgba(212, 162, 69, 0.03),
+      0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .calc-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .calc-btn:hover {
+    background: linear-gradient(135deg, var(--inv-surface4), var(--inv-surface2));
+    color: var(--inv-cyan);
+    box-shadow:
+      inset 0 1px 0 rgba(212, 162, 69, 0.06),
+      0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .calc-btn:active {
+    transform: scale(0.95);
+  }
+
+  .calc-btn.op {
+    color: #000;
+    background: linear-gradient(135deg, var(--inv-gold), var(--inv-gold2));
+    font-weight: 600;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.15),
+      0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .calc-btn.op::before {
+    border-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .calc-btn.op:hover {
+    background: linear-gradient(135deg, var(--inv-gold3), var(--inv-gold));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      0 0 12px var(--inv-gold-glow),
+      0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .calc-btn.op:active {
+    transform: scale(0.93);
+  }
+
+  .calc-btn.eq {
+    background: linear-gradient(135deg, var(--inv-gold), var(--inv-gold2));
+    color: #000;
+    font-weight: 700;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .calc-btn.eq::before {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .calc-btn.eq:hover {
+    filter: brightness(1.1);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.25),
+      0 0 15px var(--inv-gold-glow),
+      0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .calc-btn.eq:active {
+    transform: scale(0.93);
+  }
+
+  .calc-btn.clear {
+    color: var(--inv-alert);
+  }
+
+  .calc-btn.clear:hover {
+    background: linear-gradient(135deg, #2a1010, #1a0808);
+    box-shadow:
+      inset 0 1px 0 rgba(192, 57, 43, 0.1),
+      0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .calc-footer {
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .calc-footer .footer-tag {
+    display: inline-block;
+    background: var(--inv-surface3);
+    padding: 4px 10px;
+    font-size: 11px;
+    color: var(--inv-text4);
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    position: relative;
+  }
+
+  .calc-footer .footer-tag::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--inv-gold-dim);
+    pointer-events: none;
+  }
+
+  /* ============================================================
+     TAB 3 — ENEMIES (Character stat panel style)
+     ============================================================ */
+  .enemy-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+  }
+
+  .enemy-form .field {
+    flex: 1;
+    min-width: 80px;
+  }
+
+  .enemy-form .field label {
+    display: block;
+    font-size: 10px;
+    color: var(--inv-text4);
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+  }
+
+  .enemy-form .field input {
+    width: 100%;
+    padding: 8px 10px;
+    background: var(--inv-input);
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    color: var(--inv-text);
+    font-size: 14px;
+    font-weight: 600;
+    outline: none;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .enemy-form .field input:focus {
+    border-color: var(--inv-cyan);
+    box-shadow:
+      inset 0 1px 3px rgba(0, 0, 0, 0.5),
+      0 0 10px var(--inv-cyan-glow);
+  }
+
+  .btn-enemy-add {
+    padding: 8px 16px;
+    background: linear-gradient(135deg, var(--inv-gold), var(--inv-gold2));
+    border: none;
+    color: #1a0e00;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+    align-self: flex-end;
+    white-space: nowrap;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.15),
+      0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .btn-enemy-add::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    pointer-events: none;
+  }
+
+  .btn-enemy-add:hover {
+    background: linear-gradient(135deg, var(--inv-gold3), var(--inv-gold));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      0 0 15px var(--inv-gold-glow),
+      0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .btn-enemy-add:active {
+    transform: translateY(1px);
+  }
+
+  .enemy-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 320px;
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+
+  .enemy-card {
+    background: var(--inv-parchment);
+    border: none;
+    padding: 8px 10px;
+    transition: opacity 0.3s;
+    position: relative;
+    border-radius: 4px;
+  }
+
+  .enemy-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .enemy-card.removing {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.25s, transform 0.25s;
+  }
+
+  .enemy-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .enemy-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--inv-text);
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .enemy-card-actions {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .enemy-delete-btn {
+    width: 26px;
+    height: 26px;
+    background: linear-gradient(135deg, var(--inv-surface3), var(--inv-card));
+    border: none;
+    color: var(--inv-text4);
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.12s;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(212, 162, 69, 0.03);
+  }
+
+  .enemy-delete-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .enemy-delete-btn:hover {
+    background: var(--inv-alert);
+    color: #fff;
+    border-color: transparent;
+  }
+
+  /* HP/Stagger bars — game style */
+  .enemy-bar-section {
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .enemy-bar-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .enemy-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    margin-bottom: 0;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+  }
+
+  .enemy-bar-label .label {
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .enemy-bar-label .value {
+    color: var(--inv-text3);
+  }
+
+  .enemy-bar-track {
+    width: 100%;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    border-radius: 3px;
+  }
+
+  .enemy-bar-track:hover {
+    background: rgba(0, 0, 0, 0.55);
+  }
+
+  .enemy-bar-fill {
+    height: 100%;
+    transition: width 0.25s ease;
+    position: relative;
+  }
+
+  .enemy-bar-fill.hp {
+    background: linear-gradient(90deg, #1a5c2a, var(--inv-success));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .enemy-bar-fill.stagger {
+    background: linear-gradient(90deg, #7a4a00, var(--inv-stagger));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .enemy-damage-input {
+    display: none;
+    margin-top: 8px;
+    position: relative;
+  }
+
+  .enemy-damage-input.visible {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .enemy-damage-input input {
+    flex: 1;
+    padding: 6px 8px;
+    background: var(--inv-input);
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    color: var(--inv-text);
+    font-size: 13px;
+    font-weight: 600;
+    outline: none;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .enemy-damage-input input:focus {
+    border-color: var(--inv-cyan);
+    box-shadow:
+      inset 0 1px 3px rgba(0, 0, 0, 0.5),
+      0 0 8px var(--inv-cyan-glow);
+  }
+
+  .enemy-damage-input .btn-damage-apply {
+    padding: 6px 12px;
+    background: linear-gradient(135deg, #8a1a1a, #5a1010);
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.12s;
+    white-space: nowrap;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    border-radius: 4px;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.08),
+      0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .enemy-damage-input .btn-damage-apply:hover {
+    filter: brightness(1.2);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.12),
+      0 0 10px rgba(192, 57, 43, 0.2);
+  }
+
+  .enemy-damage-input .btn-damage-apply:active {
+    transform: scale(0.95);
+  }
+
+  .enemy-empty {
+    color: var(--inv-text4);
+    font-size: 13px;
+    text-align: center;
+    padding: 30px 0;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+  }
+
+  /* Enemy status effects */
+  .enemy-status-section {
+    margin-top: 10px;
+    padding-top: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .enemy-status-badges {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .enemy-status-badge {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 3px 6px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--inv-gold-dim);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--inv-text4);
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.12s;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+  }
+
+  .enemy-status-badge:hover {
+    border-color: rgba(212, 162, 69, 0.3);
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .enemy-status-badge:active {
+    transform: scale(0.93);
+  }
+
+  .enemy-status-badge .es-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    display: block;
+    filter: brightness(0.6);
+    transition: filter 0.15s;
+  }
+
+  .enemy-status-badge:hover .es-icon {
+    filter: brightness(1);
+  }
+
+  .enemy-status-badge .es-count {
+    min-width: 12px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 800;
+  }
+
+  .enemy-status-badge .es-arrow {
+    font-size: 8px;
+    color: var(--inv-text5);
+    transition: color 0.12s;
+  }
+
+  .enemy-status-badge .es-left:hover .es-arrow,
+  .enemy-status-badge .es-right:hover .es-arrow {
+    color: var(--inv-text);
+  }
+
+  .enemy-status-badge .es-left,
+  .enemy-status-badge .es-right {
+    padding: 0 2px;
+    cursor: pointer;
+    transition: background 0.1s;
+  }
+
+  .enemy-status-badge .es-left:hover,
+  .enemy-status-badge .es-right:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  /* ============================================================
+     TAB 4 — COMPARISON (Duel frame)
+     ============================================================ */
+  .comp-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 10px;
+    align-items: end;
+    margin-bottom: 16px;
+  }
+
+  .comp-grid .field {
+    flex: unset;
+  }
+
+  .comp-grid .field label {
+    display: block;
+    font-size: 11px;
+    color: var(--inv-text4);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+  }
+
+  .comp-grid .field input {
+    width: 100%;
+    padding: 10px 12px;
+    background: var(--inv-input);
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    color: var(--inv-text);
+    font-size: 18px;
+    font-weight: 700;
+    outline: none;
+    text-align: center;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .comp-grid .field input:focus {
+    border-color: var(--inv-gold);
+    box-shadow:
+      inset 0 1px 3px rgba(0, 0, 0, 0.5),
+      0 0 10px var(--inv-gold-glow);
+  }
+
+  .comp-vs {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--inv-cyan);
+    padding-bottom: 12px;
+    letter-spacing: 4px;
+    font-family: 'AritaBuri', 'Cinzel Decorative', Georgia, serif;
+    text-shadow: 0 0 15px var(--inv-cyan-glow);
+  }
+
+  .comp-btn {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, var(--inv-gold), var(--inv-gold2));
+    border: none;
+    color: #1a0e00;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+    width: 100%;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    position: relative;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.15),
+      0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .comp-btn::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    pointer-events: none;
+  }
+
+  .comp-btn:hover {
+    background: linear-gradient(135deg, var(--inv-gold3), var(--inv-gold));
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      0 0 25px rgba(212, 162, 69, 0.35),
+      0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .comp-btn:active {
+    transform: translateY(1px);
+  }
+
+  .comp-result {
+    background: var(--inv-parchment);
+    border: none;
+    padding: 14px;
+    text-align: center;
+    min-height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .comp-result::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .comp-result::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border: 1px solid rgba(212, 162, 69, 0.02);
+    border-radius: 2px;
+    pointer-events: none;
+  }
+
+  .comp-winner {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    font-family: 'Playfair Display', Georgia, serif;
+    position: relative;
+    z-index: 1;
+  }
+
+  .comp-winner.ally {
+    color: var(--inv-success);
+    text-shadow: 0 0 15px rgba(74, 154, 90, 0.3);
+  }
+
+  .comp-winner.enemy {
+    color: var(--inv-alert);
+    text-shadow: 0 0 15px rgba(192, 57, 43, 0.3);
+  }
+
+  .comp-winner.tie {
+    color: var(--inv-gold);
+    text-shadow: 0 0 15px var(--inv-gold-glow);
+  }
+
+  .comp-diff {
+    font-size: 14px;
+    color: var(--inv-text3);
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    position: relative;
+    z-index: 1;
+  }
+
+  .comp-detail {
+    font-size: 12px;
+    color: var(--inv-text4);
+    margin-top: 6px;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    position: relative;
+    z-index: 1;
+  }
+
+  .comp-footer {
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .comp-footer .footer-tag {
+    display: inline-block;
+    background: var(--inv-surface3);
+    padding: 4px 10px;
+    font-size: 11px;
+    color: var(--inv-text4);
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    position: relative;
+  }
+
+  .comp-footer .footer-tag::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--inv-gold-dim);
+    pointer-events: none;
+  }
+
+  /* ============================================================
+     TAB: RULETA (Spin Wheel)
+     ============================================================ */
+  .ruleta-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ruleta-options-area {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .ruleta-add-row {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .ruleta-add-row input[type="text"] {
+    flex: 1;
+    padding: 8px 10px;
+    background: var(--inv-input);
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    color: var(--inv-text);
+    font-size: 13px;
+    outline: none;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .ruleta-add-row input[type="text"]:focus {
+    border-color: var(--inv-cyan);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 8px var(--inv-cyan-glow);
+  }
+
+  .ruleta-add-row input[type="number"] {
+    width: 60px;
+    padding: 8px 6px;
+    background: var(--inv-input);
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    color: var(--inv-text);
+    font-size: 13px;
+    font-weight: 600;
+    outline: none;
+    text-align: center;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .ruleta-add-row input[type="number"]:focus {
+    border-color: var(--inv-cyan);
+  }
+
+  .ruleta-add-row .weight-label {
+    font-size: 10px;
+    color: var(--inv-text4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    white-space: nowrap;
+  }
+
+  .ruleta-option-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    min-height: 32px;
+    padding: 6px;
+    background: var(--inv-parchment);
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+  }
+
+  .ruleta-option-chip {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 6px 3px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1a0e00;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    position: relative;
+  }
+
+  .ruleta-option-chip .opt-name {
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .ruleta-option-chip .opt-weight {
+    font-size: 10px;
+    opacity: 0.7;
+  }
+
+  .ruleta-option-chip .opt-remove {
+    width: 16px;
+    height: 16px;
+    background: rgba(0,0,0,0.2);
+    border: none;
+    color: rgba(0,0,0,0.4);
+    font-size: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    padding: 0;
+    line-height: 1;
+  }
+
+  .ruleta-option-chip .opt-remove:hover {
+    background: rgba(0,0,0,0.4);
+    color: #000;
+  }
+
+  .ruleta-canvas-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px 0;
+    position: relative;
+  }
+
+  .ruleta-canvas-wrap canvas {
+    max-width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(212, 162, 69, 0.15), 0 0 6px rgba(212, 162, 69, 0.1);
+    display: block;
+  }
+
+  .ruleta-arrow {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 28px;
+    z-index: 5;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .ruleta-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ruleta-result {
+    text-align: center;
+    min-height: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ruleta-result .winner-name {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--inv-gold);
+    font-family: 'Playfair Display', Georgia, serif;
+    text-shadow: 0 0 20px rgba(212, 162, 69, 0.3);
+  }
+
+  .ruleta-result .winner-detail {
+    font-size: 12px;
+    color: var(--inv-text4);
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    margin-top: 2px;
+  }
+
+  .ruleta-empty {
+    color: var(--inv-text4);
+    font-size: 13px;
+    text-align: center;
+    width: 100%;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+  }
+
+
+  /* ============================================================
+     POISE TRACKER (Limbus Company)
+     ============================================================ */
+  .poise-section {
+    margin-top: 16px;
+    padding: 12px 14px;
+    background: var(--inv-parchment);
+    border: none;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
+  }
+
+  .poise-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .poise-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .poise-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: brightness(0.9) saturate(1.2);
+  }
+
+  .poise-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--inv-cyan);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-shadow: 0 0 15px rgba(91, 214, 224, 0.15);
+  }
+
+  .poise-stats {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--inv-gold);
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+  }
+
+  .poise-counter-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  .poise-btn {
+    padding: 8px 16px;
+    background: linear-gradient(135deg, var(--inv-cyan2), var(--inv-blue));
+    border: none;
+    color: #000;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 1px 3px rgba(0,0,0,0.3);
+    border-radius: 4px;
+  }
+
+  .poise-btn::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border: 1px solid rgba(255,255,255,0.08);
+    pointer-events: none;
+  }
+
+  .poise-btn:hover {
+    background: linear-gradient(135deg, var(--inv-cyan), var(--inv-cyan2));
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 0 15px var(--inv-cyan-glow), 0 1px 3px rgba(0,0,0,0.3);
+  }
+
+  .poise-btn:active {
+    transform: translateY(1px);
+  }
+
+  .poise-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 6px 14px;
+    background: var(--inv-surface3);
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    min-width: 60px;
+  }
+
+  .poise-count-label {
+    font-size: 9px;
+    color: var(--inv-text4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+  }
+
+  .poise-count-value {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--inv-cyan);
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-shadow: 0 0 10px var(--inv-cyan-glow);
+  }
+
+  .poise-crit-value {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--inv-gold);
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-shadow: 0 0 10px var(--inv-gold-glow);
+  }
+
+  .poise-crit-value.maxed {
+    color: #ff6b6b;
+    text-shadow: 0 0 20px rgba(255,107,107,0.5);
+    animation: poise-pulse 0.8s ease-in-out infinite alternate;
+  }
+
+  .poise-adv-value {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--inv-success);
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-shadow: 0 0 10px rgba(74,154,90,0.3);
+  }
+
+  @keyframes poise-pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+  }
+
+  .poise-log {
+    margin-top: 10px;
+    padding: 8px 10px;
+    background: var(--inv-input);
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 4px;
+    min-height: 30px;
+    font-size: 12px;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    color: var(--inv-text3);
+    line-height: 1.4;
+    max-height: 100px;
+    overflow-y: auto;
+  }
+
+  .poise-log-empty {
+    color: var(--inv-text4);
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
+  }
+
+  .poise-log-entry {
+    margin: 2px 0;
+  }
+
+  .poise-log-entry.crit {
+    color: #ff6b6b;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255,107,107,0.3);
+  }
+
+  .poise-log-entry.info {
+    color: var(--inv-text3);
+  }
+
+  .poise-log-entry.advantage {
+    color: var(--inv-success);
+    font-weight: 600;
+  }
+
+  /* Crit dialog overlay */
+  .crit-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: crit-fade-in 0.3s ease;
+  }
+
+  @keyframes crit-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .crit-dialog {
+    background: linear-gradient(145deg, #1a0a0a, #0a0505);
+    border: 2px solid #ff6b6b;
+    border-radius: 12px;
+    padding: 30px 40px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 0 80px rgba(255,107,107,0.3), 0 0 0 4px rgba(255,107,107,0.1);
+    animation: crit-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  @keyframes crit-pop {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  .crit-dialog .crit-title {
+    font-size: 36px;
+    font-weight: 900;
+    color: #ff6b6b;
+    font-family: 'AritaBuri', 'Cinzel Decorative', Georgia, serif;
+    text-shadow: 0 0 30px rgba(255,107,107,0.5);
+    margin-bottom: 8px;
+    letter-spacing: 4px;
+  }
+
+  .crit-dialog .crit-sub {
+    font-size: 16px;
+    color: var(--inv-text2);
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    margin-bottom: 6px;
+  }
+
+  .crit-dialog .crit-dmg {
+    font-size: 48px;
+    font-weight: 900;
+    color: #ff4444;
+    font-family: 'AritaBuri', 'Playfair Display', Georgia, serif;
+    text-shadow: 0 0 40px rgba(255,68,68,0.4);
+    margin: 10px 0;
+  }
+
+  .crit-dialog .crit-close-btn {
+    margin-top: 16px;
+    padding: 10px 30px;
+    background: linear-gradient(135deg, #ff6b6b, #cc3333);
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+
+  .crit-dialog .crit-close-btn:hover {
+    filter: brightness(1.2);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 0 25px rgba(255,107,107,0.3);
+  }
+  .poise-counter-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .poise-btn-pot {
+    background: linear-gradient(135deg, var(--inv-gold), var(--inv-gold2)) !important;
+    color: #000 !important;
+    font-size: 11px !important;
+    padding: 4px 10px !important;
+  }
+
+  .poise-btn-cnt {
+    background: linear-gradient(135deg, var(--inv-cyan2), var(--inv-blue)) !important;
+    color: #000 !important;
+    font-size: 11px !important;
+    padding: 4px 10px !important;
+  }
+
+  .poise-count-value.potency {
+    color: var(--inv-gold);
+    text-shadow: 0 0 10px var(--inv-gold-glow);
+  }
+
+  .poise-count-value.contador {
+    color: var(--inv-cyan);
+    text-shadow: 0 0 10px var(--inv-cyan-glow);
+  }
+  .poise-value-input {
+    width: 54px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid var(--inv-gold-dim);
+    border-radius: 3px;
+    color: inherit;
+    font-size: 20px;
+    font-weight: 800;
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    text-align: center;
+    outline: none;
+    -moz-appearance: textfield;
+  }
+  .poise-value-input::-webkit-inner-spin-button,
+  .poise-value-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .poise-value-input:focus {
+    border-color: var(--inv-cyan);
+    box-shadow: 0 0 8px var(--inv-cyan-glow);
+  }
+  .poise-value-input.potency {
+    color: var(--inv-gold);
+    text-shadow: 0 0 10px var(--inv-gold-glow);
+  }
+  .poise-value-input.contador {
+    color: var(--inv-cyan);
+    text-shadow: 0 0 10px var(--inv-cyan-glow);
+  }
+
+
+  .poise-info-row {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .poise-hint {
+    font-size: 10px;
+    color: var(--inv-text4);
+    font-family: 'AritaBuri', 'Rajdhani', Arial, sans-serif;
+    font-style: italic;
+  }
+
+
