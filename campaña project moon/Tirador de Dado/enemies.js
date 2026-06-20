@@ -20,7 +20,7 @@
       currentHp: maxHp,
       maxStagger,
       currentStagger: maxStagger,
-      statuses: { damageUp: 0, damageDown: 0, protection: 0, fragile: 0 },
+      statuses: { damageUp: 0, damageDown: 0, protection: 0, fragile: 0, target: 0, rupturePotency: 0, ruptureCount: 0 },
     });
     renderEnemies();
     saveState();
@@ -51,6 +51,16 @@
     if (type !== 'stagger') {
       var _crit = poiseTryCritDamage('enemy');
       if (_crit.isCrit) dmg = dmg * _crit.multiplier;
+      // Rupture adds flat bonus damage (Potencia) and consumes Contador
+      var rupturePot = enemy.statuses.rupturePotency || 0;
+      var ruptureCnt = enemy.statuses.ruptureCount || 0;
+      if (rupturePot > 0 && ruptureCnt > 0) {
+        dmg += rupturePot;
+        enemy.statuses.ruptureCount = Math.max(0, ruptureCnt - 1);
+        if (enemy.statuses.ruptureCount === 0) {
+          enemy.statuses.rupturePotency = 0;
+        }
+      }
       dmg = Math.round(dmg * getEntityDamageMultiplier(enemy));
       if (dmg < 1 && amount > 0) dmg = 1;
     }
@@ -134,12 +144,32 @@
             <div class="enemy-status-badges">
               ${ENTITY_EFFECTS.map(eff => `
                 <div class="enemy-status-badge">
-                  <span class="es-left" onclick="changeEnemyStatus(${e.id}, '${eff.id}', -1)"><span class="es-arrow">◀</span></span>
-                  <img src="${eff.icon}" alt="${eff.name}" class="es-icon">
-                  <span class="es-count">${e.statuses[eff.id] || 0}</span>
-                  <span class="es-right" onclick="changeEnemyStatus(${e.id}, '${eff.id}', 1)"><span class="es-arrow">▶</span></span>
+                  <button class="es-btn es-minus" onmousedown="holdStart(event,()=>changeEnemyStatus(${e.id},'${eff.id}',-1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Quitar stack">−</button>
+                  <img src="${eff.icon}" alt="${eff.name}" class="es-icon" title="${eff.name}">
+                  <input type="number" class="es-input" value="${e.statuses[eff.id] || 0}"
+                    onchange="setEnemyStatus(${e.id}, '${eff.id}', this.value)"
+                    onfocus="this.select()" min="0" max="${eff.max || 99}">
+                  <button class="es-btn es-plus" onmousedown="holdStart(event,()=>changeEnemyStatus(${e.id},'${eff.id}',1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Agregar stack">+</button>
                 </div>
               `).join('')}
+              <div class="enemy-status-badge rupture-badge">
+                <button class="es-btn es-minus" onmousedown="holdStart(event,()=>changeRupturePotency(${e.id},-1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Quitar Potencia">−</button>
+                <img src="${RUP_ICON}" alt="Ruptura" class="es-icon" title="Ruptura">
+                <span class="rup-label">Pot</span>
+                <input type="number" class="es-input" value="${e.statuses.rupturePotency || 0}"
+                  onchange="setRupturePotency(${e.id}, this.value)" onfocus="this.select()" min="0" max="99">
+                <button class="es-btn es-plus" onmousedown="holdStart(event,()=>changeRupturePotency(${e.id},1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Agregar Potencia">+</button>
+                <span class="rup-sep">│</span>
+                <button class="es-btn es-minus" onmousedown="holdStart(event,()=>changeRuptureCount(${e.id},-1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Quitar Contador">−</button>
+                <span class="rup-label">Cnt</span>
+                <input type="number" class="es-input" value="${e.statuses.ruptureCount || 0}"
+                  onchange="setRuptureCount(${e.id}, this.value)" onfocus="this.select()" min="0" max="99">
+                <button class="es-btn es-plus" onmousedown="holdStart(event,()=>changeRuptureCount(${e.id},1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Agregar Contador">+</button>
+              </div>
+            </div>
+            <div class="enemy-status-summary">
+              <span class="sum-item">Multiplicador: <span class="sum-val ${getEntityMultiplierClass(e)}">×${getEntityDamageMultiplier(e).toFixed(2)}</span></span>
+              ${(e.statuses.rupturePotency || 0) > 0 && (e.statuses.ruptureCount || 0) > 0 ? `<span class="sum-item">Ruptura: <span class="sum-val positive">+${e.statuses.rupturePotency} (x${e.statuses.ruptureCount} golpes)</span></span>` : ''}
             </div>
           </div>
         </div>
@@ -150,17 +180,53 @@
   }
 
   const ENTITY_EFFECTS = [
-    { id: 'damageUp',   name: 'Daño +',  icon: 'https://limbuscompany.wiki.gg/images/thumb/Damage_Up.png/25px-Damage_Up.png?e8dfcd' },
-    { id: 'damageDown', name: 'Daño −',  icon: 'https://limbuscompany.wiki.gg/images/thumb/Damage_Down.png/25px-Damage_Down.png?99c357' },
-    { id: 'protection', name: 'Prot.',   icon: 'https://limbuscompany.wiki.gg/images/thumb/Protection.png/25px-Protection.png?bd9ff7' },
-    { id: 'fragile',    name: 'Frágil',  icon: 'https://limbuscompany.wiki.gg/images/thumb/Fragile.png/25px-Fragile.png?7c6083' },
+    { id: 'damageUp',   name: 'Daño +',  icon: 'https://limbuscompany.wiki.gg/images/thumb/Damage_Up.png/25px-Damage_Up.png?e8dfcd', max: 10 },
+    { id: 'damageDown', name: 'Daño −',  icon: 'https://limbuscompany.wiki.gg/images/thumb/Damage_Down.png/25px-Damage_Down.png?99c357', max: 10 },
+    { id: 'protection', name: 'Prot.',   icon: 'https://limbuscompany.wiki.gg/images/thumb/Protection.png/25px-Protection.png?bd9ff7', max: 10 },
+    { id: 'fragile',    name: 'Frágil',  icon: 'https://limbuscompany.wiki.gg/images/thumb/Fragile.png/25px-Fragile.png?7c6083', max: 10 },
+    { id: 'target',     name: 'Marca',   icon: 'https://limbuscompany.wiki.gg/images/thumb/The_Prescript%27s_Target_-_The_Index.png/25px-The_Prescript%27s_Target_-_The_Index.png?2d838f', max: 1 },
   ];
+
+  const RUP_ICON = 'https://limbuscompany.wiki.gg/images/Rupture.png';
+
+  // Hold-to-repeat for buttons
+  let _holdTimer = null;
+  let _holdInterval = null;
+
+  function holdStart(e, fn) {
+    e.preventDefault();
+    fn();
+    holdStop();
+    _holdTimer = setTimeout(() => {
+      _holdInterval = setInterval(fn, 100);
+    }, 300);
+  }
+
+  function holdStop() {
+    if (_holdTimer) { clearTimeout(_holdTimer); _holdTimer = null; }
+    if (_holdInterval) { clearInterval(_holdInterval); _holdInterval = null; }
+  }
+
+  function getEffectMax(effectId) {
+    const eff = ENTITY_EFFECTS.find(e => e.id === effectId);
+    return eff ? eff.max : 99;
+  }
 
   function changeEnemyStatus(id, effectId, delta) {
     const enemy = enemies.find(e => e.id === id);
     if (!enemy) return;
     const cur = enemy.statuses[effectId] || 0;
-    enemy.statuses[effectId] = Math.max(0, Math.min(10, cur + delta));
+    const max = getEffectMax(effectId);
+    enemy.statuses[effectId] = Math.max(0, Math.min(max, cur + delta));
+    renderEnemies();
+    saveState();
+  }
+
+  function setEnemyStatus(id, effectId, value) {
+    const enemy = enemies.find(e => e.id === id);
+    if (!enemy) return;
+    const max = getEffectMax(effectId);
+    enemy.statuses[effectId] = Math.max(0, Math.min(max, parseInt(value) || 0));
     renderEnemies();
     saveState();
   }
@@ -169,9 +235,66 @@
     let mult = 1;
     mult += 0.1 * (enemy.statuses.fragile || 0);
     mult += 0.1 * (enemy.statuses.damageUp || 0);
+    mult += 0.1 * (enemy.statuses.target || 0);
     mult -= 0.1 * (enemy.statuses.protection || 0);
     mult -= 0.1 * (enemy.statuses.damageDown || 0);
     return Math.max(0.05, mult);
+  }
+
+  function getEntityMultiplierClass(enemy) {
+    const mult = getEntityDamageMultiplier(enemy);
+    if (mult > 1) return 'positive';
+    if (mult < 1) return 'negative';
+    return 'neutral';
+  }
+
+  function changeRupturePotency(id, delta) {
+    const enemy = enemies.find(e => e.id === id);
+    if (!enemy) return;
+    enemy.statuses.rupturePotency = Math.max(0, Math.min(99, (enemy.statuses.rupturePotency || 0) + delta));
+    renderEnemies();
+    saveState();
+  }
+
+  function setRupturePotency(id, value) {
+    const enemy = enemies.find(e => e.id === id);
+    if (!enemy) return;
+    enemy.statuses.rupturePotency = Math.max(0, Math.min(99, parseInt(value) || 0));
+    renderEnemies();
+    saveState();
+  }
+
+  function changeRuptureCount(id, delta) {
+    const enemy = enemies.find(e => e.id === id);
+    if (!enemy) return;
+    enemy.statuses.ruptureCount = Math.max(0, Math.min(99, (enemy.statuses.ruptureCount || 0) + delta));
+    renderEnemies();
+    saveState();
+  }
+
+  function setRuptureCount(id, value) {
+    const enemy = enemies.find(e => e.id === id);
+    if (!enemy) return;
+    enemy.statuses.ruptureCount = Math.max(0, Math.min(99, parseInt(value) || 0));
+    renderEnemies();
+    saveState();
+  }
+
+  function ruptureEndTurn() {
+    // Reduce ruptureCount by 1 for all entities, unless it's 1 or less
+    enemies.forEach(enemy => {
+      if (enemy.statuses.ruptureCount > 1) {
+        enemy.statuses.ruptureCount--;
+      }
+    });
+    players.forEach(player => {
+      if (player.statuses.ruptureCount > 1) {
+        player.statuses.ruptureCount--;
+      }
+    });
+    renderEnemies();
+    renderPlayers();
+    saveState();
   }
 
   function showDamageInput(id, type) {

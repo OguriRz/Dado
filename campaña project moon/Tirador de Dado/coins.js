@@ -46,4 +46,5 @@
     saveState();
     poiseEndTurn('enemy');
     poiseEndTurn('player');
+    ruptureEndTurn();
   }

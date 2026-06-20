@@ -11,8 +11,7 @@
     var tagParts = [];
     if (activeStatuses.has('paralysis')) { total = Math.floor(total / 2); parts.push('½'); tagParts.push('(½)'); }
     parts.push('(' + lastRawFormula + ')');
-    if (activeStatuses.has('power')) { total += 5; parts.push('+5'); tagParts.push('+5'); }
-    if (activeStatuses.has('weakness')) { total -= 5; parts.push('-5'); tagParts.push('-5'); }
+
     resultTotal.textContent = total;
     resultFormula.textContent = parts.join(' ') + ' = ' + total;
     const historyIdx = rollHistory.length;

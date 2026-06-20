@@ -236,12 +236,7 @@
     if (activeStatuses.has('paralysis')) {
       realTotal = Math.floor(realTotal / 2);
     }
-    if (activeStatuses.has('power')) {
-      realTotal += 5;
-    }
-    if (activeStatuses.has('weakness')) {
-      realTotal -= 5;
-    }
+
     for (let i = realResults.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [realResults[i], realResults[j]] = [realResults[j], realResults[i]]; [allSides[i], allSides[j]] = [allSides[j], allSides[i]]; }      resultTotal.textContent = '?';
     resultTotal.classList.add('loading');
     resultFormula.textContent = 'Tirando ' + totalDice + ' dado' + (totalDice !== 1 ? 's' : '') + '...';
@@ -265,8 +260,7 @@
       var formulaParts = [];
       if (activeStatuses.has('paralysis')) formulaParts.push('½');
       formulaParts.push('(' + lastRawFormula + ')');
-      if (activeStatuses.has('power')) formulaParts.push('+5');
-      if (activeStatuses.has('weakness')) formulaParts.push('-5');
+
       resultFormula.textContent = formulaParts.join(' ') + ' = ' + realTotal;
       const idx = rollHistory.length + 1;
       rollHistory.push({ results: realResults, allSides, sum: realSum, bonus, total: realTotal });

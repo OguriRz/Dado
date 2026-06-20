@@ -13,7 +13,7 @@
 
   function addPlayer(name, maxHp, maxStagger) {
     const id = ++playerIdCounter;
-    players.push({ id, name: name.trim() || 'Jugador ' + id, maxHp, currentHp: maxHp, maxStagger, currentStagger: maxStagger, statuses: { damageUp: 0, damageDown: 0, protection: 0, fragile: 0 } });
+    players.push({ id, name: name.trim() || 'Jugador ' + id, maxHp, currentHp: maxHp, maxStagger, currentStagger: maxStagger, statuses: { damageUp: 0, damageDown: 0, protection: 0, fragile: 0, target: 0, rupturePotency: 0, ruptureCount: 0 } });
     renderPlayers();
     saveState();
   }
@@ -32,6 +32,16 @@
     if (type !== 'stagger') {
       var _crit = poiseTryCritDamage('player');
       if (_crit.isCrit) dmg = dmg * _crit.multiplier;
+      // Rupture adds flat bonus damage (Potencia) and consumes Contador
+      var rupturePot = player.statuses.rupturePotency || 0;
+      var ruptureCnt = player.statuses.ruptureCount || 0;
+      if (rupturePot > 0 && ruptureCnt > 0) {
+        dmg += rupturePot;
+        player.statuses.ruptureCount = Math.max(0, ruptureCnt - 1);
+        if (player.statuses.ruptureCount === 0) {
+          player.statuses.rupturePotency = 0;
+        }
+      }
       dmg = Math.round(dmg * getEntityDamageMultiplier(player));
       if (dmg < 1 && amount > 0) dmg = 1; }
     if (type === 'stagger') { player.currentStagger = Math.max(0, player.currentStagger - dmg); }
@@ -84,12 +94,32 @@
             <div class="enemy-status-badges">
               ${ENTITY_EFFECTS.map(eff => `
                 <div class="enemy-status-badge">
-                  <span class="es-left" onclick="changePlayerStatus(${e.id}, '${eff.id}', -1)"><span class="es-arrow">◀</span></span>
-                  <img src="${eff.icon}" alt="${eff.name}" class="es-icon">
-                  <span class="es-count">${e.statuses[eff.id] || 0}</span>
-                  <span class="es-right" onclick="changePlayerStatus(${e.id}, '${eff.id}', 1)"><span class="es-arrow">▶</span></span>
+                  <button class="es-btn es-minus" onmousedown="holdStart(event,()=>changePlayerStatus(${e.id},'${eff.id}',-1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Quitar stack">−</button>
+                  <img src="${eff.icon}" alt="${eff.name}" class="es-icon" title="${eff.name}">
+                  <input type="number" class="es-input" value="${e.statuses[eff.id] || 0}"
+                    onchange="setPlayerStatus(${e.id}, '${eff.id}', this.value)"
+                    onfocus="this.select()" min="0" max="${eff.max || 99}">
+                  <button class="es-btn es-plus" onmousedown="holdStart(event,()=>changePlayerStatus(${e.id},'${eff.id}',1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Agregar stack">+</button>
                 </div>
               `).join('')}
+              <div class="enemy-status-badge rupture-badge">
+                <button class="es-btn es-minus" onmousedown="holdStart(event,()=>changeRupturePotency(${e.id},-1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Quitar Potencia">−</button>
+                <img src="${RUP_ICON}" alt="Ruptura" class="es-icon" title="Ruptura">
+                <span class="rup-label">Pot</span>
+                <input type="number" class="es-input" value="${e.statuses.rupturePotency || 0}"
+                  onchange="setRupturePotency(${e.id}, this.value)" onfocus="this.select()" min="0" max="99">
+                <button class="es-btn es-plus" onmousedown="holdStart(event,()=>changeRupturePotency(${e.id},1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Agregar Potencia">+</button>
+                <span class="rup-sep">│</span>
+                <button class="es-btn es-minus" onmousedown="holdStart(event,()=>changeRuptureCount(${e.id},-1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Quitar Contador">−</button>
+                <span class="rup-label">Cnt</span>
+                <input type="number" class="es-input" value="${e.statuses.ruptureCount || 0}"
+                  onchange="setRuptureCount(${e.id}, this.value)" onfocus="this.select()" min="0" max="99">
+                <button class="es-btn es-plus" onmousedown="holdStart(event,()=>changeRuptureCount(${e.id},1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Agregar Contador">+</button>
+              </div>
+            </div>
+            <div class="enemy-status-summary">
+              <span class="sum-item">Multiplicador: <span class="sum-val ${getEntityMultiplierClass(e)}">×${getEntityDamageMultiplier(e).toFixed(2)}</span></span>
+              ${(e.statuses.rupturePotency || 0) > 0 && (e.statuses.ruptureCount || 0) > 0 ? `<span class="sum-item">Ruptura: <span class="sum-val positive">+${e.statuses.rupturePotency} (x${e.statuses.ruptureCount} golpes)</span></span>` : ''}
             </div>
           </div>
         </div>`;
@@ -100,7 +130,18 @@
   function changePlayerStatus(id, effectId, delta) {
     const player = players.find(e => e.id === id);
     if (!player) return;
-    player.statuses[effectId] = Math.max(0, Math.min(10, (player.statuses[effectId] || 0) + delta));
+    const cur = player.statuses[effectId] || 0;
+    const max = getEffectMax(effectId);
+    player.statuses[effectId] = Math.max(0, Math.min(max, cur + delta));
+    renderPlayers();
+    saveState();
+  }
+
+  function setPlayerStatus(id, effectId, value) {
+    const player = players.find(e => e.id === id);
+    if (!player) return;
+    const max = getEffectMax(effectId);
+    player.statuses[effectId] = Math.max(0, Math.min(max, parseInt(value) || 0));
     renderPlayers();
     saveState();
   }
