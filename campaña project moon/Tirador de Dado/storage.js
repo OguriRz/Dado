@@ -17,6 +17,7 @@
     localStorage.setItem('freebuff_movTotal', String(movTotal));
     localStorage.setItem('freebuff_ventaja', String(ventajaStacks));
     localStorage.setItem('freebuff_desventaja', String(desventajaStacks));
+    localStorage.setItem('freebuff_activeStatuses', JSON.stringify([...activeStatuses]));
     if (lastRawTotal !== null) {
       const state = {
         total: lastRollTotal,
@@ -105,6 +106,20 @@
     }
     renderStacks();
 
+    // Restore active statuses (Paralysis)
+    const savedStatuses = localStorage.getItem('freebuff_activeStatuses');
+    if (savedStatuses) {
+      try {
+        const parsed = JSON.parse(savedStatuses);
+        activeStatuses.clear();
+        parsed.forEach(function(s) { activeStatuses.add(s); });
+        parsed.forEach(function(s) {
+          var el = document.querySelector('.status-badge[data-status="' + s + '"]');
+          if (el) el.classList.add('active');
+        });
+      } catch(e) {}
+    }
+
     const savedRuleta = localStorage.getItem('freebuff_ruleta');
     if (savedRuleta) {
       try {
@@ -123,6 +138,7 @@
           lastRawTotal = data.rawTotal;
           lastRollTotal = data.total;
           lastRawFormula = data.formula;
+          lastHistoryIdx = data.historyIdx || 0;
 
           // Reconstruir display
           var total = data.rawTotal;

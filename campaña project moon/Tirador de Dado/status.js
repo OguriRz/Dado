@@ -20,7 +20,7 @@
 
     resultTotal.textContent = total;
     resultFormula.textContent = parts.join(' ') + ' = ' + total;
-    const historyIdx = rollHistory.length;
+    const historyIdx = lastHistoryIdx || rollHistory.length;
     var tagSuffix = tagParts.length > 0 ? ' ' + tagParts.join(' ') : '';
     lastRollTag.textContent = '#' + historyIdx + ': ' + total + tagSuffix;
     lastRollTotal = total;

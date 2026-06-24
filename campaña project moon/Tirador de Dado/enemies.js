@@ -20,7 +20,8 @@
       currentHp: maxHp,
       maxStagger,
       currentStagger: maxStagger,
-      statuses: { damageUp: 0, damageDown: 0, protection: 0, fragile: 0, target: 0, targetPercent: 10, rupturePotency: 0, ruptureCount: 0 },
+      statuses: { damageUp: 0, damageDown: 0, protection: 0, fragile: 0, target: 0, targetPercent: 10, rupturePotency: 0, ruptureCount: 0, tremorPotency: 0, tremorCount: 0, burnPotency: 0, burnCount: 0, talisman: 0 },
+      staggered: false,
     });
     renderEnemies();
     saveState();
@@ -31,6 +32,7 @@
     if (card) {
       card.classList.add('removing');
       setTimeout(() => {
+        if (!enemies.some(e => e.id === id)) return;
         enemies = enemies.filter(e => e.id !== id);
         renderEnemies();
         saveState();
@@ -48,7 +50,14 @@
     let dmg = Math.max(0, Math.floor(amount));
     if (dmg === 0) return;
 
+    var staggeredConsumed = false;
     if (type !== 'stagger') {
+      // Staggered: next hit deals x2 damage, then consumes stagger
+      if (enemy.staggered) {
+        dmg = dmg * 2;
+        enemy.staggered = false;
+        staggeredConsumed = true;
+      }
       var _crit = poiseTryCritDamage('enemy');
       if (_crit.isCrit) dmg = dmg * _crit.multiplier;
       // Rupture adds flat bonus damage (Potencia) and consumes Contador
@@ -71,6 +80,11 @@
       enemy.currentStagger = Math.max(0, enemy.currentStagger - dmg);
     }
 
+    // Check if stagger reached 0 (but don't re-stagger if we just consumed it)
+    if (!staggeredConsumed && enemy.currentStagger <= 0 && enemy.currentHp > 0) {
+      enemy.staggered = true;
+    }
+
     if (enemy.currentHp <= 0) {
       removeEnemy(id);
     } else {
@@ -91,7 +105,8 @@
       const staggerPct = Math.max(0, (e.currentStagger / e.maxStagger) * 100);
 
       html += `
-        <div class="enemy-card" data-id="${e.id}">
+        <div class="enemy-card${e.staggered ? ' staggered' : ''}" data-id="${e.id}">
+          ${e.staggered ? `<div class="staggered-overlay"><img src="${STAGGERED_IMG}" alt="Staggered" class="staggered-img"><span class="staggered-label">¡STAGGERED! ×2</span></div>` : ''}
           <div class="enemy-card-header">
             <span class="enemy-name">${escapeHtml(e.name)}</span>
             <div class="enemy-card-actions">
@@ -178,11 +193,51 @@
                 <input type="number" class="es-input" value="${e.statuses.ruptureCount || 0}"
                   onchange="setRuptureCount(${e.id}, this.value)" onfocus="this.select()" min="0" max="10000">
                 <button class="es-btn es-plus" onmousedown="holdStart(event,()=>changeRuptureCount(${e.id},1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Agregar Contador">+</button>
+                <span class="rup-sep" style="margin:0 6px">│</span>
+                <button class="es-btn es-minus" onmousedown="holdStart(event,()=>changeTalisman(${e.id},-1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Quitar Talisman">−</button>
+                <img src="${TALISMAN_ICON}" alt="Talisman" class="es-icon" title="Talisman" style="width:18px;height:18px">
+                <input type="number" class="es-input" value="${e.statuses.talisman || 0}"
+                  onchange="setTalisman(${e.id}, this.value)" onfocus="this.select()" min="0" max="3" style="width:26px">
+                <button class="es-btn es-plus" onmousedown="holdStart(event,()=>changeTalisman(${e.id},1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Agregar Talisman">+</button>
+              </div>
+              <div class="enemy-status-badge rupture-badge tremor-badge">
+                <button class="es-btn es-minus" onmousedown="holdStart(event,()=>changeTremorPotency(${e.id},-1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Quitar Potencia">−</button>
+                <img src="${TREMOR_ICON}" alt="Tremor" class="es-icon" title="Tremor">
+                <span class="rup-label">Pot</span>
+                <input type="number" class="es-input" value="${e.statuses.tremorPotency || 0}"
+                  onchange="setTremorPotency(${e.id}, this.value)" onfocus="this.select()" min="0" max="10000">
+                <button class="es-btn es-plus" onmousedown="holdStart(event,()=>changeTremorPotency(${e.id},1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Agregar Potencia">+</button>
+                <span class="rup-sep">│</span>
+                <button class="es-btn es-minus" onmousedown="holdStart(event,()=>changeTremorCount(${e.id},-1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Quitar Contador">−</button>
+                <span class="rup-label">Cnt</span>
+                <input type="number" class="es-input" value="${e.statuses.tremorCount || 0}"
+                  onchange="setTremorCount(${e.id}, this.value)" onfocus="this.select()" min="0" max="10000">
+                <button class="es-btn es-plus" onmousedown="holdStart(event,()=>changeTremorCount(${e.id},1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Agregar Contador">+</button>
+                <span class="rup-sep" style="margin:0 6px">│</span>
+                <button class="es-btn tremor-burst-btn" onclick="tremorBurst(${e.id})" title="Tremor Burst: inflige la Potencia como daño directo al Stagger">
+                  <img src="${TREMOR_BURST_ICON}" alt="Tremor Burst" style="width:16px;height:16px;vertical-align:middle">
+                </button>
+              </div>
+              <div class="enemy-status-badge rupture-badge burn-badge">
+                <button class="es-btn es-minus" onmousedown="holdStart(event,()=>changeBurnPotency(${e.id},-1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Quitar Potencia">−</button>
+                <img src="${BURN_ICON}" alt="Burn" class="es-icon" title="Burn">
+                <span class="rup-label">Pot</span>
+                <input type="number" class="es-input" value="${e.statuses.burnPotency || 0}"
+                  onchange="setBurnPotency(${e.id}, this.value)" onfocus="this.select()" min="0" max="10000">
+                <button class="es-btn es-plus" onmousedown="holdStart(event,()=>changeBurnPotency(${e.id},1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Agregar Potencia">+</button>
+                <span class="rup-sep">│</span>
+                <button class="es-btn es-minus" onmousedown="holdStart(event,()=>changeBurnCount(${e.id},-1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Quitar Contador">−</button>
+                <span class="rup-label">Cnt</span>
+                <input type="number" class="es-input" value="${e.statuses.burnCount || 0}"
+                  onchange="setBurnCount(${e.id}, this.value)" onfocus="this.select()" min="0" max="10000">
+                <button class="es-btn es-plus" onmousedown="holdStart(event,()=>changeBurnCount(${e.id},1))" onmouseup="holdStop()" onmouseleave="holdStop()" title="Agregar Contador">+</button>
               </div>
             </div>
             <div class="enemy-status-summary">
               <span class="sum-item">Multiplicador: <span class="sum-val ${getEntityMultiplierClass(e)}">×${getEntityDamageMultiplier(e).toFixed(2)}</span></span>
               ${(e.statuses.rupturePotency || 0) > 0 && (e.statuses.ruptureCount || 0) > 0 ? `<span class="sum-item">Ruptura: <span class="sum-val positive">+${e.statuses.rupturePotency} (x${e.statuses.ruptureCount} golpes)</span></span>` : ''}
+              ${(e.statuses.tremorPotency || 0) > 0 && (e.statuses.tremorCount || 0) > 0 ? `<span class="sum-item">Tremor: <span class="sum-val positive">${e.statuses.tremorPotency} (x${e.statuses.tremorCount})</span></span>` : ''}
+              ${(e.statuses.burnPotency || 0) > 0 && (e.statuses.burnCount || 0) > 0 ? `<span class="sum-item">Burn: <span class="sum-val alert">${e.statuses.burnPotency}/turno (x${e.statuses.burnCount})</span></span>` : ''}
             </div>
           </div>
         </div>
@@ -201,6 +256,11 @@
   ];
 
   const RUP_ICON = 'https://limbuscompany.wiki.gg/images/Rupture.png';
+  const TREMOR_ICON = 'https://limbuscompany.wiki.gg/images/Tremor.png?3233a7';
+  const TREMOR_BURST_ICON = 'https://limbuscompany.wiki.gg/images/thumb/Tremor_Burst.png/25px-Tremor_Burst.png?7613b5';
+  const BURN_ICON = 'https://limbuscompany.wiki.gg/images/Burn.png?bfbea6';
+  const TALISMAN_ICON = 'https://limbuscompany.wiki.gg/images/thumb/Entangled_Curse_Talisman.png/25px-Entangled_Curse_Talisman.png?f08230';
+  const STAGGERED_IMG = 'https://cdn.discordapp.com/attachments/997071755027955764/1519318046194270319/729d63c1-d5bf-49cc-a687-28a1927ea4b5-1765190418260-thumbnailM.png?ex=6a3d1eb1&is=6a3bcd31&hm=6658ee12779b6dcbad4f9e4f49764cf24e6bb2c04e2d4c85829f6b6541d5204c&';
 
   // Hold-to-repeat for buttons
   let _holdTimer = null;
@@ -310,6 +370,130 @@
     saveState();
   }
 
+  // ============================================================
+  //  ENEMY BURN
+  // ============================================================
+
+  function changeBurnPotency(id, delta) {
+    const enemy = enemies.find(e => e.id === id);
+    if (!enemy) return;
+    enemy.statuses.burnPotency = Math.max(0, Math.min(10000, (enemy.statuses.burnPotency || 0) + delta));
+    renderEnemies();
+    saveState();
+  }
+
+  function setBurnPotency(id, value) {
+    const enemy = enemies.find(e => e.id === id);
+    if (!enemy) return;
+    enemy.statuses.burnPotency = Math.max(0, Math.min(10000, parseInt(value) || 0));
+    renderEnemies();
+    saveState();
+  }
+
+  function changeBurnCount(id, delta) {
+    const enemy = enemies.find(e => e.id === id);
+    if (!enemy) return;
+    enemy.statuses.burnCount = Math.max(0, Math.min(10000, (enemy.statuses.burnCount || 0) + delta));
+    renderEnemies();
+    saveState();
+  }
+
+  function setBurnCount(id, value) {
+    const enemy = enemies.find(e => e.id === id);
+    if (!enemy) return;
+    enemy.statuses.burnCount = Math.max(0, Math.min(10000, parseInt(value) || 0));
+    renderEnemies();
+    saveState();
+  }
+
+  // ============================================================
+  //  ENEMY TALISMAN
+  // ============================================================
+
+  function changeTalisman(id, delta) {
+    const enemy = enemies.find(e => e.id === id);
+    if (!enemy) return;
+    var cur = enemy.statuses.talisman || 0;
+    var newVal = cur + delta;
+    if (newVal >= 3) {
+      // Talisman completa: +10 Rupture Pot, +2 Rupture Count
+      enemy.statuses.rupturePotency = (enemy.statuses.rupturePotency || 0) + 10;
+      enemy.statuses.ruptureCount = (enemy.statuses.ruptureCount || 0) + 2;
+      enemy.statuses.talisman = 0;
+    } else {
+      enemy.statuses.talisman = Math.max(0, Math.min(3, newVal));
+    }
+    renderEnemies();
+    saveState();
+  }
+
+  function setTalisman(id, value) {
+    const enemy = enemies.find(e => e.id === id);
+    if (!enemy) return;
+    var newVal = parseInt(value) || 0;
+    if (newVal >= 3) {
+      enemy.statuses.rupturePotency = (enemy.statuses.rupturePotency || 0) + 10;
+      enemy.statuses.ruptureCount = (enemy.statuses.ruptureCount || 0) + 2;
+      enemy.statuses.talisman = 0;
+    } else {
+      enemy.statuses.talisman = Math.max(0, Math.min(3, newVal));
+    }
+    renderEnemies();
+    saveState();
+  }
+
+  // ============================================================
+  //  ENEMY TREMOR
+  // ============================================================
+
+  function changeTremorPotency(id, delta) {
+    const enemy = enemies.find(e => e.id === id);
+    if (!enemy) return;
+    enemy.statuses.tremorPotency = Math.max(0, Math.min(10000, (enemy.statuses.tremorPotency || 0) + delta));
+    renderEnemies();
+    saveState();
+  }
+
+  function setTremorPotency(id, value) {
+    const enemy = enemies.find(e => e.id === id);
+    if (!enemy) return;
+    enemy.statuses.tremorPotency = Math.max(0, Math.min(10000, parseInt(value) || 0));
+    renderEnemies();
+    saveState();
+  }
+
+  function changeTremorCount(id, delta) {
+    const enemy = enemies.find(e => e.id === id);
+    if (!enemy) return;
+    enemy.statuses.tremorCount = Math.max(0, Math.min(10000, (enemy.statuses.tremorCount || 0) + delta));
+    renderEnemies();
+    saveState();
+  }
+
+  function setTremorCount(id, value) {
+    const enemy = enemies.find(e => e.id === id);
+    if (!enemy) return;
+    enemy.statuses.tremorCount = Math.max(0, Math.min(10000, parseInt(value) || 0));
+    renderEnemies();
+    saveState();
+  }
+
+  function tremorBurst(id) {
+    const enemy = enemies.find(e => e.id === id);
+    if (!enemy) return;
+    var potency = enemy.statuses.tremorPotency || 0;
+    var count = enemy.statuses.tremorCount || 0;
+    if (potency <= 0 || count <= 0) return;
+    // Deal Tremor potency as direct Stagger damage
+    enemy.currentStagger = Math.max(0, enemy.currentStagger - potency);
+    enemy.statuses.tremorCount = Math.max(0, count - 1);
+    if (enemy.statuses.tremorCount === 0) {
+      enemy.statuses.tremorPotency = 0;
+    }
+    renderEnemies();
+    saveState();
+  }
+
   function ruptureEndTurn() {
     // Reduce ruptureCount by 1 for all entities, unless it's 1 or less
     enemies.forEach(enemy => {
@@ -322,6 +506,63 @@
         player.statuses.ruptureCount--;
       }
     });
+    renderEnemies();
+    renderPlayers();
+    saveState();
+  }
+
+  function tremorEndTurn() {
+    // Reduce tremorCount by 1 for all entities, unless it's 1 or less
+    enemies.forEach(enemy => {
+      if (enemy.statuses.tremorCount > 1) {
+        enemy.statuses.tremorCount--;
+      }
+    });
+    players.forEach(player => {
+      if (player.statuses.tremorCount > 1) {
+        player.statuses.tremorCount--;
+      }
+    });
+    renderEnemies();
+    renderPlayers();
+    saveState();
+  }
+
+  function burnEndTurn() {
+    // Burn deals Potency as HP damage at end of turn, then reduces Count by 1
+    var deadEnemies = [];
+    enemies.forEach(enemy => {
+      var potency = enemy.statuses.burnPotency || 0;
+      var count = enemy.statuses.burnCount || 0;
+      if (potency > 0 && count > 0) {
+        enemy.currentHp = Math.max(0, enemy.currentHp - potency);
+        enemy.statuses.burnCount = Math.max(0, count - 1);
+        if (enemy.statuses.burnCount === 0) {
+          enemy.statuses.burnPotency = 0;
+        }
+        if (enemy.currentHp <= 0) {
+          deadEnemies.push(enemy.id);
+        }
+      }
+    });
+    var deadPlayers = [];
+    players.forEach(player => {
+      var potency = player.statuses.burnPotency || 0;
+      var count = player.statuses.burnCount || 0;
+      if (potency > 0 && count > 0) {
+        player.currentHp = Math.max(0, player.currentHp - potency);
+        player.statuses.burnCount = Math.max(0, count - 1);
+        if (player.statuses.burnCount === 0) {
+          player.statuses.burnPotency = 0;
+        }
+        if (player.currentHp <= 0) {
+          deadPlayers.push(player.id);
+        }
+      }
+    });
+    // Remove dead entities directly (avoiding animation delay overhead)
+    deadEnemies.forEach(function(id) { enemies = enemies.filter(function(e) { return e.id !== id; }); });
+    deadPlayers.forEach(function(id) { players = players.filter(function(e) { return e.id !== id; }); });
     renderEnemies();
     renderPlayers();
     saveState();
@@ -353,6 +594,10 @@
     const heal = Math.max(0, Math.floor(amount));
     if (heal === 0) return;
     enemy.currentStagger = Math.min(enemy.maxStagger, enemy.currentStagger + heal);
+    // If stagger recovers above 0, staggered state ends
+    if (enemy.staggered && enemy.currentStagger > 0) {
+      enemy.staggered = false;
+    }
     renderEnemies();
     saveState();
   }

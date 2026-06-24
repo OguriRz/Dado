@@ -80,4 +80,6 @@
     poiseEndTurn('enemy');
     poiseEndTurn('player');
     ruptureEndTurn();
+    tremorEndTurn();
+    burnEndTurn();
   }

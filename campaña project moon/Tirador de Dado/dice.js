@@ -24,6 +24,7 @@
   let lastRollTotal = null;
   let lastRawTotal = null;
   let lastRawFormula = '';
+  let lastHistoryIdx = 0;
 
   const diceTypeBtns = document.querySelectorAll('.dice-type-btn');
   const diceCountInput = document.getElementById('diceCount');
@@ -271,6 +272,7 @@
 
       resultFormula.textContent = formulaParts.join(' ') + ' = ' + realTotal;
       const idx = rollHistory.length + 1;
+      lastHistoryIdx = idx;
       rollHistory.push({ results: realResults, allSides, sum: realSum, bonus, total: realTotal });
       lastRollTag.textContent = '#' + idx + ': ' + realTotal;
       lastRollTotal = realTotal;
